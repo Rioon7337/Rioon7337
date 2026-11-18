@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 140" width="900" height="140">
+  <defs>
+    <linearGradient id="wcBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#11161d"/>
+      <stop offset="100%" stop-color="#1c2430"/>
+    </linearGradient>
+    <linearGradient id="wcSteel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A8B99"/>
+      <stop offset="50%" stop-color="#D3D9DF"/>
+      <stop offset="100%" stop-color="#7A8B99"/>
+    </linearGradient>
+    <linearGradient id="wcGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A67B29"/>
+      <stop offset="50%" stop-color="#F2C94C"/>
+      <stop offset="100%" stop-color="#A67B29"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="140" fill="url(#wcBg)"/>
+
+  <!-- Frame -->
+  <path d="M 20 20 L 880 20 L 880 120 L 20 120 Z" fill="none" stroke="url(#wcSteel)" stroke-width="2"/>
+  <path d="M 28 28 L 872 28 L 872 112 L 28 112 Z" fill="none" stroke="#4B5E6F" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- Shield + Paw ornaments -->
+  <g transform="translate(120, 70)" stroke="url(#wcSteel)" fill="none" stroke-width="2">
+    <path d="M 0 -22 L 18 -12 L 18 10 L 0 22 L -18 10 L -18 -12 Z" fill="#1c2430"/>
+    <circle cx="0" cy="-4" r="4" fill="#F2C94C" stroke="none"/>
+    <circle cx="-8" cy="-12" r="2.5" fill="#F2C94C" stroke="none"/>
+    <circle cx="0" cy="-16" r="2.5" fill="#F2C94C" stroke="none"/>
+    <circle cx="8" cy="-12" r="2.5" fill="#F2C94C" stroke="none"/>
+  </g>
+  <g transform="translate(780, 70)" stroke="url(#wcSteel)" fill="none" stroke-width="2">
+    <path d="M 0 -22 L 18 -12 L 18 10 L 0 22 L -18 10 L -18 -12 Z" fill="#1c2430"/>
+    <circle cx="0" cy="-4" r="4" fill="#F2C94C" stroke="none"/>
+    <circle cx="-8" cy="-12" r="2.5" fill="#F2C94C" stroke="none"/>
+    <circle cx="0" cy="-16" r="2.5" fill="#F2C94C" stroke="none"/>
+    <circle cx="8" cy="-12" r="2.5" fill="#F2C94C" stroke="none"/>
+  </g>
+
+  <!-- Title -->
+  <text x="450" y="62" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="bold" font-style="italic"
+        fill="url(#wcGold)" letter-spacing="10">
+    CONNECT
+  </text>
+
+  <!-- Subtitle -->
+  <text x="450" y="92" text-anchor="middle"
+        font-family="Georgia, serif" font-size="12" fill="#D3D9DF" letter-spacing="3">
+    // THE PACK ANSWERS THE CALL — NAMA KAMU
+  </text>
+
+  <!-- Divider -->
+  <line x1="120" y1="108" x2="780" y2="108" stroke="#4B5E6F" stroke-width="1"/>
+  <circle cx="450" cy="108" r="4" fill="#F2C94C"/>
+  <circle cx="120" cy="108" r="2" fill="#7A8B99"/>
+  <circle cx="780" cy="108" r="2" fill="#7A8B99"/>
+</svg>
