@@ -314,185 +314,193 @@
     <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
   </rect>
 
-      <!-- ===== HONKAI: STAR RAIL - VORACITY CORROSION (KOROSI VORACITY) BACKGROUND ===== -->
+        <!-- ===== ORBITAL DRONE BITS // BACKGROUND & FORCEFIELD BASE ===== -->
   <g transform="translate(110, 240)">
-    <!-- Abyssal Base Circle -->
-    <circle r="60.5" fill="#080004" stroke="#ff0033" stroke-width="1.5" opacity="0.9"/>
+    <!-- Base dark shield backing -->
+    <circle r="60.5" fill="#040618" stroke="#00f0ff" stroke-width="1.5" opacity="0.9"/>
 
-    <!-- 1. EXPANDING VORACITY CORROSION PULSES (Expanding outwards and dissolving) -->
-    <g>
-      <!-- Pulse 1: Blood Crimson Devour Wave -->
-      <path d="M -18.5 -33 L -21.5 -29 L -22.8 -22 L -23 -15 L -23.5 -5 L -24 5 L -23 14 L -16 21 L -6.5 26 L -7 31 L -20 35 L -32 42 L -44 52 L -48 58 L 0 60 L 48 58 L 44 52 L 32 42 L 20 35 L 7 31 L 6.5 26 L 16 21 L 23 14 L 24 5 L 23.5 -5 L 23 -15 L 22.8 -22 L 21.5 -29 L 18.5 -33 L 13 -25 L 7 -19 L 0 -16 L -7 -19 L -13 -25 Z" fill="none" stroke="#ff0033" stroke-width="3" opacity="0.85">
-        <animateTransform attributeName="transform" type="scale" values="1; 1.15; 1.3" dur="2.2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.85; 0.35; 0" dur="2.2s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-width" values="3; 1.5; 0.5" dur="2.2s" repeatCount="indefinite"/>
-      </path>
+    <!-- Telemetry Range Rings (Subtle tactical HUD arcs) -->
+    <circle r="64" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.4" stroke-dasharray="14 12 28 10"/>
+    <circle r="66.5" fill="none" stroke="#ff0055" stroke-width="0.8" opacity="0.35" stroke-dasharray="6 20 40 15"/>
 
-      <!-- Pulse 2: Burning Amber Corrosion Wave (Offset phase) -->
-      <path d="M -18.5 -33 L -21.5 -29 L -22.8 -22 L -23 -15 L -23.5 -5 L -24 5 L -23 14 L -16 21 L -6.5 26 L -7 31 L -20 35 L -32 42 L -44 52 L -48 58 L 0 60 L 48 58 L 44 52 L 32 42 L 20 35 L 7 31 L 6.5 26 L 16 21 L 23 14 L 24 5 L 23.5 -5 L 23 -15 L 22.8 -22 L 21.5 -29 L 18.5 -33 L 13 -25 L 7 -19 L 0 -16 L -7 -19 L -13 -25 Z" fill="none" stroke="#ff7700" stroke-width="2.5" opacity="0.85">
-        <animateTransform attributeName="transform" type="scale" values="1; 1.15; 1.3" begin="1.1s" dur="2.2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.85; 0.35; 0" begin="1.1s" dur="2.2s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-width" values="2.5; 1.2; 0.5" begin="1.1s" dur="2.2s" repeatCount="indefinite"/>
-      </path>
-    </g>
-
-    <!-- Deep Void Atmospheric Glow -->
-    <circle r="58" fill="#ff0033" opacity="0.08" filter="url(#neonGlow)">
-      <animate attributeName="opacity" values="0.06;0.18;0.06" dur="2.0s" repeatCount="indefinite"/>
+    <!-- Periodic Defense Shockwave Pulse (Expands from center outwards at t=0.54) -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#00f0ff" stroke-width="2.5" opacity="0" filter="url(#neonGlow)">
+      <animate attributeName="r" values="50;50;85;115;50" keyTimes="0; 0.27; 0.54; 0.8; 1" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0.85;0;0" keyTimes="0; 0.27; 0.54; 0.8; 1" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#00f0ff;#ffffff;#ff0055;#00f0ff;#00f0ff" keyTimes="0; 0.27; 0.54; 0.8; 1" dur="4.5s" repeatCount="indefinite"/>
     </circle>
   </g>
 
   <!-- Avatar image -->
   <image href="data:image/jpeg;base64,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" x="50" y="180" width="120" height="120" clip-path="url(#avatarClip)" preserveAspectRatio="xMidYMid slice"/>
 
-  <!-- ===== HONKAI: STAR RAIL - VORACITY CORROSION FOREGROUND (HUGS AVATAR SILHOUETTE) ===== -->
+  <!-- ===== ORBITAL DRONE BITS // FOREGROUND LASER MATRIX & DRONES ===== -->
   <g transform="translate(110, 240)">
 
-    <!-- 2. DEEP CORROSIVE AURA (Glow tightly following the furry wolf silhouette) -->
-    <path d="M -18.5 -33 L -21.5 -29 L -22.8 -22 L -23 -15 L -23.5 -5 L -24 5 L -23 14 L -16 21 L -6.5 26 L -7 31 L -20 35 L -32 42 L -44 52 L -48 58 L 0 60 L 48 58 L 44 52 L 32 42 L 20 35 L 7 31 L 6.5 26 L 16 21 L 23 14 L 24 5 L 23.5 -5 L 23 -15 L 22.8 -22 L 21.5 -29 L 18.5 -33 L 13 -25 L 7 -19 L 0 -16 L -7 -19 L -13 -25 Z" fill="none" stroke="#ff0033" stroke-width="8" opacity="0.4" filter="url(#neonGlow)">
-      <animate attributeName="stroke" values="#ff0033;#ff4400;#990022;#ff0033" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="stroke-width" values="7;11;6;12;7" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.35;0.65;0.3;0.6;0.35" dur="2.4s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- Secondary Hot Amber Bloom -->
-    <path d="M -18.5 -33 L -21.5 -29 L -22.8 -22 L -23 -15 L -23.5 -5 L -24 5 L -23 14 L -16 21 L -6.5 26 L -7 31 L -20 35 L -32 42 L -44 52 L -48 58 L 0 60 L 48 58 L 44 52 L 32 42 L 20 35 L 7 31 L 6.5 26 L 16 21 L 23 14 L 24 5 L 23.5 -5 L 23 -15 L 22.8 -22 L 21.5 -29 L 18.5 -33 L 13 -25 L 7 -19 L 0 -16 L -7 -19 L -13 -25 Z" fill="none" stroke="#ff5500" stroke-width="5" opacity="0.45" filter="url(#nitroGlow)">
-      <animate attributeName="stroke" values="#ff5500;#ff0044;#ffaa00;#ff5500" dur="1.8s" repeatCount="indefinite"/>
-      <animate attributeName="stroke-width" values="4;8;3;7;4" dur="1.8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.4;0.75;0.35;0.7;0.4" dur="1.8s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- 3. CRAWLING CORROSIVE ENERGY STREAMS (Slithers along the silhouette outline) -->
-    <!-- Primary Crimson Stream (Clockwise flow) -->
-    <path d="M -18.5 -33 L -21.5 -29 L -22.8 -22 L -23 -15 L -23.5 -5 L -24 5 L -23 14 L -16 21 L -6.5 26 L -7 31 L -20 35 L -32 42 L -44 52 L -48 58 L 0 60 L 48 58 L 44 52 L 32 42 L 20 35 L 7 31 L 6.5 26 L 16 21 L 23 14 L 24 5 L 23.5 -5 L 23 -15 L 22.8 -22 L 21.5 -29 L 18.5 -33 L 13 -25 L 7 -19 L 0 -16 L -7 -19 L -13 -25 Z" fill="none" stroke="#ff0044" stroke-width="3" stroke-dasharray="24 10 36 8 16 12" stroke-linecap="round" filter="url(#neonGlow)">
-      <animate attributeName="stroke-dashoffset" from="0" to="260" dur="2.6s" repeatCount="indefinite"/>
-      <animate attributeName="stroke" values="#ff0044;#ff0000;#ff2200;#ff0044" dur="2.6s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- Counter Hot Amber Stream (Counter-clockwise flow) -->
-    <path d="M -18.5 -33 L -21.5 -29 L -22.8 -22 L -23 -15 L -23.5 -5 L -24 5 L -23 14 L -16 21 L -6.5 26 L -7 31 L -20 35 L -32 42 L -44 52 L -48 58 L 0 60 L 48 58 L 44 52 L 32 42 L 20 35 L 7 31 L 6.5 26 L 16 21 L 23 14 L 24 5 L 23.5 -5 L 23 -15 L 22.8 -22 L 21.5 -29 L 18.5 -33 L 13 -25 L 7 -19 L 0 -16 L -7 -19 L -13 -25 Z" fill="none" stroke="#ffbb00" stroke-width="2" stroke-dasharray="18 14 28 10" stroke-linecap="round">
-      <animate attributeName="stroke-dashoffset" from="240" to="0" dur="1.9s" repeatCount="indefinite"/>
-      <animate attributeName="stroke" values="#ffbb00;#ffffff;#ff5500;#ffbb00" dur="1.9s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- Razor Core Filament (White-hot sharp edge) -->
-    <path d="M -18.5 -33 L -21.5 -29 L -22.8 -22 L -23 -15 L -23.5 -5 L -24 5 L -23 14 L -16 21 L -6.5 26 L -7 31 L -20 35 L -32 42 L -44 52 L -48 58 L 0 60 L 48 58 L 44 52 L 32 42 L 20 35 L 7 31 L 6.5 26 L 16 21 L 23 14 L 24 5 L 23.5 -5 L 23 -15 L 22.8 -22 L 21.5 -29 L 18.5 -33 L 13 -25 L 7 -19 L 0 -16 L -7 -19 L -13 -25 Z" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.9" stroke-dasharray="40 25 15 20">
-      <animate attributeName="stroke-dashoffset" from="0" to="200" dur="3.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.7;1;0.5;0.95;0.7" dur="1.2s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- 4. VORACITY CORROSION BARBED TEETH & THORNS (Sprouting from silhouette contour) -->
-    <g fill="#ff0033" stroke="#ffffff" stroke-width="0.8" filter="url(#neonGlow)">
-      <!-- Left Ear Outer Thorn -->
-      <polygon points="-18.5,-33 -27,-40 -21.5,-29">
-        <animate attributeName="fill" values="#ff0033;#ff6600;#ffffff;#ff0033" dur="1.5s" repeatCount="indefinite"/>
-      </polygon>
-      <!-- Left Ear Mid Thorn -->
-      <polygon points="-22.8,-22 -30,-25 -23,-15"/>
-
-      <!-- Right Ear Outer Thorn -->
-      <polygon points="18.5,-33 27,-40 21.5,-29">
-        <animate attributeName="fill" values="#ff0033;#ff6600;#ffffff;#ff0033" dur="1.5s" repeatCount="indefinite"/>
-      </polygon>
-      <!-- Right Ear Mid Thorn -->
-      <polygon points="22.8,-22 30,-25 23,-15"/>
-
-      <!-- Forehead Crown Horn / Spire -->
-      <polygon points="-4,-17 0,-25 4,-17" fill="#ff7700">
-        <animate attributeName="fill" values="#ff7700;#ffffff;#ff0044;#ff7700" dur="1.2s" repeatCount="indefinite"/>
-      </polygon>
-
-      <!-- Left Cheek Fluff Thorns -->
-      <polygon points="-24,5 -33,7 -23,14">
-        <animate attributeName="fill" values="#ff0033;#ffffff;#ff5500;#ff0033" dur="1.4s" repeatCount="indefinite"/>
-      </polygon>
-      <polygon points="-23.5,-5 -31,-6 -24,2"/>
-
-      <!-- Right Cheek Fluff Thorns -->
-      <polygon points="24,5 33,7 23,14">
-        <animate attributeName="fill" values="#ff0033;#ffffff;#ff5500;#ff0033" dur="1.4s" repeatCount="indefinite"/>
-      </polygon>
-      <polygon points="23.5,-5 31,-6 24,2"/>
-
-      <!-- Neck Constriction Barbs -->
-      <polygon points="-6.5,26 -13,28 -7,31"/>
-      <polygon points="6.5,26 13,28 7,31"/>
-
-      <!-- Left Shoulder Corrosive Blades -->
-      <polygon points="-32,42 -43,45 -44,52">
-        <animate attributeName="fill" values="#ff0033;#ff5500;#ffffff;#ff0033" dur="1.6s" repeatCount="indefinite"/>
-      </polygon>
-      <polygon points="-20,35 -28,37 -32,42"/>
-
-      <!-- Right Shoulder Corrosive Blades -->
-      <polygon points="32,42 43,45 44,52">
-        <animate attributeName="fill" values="#ff0033;#ff5500;#ffffff;#ff0033" dur="1.6s" repeatCount="indefinite"/>
-      </polygon>
-      <polygon points="20,35 28,37 32,42"/>
+    <!-- Corner Crosshair Targeting Ticks around Avatar -->
+    <g stroke="#00f0ff" stroke-width="1.5" opacity="0.75">
+      <line x1="-54" y1="-54" x2="-46" y2="-54"/>
+      <line x1="-54" y1="-54" x2="-54" y2="-46"/>
+      <line x1="54" y1="-54" x2="46" y2="-54"/>
+      <line x1="54" y1="-54" x2="54" y2="-46"/>
+      <line x1="-54" y1="54" x2="-46" y2="54"/>
+      <line x1="-54" y1="54" x2="-54" y2="46"/>
+      <line x1="54" y1="54" x2="46" y2="54"/>
+      <line x1="54" y1="54" x2="54" y2="46"/>
     </g>
 
-    <!-- 5. FLOATING CORROSIVE EMBERS / ABYSSAL CINDER PARTICLES -->
-    <g fill="#ff3300">
-      <!-- Particle 1: Left Ear Cinder (Drifts upward) -->
-      <rect x="-24" y="-36" width="3" height="3" rx="0.5">
-        <animate attributeName="y" values="-36;-48;-36" dur="1.8s" repeatCount="indefinite"/>
-        <animate attributeName="x" values="-24;-28;-24" dur="1.8s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" repeatCount="indefinite"/>
-        <animate attributeName="fill" values="#ff3300;#ffbb00;#ff0033" dur="1.8s" repeatCount="indefinite"/>
-      </rect>
+    <!-- 1. TRIANGULATION LASER GRID & FORCEFIELD BARRIER (Connecting Drone Alpha, Beta & Gamma) -->
+    <!-- Faint Holographic Forcefield Polygon Fill -->
+    <polygon points="0,-78 -70,42 72,36" fill="#00f0ff" opacity="0.08" filter="url(#neonGlow)">
+      <animate attributeName="points" values="0,-78 -70,42 72,36; -8,-82 -75,36 66,44; 8,-84 -66,48 76,40; 4,-76 -68,40 70,34; 0,-78 -70,42 72,36" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.08;0.14;0.06;0.12;0.08" dur="2.2s" repeatCount="indefinite"/>
+    </polygon>
 
-      <!-- Particle 2: Right Ear Cinder -->
-      <rect x="22" y="-36" width="3" height="3" rx="0.5">
-        <animate attributeName="y" values="-36;-48;-36" dur="2.1s" repeatCount="indefinite"/>
-        <animate attributeName="x" values="22;26;22" dur="2.1s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.1s" repeatCount="indefinite"/>
-        <animate attributeName="fill" values="#ffbb00;#ff3300;#ffffff" dur="2.1s" repeatCount="indefinite"/>
-      </rect>
+    <!-- Primary Neon Cyan Laser Beam Triangulation Lines -->
+    <polygon points="0,-78 -70,42 72,36" fill="none" stroke="#00f0ff" stroke-width="1.8" filter="url(#neonGlow)">
+      <animate attributeName="points" values="0,-78 -70,42 72,36; -8,-82 -75,36 66,44; 8,-84 -66,48 76,40; 4,-76 -68,40 70,34; 0,-78 -70,42 72,36" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#00f0ff;#00ffff;#80f0ff;#00f0ff" dur="3s" repeatCount="indefinite"/>
+    </polygon>
 
-      <!-- Particle 3: Left Cheek Ember -->
-      <rect x="-30" y="2" width="2.5" height="2.5" rx="0.5">
-        <animate attributeName="y" values="2;-12;2" dur="2.4s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.9;0" dur="2.4s" repeatCount="indefinite"/>
-      </rect>
+    <!-- Secondary Pulsing Neon Magenta Laser Particle Stream -->
+    <polygon points="0,-78 -70,42 72,36" fill="none" stroke="#ff0055" stroke-width="1.2" stroke-dasharray="16 10 24 8" stroke-linecap="round">
+      <animate attributeName="points" values="0,-78 -70,42 72,36; -8,-82 -75,36 66,44; 8,-84 -66,48 76,40; 4,-76 -68,40 70,34; 0,-78 -70,42 72,36" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" from="0" to="180" dur="2.4s" repeatCount="indefinite"/>
+    </polygon>
 
-      <!-- Particle 4: Right Cheek Ember -->
-      <rect x="28" y="2" width="2.5" height="2.5" rx="0.5">
-        <animate attributeName="y" values="2;-12;2" dur="2.2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.9;0" dur="2.2s" repeatCount="indefinite"/>
-      </rect>
-    </g>
+    <!-- Core Razor-White Triangulation Laser Filament -->
+    <polygon points="0,-78 -70,42 72,36" fill="none" stroke="#ffffff" stroke-width="0.8" opacity="0.9" stroke-dasharray="30 20 15 25">
+      <animate attributeName="points" values="0,-78 -70,42 72,36; -8,-82 -75,36 66,44; 8,-84 -66,48 76,40; 4,-76 -68,40 70,34; 0,-78 -70,42 72,36" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" from="180" to="0" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.5;0.9;0.7" dur="1.5s" repeatCount="indefinite"/>
+    </polygon>
 
-    <!-- 6. OUTER CORROSION ENERGY BOUNDARY (Enclosing perimeter) -->
-    <circle r="63.5" fill="none" stroke="#ff0033" stroke-width="2" opacity="0.65" stroke-dasharray="14 6 26 8">
-      <animate attributeName="stroke" values="#ff0033;#99001a;#ff5500;#ff0033" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="stroke-dashoffset" from="0" to="120" dur="6s" repeatCount="indefinite"/>
-    </circle>
-    <circle r="60.5" fill="none" stroke="#ff6600" stroke-width="1.2" opacity="0.8"/>
+    <!-- 2. DRONE BIT ALPHA (Top Center Drone // Recon & Uplink) -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-78; -8,-82; 8,-84; 4,-76; 0,-78" dur="4.5s" repeatCount="indefinite"/>
+      
+      <!-- Plasma Jet Exhaust Flame (Pointing upwards/backward) -->
+      <polygon points="-3,-5 0,-15 3,-5" fill="#00f0ff" opacity="0.85" filter="url(#neonGlow)">
+        <animate attributeName="points" values="-3,-5 0,-13 3,-5; -3,-5 0,-18 3,-5; -3,-5 0,-12 3,-5" dur="0.25s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.6;0.9" dur="0.25s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="-1.5,-5 0,-10 1.5,-5" fill="#ffffff"/>
 
-    <!-- 7. HONKAI: STAR RAIL VORACITY CORROSION UI BADGE (Top Header: [ IV VORACITY CORROSION ]) -->
-    <g transform="translate(0, -78)">
-      <rect x="-52" y="-7" width="104" height="14" rx="2" fill="#0c0005" stroke="#ff0033" stroke-width="1.2">
-        <animate attributeName="stroke" values="#ff0033;#ff6600;#ff0033" dur="1.6s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Level Indicator Box (Level IV) -->
-      <rect x="-50" y="-5" width="18" height="10" rx="1" fill="#ff0033">
-        <animate attributeName="fill" values="#ff0033;#ff4400;#ff0033" dur="1.6s" repeatCount="indefinite"/>
-      </rect>
-      <text x="-41" y="2.5" font-family="'Segoe UI', Arial, sans-serif" font-size="7" font-weight="900" fill="#ffffff" text-anchor="middle">
-        IV
-      </text>
-      <!-- Label -->
-      <text x="12" y="3" font-family="'Courier New', monospace, Arial" font-size="7" font-weight="900" fill="#ff4400" text-anchor="middle" letter-spacing="1">
-        VORACITY CORROSION
-        <animate attributeName="fill" values="#ff4400;#ffffff;#ff0033;#ff4400" dur="1.6s" repeatCount="indefinite"/>
+      <!-- Twin Stabilizer Winglets -->
+      <polygon points="-5,-2 -13,-6 -7,4" fill="#0a1535" stroke="#00f0ff" stroke-width="1"/>
+      <polygon points="5,-2 13,-6 7,4" fill="#0a1535" stroke="#00f0ff" stroke-width="1"/>
+      
+      <!-- Main Drone Chassis Body (Angular Mecha Fuselage) -->
+      <polygon points="-7,-4 0,-9 7,-4 5,6 -5,6" fill="#060c26" stroke="#00f0ff" stroke-width="1.4"/>
+      <polygon points="-4,-2 0,-6 4,-2 3,4 -3,4" fill="#0d1b45"/>
+
+      <!-- Glowing Core Optic Sensor Lens -->
+      <circle cx="0" cy="0" r="2.5" fill="#ff0055" filter="url(#neonGlow)">
+        <animate attributeName="fill" values="#ff0055;#00f0ff;#ffffff;#ff0055" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Tactical Micro Reticle Brackets -->
+      <g stroke="#00f0ff" stroke-width="0.8" fill="none" opacity="0.75">
+        <path d="M -10 -9 L -14 -9 L -14 7 L -10 7"/>
+        <path d="M 10 -9 L 14 -9 L 14 7 L 10 7"/>
+      </g>
+
+      <!-- Drone ID Tag -->
+      <text x="0" y="14" font-family="'Courier New', monospace" font-size="5.5" font-weight="900" fill="#00f0ff" text-anchor="middle" letter-spacing="0.8">
+        BIT-A1
       </text>
     </g>
 
-    <!-- Bottom Status Pill: [ MAX HP SUPPRESSED ] -->
-    <g transform="translate(0, 78)">
-      <rect x="-46" y="-6" width="92" height="12" rx="2" fill="#0c0005" stroke="#ff5500" stroke-width="1" opacity="0.85"/>
-      <text x="0" y="2.5" font-family="'Segoe UI', Arial, sans-serif" font-size="6.5" font-weight="700" fill="#ffaa00" text-anchor="middle" letter-spacing="1">
-        [ MAX HP SUPPRESSED ]
+    <!-- 3. DRONE BIT BETA (Bottom-Left Drone // Kinetic Deflector) -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-70,42; -75,36; -66,48; -68,40; -70,42" dur="4.5s" repeatCount="indefinite"/>
+
+      <!-- Plasma Jet Exhaust Flame (Angled back-left) -->
+      <polygon points="-5,1 -14,6 -2,5" fill="#00f0ff" opacity="0.85" filter="url(#neonGlow)">
+        <animate attributeName="points" values="-5,1 -12,5 -2,5; -5,1 -17,8 -2,5; -5,1 -13,6 -2,5" dur="0.22s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="-4,2 -9,4 -2,4" fill="#ffffff"/>
+
+      <!-- Twin Stabilizer Winglets -->
+      <polygon points="-2,-5 -6,-13 4,-7" fill="#0a1535" stroke="#00f0ff" stroke-width="1"/>
+      <polygon points="-2,5 -6,13 4,7" fill="#0a1535" stroke="#00f0ff" stroke-width="1"/>
+
+      <!-- Main Drone Chassis Body -->
+      <polygon points="-4,-7 -9,0 -4,7 6,5 6,-5" fill="#060c26" stroke="#00f0ff" stroke-width="1.4"/>
+      <polygon points="-2,-4 -6,0 -2,4 4,3 4,-3" fill="#0d1b45"/>
+
+      <!-- Glowing Core Optic Sensor Lens -->
+      <circle cx="0" cy="0" r="2.5" fill="#00f0ff" filter="url(#neonGlow)">
+        <animate attributeName="fill" values="#00f0ff;#ffffff;#ff0055;#00f0ff" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Tactical Micro Reticle Brackets -->
+      <g stroke="#00f0ff" stroke-width="0.8" fill="none" opacity="0.75">
+        <path d="M -9 -10 L -9 -14 L 7 -14 L 7 -10"/>
+        <path d="M -9 10 L -9 14 L 7 14 L 7 10"/>
+      </g>
+
+      <!-- Drone ID Tag -->
+      <text x="-14" y="2" font-family="'Courier New', monospace" font-size="5.5" font-weight="900" fill="#00f0ff" text-anchor="middle" letter-spacing="0.8">
+        BIT-B2
+      </text>
+    </g>
+
+    <!-- 4. DRONE BIT GAMMA (Bottom-Right Drone // Laser Interceptor) -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="72,36; 66,44; 76,40; 70,34; 72,36" dur="4.5s" repeatCount="indefinite"/>
+
+      <!-- Plasma Jet Exhaust Flame (Angled back-right) -->
+      <polygon points="5,1 14,6 2,5" fill="#ff0055" opacity="0.85" filter="url(#neonGlow)">
+        <animate attributeName="points" values="5,1 12,5 2,5; 5,1 17,8 2,5; 5,1 13,6 2,5" dur="0.24s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="4,2 9,4 2,4" fill="#ffffff"/>
+
+      <!-- Twin Stabilizer Winglets -->
+      <polygon points="2,-5 6,-13 -4,-7" fill="#0a1535" stroke="#ff0055" stroke-width="1"/>
+      <polygon points="2,5 6,13 -4,7" fill="#0a1535" stroke="#ff0055" stroke-width="1"/>
+
+      <!-- Main Drone Chassis Body -->
+      <polygon points="4,-7 9,0 4,7 -6,5 -6,-5" fill="#060c26" stroke="#ff0055" stroke-width="1.4"/>
+      <polygon points="2,-4 6,0 2,4 -4,3 -4,-3" fill="#0d1b45"/>
+
+      <!-- Glowing Core Optic Sensor Lens -->
+      <circle cx="0" cy="0" r="2.5" fill="#ff0055" filter="url(#neonGlow)">
+        <animate attributeName="fill" values="#ff0055;#00f0ff;#ffffff;#ff0055" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Tactical Micro Reticle Brackets -->
+      <g stroke="#ff0055" stroke-width="0.8" fill="none" opacity="0.75">
+        <path d="M 9 -10 L 9 -14 L -7 -14 L -7 -10"/>
+        <path d="M 9 10 L 9 14 L -7 14 L -7 10"/>
+      </g>
+
+      <!-- Drone ID Tag -->
+      <text x="14" y="2" font-family="'Courier New', monospace" font-size="5.5" font-weight="900" fill="#ff0055" text-anchor="middle" letter-spacing="0.8">
+        BIT-C3
+      </text>
+    </g>
+
+    <!-- 5. TOP STATUS HUD BADGE: [ ORBITAL BITS // DEFENSE ARRAY ] -->
+    <g transform="translate(0, -96)">
+      <rect x="-56" y="-7" width="112" height="14" rx="2" fill="#040618" stroke="#00f0ff" stroke-width="1.2">
+        <animate attributeName="stroke" values="#00f0ff;#ff0055;#00f0ff" dur="2.4s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Status Green/Cyan Blip -->
+      <circle cx="-47" cy="0" r="2.5" fill="#00ff88">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="3" y="3.2" font-family="'Courier New', monospace, Arial" font-size="7" font-weight="900" fill="#00f0ff" text-anchor="middle" letter-spacing="1">
+        ORBITAL BITS // DEFENSE
+        <animate attributeName="fill" values="#00f0ff;#ffffff;#ff73fa;#00f0ff" dur="2.4s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- 6. BOTTOM TELEMETRY STATUS PILL -->
+    <g transform="translate(0, 84)">
+      <rect x="-52" y="-6" width="104" height="12" rx="2" fill="#040618" stroke="#00f0ff" stroke-width="1" opacity="0.9"/>
+      <text x="0" y="2.5" font-family="'Segoe UI', Arial, sans-serif" font-size="6.5" font-weight="700" fill="#a0f0ff" text-anchor="middle" letter-spacing="1.2">
+        [ TRIANGULATION: 100% ONLINE ]
       </text>
     </g>
 
