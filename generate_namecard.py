@@ -135,23 +135,23 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="8
   <rect x="100" y="370" width="600" height="0.5" fill="url(#accentLine)" opacity="0.3"/>
 
   <!-- Watermark -->
-  <text x="750" y="385" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#1e3a5f" text-anchor="end" opacity="0.5">github.com/Rioon</text>
+  <text x="750" y="385" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#1e3a5f" text-anchor="end" opacity="0.5">github.com/Rioon7337</text>
 </svg>'''
 
 # Create directory
-os.makedirs(r'd:\Rioon7337\Rioon\assets', exist_ok=True)
+os.makedirs(r'd:\Rioon7337\assets', exist_ok=True)
 
 # Write SVG
-with open(r'd:\Rioon7337\Rioon\assets\namecard.svg', 'w', encoding='utf-8') as f:
+with open(r'd:\Rioon7337\assets\namecard.svg', 'w', encoding='utf-8') as f:
     f.write(svg)
 
 # Write README
 readme = '''<p align="center">
-  <img src="https://raw.githubusercontent.com/Rioon/Rioon/main/assets/namecard.svg"/>
+  <img src="https://raw.githubusercontent.com/Rioon7337/Rioon7337/main/assets/namecard.svg"/>
 </p>
 '''
-with open(r'd:\Rioon7337\Rioon\README.md', 'w', encoding='utf-8') as f:
+with open(r'd:\Rioon7337\README.md', 'w', encoding='utf-8') as f:
     f.write(readme)
 
-svg_size = os.path.getsize(r'd:\Rioon7337\Rioon\assets\namecard.svg')
+svg_size = os.path.getsize(r'd:\Rioon7337\assets\namecard.svg')
 print(f'Done! SVG size: {svg_size} bytes ({svg_size/1024/1024:.1f} MB)')
