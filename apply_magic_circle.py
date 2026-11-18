@@ -166,28 +166,7 @@ def get_magic_circle_elements():
       </circle>
     </g>
 
-    <!-- 5. TOP ARCANE CREST BADGE: [ CIRCULUS MAGICUS // ARCANE SEAL ] -->
-    <g transform="translate(0, -96)">
-      <rect x="-60" y="-7" width="120" height="14" rx="2" fill="#040618" stroke="#d946ef" stroke-width="1.2">
-        <animate attributeName="stroke" values="#d946ef;#00f0ff;#ffd700;#d946ef" dur="3s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Glowing Sigil Gem -->
-      <circle cx="-50" cy="0" r="2.5" fill="#00f0ff">
-        <animate attributeName="fill" values="#00f0ff;#ffffff;#d946ef;#00f0ff" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <text x="5" y="3.2" font-family="'Courier New', monospace, Arial" font-size="7" font-weight="900" fill="#00f0ff" text-anchor="middle" letter-spacing="1.2">
-        CIRCULUS MAGICUS // SEAL
-        <animate attributeName="fill" values="#00f0ff;#ffffff;#d946ef;#00f0ff" dur="3s" repeatCount="indefinite"/>
-      </text>
-    </g>
 
-    <!-- 6. BOTTOM RUNIC STATUS PILL -->
-    <g transform="translate(0, 84)">
-      <rect x="-54" y="-6" width="108" height="12" rx="2" fill="#040618" stroke="#00f0ff" stroke-width="1" opacity="0.9"/>
-      <text x="0" y="2.5" font-family="'Segoe UI', Arial, sans-serif" font-size="6.5" font-weight="700" fill="#e0f0ff" text-anchor="middle" letter-spacing="1.5">
-        ✦ ARCANE RESONANCE: 100% ✦
-      </text>
-    </g>
 
   </g>'''
 
