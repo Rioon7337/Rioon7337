@@ -314,42 +314,158 @@
     <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- ===== CYBERNETIC SCI-FI REACTOR AVATAR BORDER ===== -->
-  <!-- Outer glowing energy shield halo -->
+  <!-- ===== NEURALINK / NEURON LINK SYNAPSE AVATAR BORDER ===== -->
+  <!-- Bio-Electric Synaptic Aura / Neural Halo -->
   <g transform="translate(110, 240)">
-    <circle r="73" fill="none" stroke="#00f0ff" stroke-width="12" opacity="0.3" filter="url(#nitroOuterGlow)">
-      <animate attributeName="stroke" values="#00f0ff;#ff73fa;#a855f7;#00ff88;#00f0ff" dur="4s" repeatCount="indefinite"/>
+    <circle r="75" fill="none" stroke="#00f0ff" stroke-width="14" opacity="0.25" filter="url(#nitroOuterGlow)">
+      <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#06b6d4;#a855f7;#00f0ff" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.45;0.2" dur="2s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- Cybernetic Reticle and Rotating Reactor Ring -->
+  <!-- Neural Network Circuit & Synaptic Firing Rings -->
   <g transform="translate(110, 240)" filter="url(#nitroGlow)">
-    <!-- Layer 1: Orbital Tech Brackets (Clockwise) -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
-      <circle r="69" fill="none" stroke="#00f0ff" stroke-width="3.5" stroke-dasharray="35 19.5" stroke-linecap="round" opacity="0.9"/>
-      <circle r="69" fill="none" stroke="#ff73fa" stroke-width="2" stroke-dasharray="10 44.5" stroke-linecap="round" opacity="0.75"/>
+    <!-- 12 Radial Synaptic Threads (Neuralink Micro-electrode Threads) -->
+    <g id="neuralThreads">
+      <!-- Synaptic Thread 1 (0°) -->
+      <line x1="62.5" y1="0.0" x2="73.5" y2="0.0" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="0.0s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="0.0s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="73.5" cy="0.0" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="0.0s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="0.0s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 2 (30°) -->
+      <line x1="54.13" y1="31.25" x2="63.65" y2="36.75" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="0.15s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="0.15s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="63.65" cy="36.75" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="0.15s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="0.15s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 3 (60°) -->
+      <line x1="31.25" y1="54.13" x2="36.75" y2="63.65" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="0.3s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="36.75" cy="63.65" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 4 (90°) -->
+      <line x1="0.0" y1="62.5" x2="0.0" y2="73.5" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="0.45s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="0.45s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="0.0" cy="73.5" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="0.45s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="0.45s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 5 (120°) -->
+      <line x1="-31.25" y1="54.13" x2="-36.75" y2="63.65" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="0.6s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="-36.75" cy="63.65" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 6 (150°) -->
+      <line x1="-54.13" y1="31.25" x2="-63.65" y2="36.75" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="0.75s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="0.75s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="-63.65" cy="36.75" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="0.75s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="0.75s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 7 (180°) -->
+      <line x1="-62.5" y1="0.0" x2="-73.5" y2="0.0" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="0.9s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="-73.5" cy="0.0" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 8 (210°) -->
+      <line x1="-54.13" y1="-31.25" x2="-63.65" y2="-36.75" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="1.05s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="1.05s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="-63.65" cy="-36.75" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="1.05s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="1.05s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 9 (240°) -->
+      <line x1="-31.25" y1="-54.13" x2="-36.75" y2="-63.65" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="-36.75" cy="-63.65" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 10 (270°) -->
+      <line x1="-0.0" y1="-62.5" x2="-0.0" y2="-73.5" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="1.35s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="1.35s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="-0.0" cy="-73.5" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="1.35s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="1.35s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 11 (300°) -->
+      <line x1="31.25" y1="-54.13" x2="36.75" y2="-63.65" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="1.5s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="36.75" cy="-63.65" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Synaptic Thread 12 (330°) -->
+      <line x1="54.13" y1="-31.25" x2="63.65" y2="-36.75" stroke="#00f0ff" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" begin="1.65s" repeatCount="indefinite"/>
+        <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" begin="1.65s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="63.65" cy="-36.75" r="1.8" fill="#00ffcc">
+        <animate attributeName="r" values="1.2;2.8;1.2" dur="1.8s" begin="1.65s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00ffcc;#ffffff;#8b5cf6;#00ffcc" dur="1.8s" begin="1.65s" repeatCount="indefinite"/>
+      </circle>
     </g>
 
-    <!-- Layer 2: Fast Dual Neon Laser Arcs (Counter-Clockwise) -->
+    <!-- Outer Neural Axon Ring (Continuous synaptic circuit pathway) -->
+    <circle r="73.5" fill="none" stroke="#8b5cf6" stroke-width="0.8" opacity="0.4"/>
+    
+    <!-- Fast Synaptic Action Potential Pulses (Electric White & Cyan Firing Clockwise) -->
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="2.5s" repeatCount="indefinite"/>
-      <circle r="65" fill="none" stroke="#00e5ff" stroke-width="4.5" stroke-dasharray="50 52" stroke-linecap="round" opacity="0.95"/>
-      <circle r="65" fill="none" stroke="#d946ef" stroke-width="3.5" stroke-dasharray="35 67" stroke-linecap="round" opacity="0.85"/>
-      <circle r="65" fill="none" stroke="#00ff88" stroke-width="2.5" stroke-dasharray="20 82" stroke-linecap="round" opacity="0.7"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2.2s" repeatCount="indefinite"/>
+      <circle r="73.5" fill="none" stroke="#00f0ff" stroke-width="2.5" stroke-dasharray="24 52" stroke-linecap="round" opacity="0.95"/>
+      <circle r="73.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="10 80" stroke-linecap="round" opacity="1"/>
     </g>
 
-    <!-- Layer 3: Orbiting Energy Sparkle / Data Nodes (Clockwise Fast) -->
+    <!-- Middle Neural Pathway (Counter-traveling Bio-electric Pulses in Cyan & Violet) -->
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/>
-      <circle cx="0" cy="-66" r="3.2" fill="#ffffff"/>
-      <circle cx="66" cy="0" r="2.8" fill="#00ffcc"/>
-      <circle cx="0" cy="66" r="3.2" fill="#ffffff"/>
-      <circle cx="-66" cy="0" r="2.8" fill="#ff73fa"/>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="3s" repeatCount="indefinite"/>
+      <circle r="67.5" fill="none" stroke="#06b6d4" stroke-width="2" stroke-dasharray="35 35" stroke-linecap="round" opacity="0.85"/>
+      <circle r="67.5" fill="none" stroke="#a855f7" stroke-width="1.8" stroke-dasharray="18 52" stroke-linecap="round" opacity="0.75"/>
     </g>
 
-    <!-- Inner clean dark separator frame -->
-    <circle r="61" fill="#060618" stroke="#00f0ff" stroke-width="1.8" opacity="0.9"/>
+    <!-- High-speed Synaptic Firing Sparks (Clockwise burst) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.4s" repeatCount="indefinite"/>
+      <circle cx="0" cy="-67.5" r="2.8" fill="#ffffff" filter="url(#neonGlow)"/>
+      <circle cx="67.5" cy="0" r="2.4" fill="#00ffcc" filter="url(#neonGlow)"/>
+      <circle cx="0" cy="67.5" r="2.8" fill="#ffffff" filter="url(#neonGlow)"/>
+      <circle cx="-67.5" cy="0" r="2.4" fill="#00e5ff" filter="url(#neonGlow)"/>
+    </g>
+
+    <!-- Inner Bio-Chip Neural Interface Frame Ring -->
+    <circle r="62.5" fill="none" stroke="#00f0ff" stroke-width="2.2" opacity="0.9"/>
+    <circle r="61.5" fill="#05051a" stroke="#8b5cf6" stroke-width="1" opacity="0.8"/>
   </g>
 
   <!-- Avatar image -->
@@ -426,7 +542,7 @@
     </g>
     <text x="30" y="15" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#c0d0f0" filter="url(#textGlow)">
       <animate attributeName="fill" values="#c0d0f0;#ffffff;#c0d0f0" dur="3.5s" repeatCount="indefinite"/>
-      Telegram: @rioon7337
+      Telegram: @Rioon7337
     </text>
   </g>
 
@@ -466,7 +582,7 @@
     </text>
     <text x="0" y="56" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#a0b0d0" filter="url(#textGlow)">
       <animate attributeName="fill" values="#a0b0d0;#e0f0ff;#a0b0d0" dur="4s" begin="1s" repeatCount="indefinite"/>
-      Ig: @rei_ntobing | Tg: @rioon7337
+      Ig: @rei_ntobing | Tg: @Rioon7337
     </text>
   </g>
 
