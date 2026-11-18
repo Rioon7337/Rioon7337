@@ -15,10 +15,15 @@
   
   <!-- Shield Outline -->
   <path d="M 20 20 L 980 20 L 980 480 L 500 530 L 20 480 Z" fill="none" stroke="url(#wBorder)" stroke-width="2"/>
-  <path d="M 30 30 L 970 30 L 970 470 L 500 518 L 30 470 Z" fill="none" stroke="#4B5E6F" stroke-width="1"/>
+  <path d="M 30 30 L 970 30 L 970 470 L 500 518 L 30 470 Z" fill="none" stroke="#4B5E6F" stroke-width="1" stroke-dasharray="10 8" opacity="0.7">
+    <animate attributeName="stroke-dashoffset" values="0;36" dur="6s" repeatCount="indefinite"/>
+  </path>
 
   <!-- Title -->
-  <text x="500" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="bold" font-style="italic" fill="url(#wBorder)" letter-spacing="8">THE ARSENAL</text>
+  <text x="500" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="bold" font-style="italic" fill="url(#wBorder)" letter-spacing="8">
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="3.5s" repeatCount="indefinite"/>
+    THE ARSENAL
+  </text>
   <line x1="380" y1="85" x2="620" y2="85" stroke="#4B5E6F" stroke-width="1"/>
 
   <!-- Section 1 -->
@@ -61,11 +66,13 @@
     <g><rect x="555" y="410" width="150" height="28" rx="4" fill="#1c2430" stroke="#10B981" stroke-width="1.5"/><text x="630" y="428" fill="#D3D9DF">HW/SW REPAIR</text></g>
   </g>
 
-  <!-- Paw Prints Decoration -->
-  <g fill="#4B5E6F" transform="translate(100, 500) scale(0.5)">
+  <!-- Paw Prints Decoration with subtle lupine pulse -->
+  <g fill="#7EB6FF" transform="translate(100, 500) scale(0.5)">
+    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="3s" repeatCount="indefinite"/>
     <circle cx="0" cy="0" r="8"/><circle cx="-12" cy="-12" r="5"/><circle cx="0" cy="-16" r="5"/><circle cx="12" cy="-12" r="5"/>
   </g>
-  <g fill="#4B5E6F" transform="translate(900, 500) scale(0.5)">
+  <g fill="#7EB6FF" transform="translate(900, 500) scale(0.5)">
+    <animate attributeName="opacity" values="0.85;0.35;0.85" dur="3s" repeatCount="indefinite"/>
     <circle cx="0" cy="0" r="8"/><circle cx="-12" cy="-12" r="5"/><circle cx="0" cy="-16" r="5"/><circle cx="12" cy="-12" r="5"/>
   </g>
 </svg>

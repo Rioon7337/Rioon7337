@@ -98,6 +98,20 @@
     </linearGradient>
 
     <!-- Filters -->
+    <filter id="amberGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="intenseCyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
     <filter id="runeGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
@@ -114,25 +128,95 @@
   <!-- Canvas Background -->
   <rect width="1000" height="530" rx="16" fill="url(#bgGrad)"/>
 
-  <!-- Magical Starfield / Embers -->
-  <g opacity="0.6">
-    <circle cx="95" cy="70" r="1.5" fill="#38bdf8"/>
-    <circle cx="180" cy="120" r="1" fill="#fde68a"/>
-    <circle cx="260" cy="50" r="1.5" fill="#38bdf8"/>
-    <circle cx="130" cy="220" r="1.2" fill="#38bdf8"/>
-    <circle cx="210" cy="290" r="1.5" fill="#fde68a"/>
-    <circle cx="80" cy="380" r="1" fill="#38bdf8"/>
-    <circle cx="890" cy="80" r="1.5" fill="#fde68a"/>
-    <circle cx="820" cy="140" r="1" fill="#38bdf8"/>
-    <circle cx="740" cy="60" r="1.5" fill="#38bdf8"/>
-    <circle cx="870" cy="230" r="1.2" fill="#fde68a"/>
-    <circle cx="790" cy="300" r="1" fill="#38bdf8"/>
-    <circle cx="920" cy="370" r="1.5" fill="#fde68a"/>
-    <!-- Diamond stars -->
-    <path d="M 140 100 L 142 105 L 147 107 L 142 109 L 140 114 L 138 109 L 133 107 L 138 105 Z" fill="#38bdf8" opacity="0.7"/>
-    <path d="M 850 110 L 852 115 L 857 117 L 852 119 L 850 124 L 848 119 L 843 117 L 848 115 Z" fill="#fbbf24" opacity="0.7"/>
-    <path d="M 230 180 L 231.5 184 L 235.5 185.5 L 231.5 187 L 230 191 L 228.5 187 L 224.5 185.5 L 228.5 184 Z" fill="#fbbf24" opacity="0.6"/>
-    <path d="M 760 190 L 761.5 194 L 765.5 195.5 L 761.5 197 L 760 201 L 758.5 197 L 754.5 195.5 L 758.5 194 Z" fill="#38bdf8" opacity="0.6"/>
+  <!-- Magical Starfield / Animated Celestial Embers -->
+  <g>
+    <!-- Cyan Twinkling Constellations -->
+    <g opacity="0.7">
+      <circle cx="95" cy="70" r="1.5" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1.2;2;1.2" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="260" cy="50" r="1.5" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="3.1s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1.2;2.1;1.2" dur="3.1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="130" cy="220" r="1.2" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.7s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="80" cy="380" r="1" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="820" cy="140" r="1" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.2;1;0.2" dur="2.9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="740" cy="60" r="1.5" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1.2;2;1.2" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="790" cy="300" r="1" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Amber & Gold Twinkling Stars -->
+    <g opacity="0.7">
+      <circle cx="180" cy="120" r="1" fill="#fde68a">
+        <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="210" cy="290" r="1.5" fill="#fde68a">
+        <animate attributeName="opacity" values="1;0.3;1" dur="3.2s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1.8;1.2;1.8" dur="3.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="890" cy="80" r="1.5" fill="#fde68a">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.8s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1.8;1.2;1.8" dur="2.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="870" cy="230" r="1.2" fill="#fde68a">
+        <animate attributeName="opacity" values="1;0.3;1" dur="3.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="920" cy="370" r="1.5" fill="#fde68a">
+        <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="2;1.2;2" dur="2.3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Diamond Stars with Dynamic Shimmer -->
+    <g>
+      <path d="M 140 100 L 142 105 L 147 107 L 142 109 L 140 114 L 138 109 L 133 107 L 138 105 Z" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 850 110 L 852 115 L 857 117 L 852 119 L 850 124 L 848 119 L 843 117 L 848 115 Z" fill="#fbbf24">
+        <animate attributeName="opacity" values="1;0.4;1" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 230 180 L 231.5 184 L 235.5 185.5 L 231.5 187 L 230 191 L 228.5 187 L 224.5 185.5 L 228.5 184 Z" fill="#fbbf24">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.8s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 760 190 L 761.5 194 L 765.5 195.5 L 761.5 197 L 760 201 L 758.5 197 L 754.5 195.5 L 758.5 194 Z" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.6s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Floating Arcane Motes / Embers drifting up into the night -->
+    <g filter="url(#runeGlow)">
+      <circle cx="320" cy="380" r="1.5" fill="#38bdf8">
+        <animate attributeName="cy" values="380;260" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="320;335;320" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0.6;0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="680" cy="390" r="1.5" fill="#f59e0b">
+        <animate attributeName="cy" values="390;270" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="680;665;680" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0.5;0" dur="7s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="270" cy="310" r="1.2" fill="#818cf8">
+        <animate attributeName="cy" values="310;190" dur="5.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="5.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="730" cy="330" r="1.2" fill="#38bdf8">
+        <animate attributeName="cy" values="330;200" dur="6.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="6.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
   </g>
 
   <!-- Ornate Border Frame -->
@@ -145,29 +229,51 @@
     <path d="M 975 55 L 945 25 M 965 25 L 975 35 M 975 45 L 955 25"/>
     <path d="M 25 475 L 55 505 M 35 505 L 25 495 M 25 485 L 45 505"/>
     <path d="M 975 475 L 945 505 M 965 505 L 975 495 M 975 485 L 955 505"/>
-    <!-- Rivet dots -->
-    <circle cx="30" cy="30" r="3" fill="#d97706" stroke="none"/>
-    <circle cx="970" cy="30" r="3" fill="#d97706" stroke="none"/>
-    <circle cx="30" cy="500" r="3" fill="#d97706" stroke="none"/>
-    <circle cx="970" cy="500" r="3" fill="#d97706" stroke="none"/>
+    <!-- Rivet dots with subtle golden aura -->
+    <circle cx="30" cy="30" r="3" fill="#d97706" stroke="none">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="970" cy="30" r="3" fill="#d97706" stroke="none">
+      <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="30" cy="500" r="3" fill="#d97706" stroke="none">
+      <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="970" cy="500" r="3" fill="#d97706" stroke="none">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
   <!-- Celestial Arcane Moon & Halo behind Knight -->
-  <circle cx="500" cy="180" r="145" fill="url(#moonGlow)"/>
-  <circle cx="500" cy="180" r="140" fill="none" stroke="url(#haloGold)" stroke-width="18"/>
-  <circle cx="500" cy="180" r="132" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="5 7" opacity="0.6" filter="url(#runeGlow)"/>
-  <circle cx="500" cy="180" r="124" fill="none" stroke="url(#goldTrim)" stroke-width="1" opacity="0.5"/>
+  <circle cx="500" cy="180" r="145" fill="url(#moonGlow)">
+    <animate attributeName="opacity" values="0.75;1;0.75" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="500" cy="180" r="140" fill="none" stroke="url(#haloGold)" stroke-width="18">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
 
-  <!-- Arcane Dial Tick Marks -->
-  <g stroke="#94a3b8" stroke-width="1.5" opacity="0.4" transform="translate(500, 180)">
-    <line x1="0" y1="-138" x2="0" y2="-126"/>
-    <line x1="0" y1="138" x2="0" y2="126"/>
-    <line x1="-138" y1="0" x2="-126" y2="0"/>
-    <line x1="138" y1="0" x2="126" y2="0"/>
-    <line x1="-97" y1="-97" x2="-89" y2="-89"/>
-    <line x1="97" y1="-97" x2="89" y2="-89"/>
-    <line x1="-97" y1="97" x2="-89" y2="89"/>
-    <line x1="97" y1="97" x2="89" y2="89"/>
+  <!-- Arcane Rotating Runic Summoning Circle & Dials -->
+  <g transform="translate(500, 180)">
+    <!-- Clockwise Cyan Rune Circle -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="36s" repeatCount="indefinite"/>
+      <circle cx="0" cy="0" r="132" fill="none" stroke="#38bdf8" stroke-width="1.4" stroke-dasharray="6 8" opacity="0.75" filter="url(#runeGlow)"/>
+    </g>
+    <!-- Counter-Clockwise Gold Accent Ring and Arcane Dial Tick Marks -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="48s" repeatCount="indefinite"/>
+      <circle cx="0" cy="0" r="124" fill="none" stroke="url(#goldTrim)" stroke-width="1" stroke-dasharray="14 16" opacity="0.6"/>
+      <g stroke="#94a3b8" stroke-width="1.5" opacity="0.5">
+        <line x1="0" y1="-138" x2="0" y2="-126"/>
+        <line x1="0" y1="138" x2="0" y2="126"/>
+        <line x1="-138" y1="0" x2="-126" y2="0"/>
+        <line x1="138" y1="0" x2="126" y2="0"/>
+        <line x1="-97" y1="-97" x2="-89" y2="-89"/>
+        <line x1="97" y1="-97" x2="89" y2="-89"/>
+        <line x1="-97" y1="97" x2="-89" y2="89"/>
+        <line x1="97" y1="97" x2="89" y2="89"/>
+      </g>
+    </g>
   </g>
 
   <!-- ==================== CROSSED KNIGHT GREATSWORDS ==================== -->
@@ -176,13 +282,22 @@
     <g transform="translate(500, 185) rotate(-38)">
       <!-- Blade -->
       <path d="M -8 -175 L 0 -195 L 8 -175 L 6 35 L -6 35 Z" fill="url(#steelBlade)"/>
-      <!-- Fuller / Groove -->
-      <line x1="0" y1="-170" x2="0" y2="25" stroke="#38bdf8" stroke-width="2" opacity="0.85" filter="url(#runeGlow)"/>
+      <!-- Fuller / Groove with Rune Glow -->
+      <line x1="0" y1="-170" x2="0" y2="25" stroke="#38bdf8" stroke-width="2" opacity="0.85" filter="url(#runeGlow)">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.8;2.6;1.8" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <!-- Magical Energy Surge traveling up the blade -->
+      <line x1="0" y1="25" x2="0" y2="-170" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="35 160" opacity="0.85" filter="url(#runeGlow)">
+        <animate attributeName="stroke-dashoffset" values="0;-195" dur="2.4s" repeatCount="indefinite"/>
+      </line>
       <!-- Blade bevel line -->
       <line x1="0" y1="-195" x2="0" y2="35" stroke="#ffffff" stroke-width="0.8" opacity="0.7"/>
       <!-- Crossguard -->
       <path d="M -36 35 C -15 32 -6 38 0 42 C 6 38 15 32 36 35 C 38 42 28 48 12 46 L 0 45 L -12 46 C -28 48 -38 42 -36 35 Z" fill="url(#goldTrim)"/>
-      <circle cx="0" cy="42" r="4.5" fill="#38bdf8" stroke="#f59e0b" stroke-width="1"/>
+      <circle cx="0" cy="42" r="4.5" fill="#38bdf8" stroke="#f59e0b" stroke-width="1">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
       <!-- Hilt Grip -->
       <rect x="-4.5" y="45" width="9" height="34" rx="2" fill="#1e293b" stroke="#64748b" stroke-width="0.8"/>
       <line x1="-4" y1="52" x2="4" y2="54" stroke="#f59e0b" stroke-width="1"/>
@@ -190,20 +305,31 @@
       <line x1="-4" y1="68" x2="4" y2="70" stroke="#f59e0b" stroke-width="1"/>
       <!-- Pommel -->
       <circle cx="0" cy="85" r="7" fill="url(#goldTrim)"/>
-      <circle cx="0" cy="85" r="3.5" fill="#38bdf8"/>
+      <circle cx="0" cy="85" r="3.5" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
     </g>
 
     <!-- SWORD 2 (Slanted Right to Left) -->
     <g transform="translate(500, 185) rotate(38)">
       <!-- Blade -->
       <path d="M -8 -175 L 0 -195 L 8 -175 L 6 35 L -6 35 Z" fill="url(#steelBlade)"/>
-      <!-- Fuller / Groove -->
-      <line x1="0" y1="-170" x2="0" y2="25" stroke="#38bdf8" stroke-width="2" opacity="0.85" filter="url(#runeGlow)"/>
+      <!-- Fuller / Groove with Rune Glow -->
+      <line x1="0" y1="-170" x2="0" y2="25" stroke="#38bdf8" stroke-width="2" opacity="0.85" filter="url(#runeGlow)">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.8;2.6;1.8" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <!-- Magical Energy Surge traveling up the blade -->
+      <line x1="0" y1="25" x2="0" y2="-170" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="35 160" opacity="0.85" filter="url(#runeGlow)">
+        <animate attributeName="stroke-dashoffset" values="0;-195" dur="2.4s" repeatCount="indefinite"/>
+      </line>
       <!-- Blade bevel line -->
       <line x1="0" y1="-195" x2="0" y2="35" stroke="#ffffff" stroke-width="0.8" opacity="0.7"/>
       <!-- Crossguard -->
       <path d="M -36 35 C -15 32 -6 38 0 42 C 6 38 15 32 36 35 C 38 42 28 48 12 46 L 0 45 L -12 46 C -28 48 -38 42 -36 35 Z" fill="url(#goldTrim)"/>
-      <circle cx="0" cy="42" r="4.5" fill="#38bdf8" stroke="#f59e0b" stroke-width="1"/>
+      <circle cx="0" cy="42" r="4.5" fill="#38bdf8" stroke="#f59e0b" stroke-width="1">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
       <!-- Hilt Grip -->
       <rect x="-4.5" y="45" width="9" height="34" rx="2" fill="#1e293b" stroke="#64748b" stroke-width="0.8"/>
       <line x1="-4" y1="52" x2="4" y2="54" stroke="#f59e0b" stroke-width="1"/>
@@ -211,12 +337,16 @@
       <line x1="-4" y1="68" x2="4" y2="70" stroke="#f59e0b" stroke-width="1"/>
       <!-- Pommel -->
       <circle cx="0" cy="85" r="7" fill="url(#goldTrim)"/>
-      <circle cx="0" cy="85" r="3.5" fill="#38bdf8"/>
+      <circle cx="0" cy="85" r="3.5" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
     </g>
   </g>
 
   <!-- ==================== WOLF FURRY KNIGHT CHARACTER ==================== -->
   <g id="wolfFurryKnight" filter="url(#shadowFilter)">
+    <!-- Gentle Warrior Idle Breathing -->
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-2.5; 0,0" dur="4.8s" repeatCount="indefinite"/>
 
     <!-- CAPE / MANTLE (Background layer) -->
     <path d="M 360 215 C 330 250 310 295 300 330 L 700 330 C 690 295 670 250 640 215 Z" fill="url(#capeGrad)"/>
@@ -300,9 +430,14 @@
 
       <!-- CENTER GOLD WOLF EMBLEM / RUNE CORE -->
       <circle cx="500" cy="285" r="22" fill="#1e293b" stroke="url(#goldTrim)" stroke-width="2.5" filter="url(#shadowFilter)"/>
-      <circle cx="500" cy="285" r="18" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3 3"/>
-      <!-- Howling Wolf Silhouette inside Medallion -->
-      <path d="M 494 296 C 492 292 491 286 493 282 C 494 278 497 274 496 270 C 498 272 501 270 502 268 C 504 271 508 274 507 278 C 509 281 508 285 506 288 C 508 290 509 294 506 296 Z" fill="url(#goldText)" filter="url(#runeGlow)"/>
+      <!-- Rotating inner rune ring -->
+      <circle cx="500" cy="285" r="18" fill="none" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3 3">
+        <animateTransform attributeName="transform" type="rotate" from="0 500 285" to="360 500 285" dur="18s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Howling Wolf Silhouette inside Medallion with inner amber radiance -->
+      <path d="M 494 296 C 492 292 491 286 493 282 C 494 278 497 274 496 270 C 498 272 501 270 502 268 C 504 271 508 274 507 278 C 509 281 508 285 506 288 C 508 290 509 294 506 296 Z" fill="url(#goldText)" filter="url(#amberGlow)">
+        <animate attributeName="opacity" values="0.75;1;0.75" dur="3s" repeatCount="indefinite"/>
+      </path>
 
       <!-- GORGET (Neck Armor Collar) -->
       <path d="M 460 220 Q 500 234 540 220 L 545 244 Q 500 258 455 244 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="2"/>
@@ -311,11 +446,15 @@
       <circle cx="500" cy="244" r="2.5" fill="#f59e0b"/>
       <circle cx="532" cy="235" r="2" fill="#f59e0b"/>
 
-      <!-- Cloak Brooches / Clasps -->
+      <!-- Cloak Brooches / Clasps with cyan gem pulse -->
       <circle cx="438" cy="232" r="6" fill="url(#goldTrim)" stroke="#1e293b" stroke-width="1.5"/>
-      <circle cx="438" cy="232" r="2.5" fill="#38bdf8"/>
+      <circle cx="438" cy="232" r="2.5" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
       <circle cx="562" cy="232" r="6" fill="url(#goldTrim)" stroke="#1e293b" stroke-width="1.5"/>
-      <circle cx="562" cy="232" r="2.5" fill="#38bdf8"/>
+      <circle cx="562" cy="232" r="2.5" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
     </g>
 
     <!-- WOLF HEAD & FURRY FEATURES -->
@@ -325,8 +464,11 @@
       <path d="M 470 215 Q 485 238 500 230 Q 515 238 530 215 Z" fill="#cbd5e1" opacity="0.7"/>
 
       <!-- WOLF EARS -->
-      <!-- Left Ear -->
+      <!-- Left Ear with alert twitch animation -->
       <g id="leftEar">
+        <animateTransform attributeName="transform" type="rotate"
+          values="0 450 115; 0 450 115; -3 450 115; 1 450 115; -1.5 450 115; 0 450 115; 0 450 115"
+          keyTimes="0; 0.90; 0.92; 0.94; 0.96; 0.98; 1" dur="7s" repeatCount="indefinite" additive="sum"/>
         <!-- Outer Ear Shell -->
         <path d="M 445 115 C 430 85 410 55 398 32 C 418 45 440 68 465 88 C 475 98 478 108 478 112 Z" fill="url(#furDark)" stroke="#0f172a" stroke-width="1.5"/>
         <!-- Outer ear rim highlight -->
@@ -344,8 +486,11 @@
         <rect x="418" y="70" width="4" height="8" rx="2" fill="url(#goldTrim)" transform="rotate(35, 420, 74)"/>
       </g>
 
-      <!-- Right Ear -->
+      <!-- Right Ear with alert twitch animation -->
       <g id="rightEar">
+        <animateTransform attributeName="transform" type="rotate"
+          values="0 550 115; 0 550 115; 3 550 115; -1 550 115; 1.5 550 115; 0 550 115; 0 550 115"
+          keyTimes="0; 0.82; 0.84; 0.86; 0.88; 0.90; 1" dur="8s" repeatCount="indefinite" additive="sum"/>
         <!-- Outer Ear Shell -->
         <path d="M 555 115 C 570 85 590 55 602 32 C 582 45 560 68 535 88 C 525 98 522 108 522 112 Z" fill="url(#furDark)" stroke="#0f172a" stroke-width="1.5"/>
         <!-- Outer ear rim highlight -->
@@ -393,6 +538,11 @@
         <path d="M 458 116 Q 500 128 542 116 L 538 126 Q 500 138 462 126 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="1.8"/>
         <!-- Central Gothic Peak -->
         <path d="M 492 120 L 500 106 L 508 120 Z" fill="url(#goldTrim)"/>
+        <!-- Pulsing Diadem Beacon Aura -->
+        <circle cx="500" cy="120" r="5" fill="#38bdf8" opacity="0.4" filter="url(#intenseCyanGlow)">
+          <animate attributeName="r" values="4;9;4" dur="2.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.8s" repeatCount="indefinite"/>
+        </circle>
         <!-- Embedded Glowing Gemstone -->
         <circle cx="500" cy="120" r="5" fill="#38bdf8" stroke="#fbbf24" stroke-width="1" filter="url(#runeGlow)"/>
         <circle cx="498.5" cy="118.5" r="1.5" fill="#ffffff"/>
@@ -445,12 +595,20 @@
           <path d="M 448 156 C 454 144 472 142 485 150 C 478 162 460 164 448 156 Z" fill="#090d16" stroke="#090d16" stroke-width="2"/>
           <!-- Sclera -->
           <path d="M 452 155 C 456 147 470 146 481 151 C 476 159 462 161 452 155 Z" fill="#f8fafc"/>
-          <!-- Amber Iris -->
+          <!-- Amber Iris Base -->
           <ellipse cx="468" cy="154" rx="6.5" ry="5.5" fill="url(#eyeAmber)" filter="url(#runeGlow)"/>
+          <!-- Dynamic Amber Eye Glow Aura -->
+          <ellipse cx="468" cy="154" rx="6.5" ry="5.5" fill="#f59e0b" opacity="0.4" filter="url(#amberGlow)">
+            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="rx" values="6.5;7.8;6.5" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="ry" values="5.5;6.5;5.5" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
           <!-- Vertical Slit Pupil -->
           <ellipse cx="468" cy="154" rx="2" ry="4.5" fill="#090d16"/>
-          <!-- Pupil Specular Catchlights (Brings the eye alive!) -->
-          <circle cx="465.5" cy="151.5" r="1.6" fill="#ffffff"/>
+          <!-- Pupil Specular Catchlights -->
+          <circle cx="465.5" cy="151.5" r="1.6" fill="#ffffff">
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+          </circle>
           <circle cx="470" cy="156" r="0.8" fill="#ffffff"/>
           <!-- Eye contour top lid -->
           <path d="M 448 156 C 456 144 472 143 485 150" fill="none" stroke="#090d16" stroke-width="2.5" stroke-linecap="round"/>
@@ -462,12 +620,20 @@
           <path d="M 552 156 C 546 144 528 142 515 150 C 522 162 540 164 552 156 Z" fill="#090d16" stroke="#090d16" stroke-width="2"/>
           <!-- Sclera -->
           <path d="M 548 155 C 544 147 530 146 519 151 C 524 159 538 161 548 155 Z" fill="#f8fafc"/>
-          <!-- Amber Iris -->
+          <!-- Amber Iris Base -->
           <ellipse cx="532" cy="154" rx="6.5" ry="5.5" fill="url(#eyeAmber)" filter="url(#runeGlow)"/>
+          <!-- Dynamic Amber Eye Glow Aura -->
+          <ellipse cx="532" cy="154" rx="6.5" ry="5.5" fill="#f59e0b" opacity="0.4" filter="url(#amberGlow)">
+            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="rx" values="6.5;7.8;6.5" dur="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="ry" values="5.5;6.5;5.5" dur="3.2s" repeatCount="indefinite"/>
+          </ellipse>
           <!-- Vertical Slit Pupil -->
           <ellipse cx="532" cy="154" rx="2" ry="4.5" fill="#090d16"/>
           <!-- Pupil Specular Catchlights -->
-          <circle cx="529.5" cy="151.5" r="1.6" fill="#ffffff"/>
+          <circle cx="529.5" cy="151.5" r="1.6" fill="#ffffff">
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+          </circle>
           <circle cx="534" cy="156" r="0.8" fill="#ffffff"/>
           <!-- Eye contour top lid -->
           <path d="M 552 156 C 544 144 528 143 515 150" fill="none" stroke="#090d16" stroke-width="2.5" stroke-linecap="round"/>
@@ -485,20 +651,24 @@
   <g transform="translate(500, 345)">
     <line x1="-360" y1="0" x2="-60" y2="0" stroke="url(#goldTrim)" stroke-width="1.8"/>
     <line x1="60" y1="0" x2="360" y2="0" stroke="url(#goldTrim)" stroke-width="1.8"/>
-    <!-- Center Heraldic Diamond Crest -->
+    <!-- Center Heraldic Diamond Crest with pulsing cyan jewel -->
     <path d="M 0 -8 L 12 0 L 0 8 L -12 0 Z" fill="url(#goldTrim)"/>
-    <circle cx="0" cy="0" r="3" fill="#38bdf8"/>
+    <circle cx="0" cy="0" r="3" fill="#38bdf8">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
     <circle cx="-60" cy="0" r="3" fill="#f59e0b"/>
     <circle cx="60" cy="0" r="3" fill="#f59e0b"/>
     <circle cx="-360" cy="0" r="2.5" fill="#f59e0b"/>
     <circle cx="360" cy="0" r="2.5" fill="#f59e0b"/>
   </g>
 
-  <!-- Main Name: RIOON7337 -->
+  <!-- Main Name: RIOON7337 with subtle gold aura breathing -->
   <text x="500" y="388" text-anchor="middle"
         font-family="'Cinzel', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif"
         font-size="44" font-weight="900" letter-spacing="10"
         fill="url(#goldText)" filter="url(#shadowFilter)">
+    <animate attributeName="opacity" values="0.92;1;0.92" dur="4s" repeatCount="indefinite"/>
     RIOON7337
   </text>
 
