@@ -19,11 +19,12 @@
   </g>
 
   <!-- Icon shield -->
-  <path d="M 30 25 L 60 25 L 60 55 L 45 68 L 30 55 Z" fill="none" stroke="#D3D9DF" stroke-width="1.5"/>
-  <text x="45" y="52" text-anchor="middle"
-        font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#F2C94C">
-    ✉
-  </text>
+  <path d="M 30 25 L 60 25 L 60 55 L 45 68 L 30 55 Z" fill="#1c2430" stroke="#D3D9DF" stroke-width="1.5"/>
+  <!-- Telegram Icon -->
+  <g stroke="#F2C94C" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37 45 L52 35 L47 52 L43 47 L40 49 L39.5 45 Z"/>
+    <path d="M42 46.5 L52 35"/>
+  </g>
 
   <!-- Platform name -->
   <text x="80" y="42"
