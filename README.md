@@ -1,17 +1,17 @@
 <div align="center">
-  <img width="100%" src="./wolf-banner.svg" alt="The Arcane Paladin Banner"/>
+  <img width="100%" src="./wolf-banner.svg" alt="Mythic Celestial Relic Banner"/>
 </div>
 
 <br/>
 
 <div align="center">
-  <img width="100%" src="./wolf-arsenal.svg" alt="The Arsenal - Skills & Technologies"/>
+  <img width="100%" src="./wolf-arsenal.svg" alt="The Mythic Arsenal - Skills &amp; Technologies"/>
 </div>
 
 <br/>
 
 <div align="center">
-  <img width="100%" src="./wolf-connect-banner.svg" alt="Connect with Rioon7337"/>
+  <img width="100%" src="./wolf-connect-banner.svg" alt="Guild Convergence - Connect with Rioon7337"/>
 </div>
 
 <br/>
