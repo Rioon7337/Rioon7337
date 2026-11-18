@@ -82,7 +82,7 @@ bottom_content = bottom_content.replace('transform="translate(425, 222)"', 'tran
 # 9. Replace Social handles
 bottom_content = bottom_content.replace('GitHub: /LawlessDragon', 'GitHub: /Rioon7337')
 bottom_content = bottom_content.replace('@BlueLawless', '@rioon7337')
-bottom_content = bottom_content.replace('@lawless_derg', '@rioon7337')
+bottom_content = bottom_content.replace('@rioon7337', '@rei_ntobing')
 
 # 10. Replace About Me
 old_about = """      Code-slayer. Dragon-tamer. Creating

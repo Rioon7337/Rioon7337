@@ -1,0 +1,432 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07071a"/>
+      <stop offset="50%" stop-color="#0d1a3e"/>
+      <stop offset="100%" stop-color="#0a2a4a"/>
+    </linearGradient>
+
+    <linearGradient id="bottomBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d2a" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0a1a3e" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <filter id="cardGlow" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="textGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="nitroGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="nitroOuterGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+
+    <clipPath id="avatarClip">
+      <circle cx="110" cy="240" r="60"/>
+    </clipPath>
+
+    <clipPath id="bannerClip">
+      <rect x="10" y="10" width="780" height="190" rx="14" ry="14"/>
+    </clipPath>
+
+    <clipPath id="bottomClip">
+      <rect x="10" y="200" width="780" height="190"/>
+    </clipPath>
+  </defs>
+
+  <!-- Main card background -->
+  <rect x="5" y="5" width="790" height="390" rx="18" ry="18" fill="url(#bgGrad)" stroke="#1a3a6a" stroke-width="2.5" filter="url(#cardGlow)"/>
+
+  <!-- Banner - STATIC, no animation -->
+  <g clip-path="url(#bannerClip)">
+    <rect x="10" y="10" width="780" height="190" fill="#0a0a1a"/>
+    <image href="[B64]" x="10" y="10" width="780" height="190" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+
+  <!-- Banner bottom transition -->
+  <rect x="10" y="190" width="780" height="12" fill="url(#bgGrad)"/>
+  <line x1="10" y1="198" x2="790" y2="198" stroke="#00f0ff" stroke-width="1.5" opacity="0.6" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- ===== BOTTOM BOX — FUTURISTIC HUD ANIMATION ===== -->
+  <g clip-path="url(#bottomClip)">
+    <rect x="10" y="200" width="780" height="190" fill="url(#bottomBg)"/>
+
+    <!-- Grid lines -->
+    <g opacity="0.055" stroke="#00f0ff" stroke-width="0.5">
+      <line x1="10" y1="220" x2="790" y2="220"/>
+      <line x1="10" y1="240" x2="790" y2="240"/>
+      <line x1="10" y1="260" x2="790" y2="260"/>
+      <line x1="10" y1="280" x2="790" y2="280"/>
+      <line x1="10" y1="300" x2="790" y2="300"/>
+      <line x1="10" y1="320" x2="790" y2="320"/>
+      <line x1="10" y1="340" x2="790" y2="340"/>
+      <line x1="10" y1="360" x2="790" y2="360"/>
+      <line x1="10" y1="380" x2="790" y2="380"/>
+      <line x1="100" y1="200" x2="100" y2="390"/>
+      <line x1="200" y1="200" x2="200" y2="390"/>
+      <line x1="300" y1="200" x2="300" y2="390"/>
+      <line x1="400" y1="200" x2="400" y2="390"/>
+      <line x1="500" y1="200" x2="500" y2="390"/>
+      <line x1="600" y1="200" x2="600" y2="390"/>
+      <line x1="700" y1="200" x2="700" y2="390"/>
+    </g>
+
+    <!-- Scanning beam -->
+    <rect x="10" y="200" width="780" height="1.5" fill="#00f0ff" opacity="0">
+      <animate attributeName="y" values="200;390;200" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="10" y="200" width="780" height="18" fill="#00f0ff" opacity="0">
+      <animate attributeName="y" values="182;372;182" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.035;0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Data flow streams — horizontal dashed lines moving -->
+    <line x1="10" y1="228" x2="790" y2="228" stroke="#8b5cf6" stroke-width="0.5" stroke-dasharray="4 16" opacity="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.3;0.3;0" dur="6s" begin="0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="10" y1="268" x2="790" y2="268" stroke="#06b6d4" stroke-width="0.5" stroke-dasharray="3 20" opacity="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="-23" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.25;0.25;0" dur="7s" begin="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="10" y1="308" x2="790" y2="308" stroke="#ec4899" stroke-width="0.5" stroke-dasharray="5 18" opacity="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="-23" dur="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.2;0.2;0" dur="5s" begin="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="10" y1="348" x2="790" y2="348" stroke="#00f0ff" stroke-width="0.5" stroke-dasharray="3 15" opacity="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.18;0.18;0" dur="8s" begin="0.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="10" y1="375" x2="790" y2="375" stroke="#f59e0b" stroke-width="0.4" stroke-dasharray="2 22" opacity="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.15;0.15;0" dur="9s" begin="3s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Pulsing grid intersection dots -->
+    <circle cx="200" cy="260" r="1.5" fill="#00f0ff">
+      <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="280" r="1.5" fill="#8b5cf6">
+      <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0.25s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="240" r="1.5" fill="#06b6d4">
+      <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="300" r="1.5" fill="#ec4899">
+      <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0.75s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="260" r="1.5" fill="#00f0ff">
+      <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="320" r="1.5" fill="#8b5cf6">
+      <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="1.25s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="340" r="1.5" fill="#06b6d4">
+      <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="360" r="1.5" fill="#ec4899">
+      <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="1.75s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="340" r="1.2" fill="#00f0ff">
+      <animate attributeName="opacity" values="0;0.7;0" dur="2.5s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="380" r="1.2" fill="#8b5cf6">
+      <animate attributeName="opacity" values="0;0.7;0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="300" r="1" fill="#f59e0b">
+      <animate attributeName="opacity" values="0;0.6;0" dur="2.5s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="380" r="1" fill="#f59e0b">
+      <animate attributeName="opacity" values="0;0.6;0" dur="2.5s" begin="1.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="320" r="1" fill="#34d399">
+      <animate attributeName="opacity" values="0;0.6;0" dur="2.5s" begin="0.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="220" r="1" fill="#00f0ff">
+      <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="0.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="220" r="1" fill="#a855f7">
+      <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="1.3s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Small diamond markers -->
+    <polygon points="650,224 653,227 650,230 647,227" fill="none" stroke="#00f0ff" stroke-width="0.6" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="0s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="350,366 353,369 350,372 347,369" fill="none" stroke="#8b5cf6" stroke-width="0.6" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="750,352 753,355 750,358 747,355" fill="none" stroke="#ec4899" stroke-width="0.6" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="0.8s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="50,352 53,355 50,358 47,355" fill="none" stroke="#06b6d4" stroke-width="0.6" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="2.2s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="450,214 453,217 450,220 447,217" fill="none" stroke="#f59e0b" stroke-width="0.6" opacity="0">
+      <animate attributeName="opacity" values="0;0.4;0" dur="3.5s" begin="1s" repeatCount="indefinite"/>
+    </polygon>
+
+    <!-- Futuristic corner brackets -->
+    <path d="M18 208 L18 203 L35 203" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.35">
+      <animate attributeName="opacity" values="0.35;0.7;0.35" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M782 208 L782 203 L765 203" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.35">
+      <animate attributeName="opacity" values="0.35;0.7;0.35" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M18 382 L18 387 L35 387" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.35">
+      <animate attributeName="opacity" values="0.35;0.7;0.35" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M782 382 L782 387 L765 387" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.35">
+      <animate attributeName="opacity" values="0.35;0.7;0.35" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Diagonal corner accents -->
+    <line x1="10" y1="200" x2="55" y2="245" stroke="#8b5cf6" stroke-width="0.4" opacity="0.07">
+      <animate attributeName="opacity" values="0.07;0.14;0.07" dur="4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="790" y1="200" x2="745" y2="245" stroke="#8b5cf6" stroke-width="0.4" opacity="0.07">
+      <animate attributeName="opacity" values="0.07;0.14;0.07" dur="4s" begin="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="10" y1="390" x2="55" y2="345" stroke="#06b6d4" stroke-width="0.4" opacity="0.07">
+      <animate attributeName="opacity" values="0.07;0.14;0.07" dur="4s" begin="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="790" y1="390" x2="745" y2="345" stroke="#06b6d4" stroke-width="0.4" opacity="0.07">
+      <animate attributeName="opacity" values="0.07;0.14;0.07" dur="4s" begin="3s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Thin crosshair markers at specific grid points -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0.25;0" dur="4s" begin="0s" repeatCount="indefinite"/>
+      <line x1="396" y1="260" x2="404" y2="260" stroke="#00f0ff" stroke-width="0.5"/>
+      <line x1="400" y1="256" x2="400" y2="264" stroke="#00f0ff" stroke-width="0.5"/>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0.25;0" dur="4s" begin="2s" repeatCount="indefinite"/>
+      <line x1="596" y1="340" x2="604" y2="340" stroke="#a855f7" stroke-width="0.5"/>
+      <line x1="600" y1="336" x2="600" y2="344" stroke="#a855f7" stroke-width="0.5"/>
+    </g>
+  </g>
+
+  <!-- Bottom box subtle border -->
+  <rect x="10" y="200" width="780" height="190" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.2">
+    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ===== NITRO BORDER — BRIGHT & CRISP ===== -->
+  <!-- Outer glow halo — more visible -->
+  <g transform="translate(110, 240)">
+    <circle r="72" fill="none" stroke="#a855f7" stroke-width="16" opacity="0.35" filter="url(#nitroOuterGlow)">
+      <animate attributeName="stroke" values="#ff6b9d;#d946ef;#a855f7;#3b82f6;#06b6d4;#ff6b9d" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Main rotating ring -->
+  <g transform="translate(110, 240)" filter="url(#nitroGlow)">
+    <!-- Layer 1: 6 color segments clockwise -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3.5s" repeatCount="indefinite"/>
+      <circle r="66" fill="none" stroke="#ff6b9d" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="0" stroke-linecap="round"/>
+      <circle r="66" fill="none" stroke="#d946ef" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-69.1" stroke-linecap="round"/>
+      <circle r="66" fill="none" stroke="#a855f7" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-138.2" stroke-linecap="round"/>
+      <circle r="66" fill="none" stroke="#7c3aed" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-207.3" stroke-linecap="round"/>
+      <circle r="66" fill="none" stroke="#3b82f6" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-276.5" stroke-linecap="round"/>
+      <circle r="66" fill="none" stroke="#06b6d4" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-345.6" stroke-linecap="round"/>
+    </g>
+
+    <!-- Layer 2: counter-rotation -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="2.5s" repeatCount="indefinite"/>
+      <circle r="66" fill="none" stroke="#ff6b9d" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="0" stroke-linecap="round" opacity="0.9"/>
+      <circle r="66" fill="none" stroke="#a855f7" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-69.1" stroke-linecap="round" opacity="0.9"/>
+      <circle r="66" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-138.2" stroke-linecap="round" opacity="0.9"/>
+      <circle r="66" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-207.3" stroke-linecap="round" opacity="0.9"/>
+      <circle r="66" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-276.5" stroke-linecap="round" opacity="0.9"/>
+      <circle r="66" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-345.6" stroke-linecap="round" opacity="0.9"/>
+    </g>
+
+    <!-- Layer 3: fast sparkle -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.8s" repeatCount="indefinite"/>
+      <circle r="66" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="18 396.7" stroke-dashoffset="0" stroke-linecap="round" opacity="0.75"/>
+    </g>
+
+    <!-- Inner dark gap -->
+    <circle r="62" fill="#0a0a1a"/>
+    <circle r="62" fill="none" stroke="#1a1a3a" stroke-width="0.5" opacity="0.5"/>
+  </g>
+
+  <!-- Avatar image -->
+  <image href="[B64]" x="50" y="180" width="120" height="120" clip-path="url(#avatarClip)" preserveAspectRatio="xMidYMid slice"/>
+
+  <!-- Status indicator -->
+  <circle cx="160" cy="290" r="12" fill="#0d0d1a" stroke="#00f0ff" stroke-width="2.5"/>
+  <circle cx="160" cy="290" r="7" fill="#00f0ff">
+    <animate attributeName="fill" values="#00f0ff;#00ffcc;#00f0ff" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="7;8.5;7" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== TEXT — UNCHANGED ===== -->
+
+  <text x="190" y="230" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff" filter="url(#textGlow)">
+    LawlessDragon
+    <animate attributeName="fill" values="#ffffff;#a0f0ff;#ffffff" dur="4s" repeatCount="indefinite"/>
+  </text>
+
+  <g transform="translate(425, 222)">
+    <circle cx="0" cy="0" r="11" fill="#3b82f6" stroke="#60a5fa" stroke-width="1.5">
+      <animate attributeName="fill" values="#3b82f6;#60a5fa;#3b82f6" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M-4.5 0 L-1.5 3.5 L5 -4" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(720, 222)">
+    <circle cx="0" cy="0" r="10" fill="#ff73fa" stroke="#ff00a0" stroke-width="1.5">
+      <animate attributeName="fill" values="#ff73fa;#ff00a0;#ff73fa" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M-3 -2 L0 -5 L3 -2 L0 1 Z M-3 2 L0 5 L3 2" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(745, 222)">
+    <polygon points="0,-10 8,5 0,2 -8,5" fill="#fbb848" stroke="#ff8c00" stroke-width="1.5">
+      <animate attributeName="fill" values="#fbb848;#ffd700;#fbb848" dur="3.5s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <g transform="translate(770, 222)">
+    <circle cx="0" cy="0" r="10" fill="#00f0ff" stroke="#00e5ff" stroke-width="1.5">
+      <animate attributeName="fill" values="#00f0ff;#00ffcc;#00f0ff" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="-4" y="-4" width="8" height="8" rx="1" fill="none" stroke="#fff" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="1.5" fill="#fff"/>
+  </g>
+
+  <line x1="190" y1="242" x2="750" y2="242" stroke="#1a3a6a" stroke-width="1.5">
+    <animate attributeName="stroke" values="#1a3a6a;#00f0ff;#1a3a6a" dur="4s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- GitHub -->
+  <g transform="translate(190, 270)">
+    <g transform="translate(0, 0)">
+      <circle cx="11" cy="11" r="11" fill="#0a0a1a" stroke="#00f0ff" stroke-width="1.5">
+        <animate attributeName="stroke-opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M12,2C6.48,2,2,6.48,2,12c0,4.42,2.87,8.17,6.84,9.5c0.5,0.08,0.66-0.23,0.66-0.5v-1.69c-2.77,0.6-3.36-1.34-3.36-1.34c-0.46-1.16-1.11-1.47-1.11-1.47c-0.91-0.62,0.07-0.6,0.07-0.6c1,0.07,1.53,1.03,1.53,1.03c0.87,1.52,2.34,1.07,2.91,0.83c0.09-0.65,0.35-1.09,0.63-1.34c-2.22-0.25-4.55-1.11-4.55-4.92c0-1.11,0.38-2,1.03-2.71c-0.1-0.25-0.45-1.29,0.1-2.64c0,0,0.84-0.27,2.75,1.02c0.8-0.22,1.65-0.33,2.5-0.33c0.85,0.01,1.71,0.11,2.5,0.33c1.91-1.29,2.75-1.02,2.75-1.02c0.55,1.35,0.2,2.39,0.1,2.64c0.65,0.71,1.03,1.6,1.03,2.71c0,3.82-2.34,4.66-4.57,4.91c0.36,0.31,0.69,0.92,0.69,1.85V21c0,0.27,0.16,0.59,0.67,0.5C19.14,20.16,22,16.42,22,12C22,6.48,17.52,2,12,2z" fill="#00f0ff" transform="translate(0.2,0.2) scale(0.88)"/>
+    </g>
+    <text x="30" y="15" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#c0d0f0" filter="url(#textGlow)">
+      <animate attributeName="fill" values="#c0d0f0;#ffffff;#c0d0f0" dur="3s" repeatCount="indefinite"/>
+      GitHub: /LawlessDragon
+    </text>
+  </g>
+
+  <!-- X/Twitter -->
+  <g transform="translate(190, 308)">
+    <g transform="translate(0, 0)">
+      <circle cx="11" cy="11" r="11" fill="#0a0a1a" stroke="#00e5ff" stroke-width="1.5">
+        <animate attributeName="stroke-opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M6.5 6.5 L15.5 15.5 M15.5 6.5 L6.5 15.5" stroke="#00e5ff" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+    <text x="30" y="15" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#c0d0f0" filter="url(#textGlow)">
+      <animate attributeName="fill" values="#c0d0f0;#ffffff;#c0d0f0" dur="3.5s" repeatCount="indefinite"/>
+      @BlueLawless
+    </text>
+  </g>
+
+  <!-- Instagram -->
+  <g transform="translate(190, 346)">
+    <g transform="translate(0, 0)">
+      <circle cx="11" cy="11" r="11" fill="#0a0a1a" stroke="#00f0ff" stroke-width="1.5">
+        <animate attributeName="stroke-opacity" values="1;0.4;1" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+      <rect x="5" y="5" width="12" height="12" rx="3.5" ry="3.5" fill="none" stroke="#00f0ff" stroke-width="1.3"/>
+      <circle cx="11" cy="11" r="3" fill="none" stroke="#00f0ff" stroke-width="1.3"/>
+      <circle cx="15.5" cy="6.5" r="1.2" fill="#00f0ff"/>
+    </g>
+    <text x="30" y="15" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#c0d0f0" filter="url(#textGlow)">
+      <animate attributeName="fill" values="#c0d0f0;#ffffff;#c0d0f0" dur="4s" repeatCount="indefinite"/>
+      @lawless_derg
+    </text>
+  </g>
+
+  <line x1="505" y1="265" x2="505" y2="350" stroke="#00f0ff" stroke-width="1" opacity="0.5" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- About Me -->
+  <g transform="translate(520, 270)">
+    <text x="0" y="0" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#00f0ff" letter-spacing="1.5" filter="url(#textGlow)">
+      ABOUT ME
+      <animate attributeName="fill" values="#00f0ff;#00ffcc;#00f0ff" dur="3s" repeatCount="indefinite"/>
+    </text>
+    <text x="0" y="20" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#a0b0d0" filter="url(#textGlow)">
+      <animate attributeName="fill" values="#a0b0d0;#e0f0ff;#a0b0d0" dur="4s" repeatCount="indefinite"/>
+      Code-slayer. Dragon-tamer. Creating
+    </text>
+    <text x="0" y="38" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#a0b0d0" filter="url(#textGlow)">
+      <animate attributeName="fill" values="#a0b0d0;#e0f0ff;#a0b0d0" dur="4s" begin="0.5s" repeatCount="indefinite"/>
+      digital realms. | Dev | Designer |
+    </text>
+    <text x="0" y="56" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#a0b0d0" filter="url(#textGlow)">
+      <animate attributeName="fill" values="#a0b0d0;#e0f0ff;#a0b0d0" dur="4s" begin="1s" repeatCount="indefinite"/>
+      @BlueLawless | Living the lawless life!
+    </text>
+  </g>
+
+  <!-- Tech stack pills -->
+  <g transform="translate(520, 340)">
+    <rect x="0" y="0" width="42" height="16" rx="8" fill="#0a0a1a" stroke="#00f0ff" stroke-width="1" opacity="0.8">
+      <animate attributeName="stroke-opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="21" y="11" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#00f0ff" text-anchor="middle">JS</text>
+
+    <rect x="50" y="0" width="46" height="16" rx="8" fill="#0a0a1a" stroke="#00e5ff" stroke-width="1" opacity="0.8">
+      <animate attributeName="stroke-opacity" values="0.8;0.4;0.8" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="73" y="11" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#00e5ff" text-anchor="middle">REACT</text>
+
+    <rect x="104" y="0" width="44" height="16" rx="8" fill="#0a0a1a" stroke="#00ff88" stroke-width="1" opacity="0.8">
+      <animate attributeName="stroke-opacity" values="0.8;0.4;0.8" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="126" y="11" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#00ff88" text-anchor="middle">NODE</text>
+
+    <rect x="156" y="0" width="44" height="16" rx="8" fill="#0a0a1a" stroke="#ff73fa" stroke-width="1" opacity="0.8">
+      <animate attributeName="stroke-opacity" values="0.8;0.4;0.8" dur="2.8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="178" y="11" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#ff73fa" text-anchor="middle">UI/UX</text>
+  </g>
+
+  <line x1="520" y1="332" x2="720" y2="332" stroke="#00f0ff" stroke-width="0.5" opacity="0.4" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Corner accents -->
+  <path d="M 15 15 L 40 15 L 40 22 L 22 22 L 22 40 L 15 40 Z" fill="#00f0ff" opacity="0.7" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 785 15 L 760 15 L 760 22 L 778 22 L 778 40 L 785 40 Z" fill="#00e5ff" opacity="0.7" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 15 385 L 40 385 L 40 378 L 22 378 L 22 360 L 15 360 Z" fill="#00e5ff" opacity="0.7" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 785 385 L 760 385 L 760 378 L 778 378 L 778 360 L 785 360 Z" fill="#00f0ff" opacity="0.7" filter="url(#neonGlow)">
+    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.8s" repeatCount="indefinite"/>
+  </path>
+</svg>
