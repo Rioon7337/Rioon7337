@@ -314,47 +314,42 @@
     <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- ===== NITRO BORDER — BRIGHT & CRISP ===== -->
-  <!-- Outer glow halo — more visible -->
+  <!-- ===== CYBERNETIC SCI-FI REACTOR AVATAR BORDER ===== -->
+  <!-- Outer glowing energy shield halo -->
   <g transform="translate(110, 240)">
-    <circle r="72" fill="none" stroke="#a855f7" stroke-width="16" opacity="0.35" filter="url(#nitroOuterGlow)">
-      <animate attributeName="stroke" values="#ff6b9d;#d946ef;#a855f7;#3b82f6;#06b6d4;#ff6b9d" dur="3.5s" repeatCount="indefinite"/>
+    <circle r="73" fill="none" stroke="#00f0ff" stroke-width="12" opacity="0.3" filter="url(#nitroOuterGlow)">
+      <animate attributeName="stroke" values="#00f0ff;#ff73fa;#a855f7;#00ff88;#00f0ff" dur="4s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- Main rotating ring -->
+  <!-- Cybernetic Reticle and Rotating Reactor Ring -->
   <g transform="translate(110, 240)" filter="url(#nitroGlow)">
-    <!-- Layer 1: 6 color segments clockwise -->
+    <!-- Layer 1: Orbital Tech Brackets (Clockwise) -->
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3.5s" repeatCount="indefinite"/>
-      <circle r="66" fill="none" stroke="#ff6b9d" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="0" stroke-linecap="round"/>
-      <circle r="66" fill="none" stroke="#d946ef" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-69.1" stroke-linecap="round"/>
-      <circle r="66" fill="none" stroke="#a855f7" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-138.2" stroke-linecap="round"/>
-      <circle r="66" fill="none" stroke="#7c3aed" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-207.3" stroke-linecap="round"/>
-      <circle r="66" fill="none" stroke="#3b82f6" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-276.5" stroke-linecap="round"/>
-      <circle r="66" fill="none" stroke="#06b6d4" stroke-width="5.5" stroke-dasharray="63 6.1" stroke-dashoffset="-345.6" stroke-linecap="round"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+      <circle r="69" fill="none" stroke="#00f0ff" stroke-width="3.5" stroke-dasharray="35 19.5" stroke-linecap="round" opacity="0.9"/>
+      <circle r="69" fill="none" stroke="#ff73fa" stroke-width="2" stroke-dasharray="10 44.5" stroke-linecap="round" opacity="0.75"/>
     </g>
 
-    <!-- Layer 2: counter-rotation -->
+    <!-- Layer 2: Fast Dual Neon Laser Arcs (Counter-Clockwise) -->
     <g>
       <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="2.5s" repeatCount="indefinite"/>
-      <circle r="66" fill="none" stroke="#ff6b9d" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="0" stroke-linecap="round" opacity="0.9"/>
-      <circle r="66" fill="none" stroke="#a855f7" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-69.1" stroke-linecap="round" opacity="0.9"/>
-      <circle r="66" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-138.2" stroke-linecap="round" opacity="0.9"/>
-      <circle r="66" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-207.3" stroke-linecap="round" opacity="0.9"/>
-      <circle r="66" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-276.5" stroke-linecap="round" opacity="0.9"/>
-      <circle r="66" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="35 34.1" stroke-dashoffset="-345.6" stroke-linecap="round" opacity="0.9"/>
+      <circle r="65" fill="none" stroke="#00e5ff" stroke-width="4.5" stroke-dasharray="50 52" stroke-linecap="round" opacity="0.95"/>
+      <circle r="65" fill="none" stroke="#d946ef" stroke-width="3.5" stroke-dasharray="35 67" stroke-linecap="round" opacity="0.85"/>
+      <circle r="65" fill="none" stroke="#00ff88" stroke-width="2.5" stroke-dasharray="20 82" stroke-linecap="round" opacity="0.7"/>
     </g>
 
-    <!-- Layer 3: fast sparkle -->
+    <!-- Layer 3: Orbiting Energy Sparkle / Data Nodes (Clockwise Fast) -->
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.8s" repeatCount="indefinite"/>
-      <circle r="66" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="18 396.7" stroke-dashoffset="0" stroke-linecap="round" opacity="0.75"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/>
+      <circle cx="0" cy="-66" r="3.2" fill="#ffffff"/>
+      <circle cx="66" cy="0" r="2.8" fill="#00ffcc"/>
+      <circle cx="0" cy="66" r="3.2" fill="#ffffff"/>
+      <circle cx="-66" cy="0" r="2.8" fill="#ff73fa"/>
     </g>
 
-    <!-- Inner dark gap -->
-    <circle r="62" fill="#0a0a1a"/>
-    <circle r="62" fill="none" stroke="#1a1a3a" stroke-width="0.5" opacity="0.5"/>
+    <!-- Inner clean dark separator frame -->
+    <circle r="61" fill="#060618" stroke="#00f0ff" stroke-width="1.8" opacity="0.9"/>
   </g>
 
   <!-- Avatar image -->
@@ -370,11 +365,11 @@
   <!-- ===== TEXT — UNCHANGED ===== -->
 
   <text x="190" y="230" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff" filter="url(#textGlow)">
-    Rioon
+    RIoon7337
     <animate attributeName="fill" values="#ffffff;#a0f0ff;#ffffff" dur="4s" repeatCount="indefinite"/>
   </text>
 
-  <g transform="translate(290, 222)">
+  <g transform="translate(385, 222)">
     <circle cx="0" cy="0" r="11" fill="#3b82f6" stroke="#60a5fa" stroke-width="1.5">
       <animate attributeName="fill" values="#3b82f6;#60a5fa;#3b82f6" dur="2.5s" repeatCount="indefinite"/>
     </circle>
@@ -416,7 +411,7 @@
     </g>
     <text x="30" y="15" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#c0d0f0" filter="url(#textGlow)">
       <animate attributeName="fill" values="#c0d0f0;#ffffff;#c0d0f0" dur="3s" repeatCount="indefinite"/>
-      GitHub: /Rioon
+      GitHub: /RIoon7337
     </text>
   </g>
 
@@ -463,15 +458,15 @@
     </text>
     <text x="0" y="20" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#a0b0d0" filter="url(#textGlow)">
       <animate attributeName="fill" values="#a0b0d0;#e0f0ff;#a0b0d0" dur="4s" repeatCount="indefinite"/>
-      Just a Normal Furry. Creating
+      Just a Normal Furry UwU
     </text>
     <text x="0" y="38" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#a0b0d0" filter="url(#textGlow)">
       <animate attributeName="fill" values="#a0b0d0;#e0f0ff;#a0b0d0" dur="4s" begin="0.5s" repeatCount="indefinite"/>
-      digital realms &amp; code. | Dev |
+      Furry Enthusiast &amp; Developer
     </text>
     <text x="0" y="56" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#a0b0d0" filter="url(#textGlow)">
       <animate attributeName="fill" values="#a0b0d0;#e0f0ff;#a0b0d0" dur="4s" begin="1s" repeatCount="indefinite"/>
-      @RIoon7337 | Living the furry life!
+      Ig: @rei_ntobing | Tg: @rioon7337
     </text>
   </g>
 
