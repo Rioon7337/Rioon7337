@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="100%" src="./wolf-banner.svg" alt="Wolf Knight Banner"/>
+  <img width="100%" src="./wolf-banner.svg" alt="The Arcane Paladin Banner"/>
 </div>
 
 <br/>

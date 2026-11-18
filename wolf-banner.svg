@@ -9,8 +9,8 @@
     </linearGradient>
 
     <radialGradient id="moonGlow" cx="50%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.22"/>
-      <stop offset="35%" stop-color="#818cf8" stop-opacity="0.10"/>
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="35%" stop-color="#818cf8" stop-opacity="0.12"/>
       <stop offset="70%" stop-color="#1e293b" stop-opacity="0"/>
     </radialGradient>
 
@@ -23,9 +23,9 @@
     <!-- Metallic Steel Gradients -->
     <linearGradient id="steelPlate" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#334155"/>
-      <stop offset="35%" stop-color="#64748b"/>
+      <stop offset="30%" stop-color="#64748b"/>
       <stop offset="50%" stop-color="#cbd5e1"/>
-      <stop offset="65%" stop-color="#64748b"/>
+      <stop offset="70%" stop-color="#64748b"/>
       <stop offset="100%" stop-color="#1e293b"/>
     </linearGradient>
 
@@ -41,6 +41,12 @@
       <stop offset="50%" stop-color="#ffffff"/>
       <stop offset="60%" stop-color="#94a3b8"/>
       <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+
+    <linearGradient id="steelHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748b" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#64748b" stop-opacity="0"/>
     </linearGradient>
 
     <!-- Gold Gradients -->
@@ -60,58 +66,13 @@
       <stop offset="100%" stop-color="#b45309"/>
     </linearGradient>
 
-    <linearGradient id="cyanGlowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#0284c7"/>
-    </linearGradient>
-
-    <!-- Fur Shading Gradients -->
-    <linearGradient id="furDark" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#334155"/>
-      <stop offset="60%" stop-color="#1e293b"/>
-      <stop offset="100%" stop-color="#0f172a"/>
-    </linearGradient>
-
-    <linearGradient id="furMid" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#94a3b8"/>
-      <stop offset="60%" stop-color="#64748b"/>
-      <stop offset="100%" stop-color="#334155"/>
-    </linearGradient>
-
-    <linearGradient id="furWhite" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="60%" stop-color="#e2e8f0"/>
-      <stop offset="100%" stop-color="#94a3b8"/>
-    </linearGradient>
-
-    <radialGradient id="eyeAmber" cx="50%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#fef08a"/>
-      <stop offset="40%" stop-color="#f59e0b"/>
-      <stop offset="80%" stop-color="#b45309"/>
-      <stop offset="100%" stop-color="#78350f"/>
-    </radialGradient>
-
     <linearGradient id="capeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#1e1b4b"/>
       <stop offset="50%" stop-color="#0f172a"/>
       <stop offset="100%" stop-color="#020617"/>
     </linearGradient>
 
-    <!-- Filters -->
-    <filter id="amberGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="intenseCyanGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <!-- Glow & Shadow Filters -->
     <filter id="runeGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
@@ -120,21 +81,39 @@
       </feMerge>
     </filter>
 
+    <filter id="amberGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="intenseCyanGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="blur1"/>
+      <feGaussianBlur stdDeviation="2" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
     <filter id="shadowFilter" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.7"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.75"/>
     </filter>
   </defs>
 
   <!-- Canvas Background -->
   <rect width="1000" height="530" rx="16" fill="url(#bgGrad)"/>
 
-  <!-- Magical Starfield / Animated Celestial Embers -->
+  <!-- ==================== MAGICAL CELESTIAL STARFIELD & FLOATING EMBERS ==================== -->
   <g>
     <!-- Cyan Twinkling Constellations -->
-    <g opacity="0.7">
+    <g opacity="0.75">
       <circle cx="95" cy="70" r="1.5" fill="#38bdf8">
         <animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite"/>
-        <animate attributeName="r" values="1.2;2;1.2" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1.2;2.2;1.2" dur="2.4s" repeatCount="indefinite"/>
       </circle>
       <circle cx="260" cy="50" r="1.5" fill="#38bdf8">
         <animate attributeName="opacity" values="0.4;1;0.4" dur="3.1s" repeatCount="indefinite"/>
@@ -159,7 +138,7 @@
     </g>
 
     <!-- Amber & Gold Twinkling Stars -->
-    <g opacity="0.7">
+    <g opacity="0.75">
       <circle cx="180" cy="120" r="1" fill="#fde68a">
         <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.5s" repeatCount="indefinite"/>
       </circle>
@@ -196,31 +175,35 @@
       </path>
     </g>
 
-    <!-- Floating Arcane Motes / Embers drifting up into the night -->
+    <!-- Floating Arcane Embers & Motes -->
     <g filter="url(#runeGlow)">
       <circle cx="320" cy="380" r="1.5" fill="#38bdf8">
-        <animate attributeName="cy" values="380;260" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="cx" values="320;335;320" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.9;0.6;0" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="380;240" dur="5.5s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="320;335;320" dur="5.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0.6;0" dur="5.5s" repeatCount="indefinite"/>
       </circle>
       <circle cx="680" cy="390" r="1.5" fill="#f59e0b">
-        <animate attributeName="cy" values="390;270" dur="7s" repeatCount="indefinite"/>
-        <animate attributeName="cx" values="680;665;680" dur="7s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.9;0.5;0" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="390;250" dur="6.5s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="680;665;680" dur="6.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0.5;0" dur="6.5s" repeatCount="indefinite"/>
       </circle>
       <circle cx="270" cy="310" r="1.2" fill="#818cf8">
-        <animate attributeName="cy" values="310;190" dur="5.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.8;0" dur="5.5s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="310;170" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="5s" repeatCount="indefinite"/>
       </circle>
       <circle cx="730" cy="330" r="1.2" fill="#38bdf8">
-        <animate attributeName="cy" values="330;200" dur="6.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.8;0" dur="6.5s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="330;180" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="490" cy="110" r="1.2" fill="#fde68a">
+        <animate attributeName="cy" values="110;40" dur="4.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="4.5s" repeatCount="indefinite"/>
       </circle>
     </g>
   </g>
 
   <!-- Ornate Border Frame -->
-  <rect x="18" y="18" width="964" height="494" rx="12" fill="none" stroke="url(#goldTrim)" stroke-width="1.8" opacity="0.75"/>
+  <rect x="18" y="18" width="964" height="494" rx="12" fill="none" stroke="url(#goldTrim)" stroke-width="1.8" opacity="0.8"/>
   <rect x="25" y="25" width="950" height="480" rx="9" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="8 6" opacity="0.6"/>
 
   <!-- Corner Flourishes -->
@@ -343,35 +326,19 @@
     </g>
   </g>
 
-  <!-- ==================== WOLF FURRY KNIGHT CHARACTER ==================== -->
-  <g id="wolfFurryKnight" filter="url(#shadowFilter)">
+  <!-- ==================== GOTHIC MEDIEVAL FANTASY KNIGHT ==================== -->
+  <g id="gothicFantasyKnight" filter="url(#shadowFilter)">
     <!-- Gentle Warrior Idle Breathing -->
     <animateTransform attributeName="transform" type="translate" values="0,0; 0,-2.5; 0,0" dur="4.8s" repeatCount="indefinite"/>
 
     <!-- CAPE / MANTLE (Background layer) -->
-    <path d="M 360 215 C 330 250 310 295 300 330 L 700 330 C 690 295 670 250 640 215 Z" fill="url(#capeGrad)"/>
+    <path d="M 350 215 C 320 250 300 295 290 330 L 710 330 C 700 295 680 250 650 215 Z" fill="url(#capeGrad)"/>
     <!-- Cape Gold Embroidered Trim -->
-    <path d="M 302 328 L 700 328" stroke="url(#goldTrim)" stroke-width="3"/>
-    <path d="M 315 320 C 335 270 355 240 375 220" stroke="url(#goldTrim)" stroke-width="1.5" fill="none" opacity="0.7"/>
-    <path d="M 685 320 C 665 270 645 240 625 220" stroke="url(#goldTrim)" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M 292 328 L 710 328" stroke="url(#goldTrim)" stroke-width="3"/>
+    <path d="M 305 320 C 325 270 348 240 370 220" stroke="url(#goldTrim)" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M 695 320 C 675 270 652 240 630 220" stroke="url(#goldTrim)" stroke-width="1.5" fill="none" opacity="0.7"/>
 
-    <!-- WOLF MANE / RUFF (Background Fur Spikes behind shoulders & jaw) -->
-    <g fill="url(#furDark)">
-      <!-- Left Mane Spikes -->
-      <path d="M 430 140 Q 380 160 360 175 Q 390 185 380 205 Q 350 220 345 245 Q 380 248 375 270 Q 350 285 365 315 L 440 315 Z"/>
-      <!-- Right Mane Spikes -->
-      <path d="M 570 140 Q 620 160 640 175 Q 610 185 620 205 Q 650 220 655 245 Q 620 248 625 270 Q 650 285 635 315 L 560 315 Z"/>
-    </g>
-
-    <!-- Mid-tone Fur Mane Highlights -->
-    <g fill="url(#furMid)" opacity="0.85">
-      <!-- Left mid ruff -->
-      <path d="M 440 160 Q 405 180 390 195 Q 415 202 400 225 Q 375 245 375 265 Q 405 265 410 285 L 450 300 Z"/>
-      <!-- Right mid ruff -->
-      <path d="M 560 160 Q 595 180 610 195 Q 585 202 600 225 Q 625 245 625 265 Q 595 265 590 285 L 550 300 Z"/>
-    </g>
-
-    <!-- KNIGHT PAULDRONS (Shoulder Armor) -->
+    <!-- KNIGHT PAULDRONS (Gothic Shoulder Armor) -->
     <!-- Left Pauldron (Viewer Left) -->
     <g id="leftPauldron">
       <!-- Tier 3 (Bottom plate) -->
@@ -383,13 +350,15 @@
       <circle cx="325" cy="285" r="2.5" fill="#f59e0b"/>
       <!-- Tier 1 (Top Blade-breaker Guard) -->
       <path d="M 430 215 C 385 210 340 225 315 250 C 330 262 380 260 435 252 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="2"/>
-      <!-- Gold trim line and crest on top pauldron -->
       <path d="M 322 248 C 348 232 388 222 428 222" stroke="url(#goldTrim)" stroke-width="2" fill="none"/>
       <path d="M 320 248 C 350 236 390 226 428 226" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.8"/>
-      <!-- Wolf Claw emblem on pauldron -->
-      <path d="M 360 238 L 368 250 L 365 252 L 358 240 Z" fill="#fbbf24"/>
-      <path d="M 370 236 L 377 248 L 374 250 L 368 238 Z" fill="#fbbf24"/>
-      <path d="M 380 236 L 385 247 L 382 249 L 378 238 Z" fill="#fbbf24"/>
+      <!-- Medieval Fleur-de-lis / Royal Heraldry Sigil -->
+      <g transform="translate(368, 240) scale(0.6)" fill="#fbbf24">
+        <path d="M 0 -12 C 4 -8 7 -4 0 8 C -7 -4 -4 -8 0 -12 Z"/>
+        <path d="M -8 -4 C -4 -4 -2 0 -6 6 C -12 6 -12 0 -8 -4 Z"/>
+        <path d="M 8 -4 C 4 -4 2 0 6 6 C 12 6 12 0 8 -4 Z"/>
+        <rect x="-7" y="6" width="14" height="2" rx="1"/>
+      </g>
       <circle cx="330" cy="248" r="3" fill="#f59e0b"/>
     </g>
 
@@ -404,13 +373,15 @@
       <circle cx="675" cy="285" r="2.5" fill="#f59e0b"/>
       <!-- Tier 1 (Top Blade-breaker Guard) -->
       <path d="M 570 215 C 615 210 660 225 685 250 C 670 262 620 260 565 252 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="2"/>
-      <!-- Gold trim line and crest on top pauldron -->
       <path d="M 678 248 C 652 232 612 222 572 222" stroke="url(#goldTrim)" stroke-width="2" fill="none"/>
       <path d="M 680 248 C 650 236 610 226 572 226" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.8"/>
-      <!-- Wolf Claw emblem on pauldron -->
-      <path d="M 640 238 L 632 250 L 635 252 L 642 240 Z" fill="#fbbf24"/>
-      <path d="M 630 236 L 623 248 L 626 250 L 632 238 Z" fill="#fbbf24"/>
-      <path d="M 620 236 L 615 247 L 618 249 L 622 238 Z" fill="#fbbf24"/>
+      <!-- Medieval Fleur-de-lis / Royal Heraldry Sigil -->
+      <g transform="translate(632, 240) scale(0.6)" fill="#fbbf24">
+        <path d="M 0 -12 C 4 -8 7 -4 0 8 C -7 -4 -4 -8 0 -12 Z"/>
+        <path d="M -8 -4 C -4 -4 -2 0 -6 6 C -12 6 -12 0 -8 -4 Z"/>
+        <path d="M 8 -4 C 4 -4 2 0 6 6 C 12 6 12 0 8 -4 Z"/>
+        <rect x="-7" y="6" width="14" height="2" rx="1"/>
+      </g>
       <circle cx="670" cy="248" r="3" fill="#f59e0b"/>
     </g>
 
@@ -428,221 +399,151 @@
       <path d="M 452 255 L 495 258 L 495 315 L 458 312 Z" fill="none" stroke="url(#goldTrim)" stroke-width="1.2" opacity="0.7"/>
       <path d="M 548 255 L 505 258 L 505 315 L 542 312 Z" fill="none" stroke="url(#goldTrim)" stroke-width="1.2" opacity="0.7"/>
 
-      <!-- CENTER GOLD WOLF EMBLEM / RUNE CORE -->
+      <!-- CENTER GOLD RUNE MEDALLION WITH MEDIEVAL DRAGON EMBLEM -->
       <circle cx="500" cy="285" r="22" fill="#1e293b" stroke="url(#goldTrim)" stroke-width="2.5" filter="url(#shadowFilter)"/>
       <!-- Rotating inner rune ring -->
       <circle cx="500" cy="285" r="18" fill="none" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3 3">
         <animateTransform attributeName="transform" type="rotate" from="0 500 285" to="360 500 285" dur="18s" repeatCount="indefinite"/>
       </circle>
-      <!-- Howling Wolf Silhouette inside Medallion with inner amber radiance -->
-      <path d="M 494 296 C 492 292 491 286 493 282 C 494 278 497 274 496 270 C 498 272 501 270 502 268 C 504 271 508 274 507 278 C 509 281 508 285 506 288 C 508 290 509 294 506 296 Z" fill="url(#goldText)" filter="url(#amberGlow)">
-        <animate attributeName="opacity" values="0.75;1;0.75" dur="3s" repeatCount="indefinite"/>
-      </path>
+      <!-- Mythic Medieval Dragon Crest inside Medallion -->
+      <g transform="translate(500, 285) scale(0.9)" fill="url(#goldText)" filter="url(#amberGlow)">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+        <!-- Winged Dragon silhouette -->
+        <path d="M -2 -11 C -4 -9 -7 -6 -5 -2 C -8 -5 -11 -5 -12 -3 C -10 1 -7 3 -3 4 C -5 6 -6 9 -3 11 C -1 13 3 12 5 9 C 7 12 11 11 12 8 C 8 8 6 6 7 3 C 10 3 12 1 11 -2 C 9 -4 6 -2 4 -5 C 6 -8 4 -11 0 -11 Z"/>
+        <!-- Dragon Eye dot -->
+        <circle cx="0" cy="-7" r="1" fill="#38bdf8"/>
+      </g>
 
       <!-- GORGET (Neck Armor Collar) -->
-      <path d="M 460 220 Q 500 234 540 220 L 545 244 Q 500 258 455 244 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="2"/>
-      <path d="M 466 226 Q 500 238 534 226" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7"/>
-      <circle cx="468" cy="235" r="2" fill="#f59e0b"/>
-      <circle cx="500" cy="244" r="2.5" fill="#f59e0b"/>
-      <circle cx="532" cy="235" r="2" fill="#f59e0b"/>
+      <path d="M 460 215 Q 500 230 540 215 L 545 244 Q 500 258 455 244 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="2"/>
+      <path d="M 466 222 Q 500 234 534 222" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7"/>
+      <circle cx="468" cy="232" r="2" fill="#f59e0b"/>
+      <circle cx="500" cy="242" r="2.5" fill="#f59e0b"/>
+      <circle cx="532" cy="232" r="2" fill="#f59e0b"/>
 
       <!-- Cloak Brooches / Clasps with cyan gem pulse -->
-      <circle cx="438" cy="232" r="6" fill="url(#goldTrim)" stroke="#1e293b" stroke-width="1.5"/>
-      <circle cx="438" cy="232" r="2.5" fill="#38bdf8">
+      <circle cx="438" cy="228" r="6" fill="url(#goldTrim)" stroke="#1e293b" stroke-width="1.5"/>
+      <circle cx="438" cy="228" r="2.5" fill="#38bdf8">
         <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="562" cy="232" r="6" fill="url(#goldTrim)" stroke="#1e293b" stroke-width="1.5"/>
-      <circle cx="562" cy="232" r="2.5" fill="#38bdf8">
+      <circle cx="562" cy="228" r="6" fill="url(#goldTrim)" stroke="#1e293b" stroke-width="1.5"/>
+      <circle cx="562" cy="228" r="2.5" fill="#38bdf8">
         <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
       </circle>
     </g>
 
-    <!-- WOLF HEAD & FURRY FEATURES -->
-    <g id="wolfHead">
-      <!-- FRONT FUR RUFF / COLLAR FLUFF (Cascading over the gorget) -->
-      <path d="M 450 205 Q 430 220 420 238 Q 445 232 445 248 Q 470 235 485 248 Q 500 236 515 248 Q 530 235 555 248 Q 555 232 580 238 Q 570 220 550 205 Z" fill="url(#furWhite)"/>
-      <path d="M 470 215 Q 485 238 500 230 Q 515 238 530 215 Z" fill="#cbd5e1" opacity="0.7"/>
-
-      <!-- WOLF EARS -->
-      <!-- Left Ear with alert twitch animation -->
-      <g id="leftEar">
-        <animateTransform attributeName="transform" type="rotate"
-          values="0 450 115; 0 450 115; -3 450 115; 1 450 115; -1.5 450 115; 0 450 115; 0 450 115"
-          keyTimes="0; 0.90; 0.92; 0.94; 0.96; 0.98; 1" dur="7s" repeatCount="indefinite" additive="sum"/>
-        <!-- Outer Ear Shell -->
-        <path d="M 445 115 C 430 85 410 55 398 32 C 418 45 440 68 465 88 C 475 98 478 108 478 112 Z" fill="url(#furDark)" stroke="#0f172a" stroke-width="1.5"/>
-        <!-- Outer ear rim highlight -->
-        <path d="M 442 110 C 428 82 410 56 400 35 C 415 48 435 70 455 88" stroke="#64748b" stroke-width="1" fill="none" opacity="0.6"/>
-        <!-- Inner Ear Cavity -->
-        <path d="M 442 105 C 428 80 415 60 408 46 C 422 62 442 80 460 96 Z" fill="#1e293b"/>
-        <!-- Inner Fluffy Ear Tufts (Layer 1 - Slate) -->
-        <path d="M 445 102 Q 425 82 410 68 Q 430 76 450 92 Z" fill="#64748b"/>
-        <!-- Inner Fluffy Ear Tufts (Layer 2 - Silver) -->
-        <path d="M 450 96 Q 432 75 420 60 Q 438 70 455 84 Z" fill="#cbd5e1"/>
-        <!-- Inner Fluffy Ear Tufts (Layer 3 - Bright White) -->
-        <path d="M 456 88 Q 440 70 430 52 Q 445 64 460 76 Z" fill="#ffffff"/>
-        <!-- Golden Earring / Ear Cuff Rings on Outer Rim -->
-        <rect x="408" y="55" width="4" height="8" rx="2" fill="url(#goldTrim)" transform="rotate(35, 410, 59)"/>
-        <rect x="418" y="70" width="4" height="8" rx="2" fill="url(#goldTrim)" transform="rotate(35, 420, 74)"/>
+    <!-- ==================== GOTHIC KNIGHT GREATHELM (MYTHIC VISORED HELMET) ==================== -->
+    <g id="gothicGreathelm">
+      <!-- WINGED HELM CRESTS / DRAGON FINS (Left & Right) -->
+      <!-- Left Wing Crest -->
+      <g id="leftWingCrest">
+        <path d="M 445 125 C 430 95 405 60 382 35 C 400 48 425 75 440 100 C 420 75 398 52 388 38 C 408 55 435 85 452 112 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="1.5"/>
+        <path d="M 440 100 C 418 70 395 48 384 37 C 405 52 430 78 448 108" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7"/>
+        <path d="M 450 115 C 440 90 422 68 410 52 C 426 68 444 92 458 116" stroke="url(#goldTrim)" stroke-width="1" fill="none"/>
       </g>
 
-      <!-- Right Ear with alert twitch animation -->
-      <g id="rightEar">
-        <animateTransform attributeName="transform" type="rotate"
-          values="0 550 115; 0 550 115; 3 550 115; -1 550 115; 1.5 550 115; 0 550 115; 0 550 115"
-          keyTimes="0; 0.82; 0.84; 0.86; 0.88; 0.90; 1" dur="8s" repeatCount="indefinite" additive="sum"/>
-        <!-- Outer Ear Shell -->
-        <path d="M 555 115 C 570 85 590 55 602 32 C 582 45 560 68 535 88 C 525 98 522 108 522 112 Z" fill="url(#furDark)" stroke="#0f172a" stroke-width="1.5"/>
-        <!-- Outer ear rim highlight -->
-        <path d="M 558 110 C 572 82 590 56 600 35 C 585 48 565 70 545 88" stroke="#64748b" stroke-width="1" fill="none" opacity="0.6"/>
-        <!-- Inner Ear Cavity -->
-        <path d="M 558 105 C 572 80 585 60 592 46 C 578 62 558 80 540 96 Z" fill="#1e293b"/>
-        <!-- Inner Fluffy Ear Tufts (Layer 1 - Slate) -->
-        <path d="M 555 102 Q 575 82 590 68 Q 570 76 550 92 Z" fill="#64748b"/>
-        <!-- Inner Fluffy Ear Tufts (Layer 2 - Silver) -->
-        <path d="M 550 96 Q 568 75 580 60 Q 562 70 545 84 Z" fill="#cbd5e1"/>
-        <!-- Inner Fluffy Ear Tufts (Layer 3 - Bright White) -->
-        <path d="M 544 88 Q 560 70 570 52 Q 555 64 540 76 Z" fill="#ffffff"/>
-        <!-- Golden Earring / Ear Cuff Rings on Outer Rim -->
-        <rect x="588" y="55" width="4" height="8" rx="2" fill="url(#goldTrim)" transform="rotate(-35, 590, 59)"/>
-        <rect x="578" y="70" width="4" height="8" rx="2" fill="url(#goldTrim)" transform="rotate(-35, 580, 74)"/>
+      <!-- Right Wing Crest -->
+      <g id="rightWingCrest">
+        <path d="M 555 125 C 570 95 595 60 618 35 C 600 48 575 75 560 100 C 580 75 602 52 612 38 C 592 55 565 85 548 112 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="1.5"/>
+        <path d="M 560 100 C 582 70 605 48 616 37 C 595 52 570 78 552 108" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7"/>
+        <path d="M 550 115 C 560 90 578 68 590 52 C 574 68 556 92 542 116" stroke="url(#goldTrim)" stroke-width="1" fill="none"/>
       </g>
 
-      <!-- HEAD BASE & CHEEK FLUFF (The Furry Wolf Face) -->
-      <g id="headShape">
-        <!-- Main Head Base (Dark charcoal crown) -->
-        <path d="M 465 110 Q 500 102 535 110 Q 555 125 568 145 Q 535 135 500 135 Q 465 135 432 145 Q 445 125 465 110 Z" fill="url(#furDark)"/>
-        
-        <!-- Left Cheek Fluff Spikes (Layered Anthro Wolf Fur) -->
-        <!-- Outer Dark Tufts -->
-        <path d="M 440 135 Q 395 155 385 168 Q 410 174 380 192 Q 410 198 395 218 Q 430 215 450 212 L 445 135 Z" fill="url(#furDark)"/>
-        <!-- Middle Silver Tufts -->
-        <path d="M 448 142 Q 410 160 400 172 Q 425 178 400 196 Q 428 200 415 216 Q 445 212 462 208 Z" fill="url(#furMid)"/>
-        <!-- Inner White Cheek Tufts -->
-        <path d="M 458 150 Q 425 168 418 178 Q 440 182 422 198 Q 445 200 435 212 Q 465 208 475 202 Z" fill="url(#furWhite)"/>
+      <!-- CENTRAL FLUTED CREST SPINE / RIDGE (Top of Helmet) -->
+      <path d="M 495 125 L 493 55 Q 500 38 507 55 L 505 125 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="1.5"/>
+      <line x1="500" y1="42" x2="500" y2="125" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+      <!-- Finial Spike at top crest -->
+      <polygon points="500,32 494,48 506,48" fill="url(#goldTrim)"/>
 
-        <!-- Right Cheek Fluff Spikes (Layered Anthro Wolf Fur) -->
-        <!-- Outer Dark Tufts -->
-        <path d="M 560 135 Q 605 155 615 168 Q 590 174 620 192 Q 590 198 605 218 Q 570 215 550 212 L 555 135 Z" fill="url(#furDark)"/>
-        <!-- Middle Silver Tufts -->
-        <path d="M 552 142 Q 590 160 600 172 Q 575 178 600 196 Q 572 200 585 216 Q 555 212 538 208 Z" fill="url(#furMid)"/>
-        <!-- Inner White Cheek Tufts -->
-        <path d="M 542 150 Q 575 168 582 178 Q 560 182 578 198 Q 555 200 565 212 Q 535 208 525 202 Z" fill="url(#furWhite)"/>
+      <!-- HELMET CROWN / SKULL DOME -->
+      <path d="M 445 130 C 442 80 465 52 500 52 C 535 52 558 80 555 130 Z" fill="url(#steelDark)" stroke="url(#goldTrim)" stroke-width="2"/>
+      <!-- Skull plate fluting highlights -->
+      <path d="M 465 125 C 465 85 480 62 500 62 C 520 62 535 85 535 125" fill="none" stroke="#64748b" stroke-width="1.5" opacity="0.6"/>
+      <path d="M 480 120 C 480 90 490 70 500 70 C 510 70 520 90 520 120" fill="none" stroke="#cbd5e1" stroke-width="1" opacity="0.7"/>
 
-        <!-- Forehead Brow / Temple Shading -->
-        <path d="M 465 118 Q 500 128 535 118 L 530 142 Q 500 148 470 142 Z" fill="#1e293b"/>
-      </g>
+      <!-- ROYAL GOTHIC DIADEM / CROWN (Encircling brow) -->
+      <path d="M 442 124 Q 500 138 558 124 L 555 136 Q 500 150 445 136 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="1.8"/>
+      <!-- Diadem Crown Peaks -->
+      <polygon points="500,108 493,126 507,126" fill="url(#goldTrim)"/>
+      <polygon points="468,114 463,128 475,128" fill="url(#goldTrim)"/>
+      <polygon points="532,114 525,128 537,128" fill="url(#goldTrim)"/>
+      <!-- Embedded Glowing Sapphire Beacon in Diadem -->
+      <circle cx="500" cy="120" r="5" fill="#38bdf8" opacity="0.4" filter="url(#intenseCyanGlow)">
+        <animate attributeName="r" values="4;9;4" dur="2.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="500" cy="120" r="4.5" fill="#38bdf8" stroke="#fbbf24" stroke-width="1" filter="url(#runeGlow)"/>
+      <circle cx="498.5" cy="118.5" r="1.3" fill="#ffffff"/>
 
-      <!-- KNIGHT BROW DIADEM / CIRCLET (Resting on forehead between ears) -->
-      <g id="browCirclet">
-        <path d="M 458 116 Q 500 128 542 116 L 538 126 Q 500 138 462 126 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="1.8"/>
-        <!-- Central Gothic Peak -->
-        <path d="M 492 120 L 500 106 L 508 120 Z" fill="url(#goldTrim)"/>
-        <!-- Pulsing Diadem Beacon Aura -->
-        <circle cx="500" cy="120" r="5" fill="#38bdf8" opacity="0.4" filter="url(#intenseCyanGlow)">
-          <animate attributeName="r" values="4;9;4" dur="2.8s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.8s" repeatCount="indefinite"/>
+      <!-- GOTHIC ARMOR VISOR (Faceplate with central ridge) -->
+      <!-- Upper Visor Brow -->
+      <path d="M 444 135 L 500 148 L 556 135 L 550 170 L 500 180 L 450 170 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="1.8"/>
+      <!-- Lower Visor Beak / Wedge (Descends to sharp gothic chin) -->
+      <path d="M 450 170 L 500 180 L 550 170 L 542 210 L 500 226 L 458 210 Z" fill="url(#steelDark)" stroke="url(#goldTrim)" stroke-width="1.8"/>
+      <!-- Metallic shine facets on visor -->
+      <path d="M 500 148 L 444 135 L 450 170 L 500 180 Z" fill="url(#steelHighlight)" opacity="0.35"/>
+      <path d="M 500 180 L 450 170 L 458 210 L 500 226 Z" fill="url(#steelHighlight)" opacity="0.25"/>
+      <!-- Central Visor Keel Line (Sharp vertical nose ridge) -->
+      <line x1="500" y1="135" x2="500" y2="225" stroke="#ffffff" stroke-width="1.8" opacity="0.8"/>
+
+      <!-- ==================== THE ARCANE EYE-SLIT (VISOR APERTURE) ==================== -->
+      <!-- Black Visor Aperture Slot -->
+      <path d="M 458 156 L 496 160 L 496 166 L 458 162 Z" fill="#050811"/>
+      <path d="M 542 156 L 504 160 L 504 166 L 542 162 Z" fill="#050811"/>
+      <!-- Gold Rim on Eye Slit -->
+      <path d="M 457 155 L 496 159 M 457 163 L 496 167" stroke="url(#goldTrim)" stroke-width="1" fill="none"/>
+      <path d="M 543 155 L 504 159 M 543 163 L 504 167" stroke="url(#goldTrim)" stroke-width="1" fill="none"/>
+
+      <!-- Glowing Arcane Visor Slit Light (Cyan / Paladin Ethereal Flame) -->
+      <g filter="url(#intenseCyanGlow)">
+        <!-- Left eye slit glow -->
+        <rect x="462" y="157" width="32" height="6" rx="2" fill="#38bdf8">
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="2.4s" repeatCount="indefinite"/>
+        </rect>
+        <circle cx="478" cy="160" r="3" fill="#ffffff">
+          <animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="2.5;3.8;2.5" dur="1.8s" repeatCount="indefinite"/>
         </circle>
-        <!-- Embedded Glowing Gemstone -->
-        <circle cx="500" cy="120" r="5" fill="#38bdf8" stroke="#fbbf24" stroke-width="1" filter="url(#runeGlow)"/>
-        <circle cx="498.5" cy="118.5" r="1.5" fill="#ffffff"/>
+        <!-- Right eye slit glow -->
+        <rect x="506" y="157" width="32" height="6" rx="2" fill="#38bdf8">
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="2.4s" repeatCount="indefinite"/>
+        </rect>
+        <circle cx="522" cy="160" r="3" fill="#ffffff">
+          <animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="2.5;3.8;2.5" dur="1.8s" repeatCount="indefinite"/>
+        </circle>
       </g>
 
-      <!-- MUZZLE & SNOUT (Canine 3D Dimensional Shading) -->
-      <g id="muzzle">
-        <!-- Muzzle Upper Bridge (Nose bridge descending from brow) -->
-        <path d="M 488 140 Q 500 138 512 140 L 514 175 Q 500 178 486 175 Z" fill="url(#furMid)"/>
-        <path d="M 492 140 Q 500 139 508 140 L 510 174 Q 500 176 490 174 Z" fill="#64748b"/>
-        <line x1="500" y1="140" x2="500" y2="175" stroke="#cbd5e1" stroke-width="1.2" opacity="0.6"/>
-
-        <!-- Muzzle Pads / Whisker Area (Clean snowy white with soft shading) -->
-        <path d="M 500 174 C 480 172 462 178 460 192 C 458 205 476 214 496 210 L 500 206 L 504 210 C 524 214 542 205 540 192 C 538 178 520 172 500 174 Z" fill="url(#furWhite)" stroke="#cbd5e1" stroke-width="0.8"/>
-
-        <!-- Whisker Dots (Subtle anthro warrior markings) -->
-        <circle cx="476" cy="192" r="1.2" fill="#64748b"/>
-        <circle cx="482" cy="190" r="1.2" fill="#64748b"/>
-        <circle cx="478" cy="197" r="1.2" fill="#64748b"/>
-        <circle cx="485" cy="196" r="1.2" fill="#64748b"/>
-        <circle cx="524" cy="192" r="1.2" fill="#64748b"/>
-        <circle cx="518" cy="190" r="1.2" fill="#64748b"/>
-        <circle cx="522" cy="197" r="1.2" fill="#64748b"/>
-        <circle cx="515" cy="196" r="1.2" fill="#64748b"/>
-
-        <!-- Black Leather Canine Nose -->
-        <path d="M 488 175 C 494 172 506 172 512 175 C 516 182 512 192 500 193 C 488 192 484 182 488 175 Z" fill="#090d16"/>
-        <!-- Nostril indentations -->
-        <ellipse cx="493" cy="184" rx="2" ry="1.2" fill="#1e293b"/>
-        <ellipse cx="507" cy="184" rx="2" ry="1.2" fill="#1e293b"/>
-        <!-- Soft highlight specular on nose bridge -->
-        <circle cx="497" cy="177" r="1.5" fill="#64748b"/>
-
-        <!-- Canine Mouth & Smirk -->
-        <line x1="500" y1="193" x2="500" y2="201" stroke="#090d16" stroke-width="2"/>
-        <path d="M 476 199 C 488 203 496 201 500 201 C 504 201 515 202 526 198" fill="none" stroke="#090d16" stroke-width="2" stroke-linecap="round"/>
-        <!-- Sharp Canine Knight Fang Peeking Out -->
-        <path d="M 512 201 L 516 209 L 519 201 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.5"/>
-
-        <!-- Chin Fur Tuft -->
-        <path d="M 488 208 Q 500 224 512 208 Z" fill="url(#furWhite)"/>
-        <path d="M 494 210 Q 500 220 506 210 Z" fill="#cbd5e1"/>
+      <!-- Fluted Ventilation Slots (Breathing Cruciform / Angled Slits) -->
+      <g stroke="#090d16" stroke-width="1.8" stroke-linecap="round">
+        <!-- Left cheek slits -->
+        <line x1="472" y1="185" x2="488" y2="188"/>
+        <line x1="470" y1="192" x2="486" y2="195"/>
+        <line x1="473" y1="199" x2="487" y2="202"/>
+        <!-- Right cheek slits -->
+        <line x1="528" y1="185" x2="512" y2="188"/>
+        <line x1="530" y1="192" x2="514" y2="195"/>
+        <line x1="527" y1="199" x2="513" y2="202"/>
+      </g>
+      <!-- Subtle inner cyan glow leaking from ventilation slits -->
+      <g stroke="#38bdf8" stroke-width="0.8" stroke-linecap="round" opacity="0.6" filter="url(#runeGlow)">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+        <line x1="472" y1="185" x2="488" y2="188"/>
+        <line x1="470" y1="192" x2="486" y2="195"/>
+        <line x1="473" y1="199" x2="487" y2="202"/>
+        <line x1="528" y1="185" x2="512" y2="188"/>
+        <line x1="530" y1="192" x2="514" y2="195"/>
+        <line x1="527" y1="199" x2="513" y2="202"/>
       </g>
 
-      <!-- WARRIOR LUPINE EYES (Fierce, Charismatic Amber Glow) -->
-      <g id="eyes">
-        <!-- LEFT EYE -->
-        <g id="leftEye">
-          <!-- Black Eye Outline / Mask Marking -->
-          <path d="M 448 156 C 454 144 472 142 485 150 C 478 162 460 164 448 156 Z" fill="#090d16" stroke="#090d16" stroke-width="2"/>
-          <!-- Sclera -->
-          <path d="M 452 155 C 456 147 470 146 481 151 C 476 159 462 161 452 155 Z" fill="#f8fafc"/>
-          <!-- Amber Iris Base -->
-          <ellipse cx="468" cy="154" rx="6.5" ry="5.5" fill="url(#eyeAmber)" filter="url(#runeGlow)"/>
-          <!-- Dynamic Amber Eye Glow Aura -->
-          <ellipse cx="468" cy="154" rx="6.5" ry="5.5" fill="#f59e0b" opacity="0.4" filter="url(#amberGlow)">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.2s" repeatCount="indefinite"/>
-            <animate attributeName="rx" values="6.5;7.8;6.5" dur="3.2s" repeatCount="indefinite"/>
-            <animate attributeName="ry" values="5.5;6.5;5.5" dur="3.2s" repeatCount="indefinite"/>
-          </ellipse>
-          <!-- Vertical Slit Pupil -->
-          <ellipse cx="468" cy="154" rx="2" ry="4.5" fill="#090d16"/>
-          <!-- Pupil Specular Catchlights -->
-          <circle cx="465.5" cy="151.5" r="1.6" fill="#ffffff">
-            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="470" cy="156" r="0.8" fill="#ffffff"/>
-          <!-- Eye contour top lid -->
-          <path d="M 448 156 C 456 144 472 143 485 150" fill="none" stroke="#090d16" stroke-width="2.5" stroke-linecap="round"/>
-        </g>
+      <!-- Visor Pivot Screws (Temples) -->
+      <circle cx="445" cy="155" r="4.5" fill="url(#goldTrim)" stroke="#1e293b" stroke-width="1"/>
+      <circle cx="445" cy="155" r="2" fill="#38bdf8"/>
+      <circle cx="555" cy="155" r="4.5" fill="url(#goldTrim)" stroke="#1e293b" stroke-width="1"/>
+      <circle cx="555" cy="155" r="2" fill="#38bdf8"/>
 
-        <!-- RIGHT EYE -->
-        <g id="rightEye">
-          <!-- Black Eye Outline / Mask Marking -->
-          <path d="M 552 156 C 546 144 528 142 515 150 C 522 162 540 164 552 156 Z" fill="#090d16" stroke="#090d16" stroke-width="2"/>
-          <!-- Sclera -->
-          <path d="M 548 155 C 544 147 530 146 519 151 C 524 159 538 161 548 155 Z" fill="#f8fafc"/>
-          <!-- Amber Iris Base -->
-          <ellipse cx="532" cy="154" rx="6.5" ry="5.5" fill="url(#eyeAmber)" filter="url(#runeGlow)"/>
-          <!-- Dynamic Amber Eye Glow Aura -->
-          <ellipse cx="532" cy="154" rx="6.5" ry="5.5" fill="#f59e0b" opacity="0.4" filter="url(#amberGlow)">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.2s" repeatCount="indefinite"/>
-            <animate attributeName="rx" values="6.5;7.8;6.5" dur="3.2s" repeatCount="indefinite"/>
-            <animate attributeName="ry" values="5.5;6.5;5.5" dur="3.2s" repeatCount="indefinite"/>
-          </ellipse>
-          <!-- Vertical Slit Pupil -->
-          <ellipse cx="532" cy="154" rx="2" ry="4.5" fill="#090d16"/>
-          <!-- Pupil Specular Catchlights -->
-          <circle cx="529.5" cy="151.5" r="1.6" fill="#ffffff">
-            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="534" cy="156" r="0.8" fill="#ffffff"/>
-          <!-- Eye contour top lid -->
-          <path d="M 552 156 C 544 144 528 143 515 150" fill="none" stroke="#090d16" stroke-width="2.5" stroke-linecap="round"/>
-        </g>
-
-        <!-- Warrior Eyebrow Markings / Fur Texture -->
-        <path d="M 452 145 Q 470 138 484 144" stroke="#1e293b" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <path d="M 548 145 Q 530 138 516 144" stroke="#1e293b" stroke-width="2" fill="none" stroke-linecap="round"/>
-      </g>
+      <!-- Chin Bevor Plate Guard -->
+      <path d="M 480 220 L 500 230 L 520 220 L 515 235 L 500 242 L 485 235 Z" fill="url(#steelPlate)" stroke="url(#goldTrim)" stroke-width="1.2"/>
     </g>
   </g>
 
@@ -672,12 +573,12 @@
     RIOON7337
   </text>
 
-  <!-- Subtitle: THE WOLF KNIGHT -->
+  <!-- Subtitle: THE ARCANE PALADIN -->
   <text x="500" y="416" text-anchor="middle"
         font-family="'Cinzel', 'Georgia', serif"
         font-size="14" font-weight="bold" letter-spacing="6"
         fill="#94a3b8">
-    ⚔ &#8212;&#8212;&#8212; THE WOLF KNIGHT &#8212;&#8212;&#8212; ⚔
+    ⚔ &#8212;&#8212;&#8212; THE ARCANE PALADIN &#8212;&#8212;&#8212; ⚔
   </text>
 
   <!-- Domains: HARDWARE · FIRMWARE · ALGORITHMIC TRADING -->

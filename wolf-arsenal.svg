@@ -1,78 +1,161 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" width="1000" height="550">
   <defs>
-    <linearGradient id="wBg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0a0f14"/>
-      <stop offset="100%" stop-color="#1c2430"/>
+    <linearGradient id="wBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080c12"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#182232"/>
     </linearGradient>
-    <linearGradient id="wBorder" x1="0" y1="0" x2="1" y2="0">
+
+    <linearGradient id="wBorder" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#7A8B99"/>
-      <stop offset="50%" stop-color="#D3D9DF"/>
+      <stop offset="30%" stop-color="#D3D9DF"/>
+      <stop offset="50%" stop-color="#F2C94C"/>
+      <stop offset="70%" stop-color="#D3D9DF"/>
       <stop offset="100%" stop-color="#7A8B99"/>
     </linearGradient>
+
+    <linearGradient id="goldHdr" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="30%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <filter id="badgeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
-  <rect width="1000" height="550" fill="url(#wBg)"/>
-  
-  <!-- Shield Outline -->
-  <path d="M 20 20 L 980 20 L 980 480 L 500 530 L 20 480 Z" fill="none" stroke="url(#wBorder)" stroke-width="2"/>
-  <path d="M 30 30 L 970 30 L 970 470 L 500 518 L 30 470 Z" fill="none" stroke="#4B5E6F" stroke-width="1" stroke-dasharray="10 8" opacity="0.7">
-    <animate attributeName="stroke-dashoffset" values="0;36" dur="6s" repeatCount="indefinite"/>
+  <!-- Background Shield Canvas -->
+  <rect width="1000" height="550" rx="16" fill="url(#wBg)"/>
+
+  <!-- Floating Arcane Motes / Armory Embers -->
+  <g filter="url(#badgeGlow)">
+    <circle cx="120" cy="420" r="1.5" fill="#7EB6FF">
+      <animate attributeName="cy" values="420;280" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="880" cy="430" r="1.5" fill="#FF8C8C">
+      <animate attributeName="cy" values="430;290" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="200" r="1.2" fill="#C9A0FF">
+      <animate attributeName="cy" values="200;100" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="220" r="1.2" fill="#6EE7B7">
+      <animate attributeName="cy" values="220;110" dur="5.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="5.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Outer Medieval Greatshield Outline -->
+  <path d="M 20 20 L 980 20 L 980 480 L 500 534 L 20 480 Z" fill="none" stroke="url(#wBorder)" stroke-width="2.5"/>
+  <!-- Inner Animated Runic Shield Border -->
+  <path d="M 30 30 L 970 30 L 970 470 L 500 522 L 30 470 Z" fill="none" stroke="#4B5E6F" stroke-width="1.2" stroke-dasharray="10 8" opacity="0.8">
+    <animate attributeName="stroke-dashoffset" values="0;36" dur="5s" repeatCount="indefinite"/>
   </path>
 
-  <!-- Title -->
-  <text x="500" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="bold" font-style="italic" fill="url(#wBorder)" letter-spacing="8">
-    <animate attributeName="opacity" values="0.85;1;0.85" dur="3.5s" repeatCount="indefinite"/>
-    THE ARSENAL
+  <!-- Title: THE ARSENAL -->
+  <g transform="translate(500, 70)">
+    <text x="0" y="0" text-anchor="middle"
+          font-family="'Cinzel', 'Georgia', serif" font-size="34" font-weight="900" font-style="italic"
+          fill="url(#goldHdr)" letter-spacing="10">
+      <animate attributeName="opacity" values="0.88;1;0.88" dur="3s" repeatCount="indefinite"/>
+      ⚔ THE ARSENAL ⚔
+    </text>
+    <line x1="-160" y1="18" x2="160" y2="18" stroke="#F2C94C" stroke-width="1.2" opacity="0.7"/>
+    <circle cx="0" cy="18" r="3.5" fill="#38bdf8">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ==================== SECTION 1: HARDWARE & EMBEDDED ==================== -->
+  <text x="500" y="122" text-anchor="middle" font-family="'Cinzel', 'Georgia', serif" font-size="14" font-weight="bold" fill="#7EB6FF" letter-spacing="4">
+    ⚔ HARDWARE &amp; EMBEDDED ⚔
   </text>
-  <line x1="380" y1="85" x2="620" y2="85" stroke="#4B5E6F" stroke-width="1"/>
-
-  <!-- Section 1 -->
-  <text x="500" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#7EB6FF" letter-spacing="4">⚔ HARDWARE &amp; EMBEDDED ⚔</text>
   <g font-family="Verdana, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">
-    <g><rect x="150" y="140" width="70" height="28" rx="4" fill="#1c2430" stroke="#7EB6FF" stroke-width="1.5"/><text x="185" y="158" fill="#D3D9DF">C</text></g>
-    <g><rect x="230" y="140" width="80" height="28" rx="4" fill="#1c2430" stroke="#7EB6FF" stroke-width="1.5"/><text x="270" y="158" fill="#D3D9DF">C++</text></g>
-    <g><rect x="320" y="140" width="95" height="28" rx="4" fill="#1c2430" stroke="#7EB6FF" stroke-width="1.5"/><text x="367" y="158" fill="#D3D9DF">ARDUINO</text></g>
-    <g><rect x="425" y="140" width="110" height="28" rx="4" fill="#1c2430" stroke="#7EB6FF" stroke-width="1.5"/><text x="480" y="158" fill="#D3D9DF">MICROPYTHON</text></g>
-    <g><rect x="545" y="140" width="70" height="28" rx="4" fill="#1c2430" stroke="#7EB6FF" stroke-width="1.5"/><text x="580" y="158" fill="#D3D9DF">ROS</text></g>
-    <g><rect x="625" y="140" width="85" height="28" rx="4" fill="#1c2430" stroke="#7EB6FF" stroke-width="1.5"/><text x="667" y="158" fill="#D3D9DF">TINYML</text></g>
-    <g><rect x="720" y="140" width="115" height="28" rx="4" fill="#1c2430" stroke="#7EB6FF" stroke-width="1.5"/><text x="777" y="158" fill="#D3D9DF">PCB DESIGN</text></g>
+    <g><rect x="150" y="140" width="70" height="28" rx="5" fill="#151e2c" stroke="#7EB6FF" stroke-width="1.5"/><text x="185" y="158" fill="#D3D9DF">C</text></g>
+    <g><rect x="230" y="140" width="80" height="28" rx="5" fill="#151e2c" stroke="#7EB6FF" stroke-width="1.5"/><text x="270" y="158" fill="#D3D9DF">C++</text></g>
+    <g><rect x="320" y="140" width="95" height="28" rx="5" fill="#151e2c" stroke="#7EB6FF" stroke-width="1.5"/><text x="367" y="158" fill="#D3D9DF">ARDUINO</text></g>
+    <g><rect x="425" y="140" width="110" height="28" rx="5" fill="#151e2c" stroke="#7EB6FF" stroke-width="1.5"/><text x="480" y="158" fill="#D3D9DF">MICROPYTHON</text></g>
+    <g><rect x="545" y="140" width="70" height="28" rx="5" fill="#151e2c" stroke="#7EB6FF" stroke-width="1.5"/><text x="580" y="158" fill="#D3D9DF">ROS</text></g>
+    <g><rect x="625" y="140" width="85" height="28" rx="5" fill="#151e2c" stroke="#7EB6FF" stroke-width="1.5"/><text x="667" y="158" fill="#D3D9DF">TINYML</text></g>
+    <g><rect x="720" y="140" width="115" height="28" rx="5" fill="#151e2c" stroke="#7EB6FF" stroke-width="1.5"/><text x="777" y="158" fill="#D3D9DF">PCB DESIGN</text></g>
   </g>
 
-  <!-- Section 2 -->
-  <text x="500" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#FF8C8C" letter-spacing="4">⚔ TRADING &amp; QUANT ⚔</text>
+  <!-- ==================== SECTION 2: TRADING & QUANT ==================== -->
+  <text x="500" y="212" text-anchor="middle" font-family="'Cinzel', 'Georgia', serif" font-size="14" font-weight="bold" fill="#FF8C8C" letter-spacing="4">
+    ⚔ TRADING &amp; QUANT ⚔
+  </text>
   <g font-family="Verdana, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">
-    <g><rect x="90" y="230" width="120" height="28" rx="4" fill="#1c2430" stroke="#B22222" stroke-width="1.5"/><text x="150" y="248" fill="#D3D9DF">PINE SCRIPT</text></g>
-    <g><rect x="220" y="230" width="105" height="28" rx="4" fill="#1c2430" stroke="#B22222" stroke-width="1.5"/><text x="272" y="248" fill="#D3D9DF">MQL4/5</text></g>
-    <g><rect x="335" y="230" width="175" height="28" rx="4" fill="#1c2430" stroke="#B22222" stroke-width="1.5"/><text x="422" y="248" fill="#D3D9DF">ALGORITHMIC TRADING</text></g>
-    <g><rect x="520" y="230" width="180" height="28" rx="4" fill="#1c2430" stroke="#B22222" stroke-width="1.5"/><text x="610" y="248" fill="#D3D9DF">QUANTITATIVE ANALYSIS</text></g>
-    <g><rect x="710" y="230" width="130" height="28" rx="4" fill="#1c2430" stroke="#B22222" stroke-width="1.5"/><text x="775" y="248" fill="#D3D9DF">CRYPTO BOTS</text></g>
+    <g><rect x="90" y="230" width="120" height="28" rx="5" fill="#1f1820" stroke="#dc2626" stroke-width="1.5"/><text x="150" y="248" fill="#D3D9DF">PINE SCRIPT</text></g>
+    <g><rect x="220" y="230" width="105" height="28" rx="5" fill="#1f1820" stroke="#dc2626" stroke-width="1.5"/><text x="272" y="248" fill="#D3D9DF">MQL4/5</text></g>
+    <g><rect x="335" y="230" width="175" height="28" rx="5" fill="#1f1820" stroke="#dc2626" stroke-width="1.5"/><text x="422" y="248" fill="#D3D9DF">ALGORITHMIC TRADING</text></g>
+    <g><rect x="520" y="230" width="180" height="28" rx="5" fill="#1f1820" stroke="#dc2626" stroke-width="1.5"/><text x="610" y="248" fill="#D3D9DF">QUANTITATIVE ANALYSIS</text></g>
+    <g><rect x="710" y="230" width="130" height="28" rx="5" fill="#1f1820" stroke="#dc2626" stroke-width="1.5"/><text x="775" y="248" fill="#D3D9DF">CRYPTO BOTS</text></g>
   </g>
 
-  <!-- Section 3 -->
-  <text x="500" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#C9A0FF" letter-spacing="4">✦ SOFTWARE &amp; AI ✦</text>
+  <!-- ==================== SECTION 3: SOFTWARE & AI ==================== -->
+  <text x="500" y="302" text-anchor="middle" font-family="'Cinzel', 'Georgia', serif" font-size="14" font-weight="bold" fill="#C9A0FF" letter-spacing="4">
+    ✦ SOFTWARE &amp; AI ✦
+  </text>
   <g font-family="Verdana, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">
-    <g><rect x="250" y="320" width="100" height="28" rx="4" fill="#1c2430" stroke="#8B5CF6" stroke-width="1.5"/><text x="300" y="338" fill="#D3D9DF">PYTHON</text></g>
-    <g><rect x="360" y="320" width="80" height="28" rx="4" fill="#1c2430" stroke="#8B5CF6" stroke-width="1.5"/><text x="400" y="338" fill="#D3D9DF">FLASK</text></g>
-    <g><rect x="450" y="320" width="85" height="28" rx="4" fill="#1c2430" stroke="#8B5CF6" stroke-width="1.5"/><text x="492" y="338" fill="#D3D9DF">SQLITE</text></g>
-    <g><rect x="545" y="320" width="165" height="28" rx="4" fill="#1c2430" stroke="#8B5CF6" stroke-width="1.5"/><text x="627" y="338" fill="#D3D9DF">MACHINE LEARNING</text></g>
+    <g><rect x="250" y="320" width="100" height="28" rx="5" fill="#1c162a" stroke="#8B5CF6" stroke-width="1.5"/><text x="300" y="338" fill="#D3D9DF">PYTHON</text></g>
+    <g><rect x="360" y="320" width="80" height="28" rx="5" fill="#1c162a" stroke="#8B5CF6" stroke-width="1.5"/><text x="400" y="338" fill="#D3D9DF">FLASK</text></g>
+    <g><rect x="450" y="320" width="85" height="28" rx="5" fill="#1c162a" stroke="#8B5CF6" stroke-width="1.5"/><text x="492" y="338" fill="#D3D9DF">SQLITE</text></g>
+    <g><rect x="545" y="320" width="165" height="28" rx="5" fill="#1c162a" stroke="#8B5CF6" stroke-width="1.5"/><text x="627" y="338" fill="#D3D9DF">MACHINE LEARNING</text></g>
   </g>
 
-  <!-- Section 4 -->
-  <text x="500" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#6EE7B7" letter-spacing="4">🛡 SECURITY &amp; SYSTEMS 🛡</text>
+  <!-- ==================== SECTION 4: SECURITY & SYSTEMS ==================== -->
+  <text x="500" y="392" text-anchor="middle" font-family="'Cinzel', 'Georgia', serif" font-size="14" font-weight="bold" fill="#6EE7B7" letter-spacing="4">
+    🛡 SECURITY &amp; SYSTEMS 🛡
+  </text>
   <g font-family="Verdana, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">
-    <g><rect x="200" y="410" width="125" height="28" rx="4" fill="#1c2430" stroke="#10B981" stroke-width="1.5"/><text x="262" y="428" fill="#D3D9DF">NETWORKING</text></g>
-    <g><rect x="335" y="410" width="130" height="28" rx="4" fill="#1c2430" stroke="#10B981" stroke-width="1.5"/><text x="400" y="428" fill="#D3D9DF">DUCKY SCRIPT</text></g>
-    <g><rect x="475" y="410" width="70" height="28" rx="4" fill="#1c2430" stroke="#10B981" stroke-width="1.5"/><text x="510" y="428" fill="#D3D9DF">GIT</text></g>
-    <g><rect x="555" y="410" width="150" height="28" rx="4" fill="#1c2430" stroke="#10B981" stroke-width="1.5"/><text x="630" y="428" fill="#D3D9DF">HW/SW REPAIR</text></g>
+    <g><rect x="200" y="410" width="125" height="28" rx="5" fill="#122220" stroke="#10B981" stroke-width="1.5"/><text x="262" y="428" fill="#D3D9DF">NETWORKING</text></g>
+    <g><rect x="335" y="410" width="130" height="28" rx="5" fill="#122220" stroke="#10B981" stroke-width="1.5"/><text x="400" y="428" fill="#D3D9DF">DUCKY SCRIPT</text></g>
+    <g><rect x="475" y="410" width="70" height="28" rx="5" fill="#122220" stroke="#10B981" stroke-width="1.5"/><text x="510" y="428" fill="#D3D9DF">GIT</text></g>
+    <g><rect x="555" y="410" width="150" height="28" rx="5" fill="#122220" stroke="#10B981" stroke-width="1.5"/><text x="630" y="428" fill="#D3D9DF">HW/SW REPAIR</text></g>
   </g>
 
-  <!-- Paw Prints Decoration with subtle lupine pulse -->
-  <g fill="#7EB6FF" transform="translate(100, 500) scale(0.5)">
-    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="3s" repeatCount="indefinite"/>
-    <circle cx="0" cy="0" r="8"/><circle cx="-12" cy="-12" r="5"/><circle cx="0" cy="-16" r="5"/><circle cx="12" cy="-12" r="5"/>
+  <!-- ==================== MEDIEVAL HERALDIC ORNAMENTS (NO PAWS) ==================== -->
+  <!-- Left Heraldic Fleur-de-lis Crest -->
+  <g transform="translate(100, 495) scale(0.9)" fill="#F2C94C" filter="url(#badgeGlow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    <!-- Central petal -->
+    <path d="M 0 -16 C 5 -10 9 -5 0 10 C -9 -5 -5 -10 0 -16 Z"/>
+    <!-- Side left petal -->
+    <path d="M -11 -6 C -6 -6 -3 0 -8 8 C -16 8 -16 0 -11 -6 Z"/>
+    <!-- Side right petal -->
+    <path d="M 11 -6 C 6 -6 3 0 8 8 C 16 8 16 0 11 -6 Z"/>
+    <!-- Crossband -->
+    <rect x="-9" y="8" width="18" height="3" rx="1.5" fill="#7EB6FF"/>
+    <circle cx="0" cy="0" r="2" fill="#38bdf8"/>
   </g>
-  <g fill="#7EB6FF" transform="translate(900, 500) scale(0.5)">
-    <animate attributeName="opacity" values="0.85;0.35;0.85" dur="3s" repeatCount="indefinite"/>
-    <circle cx="0" cy="0" r="8"/><circle cx="-12" cy="-12" r="5"/><circle cx="0" cy="-16" r="5"/><circle cx="12" cy="-12" r="5"/>
+
+  <!-- Right Heraldic Fleur-de-lis Crest -->
+  <g transform="translate(900, 495) scale(0.9)" fill="#F2C94C" filter="url(#badgeGlow)">
+    <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+    <!-- Central petal -->
+    <path d="M 0 -16 C 5 -10 9 -5 0 10 C -9 -5 -5 -10 0 -16 Z"/>
+    <!-- Side left petal -->
+    <path d="M -11 -6 C -6 -6 -3 0 -8 8 C -16 8 -16 0 -11 -6 Z"/>
+    <!-- Side right petal -->
+    <path d="M 11 -6 C 6 -6 3 0 8 8 C 16 8 16 0 11 -6 Z"/>
+    <!-- Crossband -->
+    <rect x="-9" y="8" width="18" height="3" rx="1.5" fill="#7EB6FF"/>
+    <circle cx="0" cy="0" r="2" fill="#38bdf8"/>
+  </g>
+
+  <!-- Shield Tip Jewel -->
+  <g transform="translate(500, 526)">
+    <polygon points="0,-6 6,0 0,6 -6,0" fill="#38bdf8" filter="url(#badgeGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </polygon>
   </g>
 </svg>

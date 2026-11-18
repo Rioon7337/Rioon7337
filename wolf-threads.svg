@@ -10,12 +10,20 @@
   <path d="M 12 2 L 288 2 L 298 12 L 298 78 L 288 88 L 12 88 L 2 78 L 2 12 Z"
         fill="#11161d" stroke="url(#wbBorder)" stroke-width="2"/>
 
-  <!-- Corner rivets -->
-  <g fill="#7A8B99">
-    <circle cx="12" cy="12" r="2.5"/>
-    <circle cx="288" cy="12" r="2.5"/>
-    <circle cx="12" cy="78" r="2.5"/>
-    <circle cx="288" cy="78" r="2.5"/>
+  <!-- Corner rivets with golden aura -->
+  <g fill="#f59e0b">
+    <circle cx="12" cy="12" r="2.5">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="288" cy="12" r="2.5">
+      <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="12" cy="78" r="2.5">
+      <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="288" cy="78" r="2.5">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
   <!-- Icon shield -->
@@ -35,18 +43,25 @@
   </text>
 
   <!-- Status -->
-  <circle cx="83" cy="60" r="3" fill="#3fb950"/>
+  <circle cx="83" cy="60" r="3.2" fill="#22c55e">
+    <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="83" cy="60" r="4.5" fill="none" stroke="#22c55e" stroke-width="0.8" opacity="0.6">
+    <animate attributeName="r" values="3.2;6.5;3.2" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
   <text x="93" y="64"
         font-family="Verdana, sans-serif" font-size="9"
         fill="#7A8B99" letter-spacing="2">
     CONNECTED
   </text>
 
-  <!-- Arrow (paw style) -->
-  <g transform="translate(268, 45)" fill="#F2C94C">
-    <circle cx="0" cy="0" r="3"/>
-    <circle cx="-7" cy="-6" r="2"/>
-    <circle cx="0" cy="-8" r="2"/>
-    <circle cx="7" cy="-6" r="2"/>
+  <!-- Medieval Fantasy Heraldic Arrow -->
+  <g transform="translate(268, 45)">
+    <animateTransform attributeName="transform" type="translate" values="266,45; 271,45; 266,45" dur="1.8s" repeatCount="indefinite"/>
+    <!-- Outer Chevron Blade -->
+    <path d="M -6 -10 L 4 0 L -6 10 L -3 10 L 7 0 L -3 -10 Z" fill="#F2C94C"/>
+    <!-- Inner Radiant Spark -->
+    <polygon points="0,-4 4,0 0,4 -1,0" fill="#ffffff" opacity="0.9"/>
   </g>
 </svg>
