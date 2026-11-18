@@ -314,125 +314,154 @@
     <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- ===== DOTTORE BOSS ATTACK ANIMATION AVATAR BORDER ===== -->
-  <!-- Dottore Acoustic Shockwave Resonance 1 (Expanding Sonic Wave) -->
+  <!-- ===== SILVER WOLF LVL.999 QUANTUM CYBER-HACK ATTACK AVATAR BORDER ===== -->
+  <!-- Quantum Glitch Distortion Aura (Pink/Magenta & Cyan Energy) -->
   <g transform="translate(110, 240)">
-    <circle r="60" fill="none" stroke="#00f0ff" stroke-width="2.5" opacity="0.8" filter="url(#neonGlow)">
-      <animate attributeName="r" values="60;88;60" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.85;0;0.85" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00f0ff" dur="2.4s" repeatCount="indefinite"/>
+    <circle r="75" fill="none" stroke="#ff007f" stroke-width="14" opacity="0.3" filter="url(#nitroOuterGlow)">
+      <animate attributeName="stroke" values="#ff007f;#00f0ff;#a855f7;#00ff88;#ff007f" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.55;0.25" dur="1.2s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- Dottore Acoustic Shockwave Resonance 2 (Delayed Secondary Pulse) -->
+  <!-- Quantum Ultimate Shockwave 1 ("User is Banned" Impact Wave) -->
   <g transform="translate(110, 240)">
-    <circle r="60" fill="none" stroke="#a855f7" stroke-width="2" opacity="0.8" filter="url(#neonGlow)">
-      <animate attributeName="r" values="60;88;60" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.85;0;0.85" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
-      <animate attributeName="stroke" values="#a855f7;#00ffcc;#a855f7" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+    <circle r="60" fill="none" stroke="#ff007f" stroke-width="2.5" opacity="0.8" filter="url(#neonGlow)">
+      <animate attributeName="r" values="60;90;60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#ff007f;#00f0ff;#ff007f" dur="2s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- Fatui Delusion Mist Aura (Cold Cryo & Delusion Glow) -->
+  <!-- Quantum Ultimate Shockwave 2 (Secondary Digital Glitch Pulse) -->
   <g transform="translate(110, 240)">
-    <circle r="75" fill="none" stroke="#00f0ff" stroke-width="12" opacity="0.25" filter="url(#nitroOuterGlow)">
-      <animate attributeName="stroke" values="#00f0ff;#7c3aed;#06b6d4;#d946ef;#00f0ff" dur="4s" repeatCount="indefinite"/>
+    <circle r="60" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.8" filter="url(#neonGlow)">
+      <animate attributeName="r" values="60;90;60" dur="2s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#00f0ff;#a855f7;#00f0ff" dur="2s" begin="1s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- Rotating Dottore Mechanical Blade Array & Reticle -->
+  <!-- Main Quantum Hacking Array & Pixel Ring -->
   <g transform="translate(110, 240)" filter="url(#nitroGlow)">
-    <!-- Layer 1: 6 Orbiting Dottore Surgical Scalpel / Acoustic Needles (Clockwise) -->
+    <!-- Layer 1: 8 Orbiting Quantum Pixel Cubes / Data Voxels (Clockwise) -->
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="7s" repeatCount="indefinite"/>
-        <!-- Dottore Floating Blade Drone 1 (0°) -->
-        <g transform="rotate(0) translate(0, -73)">
-          <polygon points="0,-10 3.5,2 0,6 -3.5,2" fill="#081426" stroke="#00f0ff" stroke-width="1.2" filter="url(#neonGlow)">
-            <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00ffcc;#00f0ff" dur="3s" begin="0.0s" repeatCount="indefinite"/>
-          </polygon>
-          <circle cx="0" cy="0" r="1.5" fill="#ffffff" filter="url(#neonGlow)"/>
-          <line x1="0" y1="-10" x2="0" y2="-15" stroke="#00f0ff" stroke-width="1.5" stroke-linecap="round">
-            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.0s" repeatCount="indefinite"/>
-          </line>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite"/>
+        <!-- Quantum Pixel Cube 1 (0°) -->
+        <g transform="rotate(0) translate(0, -74)">
+          <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#ff007f" stroke="#ffffff" stroke-width="0.8" filter="url(#neonGlow)">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" begin="0.0s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="-1" y="-5" width="4" height="2" fill="#ff007f" opacity="0.6">
+            <animate attributeName="opacity" values="0;0.8;0" dur="0.8s" begin="0.1s" repeatCount="indefinite"/>
+          </rect>
         </g>
-        <!-- Dottore Floating Blade Drone 2 (60°) -->
-        <g transform="rotate(60) translate(0, -73)">
-          <polygon points="0,-10 3.5,2 0,6 -3.5,2" fill="#081426" stroke="#00f0ff" stroke-width="1.2" filter="url(#neonGlow)">
-            <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00ffcc;#00f0ff" dur="3s" begin="0.5s" repeatCount="indefinite"/>
-          </polygon>
-          <circle cx="0" cy="0" r="1.5" fill="#ffffff" filter="url(#neonGlow)"/>
-          <line x1="0" y1="-10" x2="0" y2="-15" stroke="#00f0ff" stroke-width="1.5" stroke-linecap="round">
-            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
-          </line>
+        <!-- Quantum Pixel Cube 2 (45°) -->
+        <g transform="rotate(45) translate(0, -74)">
+          <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#00f0ff" stroke="#ffffff" stroke-width="0.8" filter="url(#neonGlow)">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" begin="0.2s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="-1" y="-5" width="4" height="2" fill="#00f0ff" opacity="0.6">
+            <animate attributeName="opacity" values="0;0.8;0" dur="0.8s" begin="0.30000000000000004s" repeatCount="indefinite"/>
+          </rect>
         </g>
-        <!-- Dottore Floating Blade Drone 3 (120°) -->
-        <g transform="rotate(120) translate(0, -73)">
-          <polygon points="0,-10 3.5,2 0,6 -3.5,2" fill="#081426" stroke="#00f0ff" stroke-width="1.2" filter="url(#neonGlow)">
-            <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00ffcc;#00f0ff" dur="3s" begin="1.0s" repeatCount="indefinite"/>
-          </polygon>
-          <circle cx="0" cy="0" r="1.5" fill="#ffffff" filter="url(#neonGlow)"/>
-          <line x1="0" y1="-10" x2="0" y2="-15" stroke="#00f0ff" stroke-width="1.5" stroke-linecap="round">
-            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
-          </line>
+        <!-- Quantum Pixel Cube 3 (90°) -->
+        <g transform="rotate(90) translate(0, -74)">
+          <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#a855f7" stroke="#ffffff" stroke-width="0.8" filter="url(#neonGlow)">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" begin="0.4s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="-1" y="-5" width="4" height="2" fill="#a855f7" opacity="0.6">
+            <animate attributeName="opacity" values="0;0.8;0" dur="0.8s" begin="0.5s" repeatCount="indefinite"/>
+          </rect>
         </g>
-        <!-- Dottore Floating Blade Drone 4 (180°) -->
-        <g transform="rotate(180) translate(0, -73)">
-          <polygon points="0,-10 3.5,2 0,6 -3.5,2" fill="#081426" stroke="#00f0ff" stroke-width="1.2" filter="url(#neonGlow)">
-            <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00ffcc;#00f0ff" dur="3s" begin="1.5s" repeatCount="indefinite"/>
-          </polygon>
-          <circle cx="0" cy="0" r="1.5" fill="#ffffff" filter="url(#neonGlow)"/>
-          <line x1="0" y1="-10" x2="0" y2="-15" stroke="#00f0ff" stroke-width="1.5" stroke-linecap="round">
-            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.8999999999999999s" repeatCount="indefinite"/>
-          </line>
+        <!-- Quantum Pixel Cube 4 (135°) -->
+        <g transform="rotate(135) translate(0, -74)">
+          <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#00ff88" stroke="#ffffff" stroke-width="0.8" filter="url(#neonGlow)">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" begin="0.6s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="-1" y="-5" width="4" height="2" fill="#00ff88" opacity="0.6">
+            <animate attributeName="opacity" values="0;0.8;0" dur="0.8s" begin="0.7s" repeatCount="indefinite"/>
+          </rect>
         </g>
-        <!-- Dottore Floating Blade Drone 5 (240°) -->
-        <g transform="rotate(240) translate(0, -73)">
-          <polygon points="0,-10 3.5,2 0,6 -3.5,2" fill="#081426" stroke="#00f0ff" stroke-width="1.2" filter="url(#neonGlow)">
-            <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00ffcc;#00f0ff" dur="3s" begin="2.0s" repeatCount="indefinite"/>
-          </polygon>
-          <circle cx="0" cy="0" r="1.5" fill="#ffffff" filter="url(#neonGlow)"/>
-          <line x1="0" y1="-10" x2="0" y2="-15" stroke="#00f0ff" stroke-width="1.5" stroke-linecap="round">
-            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="1.2s" repeatCount="indefinite"/>
-          </line>
+        <!-- Quantum Pixel Cube 5 (180°) -->
+        <g transform="rotate(180) translate(0, -74)">
+          <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#ff2a85" stroke="#ffffff" stroke-width="0.8" filter="url(#neonGlow)">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" begin="0.8s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="-1" y="-5" width="4" height="2" fill="#ff2a85" opacity="0.6">
+            <animate attributeName="opacity" values="0;0.8;0" dur="0.8s" begin="0.9s" repeatCount="indefinite"/>
+          </rect>
         </g>
-        <!-- Dottore Floating Blade Drone 6 (300°) -->
-        <g transform="rotate(300) translate(0, -73)">
-          <polygon points="0,-10 3.5,2 0,6 -3.5,2" fill="#081426" stroke="#00f0ff" stroke-width="1.2" filter="url(#neonGlow)">
-            <animate attributeName="stroke" values="#00f0ff;#8b5cf6;#00ffcc;#00f0ff" dur="3s" begin="2.5s" repeatCount="indefinite"/>
-          </polygon>
-          <circle cx="0" cy="0" r="1.5" fill="#ffffff" filter="url(#neonGlow)"/>
-          <line x1="0" y1="-10" x2="0" y2="-15" stroke="#00f0ff" stroke-width="1.5" stroke-linecap="round">
-            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="1.5s" repeatCount="indefinite"/>
-          </line>
+        <!-- Quantum Pixel Cube 6 (225°) -->
+        <g transform="rotate(225) translate(0, -74)">
+          <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#00e5ff" stroke="#ffffff" stroke-width="0.8" filter="url(#neonGlow)">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" begin="1.0s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="-1" y="-5" width="4" height="2" fill="#00e5ff" opacity="0.6">
+            <animate attributeName="opacity" values="0;0.8;0" dur="0.8s" begin="1.1s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <!-- Quantum Pixel Cube 7 (270°) -->
+        <g transform="rotate(270) translate(0, -74)">
+          <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#ffd700" stroke="#ffffff" stroke-width="0.8" filter="url(#neonGlow)">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" begin="1.2s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="-1" y="-5" width="4" height="2" fill="#ffd700" opacity="0.6">
+            <animate attributeName="opacity" values="0;0.8;0" dur="0.8s" begin="1.3s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <!-- Quantum Pixel Cube 8 (315°) -->
+        <g transform="rotate(315) translate(0, -74)">
+          <rect x="-3" y="-3" width="6" height="6" rx="1" fill="#00ffcc" stroke="#ffffff" stroke-width="0.8" filter="url(#neonGlow)">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" begin="1.4s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="-1" y="-5" width="4" height="2" fill="#00ffcc" opacity="0.6">
+            <animate attributeName="opacity" values="0;0.8;0" dur="0.8s" begin="1.5s" repeatCount="indefinite"/>
+          </rect>
         </g>
     </g>
 
-    <!-- Layer 2: Fast Counter-Rotating Mechanical Reticle / Gear Ring -->
+    <!-- Layer 2: Aether Editing Code Stream Ring (Counter-Clockwise Pixel Dash) -->
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="4s" repeatCount="indefinite"/>
-      <circle r="66" fill="none" stroke="#00e5ff" stroke-width="3" stroke-dasharray="14 14" stroke-linecap="butt" opacity="0.85"/>
-      <circle r="66" fill="none" stroke="#a855f7" stroke-width="1.8" stroke-dasharray="7 21" stroke-linecap="round" opacity="0.9"/>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="3s" repeatCount="indefinite"/>
+      <circle r="67" fill="none" stroke="#ff007f" stroke-width="3" stroke-dasharray="16 8 8 8 24 8" stroke-linecap="square" opacity="0.9"/>
+      <circle r="67" fill="none" stroke="#00f0ff" stroke-width="2" stroke-dasharray="8 12 16 12" stroke-linecap="square" opacity="0.85"/>
+      <circle r="67" fill="none" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="4 20" stroke-linecap="square" opacity="0.9"/>
     </g>
 
-    <!-- Layer 3: High-speed Cryo Laser Tracer Sparks (Clockwise Fast) -->
+    <!-- Layer 3: High-speed Quantum Laser Sparks (Clockwise Fast) -->
     <g>
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite"/>
-      <circle r="66" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-dasharray="12 90" stroke-linecap="round" opacity="1"/>
-      <circle cx="0" cy="-66" r="2.5" fill="#00ffcc"/>
-      <circle cx="0" cy="66" r="2.5" fill="#00ffcc"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.5s" repeatCount="indefinite"/>
+      <circle r="67" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="14 100" stroke-linecap="square" opacity="1"/>
+      <rect x="-2" y="-69" width="4" height="4" fill="#00ffcc"/>
+      <rect x="-2" y="65" width="4" height="4" fill="#ff73fa"/>
     </g>
 
-    <!-- Layer 4: 4 Fatui Inward Targeting Crosshair Blades (0°, 90°, 180°, 270°) -->
+    <!-- Layer 4: 4 Pixelated Cyberpunk Targeting Brackets (at 45°, 135°, 225°, 315°) -->
     <g>
-      <polygon points="0,-63 3.5,-70 -3.5,-70" fill="#00ffcc" opacity="0.9"/>
-      <polygon points="63,0 70,3.5 70,-3.5" fill="#00ffcc" opacity="0.9"/>
-      <polygon points="0,63 3.5,70 -3.5,70" fill="#00ffcc" opacity="0.9"/>
-      <polygon points="-63,0 -70,3.5 -70,-3.5" fill="#00ffcc" opacity="0.9"/>
+      <!-- Top-Right Reticle Bracket (45°) -->
+      <path d="M 40 -48 L 48 -48 L 48 -40" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="square"/>
+      <!-- Bottom-Right Reticle Bracket (135°) -->
+      <path d="M 40 48 L 48 48 L 48 40" fill="none" stroke="#ff007f" stroke-width="2" stroke-linecap="square"/>
+      <!-- Bottom-Left Reticle Bracket (225°) -->
+      <path d="M -40 48 L -48 48 L -48 40" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="square"/>
+      <!-- Top-Left Reticle Bracket (315°) -->
+      <path d="M -40 -48 L -48 -48 L -48 -40" fill="none" stroke="#ff007f" stroke-width="2" stroke-linecap="square"/>
     </g>
 
-    <!-- Inner Cold Snezhnayan Cryo Core Frame -->
-    <circle r="62" fill="none" stroke="#00f0ff" stroke-width="2.5" opacity="0.95"/>
-    <circle r="60.5" fill="#040916" stroke="#1e3a5f" stroke-width="1.5"/>
+    <!-- Floating "LV.999" Quantum Badge at top of the ring -->
+    <g transform="translate(0, -78)">
+      <rect x="-23" y="-7" width="46" height="14" rx="2" fill="#060618" stroke="#ff007f" stroke-width="1.2">
+        <animate attributeName="stroke" values="#ff007f;#00f0ff;#ff007f" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="0" y="3.5" font-family="'Courier New', monospace, Arial" font-size="8" font-weight="900" fill="#00f0ff" text-anchor="middle" letter-spacing="1">
+        LV.999
+        <animate attributeName="fill" values="#00f0ff;#ffffff;#ff73fa;#00f0ff" dur="2s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- Inner Pixelated Cyber-Frame -->
+    <circle r="62" fill="none" stroke="#ff007f" stroke-width="2.5" opacity="0.95"/>
+    <circle r="60.5" fill="#050616" stroke="#00f0ff" stroke-width="1.5"/>
   </g>
 
   <!-- Avatar image -->
