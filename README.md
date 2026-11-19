@@ -11,10 +11,6 @@
   <img width="100%" src="./pacman.svg" alt="Pac-Man Arcade" />
 </div>
 
-<div align="center">
-  <br/>
-  <a href="https://rioon7337.github.io/Rioon7337/#player"><img width="100%" src="./music-player.svg" alt="Play Shape Of My Heart - Backstreet Boys" /></a>
-</div>
 
 <div align="center">
   <br/>
