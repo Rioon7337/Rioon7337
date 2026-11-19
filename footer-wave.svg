@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180" role="img" aria-label="Thanks For Visiting - Rioon7337">
+  <defs>
+    <radialGradient id="bgWave" cx="50%" cy="50%" r="85%">
+      <stop offset="0%" stop-color="#0a1a3e"/>
+      <stop offset="55%" stop-color="#07071a"/>
+      <stop offset="100%" stop-color="#050512"/>
+    </radialGradient>
+
+    <!-- Cyan to Magenta Dual Cyber Wave Gradient -->
+    <linearGradient id="cyberWave1" gradientUnits="userSpaceOnUse" x1="20" y1="90" x2="880" y2="90">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#00f0ff">
+        <animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#00e5ff">
+        <animate attributeName="stop-color" values="#00e5ff;#ff73fa;#00f0ff;#00e5ff" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="80%" stop-color="#d946ef">
+        <animate attributeName="stop-color" values="#d946ef;#00f0ff;#ff73fa;#d946ef" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="frameGradWave" gradientUnits="userSpaceOnUse" x1="12" y1="90" x2="888" y2="90">
+      <stop offset="0%" stop-color="#00f0ff">
+        <animate attributeName="stop-color" values="#00f0ff;#d946ef;#00f0ff" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#d946ef">
+        <animate attributeName="stop-color" values="#d946ef;#00f0ff;#d946ef" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#00f0ff">
+        <animate attributeName="stop-color" values="#00f0ff;#d946ef;#00f0ff" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 90" to="360 450 90" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <filter id="glowWave" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="neonOuterWave" x="-10%" y="-25%" width="120%" height="150%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <pattern id="gridWave" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#00f0ff" stroke-width="0.35" opacity="0.06"/>
+    </pattern>
+
+    <clipPath id="waveClip">
+      <rect x="12" y="12" width="876" height="156" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer Neon Glow -->
+  <rect x="12" y="12" width="876" height="156" rx="14" fill="none" stroke="url(#frameGradWave)" stroke-width="4" opacity="0.35" filter="url(#neonOuterWave)"/>
+
+  <!-- Dark Midnight Card Background -->
+  <rect x="12" y="12" width="876" height="156" rx="14" fill="url(#bgWave)"/>
+  <rect x="12" y="12" width="876" height="156" rx="14" fill="url(#gridWave)"/>
+
+  <!-- Cyber Corners -->
+  <path d="M22 42 L22 22 L42 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".9"/>
+  <path d="M878 42 L878 22 L858 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".9"/>
+  <path d="M22 138 L22 158 L42 158" stroke="#d946ef" stroke-width="2" fill="none" opacity=".9"/>
+  <path d="M878 138 L878 158 L858 158" stroke="#d946ef" stroke-width="2" fill="none" opacity=".9"/>
+
+  <!-- Flowing Dual Cyber Sine Waves -->
+  <g clip-path="url(#waveClip)">
+    <g>
+      <!-- Primary Wave (Electric Cyan) -->
+      <path d="M-300 95 Q-225 52 -150 95 T0 95 T150 95 T300 95 T450 95 T600 95 T750 95 T900 95 T1050 95 T1200 95"
+            fill="none" stroke="url(#cyberWave1)" stroke-width="2.6" filter="url(#glowWave)">
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="-300 0" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Secondary Counter Wave (Quantum Magenta) -->
+      <path d="M-300 95 Q-225 138 -150 95 T0 95 T150 95 T300 95 T450 95 T600 95 T750 95 T900 95 T1050 95 T1200 95"
+            fill="none" stroke="#d946ef" stroke-width="1.8" opacity="0.65" filter="url(#glowWave)">
+        <animateTransform attributeName="transform" type="translate" from="-300 0" to="0 0" dur="5.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Floating Cyber Motes -->
+    <circle cx="140" cy="48" r="1.5" fill="#00f0ff" opacity="0.8">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="52;44;52" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="310" cy="136" r="1.6" fill="#ff73fa" opacity="0.7">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.6s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="140;132;140" dur="3.6s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="620" cy="44" r="1.4" fill="#00ff88" opacity="0.75">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.2s" begin="1.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="770" cy="138" r="1.5" fill="#00f0ff" opacity="0.7">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="4s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Animated Border -->
+  <rect x="12" y="12" width="876" height="156" rx="14" fill="none" stroke="url(#frameGradWave)" stroke-width="1.6" opacity="0.85"/>
+
+  <!-- Traveling Border Light Tracer -->
+  <rect x="12" y="12" width="876" height="156" rx="14" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.9" pathLength="1000" stroke-dasharray="70 930" filter="url(#glowWave)">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Centered Footer Typography -->
+  <text x="450" y="86" text-anchor="middle"
+        font-family="'Segoe UI', Arial, sans-serif"
+        font-size="18" font-weight="800" letter-spacing="5" fill="#ffffff" filter="url(#glowWave)">
+    THANKS FOR VISITING
+  </text>
+  <text x="450" y="112" text-anchor="middle"
+        font-family="'Fira Code', ui-monospace, monospace"
+        font-size="12" font-weight="600" letter-spacing="3" fill="#00f0ff">
+    // SYSTEM STANDBY &#183; RIOON7337
+  </text>
+</svg>
