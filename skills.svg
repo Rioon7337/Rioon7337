@@ -1,164 +1,159 @@
-<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arsenal - Tech Stack Rioon7337">
 <defs>
 <style>
-  .title { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 6px; fill: #ffb347; }
+  .title { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 6px; fill: #ffffff; }
+  .subtitle { font-family: 'Fira Code', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 3px; fill: #00f0ff; }
   .cat { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 3px; }
   .pill-text { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 13px; }
-  .pill { }
-  .trace { fill: none; stroke-width: 2; stroke-linecap: round; animation: travel 3.2s linear infinite; }
-  @keyframes travel { to { stroke-dashoffset: -400; } }
-  .glowbar { animation: pulse 2.6s ease-in-out infinite; }
-  .ring { animation: pulse 2.6s ease-in-out infinite; }
-  .corner { stroke: #f5a623; stroke-width: 2; fill: none; opacity: .8; }
-  .grid { stroke: #ffffff; stroke-opacity: .035; stroke-width: 1; }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .25; }
-  }
+  .glowbar { animation: pulse 3s ease-in-out infinite; }
+  .corner { stroke: #00f0ff; stroke-width: 1.6; fill: none; opacity: 0.85; stroke-linecap: round; }
+  .grid { stroke: #00f0ff; stroke-opacity: 0.04; stroke-width: 1; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
   @keyframes drift {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(14px); }
-    100% { transform: translateX(0); }
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(12px); }
   }
-  @keyframes glowshift {
-    0%, 100% { stop-color: #f5a623; }
-    50% { stop-color: #dc2626; }
-  }
-
   @keyframes glitch {
-    0%, 92%, 100% { transform: translate(0,0); opacity: 0; }
-    93% { transform: translate(-3px,1px); opacity: .8; }
-    95% { transform: translate(3px,-1px); opacity: .8; }
-    97% { transform: translate(-2px,0); opacity: .6; }
+    0%, 94%, 100% { transform: translate(0,0); opacity: 0; }
+    95% { transform: translate(-2.5px,0.8px); opacity: 0.7; }
+    97% { transform: translate(2.5px,-0.8px); opacity: 0.7; }
+    98.5% { transform: translate(-1.5px,0); opacity: 0.4; }
   }
   @keyframes scan {
-    0% { transform: translateY(-40px); }
-    100% { transform: translateY(640px); }
+    0% { transform: translateY(-44px); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translateY(610px); opacity: 0; }
   }
-
   .ember { animation: rise linear infinite; }
   @keyframes rise {
     0% { transform: translateY(0); opacity: 0; }
-    10% { opacity: .9; }
-    90% { opacity: .5; }
-    100% { transform: translateY(-560px); opacity: 0; }
+    15% { opacity: 0.85; }
+    85% { opacity: 0.45; }
+    100% { transform: translateY(-540px); opacity: 0; }
   }
 </style>
 
-<radialGradient id="bgGrad" cx="50%" cy="15%" r="90%">
-  <stop offset="0%" stop-color="#161022"/>
-  <stop offset="45%" stop-color="#0a0713"/>
-  <stop offset="100%" stop-color="#020103"/>
+<radialGradient id="bgGradSkills" cx="50%" cy="15%" r="90%">
+  <stop offset="0%" stop-color="#0a1a3e"/>
+  <stop offset="55%" stop-color="#07071a"/>
+  <stop offset="100%" stop-color="#050512"/>
 </radialGradient>
 
-<radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+<radialGradient id="vignetteSkills" cx="50%" cy="50%" r="75%">
   <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
   <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
 </radialGradient>
 
-<linearGradient id="frameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-  <stop offset="0%" stop-color="#f5a623"><animate attributeName="stop-color" values="#f5a623;#dc2626;#7c3aed;#0d9488;#f5a623" dur="8s" repeatCount="indefinite"/></stop>
-  <stop offset="100%" stop-color="#7c3aed"><animate attributeName="stop-color" values="#7c3aed;#0d9488;#f5a623;#dc2626;#7c3aed" dur="8s" repeatCount="indefinite"/></stop>
+<linearGradient id="rgbBorderSkills" gradientUnits="userSpaceOnUse" x1="12" y1="300" x2="888" y2="300">
+  <stop offset="0%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/></stop>
+  <stop offset="33%" stop-color="#d946ef"><animate attributeName="stop-color" values="#d946ef;#00f0ff;#ff73fa;#d946ef" dur="5s" repeatCount="indefinite"/></stop>
+  <stop offset="66%" stop-color="#00ffcc"><animate attributeName="stop-color" values="#00ffcc;#ff73fa;#00f0ff;#00ffcc" dur="5s" repeatCount="indefinite"/></stop>
+  <stop offset="100%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/></stop>
+  <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 300" to="360 450 300" dur="4.5s" repeatCount="indefinite"/>
 </linearGradient>
 
-<filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-  <feGaussianBlur stdDeviation="4" result="blur"/>
-  <feMerge>
-    <feMergeNode in="blur"/>
-    <feMergeNode in="SourceGraphic"/>
-  </feMerge>
-</filter>
-
-<filter id="softglow" x="-80%" y="-80%" width="260%" height="260%">
-  <feGaussianBlur stdDeviation="8" result="blur"/>
-  <feMerge>
-    <feMergeNode in="blur"/>
-    <feMergeNode in="blur"/>
-    <feMergeNode in="SourceGraphic"/>
-  </feMerge>
-</filter>
 <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-  <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-  <stop offset="50%" stop-color="#ffffff" stop-opacity="0.05"/>
-  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
+  <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.08"/>
+  <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
 </linearGradient>
+
+<filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+  <feGaussianBlur stdDeviation="3" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="neonInnerSkills" x="-20%" y="-20%" width="140%" height="140%">
+  <feGaussianBlur stdDeviation="2.5" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="neonOuterSkills" x="-25%" y="-25%" width="150%" height="150%">
+  <feGaussianBlur stdDeviation="5.5" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+
+<clipPath id="cardClipSkills">
+  <rect x="12" y="12" width="876" height="576" rx="16"/>
+</clipPath>
 </defs>
 
-<rect x="0" y="0" width="900" height="600" rx="18" fill="url(#bgGrad)"/>
-<rect x="0" y="0" width="900" height="600" rx="18" fill="url(#vignette)"/>
+<!-- Outer Neon Aura -->
+<rect x="12" y="12" width="876" height="576" rx="16" fill="none" stroke="url(#rgbBorderSkills)" stroke-width="5.5" opacity="0.32" filter="url(#neonOuterSkills)"/>
+<rect x="12" y="12" width="876" height="576" rx="16" fill="none" stroke="url(#rgbBorderSkills)" stroke-width="2.6" opacity="0.55" filter="url(#neonInnerSkills)"/>
 
-<g clip-path="none">
+<!-- Dark Glass Body -->
+<rect x="12" y="12" width="876" height="576" rx="16" fill="url(#bgGradSkills)"/>
+<rect x="12" y="12" width="876" height="576" rx="16" fill="url(#vignetteSkills)"/>
+
+<g clip-path="url(#cardClipSkills)">
   <g style="animation: drift 12s ease-in-out infinite;">
-    <line class="grid" x1="0" y1="60" x2="900" y2="60"/>
-    <line class="grid" x1="0" y1="180" x2="900" y2="180"/>
-    <line class="grid" x1="0" y1="300" x2="900" y2="300"/>
-    <line class="grid" x1="0" y1="420" x2="900" y2="420"/>
-    <line class="grid" x1="0" y1="540" x2="900" y2="540"/>
+    <line class="grid" x1="12" y1="72" x2="888" y2="72"/>
+    <line class="grid" x1="12" y1="186" x2="888" y2="186"/>
+    <line class="grid" x1="12" y1="300" x2="888" y2="300"/>
+    <line class="grid" x1="12" y1="414" x2="888" y2="414"/>
+    <line class="grid" x1="12" y1="528" x2="888" y2="528"/>
   </g>
+  <rect x="12" y="12" width="876" height="40" fill="url(#scanGrad)" style="animation: scan 5.5s linear infinite;"/>
 </g>
 
-<rect x="3" y="3" width="894" height="594" rx="16" fill="none" stroke="url(#frameGrad)" stroke-width="5" opacity="0.22" filter="url(#softglow)"/>
-<rect x="3" y="3" width="894" height="594" rx="16" fill="none" stroke="url(#frameGrad)" stroke-width="2" opacity="0.55"/>
+<!-- Rotating RGB Border + Smooth Tracer -->
+<rect x="12" y="12" width="876" height="576" rx="16" fill="none" stroke="url(#rgbBorderSkills)" stroke-width="1.8" opacity="0.95"/>
+<rect x="12" y="12" width="876" height="576" rx="16" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" opacity="0.8" pathLength="1000" stroke-dasharray="85 915" filter="url(#neonInnerSkills)">
+  <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4s" repeatCount="indefinite"/>
+</rect>
 
-<path class="corner" d="M24 60 L24 24 L60 24"/>
-<path class="corner" d="M876 60 L876 24 L840 24"/>
-<path class="corner" d="M24 540 L24 576 L60 576"/>
-<path class="corner" d="M876 540 L876 576 L840 576"/>
+<!-- Cyber Corners -->
+<path class="corner" d="M30 58 L30 30 L58 30" stroke="#00f0ff"/>
+<path class="corner" d="M870 58 L870 30 L842 30" stroke="#00f0ff"/>
+<path class="corner" d="M30 542 L30 570 L58 570" stroke="#d946ef"/>
+<path class="corner" d="M870 542 L870 570 L842 570" stroke="#d946ef"/>
 
-<text x="450" y="58" text-anchor="middle" class="title" filter="url(#softglow)">ARSENAL</text>
-<rect class="glowbar" x="370" y="72" width="160" height="2.5" fill="#ffb347" filter="url(#glow)"/>
-<text x="447" y="58" text-anchor="middle" class="title" fill="#ffb347" style="animation: glitch 6s infinite; opacity:0;">ARSENAL</text>
-<text x="453" y="58" text-anchor="middle" class="title" fill="#dc2626" style="animation: glitch 6s infinite .1s; opacity:0;">ARSENAL</text>
-<rect x="0" y="0" width="900" height="40" fill="url(#scanGrad)" style="animation: scan 5s linear infinite;"/>
+<!-- Main Title -->
+<text x="450" y="60" text-anchor="middle" class="title" filter="url(#glow)">ARSENAL</text>
+<text x="450" y="80" text-anchor="middle" class="subtitle">// TECH STACK MATRIX &#183; RIOON7337</text>
+<rect class="glowbar" x="350" y="88" width="200" height="2" rx="1" fill="url(#rgbBorderSkills)" filter="url(#glow)"/>
+<text x="448" y="60" text-anchor="middle" class="title" fill="#00f0ff" style="animation: glitch 6.5s infinite; opacity:0;">ARSENAL</text>
+<text x="452" y="60" text-anchor="middle" class="title" fill="#d946ef" style="animation: glitch 6.5s infinite .12s; opacity:0;">ARSENAL</text>
 
-<text x="450" y="128" text-anchor="middle" class="cat" fill="#93c5fd" filter="url(#glow)">HARDWARE &amp; EMBEDDED</text>
-<rect x="410" y="136" width="80" height="1" fill="#2563eb" opacity="0.5"/>
+<!-- Row 1: Frontend Development -->
+<text x="450" y="148" text-anchor="middle" class="cat" fill="#00f0ff" filter="url(#glow)">FRONTEND DEVELOPMENT</text>
+<rect x="410" y="156" width="80" height="1" fill="#00f0ff" opacity="0.6"/>
 <g>
-<g class="pill" style="animation-delay:.00s"><rect x="126" y="158" width="38" height="34" rx="9" fill="#0c1830" stroke="#2563eb" stroke-width="1.3" filter="url(#glow)"/><text x="145" y="180" text-anchor="middle" class="pill-text" fill="#bfdbfe">C</text><rect class="trace" x="126" y="158" width="38" height="34" rx="9" stroke="#2563eb" stroke-dasharray="30 250" style="animation-delay:.00s"/></g>
-<g class="pill" style="animation-delay:.10s"><rect x="176" y="158" width="56" height="34" rx="9" fill="#0c1830" stroke="#2563eb" stroke-width="1.3" filter="url(#glow)"/><text x="204" y="180" text-anchor="middle" class="pill-text" fill="#bfdbfe">C++</text><rect class="trace" x="176" y="158" width="56" height="34" rx="9" stroke="#2563eb" stroke-dasharray="30 250" style="animation-delay:.10s"/></g>
-<g class="pill" style="animation-delay:.20s"><rect x="244" y="158" width="90" height="34" rx="9" fill="#0c1830" stroke="#2563eb" stroke-width="1.3" filter="url(#glow)"/><text x="289" y="180" text-anchor="middle" class="pill-text" fill="#bfdbfe">ARDUINO</text><rect class="trace" x="244" y="158" width="90" height="34" rx="9" stroke="#2563eb" stroke-dasharray="30 250" style="animation-delay:.20s"/></g>
-<g class="pill" style="animation-delay:.30s"><rect x="346" y="158" width="132" height="34" rx="9" fill="#0c1830" stroke="#2563eb" stroke-width="1.3" filter="url(#glow)"/><text x="412" y="180" text-anchor="middle" class="pill-text" fill="#bfdbfe">MICROPYTHON</text><rect class="trace" x="346" y="158" width="132" height="34" rx="9" stroke="#2563eb" stroke-dasharray="30 250" style="animation-delay:.30s"/></g>
-<g class="pill" style="animation-delay:.40s"><rect x="490" y="158" width="56" height="34" rx="9" fill="#0c1830" stroke="#2563eb" stroke-width="1.3" filter="url(#glow)"/><text x="518" y="180" text-anchor="middle" class="pill-text" fill="#bfdbfe">ROS</text><rect class="trace" x="490" y="158" width="56" height="34" rx="9" stroke="#2563eb" stroke-dasharray="30 250" style="animation-delay:.40s"/></g>
-<g class="pill" style="animation-delay:.50s"><rect x="558" y="158" width="82" height="34" rx="9" fill="#0c1830" stroke="#2563eb" stroke-width="1.3" filter="url(#glow)"/><text x="599" y="180" text-anchor="middle" class="pill-text" fill="#bfdbfe">TINYML</text><rect class="trace" x="558" y="158" width="82" height="34" rx="9" stroke="#2563eb" stroke-dasharray="30 250" style="animation-delay:.50s"/></g>
-<g class="pill" style="animation-delay:.60s"><rect x="652" y="158" width="122" height="34" rx="9" fill="#0c1830" stroke="#2563eb" stroke-width="1.3" filter="url(#glow)"/><text x="713" y="180" text-anchor="middle" class="pill-text" fill="#bfdbfe">PCB DESIGN</text><rect class="trace" x="652" y="158" width="122" height="34" rx="9" stroke="#2563eb" stroke-dasharray="30 250" style="animation-delay:.60s"/></g>
+  <g><rect x="241" y="178" width="76" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="279" y="200" text-anchor="middle" class="pill-text" fill="#bbf7d0">REACT</text><rect x="241" y="178" width="76" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.0s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="331" y="178" width="66" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="364" y="200" text-anchor="middle" class="pill-text" fill="#cffafe">VITE</text><rect x="331" y="178" width="66" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.2s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="411" y="178" width="76" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="449" y="200" text-anchor="middle" class="pill-text" fill="#cffafe">BABEL</text><rect x="411" y="178" width="76" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.4s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="501" y="178" width="76" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="539" y="200" text-anchor="middle" class="pill-text" fill="#cffafe">HTML5</text><rect x="501" y="178" width="76" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.6s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="591" y="178" width="68" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="625" y="200" text-anchor="middle" class="pill-text" fill="#cffafe">CSS3</text><rect x="591" y="178" width="68" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.8s" repeatCount="indefinite"/></rect></g>
 </g>
 
-<text x="450" y="248" text-anchor="middle" class="cat" fill="#fca5a5" filter="url(#glow)">TRADING &amp; QUANT</text>
-<rect x="410" y="256" width="80" height="1" fill="#dc2626" opacity="0.5"/>
+<!-- Row 2: Backend & Database -->
+<text x="450" y="292" text-anchor="middle" class="cat" fill="#d946ef" filter="url(#glow)">BACKEND &amp; DATABASE</text>
+<rect x="410" y="300" width="80" height="1" fill="#d946ef" opacity="0.6"/>
 <g>
-<g class="pill" style="animation-delay:.05s"><rect x="55" y="278" width="126" height="34" rx="9" fill="#2a0d0d" stroke="#dc2626" stroke-width="1.3" filter="url(#glow)"/><text x="118" y="300" text-anchor="middle" class="pill-text" fill="#fecaca">PINE SCRIPT</text><rect class="trace" x="55" y="278" width="126" height="34" rx="9" stroke="#dc2626" stroke-dasharray="30 250" style="animation-delay:.05s"/></g>
-<g class="pill" style="animation-delay:.15s"><rect x="193" y="278" width="82" height="34" rx="9" fill="#2a0d0d" stroke="#dc2626" stroke-width="1.3" filter="url(#glow)"/><text x="234" y="300" text-anchor="middle" class="pill-text" fill="#fecaca">MQL4/5</text><rect class="trace" x="193" y="278" width="82" height="34" rx="9" stroke="#dc2626" stroke-dasharray="30 250" style="animation-delay:.15s"/></g>
-<g class="pill" style="animation-delay:.25s"><rect x="287" y="278" width="196" height="34" rx="9" fill="#2a0d0d" stroke="#dc2626" stroke-width="1.3" filter="url(#glow)"/><text x="385" y="300" text-anchor="middle" class="pill-text" fill="#fecaca">ALGORITHMIC TRADING</text><rect class="trace" x="287" y="278" width="196" height="34" rx="9" stroke="#dc2626" stroke-dasharray="30 250" style="animation-delay:.25s"/></g>
-<g class="pill" style="animation-delay:.35s"><rect x="495" y="278" width="212" height="34" rx="9" fill="#2a0d0d" stroke="#dc2626" stroke-width="1.3" filter="url(#glow)"/><text x="601" y="300" text-anchor="middle" class="pill-text" fill="#fecaca">QUANTITATIVE ANALYSIS</text><rect class="trace" x="495" y="278" width="212" height="34" rx="9" stroke="#dc2626" stroke-dasharray="30 250" style="animation-delay:.35s"/></g>
-<g class="pill" style="animation-delay:.45s"><rect x="719" y="278" width="126" height="34" rx="9" fill="#2a0d0d" stroke="#dc2626" stroke-width="1.3" filter="url(#glow)"/><text x="782" y="300" text-anchor="middle" class="pill-text" fill="#fecaca">CRYPTO BOTS</text><rect class="trace" x="719" y="278" width="126" height="34" rx="9" stroke="#dc2626" stroke-dasharray="30 250" style="animation-delay:.45s"/></g>
+  <g><rect x="188" y="322" width="92" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="234" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">LARAVEL</text><rect x="188" y="322" width="92" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.1s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="294" y="322" width="58" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="323" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">PHP</text><rect x="294" y="322" width="58" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.3s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="366" y="322" width="104" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="418" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">COMPOSER</text><rect x="366" y="322" width="104" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.5s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="484" y="322" width="92" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="530" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">NODE.JS</text><rect x="484" y="322" width="92" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.7s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="590" y="322" width="122" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="651" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">POSTGRESQL</text><rect x="590" y="322" width="122" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.9s" repeatCount="indefinite"/></rect></g>
 </g>
 
-<text x="450" y="368" text-anchor="middle" class="cat" fill="#c4b5fd" filter="url(#glow)">SOFTWARE &amp; AI</text>
-<rect x="410" y="376" width="80" height="1" fill="#7c3aed" opacity="0.5"/>
+<!-- Row 3: General Programming (Highlighted Rioon Languages) -->
+<text x="450" y="436" text-anchor="middle" class="cat" fill="#00ff88" filter="url(#glow)">CORE PROGRAMMING</text>
+<rect x="410" y="444" width="80" height="1" fill="#00ff88" opacity="0.6"/>
 <g>
-<g class="pill" style="animation-delay:.00s"><rect x="230" y="398" width="82" height="34" rx="9" fill="#180d2a" stroke="#7c3aed" stroke-width="1.3" filter="url(#glow)"/><text x="271" y="420" text-anchor="middle" class="pill-text" fill="#ddd6fe">PYTHON</text><rect class="trace" x="230" y="398" width="82" height="34" rx="9" stroke="#7c3aed" stroke-dasharray="30 250" style="animation-delay:.00s"/></g>
-<g class="pill" style="animation-delay:.10s"><rect x="324" y="398" width="72" height="34" rx="9" fill="#180d2a" stroke="#7c3aed" stroke-width="1.3" filter="url(#glow)"/><text x="360" y="420" text-anchor="middle" class="pill-text" fill="#ddd6fe">FLASK</text><rect class="trace" x="324" y="398" width="72" height="34" rx="9" stroke="#7c3aed" stroke-dasharray="30 250" style="animation-delay:.10s"/></g>
-<g class="pill" style="animation-delay:.20s"><rect x="408" y="398" width="82" height="34" rx="9" fill="#180d2a" stroke="#7c3aed" stroke-width="1.3" filter="url(#glow)"/><text x="449" y="420" text-anchor="middle" class="pill-text" fill="#ddd6fe">SQLITE</text><rect class="trace" x="408" y="398" width="82" height="34" rx="9" stroke="#7c3aed" stroke-dasharray="30 250" style="animation-delay:.20s"/></g>
-<g class="pill" style="animation-delay:.30s"><rect x="502" y="398" width="168" height="34" rx="9" fill="#180d2a" stroke="#7c3aed" stroke-width="1.3" filter="url(#glow)"/><text x="586" y="420" text-anchor="middle" class="pill-text" fill="#ddd6fe">MACHINE LEARNING</text><rect class="trace" x="502" y="398" width="168" height="34" rx="9" stroke="#7c3aed" stroke-dasharray="30 250" style="animation-delay:.30s"/></g>
+  <g><rect x="288" y="466" width="44" height="34" rx="9" fill="#051914" stroke="#00ff88" stroke-width="1.2" filter="url(#glow)"/><text x="310" y="488" text-anchor="middle" class="pill-text" fill="#a7f3d0">C</text><rect x="288" y="466" width="44" height="34" rx="9" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.0s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="346" y="466" width="62" height="34" rx="9" fill="#051914" stroke="#00ff88" stroke-width="1.2" filter="url(#glow)"/><text x="377" y="488" text-anchor="middle" class="pill-text" fill="#a7f3d0">C++</text><rect x="346" y="466" width="62" height="34" rx="9" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.25s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="422" y="466" width="90" height="34" rx="9" fill="#051914" stroke="#00ff88" stroke-width="1.2" filter="url(#glow)"/><text x="467" y="488" text-anchor="middle" class="pill-text" fill="#a7f3d0">JAVA</text><rect x="422" y="466" width="90" height="34" rx="9" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.5s" repeatCount="indefinite"/></rect></g>
+  <g><rect x="526" y="466" width="86" height="34" rx="9" fill="#051914" stroke="#00ff88" stroke-width="1.2" filter="url(#glow)"/><text x="569" y="488" text-anchor="middle" class="pill-text" fill="#a7f3d0">PYTHON</text><rect x="526" y="466" width="86" height="34" rx="9" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.75s" repeatCount="indefinite"/></rect></g>
 </g>
 
-<text x="450" y="488" text-anchor="middle" class="cat" fill="#5eead4" filter="url(#glow)">SECURITY &amp; SYSTEMS</text>
-<rect x="410" y="496" width="80" height="1" fill="#0d9488" opacity="0.5"/>
-<g>
-<g class="pill" style="animation-delay:.05s"><rect x="212" y="518" width="116" height="34" rx="9" fill="#06211d" stroke="#0d9488" stroke-width="1.3" filter="url(#glow)"/><text x="270" y="540" text-anchor="middle" class="pill-text" fill="#99f6e4">NETWORKING</text><rect class="trace" x="212" y="518" width="116" height="34" rx="9" stroke="#0d9488" stroke-dasharray="30 250" style="animation-delay:.05s"/></g>
-<g class="pill" style="animation-delay:.15s"><rect x="340" y="518" width="134" height="34" rx="9" fill="#06211d" stroke="#0d9488" stroke-width="1.3" filter="url(#glow)"/><text x="407" y="540" text-anchor="middle" class="pill-text" fill="#99f6e4">DUCKY SCRIPT</text><rect class="trace" x="340" y="518" width="134" height="34" rx="9" stroke="#0d9488" stroke-dasharray="30 250" style="animation-delay:.15s"/></g>
-<g class="pill" style="animation-delay:.25s"><rect x="486" y="518" width="56" height="34" rx="9" fill="#06211d" stroke="#0d9488" stroke-width="1.3" filter="url(#glow)"/><text x="514" y="540" text-anchor="middle" class="pill-text" fill="#99f6e4">GIT</text><rect class="trace" x="486" y="518" width="56" height="34" rx="9" stroke="#0d9488" stroke-dasharray="30 250" style="animation-delay:.25s"/></g>
-<g class="pill" style="animation-delay:.35s"><rect x="554" y="518" width="134" height="34" rx="9" fill="#06211d" stroke="#0d9488" stroke-width="1.3" filter="url(#glow)"/><text x="621" y="540" text-anchor="middle" class="pill-text" fill="#99f6e4">HW/SW REPAIR</text><rect class="trace" x="554" y="518" width="134" height="34" rx="9" stroke="#0d9488" stroke-dasharray="30 250" style="animation-delay:.35s"/></g>
+<!-- Floating Cyber Particles -->
+<g clip-path="url(#cardClipSkills)">
+  <circle class="ember" cx="80" cy="565" r="1.6" fill="#00f0ff" style="animation-duration:4.5s; animation-delay:0s;"/>
+  <circle class="ember" cx="150" cy="565" r="1.6" fill="#d946ef" style="animation-duration:5.5s; animation-delay:1.2s;"/>
+  <circle class="ember" cx="240" cy="565" r="1.4" fill="#00ff88" style="animation-duration:6.2s; animation-delay:2.4s;"/>
+  <circle class="ember" cx="660" cy="565" r="1.6" fill="#00f0ff" style="animation-duration:5.8s; animation-delay:0.8s;"/>
+  <circle class="ember" cx="750" cy="565" r="1.5" fill="#ff73fa" style="animation-duration:4.8s; animation-delay:1.8s;"/>
+  <circle class="ember" cx="820" cy="565" r="1.6" fill="#00ffcc" style="animation-duration:5.2s; animation-delay:3.1s;"/>
 </g>
-<circle class="ember" cx="80" cy="560" r="1.8" fill="#f5a623" style="animation-duration:4.2s; animation-delay:0s;"/>
-<circle class="ember" cx="150" cy="560" r="1.8" fill="#dc2626" style="animation-duration:5.1s; animation-delay:0.6s;"/>
-<circle class="ember" cx="230" cy="560" r="1.8" fill="#ffb347" style="animation-duration:3.6s; animation-delay:1.2s;"/>
-<circle class="ember" cx="310" cy="560" r="1.8" fill="#7c3aed" style="animation-duration:4.8s; animation-delay:1.8s;"/>
-<circle class="ember" cx="400" cy="560" r="1.8" fill="#0d9488" style="animation-duration:5.4s; animation-delay:0.3s;"/>
-<circle class="ember" cx="470" cy="560" r="1.8" fill="#f5a623" style="animation-duration:4.0s; animation-delay:2.1s;"/>
-<circle class="ember" cx="540" cy="560" r="1.8" fill="#dc2626" style="animation-duration:4.6s; animation-delay:1.0s;"/>
-<circle class="ember" cx="620" cy="560" r="1.8" fill="#ffb347" style="animation-duration:5.0s; animation-delay:0.8s;"/>
-<circle class="ember" cx="700" cy="560" r="1.8" fill="#7c3aed" style="animation-duration:4.3s; animation-delay:1.6s;"/>
-<circle class="ember" cx="780" cy="560" r="1.8" fill="#0d9488" style="animation-duration:3.9s; animation-delay:2.4s;"/>
-<circle class="ember" cx="830" cy="560" r="1.8" fill="#f5a623" style="animation-duration:5.2s; animation-delay:0.4s;"/>
 </svg>

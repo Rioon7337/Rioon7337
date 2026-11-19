@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rioon7337 — Interactive GitHub Profile &amp; Audio Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #07071a;
+      color: #e0f2fe;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      padding: 28px 16px 56px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .full-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .social-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 820px;
+    }
+    .social-grid a {
+      display: inline-block;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .social-grid a:hover {
+      transform: translateY(-3px) scale(1.02);
+      filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.5));
+    }
+    .social-grid img {
+      height: 78px;
+      width: auto;
+      display: block;
+    }
+
+    /* Spotify Desktop Split-View Container (Cyberpunk Neon) */
+    .desk-wrap {
+      width: 100%;
+      margin-top: 10px;
+      padding: 3px;
+      position: relative;
+    }
+    @property --angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @keyframes spinRgb { to { --angle: 360deg; } }
+    .desk-glow {
+      position: absolute;
+      inset: 2px;
+      border-radius: 18px;
+      background: conic-gradient(from var(--angle), #00f0ff, #d946ef, #00ffcc, #ff73fa, #00f0ff);
+      animation: spinRgb 6s linear infinite;
+      filter: blur(10px);
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .desk-card {
+      position: relative;
+      z-index: 1;
+      background: #0a142e;
+      border: 1.5px solid rgba(0, 240, 255, 0.4);
+      border-radius: 18px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      overflow: hidden;
+      min-height: 520px;
+    }
+    @media (max-width: 768px) {
+      .desk-card { grid-template-columns: 1fr; }
+    }
+
+    /* Left Player Controls */
+    .sp-left {
+      background: linear-gradient(180deg, #0d1a3e 0%, #070c20 100%);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid rgba(0, 240, 255, 0.15);
+    }
+    .sp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #00f0ff;
+      margin-bottom: 20px;
+    }
+    .sp-cover {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      margin-bottom: 20px;
+    }
+    .sp-cover-left {
+      width: 48%;
+      background: linear-gradient(135deg, #07071a, #0a1a3e);
+      padding: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .sp-vert {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      color: #00f0ff;
+      line-height: 1.25;
+      letter-spacing: 0.5px;
+    }
+    .sp-cover-right {
+      width: 52%;
+      background: radial-gradient(circle at 60% 40%, #1a2a5a, #070c20);
+      position: relative;
+    }
+    .sp-cover-title {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 16px;
+      font-weight: 900;
+      display: flex;
+      gap: 5px;
+      align-items: baseline;
+    }
+    .sp-black { color: #00f0ff; }
+    .sp-amp { color: #ffffff; }
+    .sp-blue { color: #d946ef; }
+
+    .sp-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .sp-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .sp-artist {
+      font-size: 12px;
+      font-weight: 600;
+      color: #a0b0d0;
+      margin-top: 2px;
+    }
+    .sp-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #00ff88;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Progress bar */
+    .sp-prog-bar {
+      width: 100%;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .sp-prog-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #00f0ff, #00ffcc);
+      border-radius: 3px;
+      box-shadow: 0 0 8px rgba(0, 240, 255, 0.7);
+    }
+    .sp-times {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 600;
+      color: #7080a0;
+      margin-bottom: 14px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Controls */
+    .sp-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .sp-icon-btn {
+      background: none;
+      border: none;
+      color: #a0b0d0;
+      cursor: pointer;
+      transition: color 0.15s ease, transform 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sp-icon-btn:hover { color: #00f0ff; transform: scale(1.1); }
+    .sp-play-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #00f0ff;
+      color: #07071a;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 16px rgba(0, 240, 255, 0.6);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .sp-play-btn:hover { transform: scale(1.08); background: #00ffcc; }
+
+    .sp-bottom {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #00ff88;
+    }
+    .sp-device {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 1px;
+    }
+    .vol-mini {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .vol-mini input[type=range] {
+      width: 70px;
+      accent-color: #00f0ff;
+      cursor: pointer;
+    }
+
+    /* Right: Scrolling Lyrics */
+    .sp-right {
+      background: #060b1c;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      position: relative;
+    }
+    .lyrics-head {
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lyrics-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Fira Code', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: #00f0ff;
+      letter-spacing: 1.5px;
+    }
+    .lyrics-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00ff88;
+      box-shadow: 0 0 8px #00ff88;
+    }
+    .lyrics-viewport {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
+    }
+    .lyrics-track {
+      transition: transform 0.4s ease-out;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 160px 0;
+    }
+    .lyric-item {
+      font-size: 19px;
+      font-weight: 700;
+      color: #384560;
+      transition: color 0.3s ease, font-size 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      line-height: 1.35;
+    }
+    .lyric-item.active {
+      color: #ffffff;
+      font-size: 23px;
+      text-shadow: 0 0 14px rgba(0, 240, 255, 0.8), 0 0 28px rgba(0, 240, 255, 0.4);
+      transform: translateX(6px);
+    }
+    .lyric-item.passed {
+      color: #6a7c9f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Primary Hero Card (Rioon7337 Namecard) -->
+    <img class="full-svg" src="./assets/namecard.svg" alt="Rioon7337 Profile Card" />
+
+    <!-- Tech Stack Arsenal -->
+    <img class="full-svg" src="./skills.svg" alt="Tech Stack Arsenal - Rioon7337" />
+
+    <!-- Spotify Desktop Split-View Player -->
+    <div id="player" class="desk-wrap">
+      <div class="desk-glow"></div>
+      <div class="desk-card">
+        <!-- Left: Player Controls -->
+        <div class="sp-left">
+          <div class="sp-top">
+            <span>SYS.ACTIVE</span>
+            <span>RIOON7337 // AUDIO UPLINK</span>
+            <span>•••</span>
+          </div>
+
+          <div class="sp-cover">
+            <div class="sp-cover-left">
+              <div class="sp-vert">
+                <span>B</span><span>A</span><span>C</span><span>K</span><span>S</span><span>T</span><span>R</span><span>E</span><span>E</span><span>T</span>
+                <span style="margin-top:6px;">B</span><span>O</span><span>Y</span><span>S</span>
+              </div>
+            </div>
+            <div class="sp-cover-right"></div>
+            <div class="sp-cover-title">
+              <span class="sp-black">BLACK</span><span class="sp-amp">&amp;</span><span class="sp-blue">BLUE</span>
+            </div>
+          </div>
+
+          <div class="sp-meta-row">
+            <div>
+              <div class="sp-title">Shape of My Heart</div>
+              <div class="sp-artist">Backstreet Boys</div>
+            </div>
+            <div class="sp-check">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#07071a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+
+          <div id="progressBar" class="sp-prog-bar" title="Seek">
+            <div id="progressFill" class="sp-prog-fill"></div>
+          </div>
+          <div class="sp-times">
+            <span id="elapsedTime">0:00</span>
+            <span id="remainingTime">-3:49</span>
+          </div>
+
+          <div class="sp-controls">
+            <button id="chorusBtn" class="sp-icon-btn" title="Jump to Chorus (1:12)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+            </button>
+            <button id="prevBtn" class="sp-icon-btn" title="Restart">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="5" width="3" height="14" rx="1"/><polygon points="20 5 20 19 8 12"/></svg>
+            </button>
+            <button id="playPauseBtn" class="sp-play-btn" aria-label="Play or Pause">
+              <svg id="playIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="pauseIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+            </button>
+            <button id="nextBtn" class="sp-icon-btn" title="Next Chorus">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="4 5 4 19 16 12"/><rect x="17" y="5" width="3" height="14" rx="1"/></svg>
+            </button>
+            <button class="sp-icon-btn" style="color:#00ff88;" title="Repeat On">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            </button>
+          </div>
+
+          <div class="sp-bottom">
+            <div class="sp-device">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="1" y1="20" x2="23" y2="20"/></svg>
+              <span>RIOON7337 // RIG</span>
+            </div>
+            <div class="vol-mini" title="Volume">
+              <span style="font-size:12px;">🔊</span>
+              <input id="volumeSlider" type="range" min="0" max="1" step="0.02" value="0.85" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Scrolling Spotify Lyrics -->
+        <div class="sp-right">
+          <div class="lyrics-head">
+            <div class="lyrics-badge">
+              <span class="lyrics-dot"></span>
+              <span id="statusText">KLIK PLAY ▶ UNTUK MEMUTAR AUDIO</span>
+            </div>
+          </div>
+          <div id="lyricsViewport" class="lyrics-viewport">
+            <div id="lyricsTrack" class="lyrics-track"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connect Header -->
+    <img class="full-svg" src="./header.svg" alt="Connect Header" />
+
+    <!-- Social Grid -->
+    <div class="social-grid">
+      <a href="https://www.linkedin.com/in/johannes-rein-gerardo-lumban-tobing-a23730303" target="_blank" rel="noopener noreferrer"><img src="./linkedin.svg" alt="LinkedIn" /></a>
+      <a href="https://t.me/Rioon7337" target="_blank" rel="noopener noreferrer"><img src="./telegram.svg" alt="Telegram" /></a>
+      <a href="https://x.com/Rioon7337" target="_blank" rel="noopener noreferrer"><img src="./x.svg" alt="X / Twitter" /></a>
+      <a href="https://www.instagram.com/rei_ntobing/" target="_blank" rel="noopener noreferrer"><img src="./instagram.svg" alt="Instagram" /></a>
+      <a href="https://hackster.io/Rioon7337" target="_blank" rel="noopener noreferrer"><img src="./hackster.svg" alt="Hackster" /></a>
+      <a href="https://www.threads.net/@rei_ntobing" target="_blank" rel="noopener noreferrer"><img src="./threads.svg" alt="Threads" /></a>
+    </div>
+
+    <!-- Pacman Arcade Matrix -->
+    <img class="full-svg" src="./pacman.svg" alt="Pac-Man Arcade Matrix" />
+
+    <!-- Footer Wave -->
+    <img class="full-svg" src="./footer-wave.svg" alt="Thanks For Visiting - Rioon7337" />
+  </div>
+
+  <audio id="localAudio" src="./BSB_ShapeOfMyHeart.mp3" preload="auto" loop></audio>
+
+  <script>
+    const LYRICS = [
+      [0, "♪"],
+      [5.0, "Mm-mm"],
+      [8.0, "Yeah, yeah"],
+      [12.2, "Baby, please try to forgive me"],
+      [19.2, "Stay here, don't put out the glow"],
+      [29.2, "Hold me now, don't bother"],
+      [33.5, "If every minute it makes me weaker"],
+      [38.0, "You can save me"],
+      [41.4, "From the man that I've become"],
+      [46.2, "Oh, yeah"],
+      [48.2, "Looking back on the things I've done"],
+      [53.0, "I was trying to be someone"],
+      [57.8, "I played my part"],
+      [60.2, "Kept you in the dark"],
+      [63.5, "Now let me show you the shape of my heart"],
+      [72.0, "Sadness is beautiful"],
+      [77.0, "Loneliness is tragical"],
+      [81.3, "So help me, I can't win this war"],
+      [89.0, "Oh, no"],
+      [92.0, "Touch me now, don't bother"],
+      [96.2, "If every second it makes me weaker"],
+      [100.4, "You can save me"],
+      [104.0, "From the man I've become"],
+      [110.5, "Looking back on the things I've done"],
+      [115.4, "I was trying to be someone"],
+      [120.0, "I played my part"],
+      [123.0, "Kept you in the dark"],
+      [126.0, "Now let me show you the shape of my heart"],
+      [133.0, "I'm here with my confession"],
+      [137.0, "Got nothing to hide no more"],
+      [141.5, "I don't know where to start"],
+      [146.5, "But to show you the shape of my heart"],
+      [157.0, "I'm looking back on things I've done"],
+      [162.2, "I never wanna play the same old part"],
+      [167.5, "Or keep you in the dark"],
+      [172.0, "Now let me show you the shape of my heart"],
+      [176.5, "Looking back on the things I've done"],
+      [180.8, "I was trying to be someone"],
+      [184.8, "I played my part"],
+      [187.8, "Kept you in the dark"],
+      [191.0, "Now let me show you the shape of my heart"],
+      [197.0, "Looking back on the things I've done"],
+      [201.0, "I was trying to be someone"],
+      [205.0, "I played my part"],
+      [208.0, "Kept you in the dark"],
+      [211.0, "Now let me show you the shape of my heart"],
+      [217.0, "Show you the shape of my heart"]
+    ];
+
+    const audio = document.getElementById('localAudio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const progressBar = document.getElementById('progressBar');
+    const progressFill = document.getElementById('progressFill');
+    const elapsedTime = document.getElementById('elapsedTime');
+    const remainingTime = document.getElementById('remainingTime');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const lyricsTrack = document.getElementById('lyricsTrack');
+    const statusText = document.getElementById('statusText');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const chorusBtn = document.getElementById('chorusBtn');
+
+    // Build lyrics elements
+    LYRICS.forEach(([time, text], idx) => {
+      const el = document.createElement('div');
+      el.className = 'lyric-item';
+      el.textContent = text;
+      el.dataset.time = time;
+      el.dataset.index = idx;
+      el.addEventListener('click', () => {
+        audio.currentTime = time;
+        if (audio.paused) playAudio();
+      });
+      lyricsTrack.appendChild(el);
+    });
+
+    const lyricElements = Array.from(document.querySelectorAll('.lyric-item'));
+
+    function fmt(s) {
+      if (isNaN(s) || s < 0) s = 0;
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return `${m}:${sec.toString().padStart(2, '0')}`;
+    }
+
+    function playAudio() {
+      audio.play().then(() => {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+        statusText.textContent = 'PLAYING — SHAPE OF MY HEART';
+      }).catch(err => {
+        console.warn('Autoplay blocked:', err);
+      });
+    }
+
+    function pauseAudio() {
+      audio.pause();
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+      statusText.textContent = 'PAUSED';
+    }
+
+    playPauseBtn.addEventListener('click', () => {
+      if (audio.paused) playAudio();
+      else pauseAudio();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      audio.currentTime = 0;
+      if (audio.paused) playAudio();
+    });
+
+    chorusBtn.addEventListener('click', () => {
+      audio.currentTime = 63.5;
+      if (audio.paused) playAudio();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      audio.currentTime = 126.0;
+      if (audio.paused) playAudio();
+    });
+
+    volumeSlider.addEventListener('input', (e) => {
+      audio.volume = parseFloat(e.target.value);
+    });
+
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      if (audio.duration) {
+        audio.currentTime = pos * audio.duration;
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      const cur = audio.currentTime;
+      const dur = audio.duration || 229;
+      const pct = (cur / dur) * 100;
+      progressFill.style.width = pct + '%';
+      elapsedTime.textContent = fmt(cur);
+      remainingTime.textContent = '-' + fmt(dur - cur);
+
+      // Active lyric sync
+      let activeIdx = 0;
+      for (let i = 0; i < LYRICS.length; i++) {
+        if (cur >= LYRICS[i][0]) {
+          activeIdx = i;
+        } else {
+          break;
+        }
+      }
+
+      lyricElements.forEach((el, idx) => {
+        if (idx === activeIdx) {
+          el.className = 'lyric-item active';
+        } else if (idx < activeIdx) {
+          el.className = 'lyric-item passed';
+        } else {
+          el.className = 'lyric-item';
+        }
+      });
+
+      const activeEl = lyricElements[activeIdx];
+      if (activeEl) {
+        const offset = activeEl.offsetTop - 160;
+        lyricsTrack.style.transform = `translateY(-${Math.max(0, offset)}px)`;
+      }
+    });
+
+    // Check hash for autoplay on load
+    if (window.location.hash === '#player') {
+      window.addEventListener('load', () => {
+        document.getElementById('player').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+</html>

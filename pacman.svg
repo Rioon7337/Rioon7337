@@ -1,18 +1,18 @@
 <svg width="900" height="250" viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="bgPac" cx="50%" cy="50%" r="75%">
-      <stop offset="0%" stop-color="#180a0a"/>
-      <stop offset="60%" stop-color="#0c0505"/>
-      <stop offset="100%" stop-color="#040203"/>
+      <stop offset="0%" stop-color="#0a1a3e"/>
+      <stop offset="60%" stop-color="#07071a"/>
+      <stop offset="100%" stop-color="#050512"/>
     </radialGradient>
     <pattern id="pacGrid" width="16" height="16" patternUnits="userSpaceOnUse">
-      <path d="M16 0H0V16" fill="none" stroke="#f5a623" stroke-width="0.35" opacity="0.04"/>
+      <path d="M16 0H0V16" fill="none" stroke="#00f0ff" stroke-width="0.35" opacity="0.06"/>
     </pattern>
     <linearGradient id="rgbPac" gradientUnits="userSpaceOnUse" x1="12" y1="125" x2="888" y2="125">
-      <stop offset="0%" stop-color="#f5a623"><animate attributeName="stop-color" values="#f5a623;#dc2626;#ff73fa;#f5a623" dur="5s" repeatCount="indefinite"/></stop>
-      <stop offset="33%" stop-color="#dc2626"><animate attributeName="stop-color" values="#dc2626;#f5a623;#dc2626" dur="5s" repeatCount="indefinite"/></stop>
-      <stop offset="66%" stop-color="#ffb347"><animate attributeName="stop-color" values="#ffb347;#dc2626;#ffb347" dur="5s" repeatCount="indefinite"/></stop>
-      <stop offset="100%" stop-color="#f5a623"><animate attributeName="stop-color" values="#f5a623;#dc2626;#f5a623" dur="5s" repeatCount="indefinite"/></stop>
+      <stop offset="0%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/></stop>
+      <stop offset="33%" stop-color="#d946ef"><animate attributeName="stop-color" values="#d946ef;#00f0ff;#ff73fa;#d946ef" dur="5s" repeatCount="indefinite"/></stop>
+      <stop offset="66%" stop-color="#00ffcc"><animate attributeName="stop-color" values="#00ffcc;#ff73fa;#00f0ff;#00ffcc" dur="5s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/></stop>
       <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 125" to="360 450 125" dur="4.5s" repeatCount="indefinite"/>
     </linearGradient>
     <filter id="glowPac" x="-25%" y="-25%" width="150%" height="150%">
@@ -29,17 +29,17 @@
   <rect x="12" y="12" width="876" height="226" rx="16" fill="url(#pacGrid)"/>
 
   <!-- Cyber Corners (Matching Hero & Skills) -->
-  <path d="M22 42 L22 22 L42 22" stroke="#f5a623" stroke-width="2" fill="none" opacity=".85"/>
-  <path d="M878 42 L878 22 L858 22" stroke="#f5a623" stroke-width="2" fill="none" opacity=".85"/>
-  <path d="M22 208 L22 228 L42 228" stroke="#f5a623" stroke-width="2" fill="none" opacity=".85"/>
-  <path d="M878 208 L878 228 L858 228" stroke="#f5a623" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M22 42 L22 22 L42 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M878 42 L878 22 L858 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M22 208 L22 228 L42 228" stroke="#d946ef" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M878 208 L878 228 L858 228" stroke="#d946ef" stroke-width="2" fill="none" opacity=".85"/>
 
   <!-- Arcade HUD Labels -->
-  <text x="32" y="32" font-family="'Fira Code', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#f5a623" opacity="0.9">// ARCADE MATRIX &#183; RIOON7337</text>
-  <text x="868" y="32" text-anchor="end" font-family="'Fira Code', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#ffb347" opacity="0.9">SCORE: 250807</text>
+  <text x="32" y="32" font-family="'Fira Code', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#00f0ff" opacity="0.95">// ARCADE MATRIX &#183; RIOON7337</text>
+  <text x="868" y="32" text-anchor="end" font-family="'Fira Code', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#ff73fa" opacity="0.95">SCORE: 250807</text>
 
   <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="url(#rgbPac)" stroke-width="1.6"/>
-  <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="#f5a623" stroke-width="1.8" stroke-linecap="round" opacity="0.8" pathLength="1000" stroke-dasharray="85 915" filter="url(#glowPac)">
+  <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.9" pathLength="1000" stroke-dasharray="85 915" filter="url(#glowPac)">
     <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4s" repeatCount="indefinite"/>
   </rect>
 

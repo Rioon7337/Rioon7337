@@ -10,28 +10,28 @@
       .song-artist { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500; font-size: 12.5px; fill: #94a3b8; }
       .time-txt { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5px; font-weight: 600; fill: #94a3b8; }
       .device-txt { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; fill: #1DB954; }
-      .lyric-header { font-family: 'Fira Code', ui-monospace, monospace; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; fill: #ffd8a8; }
+      .lyric-header { font-family: 'Fira Code', ui-monospace, monospace; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; fill: #00f0ff; }
       .lyric-line { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 800; font-size: 19px; }
     </style>
 
     <linearGradient id="leftBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1c0a0f"/>
-      <stop offset="52%" stop-color="#120609"/>
-      <stop offset="100%" stop-color="#090305"/>
+      <stop offset="0%" stop-color="#0a1a3e"/>
+      <stop offset="52%" stop-color="#07071a"/>
+      <stop offset="100%" stop-color="#050512"/>
     </linearGradient>
 
     <linearGradient id="lyricsBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#180c14"/>
-      <stop offset="100%" stop-color="#0e060b"/>
+      <stop offset="0%" stop-color="#0d1a3e"/>
+      <stop offset="100%" stop-color="#080e22"/>
     </linearGradient>
 
     <linearGradient id="lyricsFadeTop" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#180c14" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#180c14" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#0d1a3e" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0d1a3e" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="lyricsFadeBot" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0e060b" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0e060b" stop-opacity="1"/>
+      <stop offset="0%" stop-color="#080e22" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#080e22" stop-opacity="1"/>
     </linearGradient>
 
     <linearGradient id="rgbDesktop" gradientUnits="userSpaceOnUse" x1="12" y1="260" x2="888" y2="260">
@@ -50,7 +50,7 @@
       <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 260" to="360 450 260" dur="4.5s" repeatCount="indefinite"/>
     </linearGradient>
     <pattern id="deskGrid" width="16" height="16" patternUnits="userSpaceOnUse">
-      <path d="M16 0H0V16" fill="none" stroke="#f5a623" stroke-width="0.35" opacity="0.04"/>
+      <path d="M16 0H0V16" fill="none" stroke="#00f0ff" stroke-width="0.35" opacity="0.06"/>
     </pattern>
 
     <filter id="neonOuterDesk" x="-10%" y="-15%" width="120%" height="130%">
@@ -78,10 +78,10 @@
   <rect x="12" y="12" width="876" height="496" rx="20" fill="url(#deskGrid)"/>
 
   <!-- Cyber Corners (Matching Hero & Skills) -->
-  <path d="M22 45 L22 22 L45 22" stroke="#f5a623" stroke-width="2" fill="none" opacity=".85"/>
-  <path d="M878 45 L878 22 L855 22" stroke="#f5a623" stroke-width="2" fill="none" opacity=".85"/>
-  <path d="M22 475 L22 498 L45 498" stroke="#f5a623" stroke-width="2" fill="none" opacity=".85"/>
-  <path d="M878 475 L878 498 L855 498" stroke="#f5a623" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M22 45 L22 22 L45 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M878 45 L878 22 L855 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M22 475 L22 498 L45 498" stroke="#d946ef" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M878 475 L878 498 L855 498" stroke="#d946ef" stroke-width="2" fill="none" opacity=".85"/>
 
   <!-- Border Light Tracer -->
   <rect x="12" y="12" width="876" height="496" rx="20" fill="none" stroke="#f5a623" stroke-width="1.8" stroke-linecap="round" opacity="0.8" pathLength="1000" stroke-dasharray="75 925">
@@ -101,13 +101,13 @@
     <g clip-path="url(#coverClip)">
       <rect x="44" y="54" width="118" height="236" fill="#0a0507"/>
       <rect x="162" y="54" width="118" height="236" fill="#2d0f18"/>
-      <text x="58" y="72" class="cover-vert" fill="#f5a623">B<tspan x="58" dy="12.5">A</tspan><tspan x="58" dy="12.5">C</tspan><tspan x="58" dy="12.5">K</tspan><tspan x="58" dy="12.5">S</tspan><tspan x="58" dy="12.5">T</tspan><tspan x="58" dy="12.5">R</tspan><tspan x="58" dy="12.5">E</tspan><tspan x="58" dy="12.5">E</tspan><tspan x="58" dy="12.5">T</tspan><tspan x="58" dy="24">B</tspan><tspan x="58" dy="12.5">O</tspan><tspan x="58" dy="12.5">Y</tspan><tspan x="58" dy="12.5">S</tspan></text>
-      <text x="158" y="178" text-anchor="end" class="cover-black" fill="#ffb347" stroke="#dc2626">BLACK</text>
-      <text x="168" y="178" text-anchor="middle" class="cover-amp" fill="#f5a623">&amp;</text>
-      <text x="178" y="178" text-anchor="start" class="cover-blue" fill="#0a0507" stroke="#ffb347">BLUE</text>
+      <text x="58" y="72" class="cover-vert" fill="#00f0ff">B<tspan x="58" dy="12.5">A</tspan><tspan x="58" dy="12.5">C</tspan><tspan x="58" dy="12.5">K</tspan><tspan x="58" dy="12.5">S</tspan><tspan x="58" dy="12.5">T</tspan><tspan x="58" dy="12.5">R</tspan><tspan x="58" dy="12.5">E</tspan><tspan x="58" dy="12.5">E</tspan><tspan x="58" dy="12.5">T</tspan><tspan x="58" dy="24">B</tspan><tspan x="58" dy="12.5">O</tspan><tspan x="58" dy="12.5">Y</tspan><tspan x="58" dy="12.5">S</tspan></text>
+      <text x="158" y="178" text-anchor="end" class="cover-black" fill="#00f0ff" stroke="#d946ef">BLACK</text>
+      <text x="168" y="178" text-anchor="middle" class="cover-amp" fill="#ffffff">&amp;</text>
+      <text x="178" y="178" text-anchor="start" class="cover-blue" fill="#07071a" stroke="#00f0ff">BLUE</text>
       <!-- Cyber Vinyl / CD Accent Ring -->
-      <circle cx="162" cy="172" r="75" fill="none" stroke="#f5a623" stroke-width="0.8" opacity="0.3"/>
-      <circle cx="162" cy="172" r="35" fill="none" stroke="#dc2626" stroke-width="0.8" opacity="0.4"/>
+      <circle cx="162" cy="172" r="75" fill="none" stroke="#00f0ff" stroke-width="0.8" opacity="0.3"/>
+      <circle cx="162" cy="172" r="35" fill="none" stroke="#d946ef" stroke-width="0.8" opacity="0.4"/>
     </g>
   </g>
 
@@ -210,58 +210,58 @@
   <circle cx="348" cy="42" r="3.5" fill="#00ff88">
     <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/>
   </circle>
-  <text x="360" y="46" class="lyric-header" fill="#f5a623">SYNCED LYRICS &#183; RIOON7337 AUDIO MATRIX &#8599;</text>
+  <text x="360" y="46" class="lyric-header" fill="#00f0ff">SYNCED LYRICS &#183; RIOON7337 AUDIO MATRIX &#8599;</text>
 
   <g clip-path="url(#lyricsClip)">
     <g transform="translate(324 58)">
       <g>
-      <text x="36" y="0" class="lyric-line" fill="#ffffff">♪<animate attributeName="fill" calcMode="discrete" values="#ffffff;#5a4535;#5a4535" keyTimes="0;0.01965;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="38" class="lyric-line" fill="#f5a623">Mm-mm<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.01965;0.03406;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="76" class="lyric-line" fill="#f5a623">Yeah, yeah<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.03406;0.0524;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="114" class="lyric-line" fill="#f5a623">Baby, please try to forgive me<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.0524;0.08384;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="152" class="lyric-line" fill="#f5a623">Stay here, don&apos;t put out the glow<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.08384;0.12751;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="190" class="lyric-line" fill="#f5a623">Hold me now, don&apos;t bother<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.12751;0.14629;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="228" class="lyric-line" fill="#f5a623">If every minute it makes me weaker<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.14629;0.16594;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="266" class="lyric-line" fill="#f5a623">You can save me<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.16594;0.18079;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="304" class="lyric-line" fill="#f5a623">From the man that I&apos;ve become<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.18079;0.20175;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="342" class="lyric-line" fill="#f5a623">Oh, yeah<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.20175;0.21048;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="380" class="lyric-line" fill="#f5a623">Looking back on the things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.21048;0.23144;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="418" class="lyric-line" fill="#f5a623">I was trying to be someone<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.23144;0.2524;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="456" class="lyric-line" fill="#f5a623">I played my part<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.2524;0.26288;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="494" class="lyric-line" fill="#f5a623">Kept you in the dark<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.26288;0.27729;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="532" class="lyric-line" fill="#f5a623">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.27729;0.31441;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="570" class="lyric-line" fill="#f5a623">Sadness is beautiful<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.31441;0.33624;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="608" class="lyric-line" fill="#f5a623">Loneliness is tragical<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.33624;0.35502;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="646" class="lyric-line" fill="#f5a623">So help me, I can&apos;t win this war<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.35502;0.38865;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="684" class="lyric-line" fill="#f5a623">Oh, no<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.38865;0.40175;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="722" class="lyric-line" fill="#f5a623">Touch me now, don&apos;t bother<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.40175;0.42009;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="760" class="lyric-line" fill="#f5a623">If every second it makes me weaker<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.42009;0.43843;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="798" class="lyric-line" fill="#f5a623">You can save me<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.43843;0.45415;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="836" class="lyric-line" fill="#f5a623">From the man I&apos;ve become<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.45415;0.48253;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="874" class="lyric-line" fill="#f5a623">Looking back on the things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.48253;0.50393;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="912" class="lyric-line" fill="#f5a623">I was trying to be someone<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.50393;0.52402;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="950" class="lyric-line" fill="#f5a623">I played my part<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.52402;0.53668;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="988" class="lyric-line" fill="#f5a623">Kept you in the dark<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.53668;0.54934;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1026" class="lyric-line" fill="#f5a623">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.54934;0.5786;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1064" class="lyric-line" fill="#f5a623">I&apos;m here with my confession<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.5786;0.59825;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1102" class="lyric-line" fill="#f5a623">Got nothing to hide no more<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.59825;0.61703;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1140" class="lyric-line" fill="#f5a623">I don&apos;t know where to start<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.61703;0.63799;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1178" class="lyric-line" fill="#f5a623">But to show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.63799;0.68646;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1216" class="lyric-line" fill="#f5a623">I&apos;m looking back on things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.68646;0.70873;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1254" class="lyric-line" fill="#f5a623">I never wanna play the same old part<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.70873;0.73275;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1292" class="lyric-line" fill="#f5a623">Or keep you in the dark<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.73275;0.75109;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1330" class="lyric-line" fill="#f5a623">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.75109;0.77249;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1368" class="lyric-line" fill="#f5a623">Looking back on the things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.77249;0.78908;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1406" class="lyric-line" fill="#f5a623">I was trying to be someone<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.78908;0.80786;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1444" class="lyric-line" fill="#f5a623">I played my part<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.80786;0.82009;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1482" class="lyric-line" fill="#f5a623">Kept you in the dark<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.82009;0.83406;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1520" class="lyric-line" fill="#f5a623">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.83406;0.85939;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1558" class="lyric-line" fill="#f5a623">Looking back on the things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.85939;0.87511;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1596" class="lyric-line" fill="#f5a623">I was trying to be someone<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.87511;0.89476;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1634" class="lyric-line" fill="#f5a623">I played my part<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.89476;0.90742;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1672" class="lyric-line" fill="#f5a623">Kept you in the dark<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.90742;0.9214;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1710" class="lyric-line" fill="#f5a623">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#5a4535;#5a4535" keyTimes="0;0.9214;0.94672;1" dur="229s" repeatCount="indefinite"/></text>
-      <text x="36" y="1748" class="lyric-line" fill="#f5a623">Show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#ffd8a8;#ffffff;#ffffff" keyTimes="0;0.94672;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="0" class="lyric-line" fill="#ffffff">♪<animate attributeName="fill" calcMode="discrete" values="#ffffff;#405070;#405070" keyTimes="0;0.01965;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="38" class="lyric-line" fill="#00f0ff">Mm-mm<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.01965;0.03406;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="76" class="lyric-line" fill="#00f0ff">Yeah, yeah<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.03406;0.0524;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="114" class="lyric-line" fill="#00f0ff">Baby, please try to forgive me<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.0524;0.08384;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="152" class="lyric-line" fill="#00f0ff">Stay here, don&apos;t put out the glow<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.08384;0.12751;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="190" class="lyric-line" fill="#00f0ff">Hold me now, don&apos;t bother<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.12751;0.14629;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="228" class="lyric-line" fill="#00f0ff">If every minute it makes me weaker<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.14629;0.16594;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="266" class="lyric-line" fill="#00f0ff">You can save me<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.16594;0.18079;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="304" class="lyric-line" fill="#00f0ff">From the man that I&apos;ve become<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.18079;0.20175;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="342" class="lyric-line" fill="#00f0ff">Oh, yeah<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.20175;0.21048;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="380" class="lyric-line" fill="#00f0ff">Looking back on the things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.21048;0.23144;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="418" class="lyric-line" fill="#00f0ff">I was trying to be someone<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.23144;0.2524;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="456" class="lyric-line" fill="#00f0ff">I played my part<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.2524;0.26288;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="494" class="lyric-line" fill="#00f0ff">Kept you in the dark<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.26288;0.27729;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="532" class="lyric-line" fill="#00f0ff">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.27729;0.31441;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="570" class="lyric-line" fill="#00f0ff">Sadness is beautiful<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.31441;0.33624;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="608" class="lyric-line" fill="#00f0ff">Loneliness is tragical<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.33624;0.35502;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="646" class="lyric-line" fill="#00f0ff">So help me, I can&apos;t win this war<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.35502;0.38865;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="684" class="lyric-line" fill="#00f0ff">Oh, no<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.38865;0.40175;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="722" class="lyric-line" fill="#00f0ff">Touch me now, don&apos;t bother<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.40175;0.42009;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="760" class="lyric-line" fill="#00f0ff">If every second it makes me weaker<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.42009;0.43843;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="798" class="lyric-line" fill="#00f0ff">You can save me<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.43843;0.45415;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="836" class="lyric-line" fill="#00f0ff">From the man I&apos;ve become<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.45415;0.48253;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="874" class="lyric-line" fill="#00f0ff">Looking back on the things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.48253;0.50393;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="912" class="lyric-line" fill="#00f0ff">I was trying to be someone<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.50393;0.52402;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="950" class="lyric-line" fill="#00f0ff">I played my part<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.52402;0.53668;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="988" class="lyric-line" fill="#00f0ff">Kept you in the dark<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.53668;0.54934;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1026" class="lyric-line" fill="#00f0ff">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.54934;0.5786;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1064" class="lyric-line" fill="#00f0ff">I&apos;m here with my confession<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.5786;0.59825;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1102" class="lyric-line" fill="#00f0ff">Got nothing to hide no more<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.59825;0.61703;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1140" class="lyric-line" fill="#00f0ff">I don&apos;t know where to start<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.61703;0.63799;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1178" class="lyric-line" fill="#00f0ff">But to show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.63799;0.68646;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1216" class="lyric-line" fill="#00f0ff">I&apos;m looking back on things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.68646;0.70873;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1254" class="lyric-line" fill="#00f0ff">I never wanna play the same old part<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.70873;0.73275;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1292" class="lyric-line" fill="#00f0ff">Or keep you in the dark<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.73275;0.75109;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1330" class="lyric-line" fill="#00f0ff">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.75109;0.77249;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1368" class="lyric-line" fill="#00f0ff">Looking back on the things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.77249;0.78908;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1406" class="lyric-line" fill="#00f0ff">I was trying to be someone<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.78908;0.80786;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1444" class="lyric-line" fill="#00f0ff">I played my part<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.80786;0.82009;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1482" class="lyric-line" fill="#00f0ff">Kept you in the dark<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.82009;0.83406;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1520" class="lyric-line" fill="#00f0ff">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.83406;0.85939;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1558" class="lyric-line" fill="#00f0ff">Looking back on the things I&apos;ve done<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.85939;0.87511;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1596" class="lyric-line" fill="#00f0ff">I was trying to be someone<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.87511;0.89476;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1634" class="lyric-line" fill="#00f0ff">I played my part<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.89476;0.90742;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1672" class="lyric-line" fill="#00f0ff">Kept you in the dark<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.90742;0.9214;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1710" class="lyric-line" fill="#00f0ff">Now let me show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#405070;#405070" keyTimes="0;0.9214;0.94672;1" dur="229s" repeatCount="indefinite"/></text>
+      <text x="36" y="1748" class="lyric-line" fill="#00f0ff">Show you the shape of my heart<animate attributeName="fill" calcMode="discrete" values="#00f0ff;#ffffff;#ffffff" keyTimes="0;0.94672;1" dur="229s" repeatCount="indefinite"/></text>
         <animateTransform attributeName="transform" type="translate" values="0 195;0 195;0 157;0 157;0 119;0 119;0 81;0 81;0 43;0 43;0 5;0 5;0 -33;0 -33;0 -71;0 -71;0 -109;0 -109;0 -147;0 -147;0 -185;0 -185;0 -223;0 -223;0 -261;0 -261;0 -299;0 -299;0 -337;0 -337;0 -375;0 -375;0 -413;0 -413;0 -451;0 -451;0 -489;0 -489;0 -527;0 -527;0 -565;0 -565;0 -603;0 -603;0 -641;0 -641;0 -679;0 -679;0 -717;0 -717;0 -755;0 -755;0 -793;0 -793;0 -831;0 -831;0 -869;0 -869;0 -907;0 -907;0 -945;0 -945;0 -983;0 -983;0 -1021;0 -1021;0 -1059;0 -1059;0 -1097;0 -1097;0 -1135;0 -1135;0 -1173;0 -1173;0 -1211;0 -1211;0 -1249;0 -1249;0 -1287;0 -1287;0 -1325;0 -1325;0 -1363;0 -1363;0 -1401;0 -1401;0 -1439;0 -1439;0 -1477;0 -1477;0 -1515;0 -1515;0 -1553;0 -1553" keyTimes="0;0.01725;0.01965;0.03166;0.03406;0.05;0.0524;0.08144;0.08384;0.12511;0.12751;0.14389;0.14629;0.16354;0.16594;0.17838;0.18079;0.19934;0.20175;0.20808;0.21048;0.22904;0.23144;0.25;0.2524;0.26048;0.26288;0.27489;0.27729;0.31201;0.31441;0.33384;0.33624;0.35262;0.35502;0.38624;0.38865;0.39934;0.40175;0.41769;0.42009;0.43603;0.43843;0.45175;0.45415;0.48013;0.48253;0.50153;0.50393;0.52162;0.52402;0.53428;0.53668;0.54694;0.54934;0.5762;0.5786;0.59585;0.59825;0.61463;0.61703;0.63559;0.63799;0.68406;0.68646;0.70633;0.70873;0.73035;0.73275;0.74869;0.75109;0.77009;0.77249;0.78668;0.78908;0.80546;0.80786;0.81769;0.82009;0.83166;0.83406;0.85699;0.85939;0.87271;0.87511;0.89236;0.89476;0.90502;0.90742;0.919;0.9214;0.94432;0.94672;1" dur="229s" repeatCount="indefinite"/>
       </g>
     </g>
