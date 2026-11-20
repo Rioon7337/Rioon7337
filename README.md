@@ -8,9 +8,23 @@
 
 <div align="center">
   <br/>
-  <img width="100%" src="./pacman.svg" alt="Pac-Man Arcade" />
+  <img width="100%" src="./pacman.svg" alt="Pac-Man Arcade Matrix" />
 </div>
 
+<div align="center">
+  <br/>
+  <img width="100%" src="./space-invaders.svg" alt="Space Invaders Defense Matrix" />
+</div>
+
+<div align="center">
+  <br/>
+  <img width="100%" src="./flappy-bird.svg" alt="Flappy Bird Cyber Matrix" />
+</div>
+
+<div align="center">
+  <br/>
+  <a href="https://rioon7337.github.io/Rioon7337/#player"><img width="100%" src="./music-player.svg" alt="Play Shape Of My Heart - Backstreet Boys" /></a>
+</div>
 
 <div align="center">
   <br/>

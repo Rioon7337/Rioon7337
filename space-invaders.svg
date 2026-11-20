@@ -1,0 +1,372 @@
+<svg width="900" height="250" viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Space Invaders Arcade Matrix Rioon7337">
+  <defs>
+    <radialGradient id="bgInv" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0a1a3e"/>
+      <stop offset="60%" stop-color="#07071a"/>
+      <stop offset="100%" stop-color="#050512"/>
+    </radialGradient>
+
+    <pattern id="invGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#00f0ff" stroke-width="0.35" opacity="0.05"/>
+    </pattern>
+
+    <!-- Animated Neon Border Gradient -->
+    <linearGradient id="rgbInv" gradientUnits="userSpaceOnUse" x1="12" y1="125" x2="888" y2="125">
+      <stop offset="0%" stop-color="#00f0ff">
+        <animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="33%" stop-color="#d946ef">
+        <animate attributeName="stop-color" values="#d946ef;#00f0ff;#ff73fa;#d946ef" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="66%" stop-color="#00ffcc">
+        <animate attributeName="stop-color" values="#00ffcc;#ff73fa;#00f0ff;#00ffcc" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#00f0ff">
+        <animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 125" to="360 450 125" dur="4.5s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowInv" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="laserGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="neonOuterInv" x="-10%" y="-18%" width="120%" height="136%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="clipInv">
+      <rect x="12" y="12" width="876" height="226" rx="16"/>
+    </clipPath>
+
+    <!-- Reusable Alien 1: Squid (Frame A & B) -->
+    <g id="squidA">
+      <path d="M6 0h4v2h-4z M4 2h8v2h-8z M2 4h12v2h-12z M0 6h4v2h-4z M6 6h4v2h-4z M12 6h4v2h-4z M0 8h16v2h-16z M2 10h2v2h-2z M12 10h2v2h-2z M0 12h2v4h-2z M14 12h2v4h-2z M4 12h2v2h-2z M10 12h2v2h-2z" fill="currentColor"/>
+    </g>
+    <g id="squidB">
+      <path d="M6 0h4v2h-4z M4 2h8v2h-8z M2 4h12v2h-12z M0 6h4v2h-4z M6 6h4v2h-4z M12 6h4v2h-4z M0 8h16v2h-16z M4 10h2v2h-2z M10 10h2v2h-2z M2 12h2v4h-2z M12 12h2v4h-2z M6 12h4v2h-4z" fill="currentColor"/>
+    </g>
+
+    <!-- Reusable Alien 2: Crab (Frame A & B) -->
+    <g id="crabA">
+      <path d="M4 0h2v2h-2z M14 0h2v2h-2z M6 2h2v2h-2z M12 2h2v2h-2z M4 4h12v2h-12z M2 6h4v2h-4z M8 6h4v2h-4z M14 6h4v2h-4z M0 8h20v4h-20z M0 12h4v2h-4z M16 12h4v2h-4z M4 14h2v4h-2z M14 14h2v4h-2z" fill="currentColor"/>
+    </g>
+    <g id="crabB">
+      <path d="M4 0h2v2h-2z M14 0h2v2h-2z M0 2h2v2h-2z M6 2h2v2h-2z M12 2h2v2h-2z M18 2h2v2h-2z M0 4h20v2h-20z M0 6h4v2h-4z M8 6h4v2h-4z M16 6h4v2h-4z M2 8h16v4h-16z M0 12h2v6h-2z M18 12h2v6h-2z" fill="currentColor"/>
+    </g>
+
+    <!-- Reusable Alien 3: Octopus (Frame A & B) -->
+    <g id="octoA">
+      <path d="M8 0h8v2h-8z M2 2h20v2h-20z M0 4h24v2h-24z M0 6h6v2h-6z M10 6h4v2h-4z M18 6h6v2h-6z M0 8h24v4h-24z M4 12h4v2h-4z M16 12h4v2h-4z M2 14h4v2h-4z M10 14h4v2h-4z M18 14h4v2h-4z M0 16h2v4h-2z M6 16h2v4h-2z M16 16h2v4h-2z M22 16h2v4h-2z" fill="currentColor"/>
+    </g>
+    <g id="octoB">
+      <path d="M8 0h8v2h-8z M2 2h20v2h-20z M0 4h24v2h-24z M0 6h6v2h-6z M10 6h4v2h-4z M18 6h6v2h-6z M0 8h24v4h-24z M6 12h12v2h-12z M4 14h2v4h-2z M18 14h2v4h-2z M8 16h2v4h-2z M14 16h2v4h-2z" fill="currentColor"/>
+    </g>
+
+    <!-- Reusable Defense Bunker (Arch Shield with pixel damage) -->
+    <g id="bunker">
+      <path d="M4 0h36v6h4v6h4v24h-12v-12h-24v12h-12v-24h4v-6h4z" fill="#00ffcc" opacity="0.85"/>
+      <!-- Damage cutouts -->
+      <rect x="14" y="6" width="4" height="6" fill="#07071a"/>
+      <rect x="30" y="16" width="6" height="4" fill="#07071a"/>
+      <rect x="6" y="24" width="4" height="4" fill="#07071a"/>
+    </g>
+
+    <!-- Player Laser Tank -->
+    <g id="playerTank">
+      <path d="M14 0h4v6h-4z M6 6h20v4h-20z M2 10h28v6h-28z M0 16h32v4h-32z" fill="#00ff88"/>
+      <rect x="14" y="0" width="4" height="4" fill="#ffffff" filter="url(#laserGlow)"/>
+    </g>
+  </defs>
+
+  <!-- Outer Neon Aura -->
+  <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="url(#rgbInv)" stroke-width="5" opacity="0.32" filter="url(#neonOuterInv)"/>
+  <rect x="12" y="12" width="876" height="226" rx="16" fill="url(#bgInv)"/>
+  <rect x="12" y="12" width="876" height="226" rx="16" fill="url(#invGrid)"/>
+
+  <!-- Cyber Corners -->
+  <path d="M22 42 L22 22 L42 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M878 42 L878 22 L858 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M22 208 L22 228 L42 228" stroke="#d946ef" stroke-width="2" fill="none" opacity=".85"/>
+  <path d="M878 208 L878 228 L858 228" stroke="#d946ef" stroke-width="2" fill="none" opacity=".85"/>
+
+  <!-- Arcade HUD Labels -->
+  <text x="32" y="32" font-family="'Fira Code', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#00f0ff" opacity="0.95">// SPACE INVADERS &#183; RIOON7337</text>
+  <text x="450" y="32" text-anchor="middle" font-family="'Fira Code', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#00ffcc" opacity="0.85">DEFENSE MATRIX // WAVE 07</text>
+  <text x="868" y="32" text-anchor="end" font-family="'Fira Code', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#ff73fa" opacity="0.95">HI-SCORE: 250807</text>
+
+  <!-- Animated Border & Traveling Tracer -->
+  <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="url(#rgbInv)" stroke-width="1.6"/>
+  <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.9" pathLength="1000" stroke-dasharray="85 915" filter="url(#glowInv)">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Game Playfield Area -->
+  <g clip-path="url(#clipInv)">
+    <!-- Mystery Flying UFO (Cruises at the top with crimson/pink glow) -->
+    <g filter="url(#glowInv)">
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="920 44; 920 44; -60 44; -60 44"
+          keyTimes="0; 0.45; 0.70; 1"
+          dur="14s" repeatCount="indefinite"/>
+        <!-- UFO Saucer Body -->
+        <g fill="#ff0055">
+          <path d="M12 0h12v2h-12z M8 2h20v2h-20z M4 4h28v3h-28z M0 7h36v3h-36z M6 10h6v2h-6z M16 10h4v2h-4z M24 10h6v2h-6z"/>
+          <circle cx="10" cy="5" r="1.5" fill="#ffffff"/>
+          <circle cx="18" cy="5" r="1.5" fill="#ffffff"/>
+          <circle cx="26" cy="5" r="1.5" fill="#ffffff"/>
+        </g>
+        <!-- Bonus Points Flash Text -->
+        <text x="18" y="-4" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
+          ? 300 PTS
+          <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite"/>
+        </text>
+      </g>
+    </g>
+
+    <!-- Marching Alien Armada -->
+    <!-- The armada translates left and right smoothly in 3s cycle -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0 0; 36 0; 0 0; -36 0; 0 0"
+        dur="4.8s" repeatCount="indefinite"/>
+
+      <!-- ROW 1: SQUID ALIENS (Neon Pink / Quantum Magenta) -->
+      <g fill="#ff73fa" filter="url(#glowInv)">
+        <!-- 8 Aliens in Row 1 -->
+        <!-- Alien 1 -->
+        <g transform="translate(180 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 2 -->
+        <g transform="translate(245 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 3 -->
+        <g transform="translate(310 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 4 -->
+        <g transform="translate(375 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 5 -->
+        <g transform="translate(440 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 6 (Shot / exploding occasionally) -->
+        <g transform="translate(505 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 7 -->
+        <g transform="translate(570 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 8 -->
+        <g transform="translate(635 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+      </g>
+
+      <!-- ROW 2: CRAB ALIENS (Electric Cyan) -->
+      <g fill="#00f0ff" filter="url(#glowInv)">
+        <!-- Alien 1 -->
+        <g transform="translate(178 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 2 -->
+        <g transform="translate(243 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 3 -->
+        <g transform="translate(308 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 4 (Exploding Pixel Sparks) -->
+        <g transform="translate(373 78)">
+          <!-- Explosion animation when laser hits -->
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.58;0.6;0.85;0.88" dur="4s" repeatCount="indefinite"/>
+            <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+            <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+          </g>
+          <!-- Pixel burst -->
+          <g fill="#ffffff">
+            <animate attributeName="opacity" values="0;0;1;0.8;0" keyTimes="0;0.59;0.62;0.75;0.8" dur="4s" repeatCount="indefinite"/>
+            <circle cx="10" cy="8" r="2.5" fill="#ffd700"/>
+            <rect x="0" y="2" width="3" height="3"/><rect x="18" y="2" width="3" height="3"/>
+            <rect x="2" y="14" width="3" height="3"/><rect x="16" y="14" width="3" height="3"/>
+            <rect x="10" y="-3" width="2" height="3"/><rect x="10" y="17" width="2" height="3"/>
+          </g>
+        </g>
+        <!-- Alien 5 -->
+        <g transform="translate(438 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 6 -->
+        <g transform="translate(503 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 7 -->
+        <g transform="translate(568 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 8 -->
+        <g transform="translate(633 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+      </g>
+
+      <!-- ROW 3: OCTOPUS ALIENS (Cyber Mint Green) -->
+      <g fill="#00ff88" filter="url(#glowInv)">
+        <!-- Alien 1 -->
+        <g transform="translate(176 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 2 -->
+        <g transform="translate(241 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 3 -->
+        <g transform="translate(306 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 4 -->
+        <g transform="translate(371 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 5 -->
+        <g transform="translate(436 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 6 -->
+        <g transform="translate(501 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 7 -->
+        <g transform="translate(566 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 8 -->
+        <g transform="translate(631 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
+        </g>
+      </g>
+    </g>
+
+    <!-- Alien Bomb Projectiles (Zigzag Laser dropping down) -->
+    <g stroke="#ff0055" stroke-width="2" fill="none" filter="url(#laserGlow)">
+      <!-- Bomb 1 from Alien Column 3 -->
+      <path d="M318 126 L315 132 L321 138 L318 144">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 0; 0 65; 0 65"
+          keyTimes="0; 0.6; 1"
+          dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.58;0.6;1" dur="2.5s" repeatCount="indefinite"/>
+      </path>
+      <!-- Bomb 2 from Alien Column 7 -->
+      <path d="M578 126 L575 132 L581 138 L578 144">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 0; 0 72; 0 72"
+          keyTimes="0; 0.65; 1"
+          dur="3.2s" begin="1.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.63;0.65;1" dur="3.2s" begin="1.1s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- 4 Defense Bunkers (Shields) -->
+    <g transform="translate(0 156)" filter="url(#glowInv)">
+      <use href="#bunker" x="180"/>
+      <use href="#bunker" x="330"/>
+      <use href="#bunker" x="480"/>
+      <use href="#bunker" x="630"/>
+    </g>
+
+    <!-- Player Laser Tank with Patrol & Firing Animation -->
+    <!-- Player moves smoothly between Bunker 2 and 3, firing lasers upward -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="366 198; 436 198; 400 198; 320 198; 366 198"
+        dur="6s" repeatCount="indefinite"/>
+
+      <!-- Tank Body -->
+      <use href="#playerTank"/>
+
+      <!-- Rapid Player Lasers Shooting Up -->
+      <g filter="url(#laserGlow)">
+        <!-- Laser Blast 1 (Hits Crab Alien 4 at y = 88) -->
+        <line x1="16" y1="-2" x2="16" y2="-16" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="translate"
+            values="0 0; 0 -115; 0 -115"
+            keyTimes="0; 0.45; 1"
+            dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity"
+            values="1;1;0;0"
+            keyTimes="0; 0.44; 0.46; 1"
+            dur="2s" repeatCount="indefinite"/>
+        </line>
+
+        <!-- Laser Blast 2 (Rapid second shot) -->
+        <line x1="16" y1="-2" x2="16" y2="-16" stroke="#00ffcc" stroke-width="2.5" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="translate"
+            values="0 0; 0 -130; 0 -130"
+            keyTimes="0; 0.5; 1"
+            dur="2s" begin="0.9s" repeatCount="indefinite"/>
+          <animate attributeName="opacity"
+            values="1;1;0;0"
+            keyTimes="0; 0.48; 0.5; 1"
+            dur="2s" begin="0.9s" repeatCount="indefinite"/>
+        </line>
+      </g>
+    </g>
+
+    <!-- Bottom Status Line & Spare Lives Display -->
+    <g>
+      <line x1="20" y1="224" x2="880" y2="224" stroke="#00f0ff" stroke-width="1.2" opacity="0.7"/>
+      <line x1="20" y1="224" x2="880" y2="224" stroke="#00ff88" stroke-width="1.8" stroke-dasharray="12 40" opacity="0.8"/>
+
+      <!-- Lives count & icons -->
+      <text x="32" y="238" font-family="'Fira Code', monospace" font-size="9.5" font-weight="700" fill="#00ff88" letter-spacing="1.5">LIVES: 3</text>
+      <g transform="translate(90 228) scale(0.55)" fill="#00ff88">
+        <use href="#playerTank" x="0"/>
+        <use href="#playerTank" x="42"/>
+        <use href="#playerTank" x="84"/>
+      </g>
+
+      <!-- Stage & Audio Uplink indicator -->
+      <text x="868" y="238" text-anchor="end" font-family="'Fira Code', monospace" font-size="9.5" font-weight="700" fill="#00f0ff" letter-spacing="1.5">SYSTEM ACTIVE // LASER CALIBRATED</text>
+    </g>
+  </g>
+</svg>
