@@ -78,12 +78,30 @@
       border-radius: 18px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
       display: grid;
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 1.25fr 0.95fr;
       overflow: hidden;
       min-height: 520px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 860px) {
       .desk-card { grid-template-columns: 1fr; }
+    }
+    .chap-pill {
+      background: rgba(10, 26, 62, 0.85);
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      border-radius: 6px;
+      color: #00f0ff;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Fira Code', monospace;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .chap-pill:hover {
+      background: #00f0ff;
+      color: #07071a;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+      transform: translateY(-1px);
     }
 
     /* Left Player Controls */
@@ -348,93 +366,67 @@
     <div id="player" class="desk-wrap">
       <div class="desk-glow"></div>
       <div class="desk-card">
-        <!-- Left: Player Controls -->
+        <!-- Left: YouTube Video Cinema -->
         <div class="sp-left">
           <div class="sp-top">
-            <span>SYS.ACTIVE</span>
-            <span>RIOON7337 // AUDIO UPLINK</span>
-            <span>•••</span>
+            <span style="display:flex; align-items:center; gap:8px;">
+              <span class="lyrics-dot" style="background:#ff0033; box-shadow:0 0 10px #ff0033;"></span>
+              SYS.ACTIVE // YOUTUBE CYBER THEATER
+            </span>
+            <span style="font-family:'Fira Code', monospace; color:#00ff88; font-size:11px;">4K 60FPS // HDR</span>
           </div>
 
-          <div class="sp-cover" style="display:flex; flex-direction:column; justify-content:center; align-items:center; background: radial-gradient(circle at 50% 45%, #2a1548 0%, #15092a 50%, #080314 100%); position:relative; overflow:hidden;">
-            <!-- Golden Cyber Sun & Wings -->
-            <div style="position:absolute; width:130px; height:130px; border-radius:50%; background:radial-gradient(circle, #ffe600 0%, #ff007f 60%, transparent 75%); opacity:0.85; filter:blur(1px);"></div>
-            <div style="position:absolute; width:150px; height:150px; border-radius:50%; border:1px dashed #ffd700; opacity:0.6; animation: spin 24s linear infinite;"></div>
-            <div style="position:absolute; top:12px; left:12px; padding:3px 8px; border-radius:4px; background:rgba(7,7,26,0.85); border:1px solid #00f0ff; font-family:'Fira Code',monospace; font-size:9px; font-weight:700; color:#00f0ff;">
-              狼音アロ ARO
-            </div>
-            <div style="position:relative; z-index:2; text-align:center;">
-              <div style="font-size:36px; font-weight:900; color:#ffd700; text-shadow:0 0 16px rgba(255,215,0,0.8); letter-spacing:4px; font-family:'Segoe UI','Noto Sans JP',sans-serif;">金 烏</div>
-              <div style="font-size:11px; font-weight:800; color:#00f0ff; letter-spacing:3px; margin-top:2px; font-family:'Fira Code',monospace;">SOL BIRD</div>
-              <div style="font-size:10.5px; font-weight:600; color:#ff73fa; letter-spacing:1px; margin-top:4px;">羅威 feat. 狼音アロ</div>
-            </div>
-            <!-- Bottom visualizer bars -->
-            <div style="position:absolute; bottom:10px; display:flex; gap:3px; align-items:flex-end; height:14px; opacity:0.75;">
-              <div style="width:3px; height:8px; background:#00f0ff; border-radius:1px;"></div>
-              <div style="width:3px; height:12px; background:#00f0ff; border-radius:1px;"></div>
-              <div style="width:3px; height:6px; background:#00f0ff; border-radius:1px;"></div>
-              <div style="width:3px; height:14px; background:#00f0ff; border-radius:1px;"></div>
-              <div style="width:3px; height:9px; background:#00f0ff; border-radius:1px;"></div>
-              <div style="width:3px; height:13px; background:#00f0ff; border-radius:1px;"></div>
-              <div style="width:3px; height:7px; background:#00f0ff; border-radius:1px;"></div>
-            </div>
+          <!-- 16:9 Video Embed Container -->
+          <div class="video-container" style="position:relative; width:100%; aspect-ratio:16/9; background:#000000; border-radius:12px; overflow:hidden; border:1px solid rgba(0,240,255,0.4); box-shadow:0 10px 30px rgba(0,0,0,0.85);">
+            <iframe id="ytVideoFrame"
+              src="https://www.youtube.com/embed/mL-Fwq6jg8o?enablejsapi=1&rel=0&playsinline=1"
+              title="★【狼音アロ14th】金烏(Sol Bird) - 羅威 feat. 狼音アロ"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
+            </iframe>
           </div>
 
-          <div class="sp-meta-row">
+          <!-- Video Details & Links -->
+          <div class="sp-meta-row" style="margin-top:16px; margin-bottom:12px;">
             <div>
-              <div class="sp-title">金烏 (Sol Bird)</div>
-              <div class="sp-artist">羅威 feat. 狼音アロ</div>
+              <div class="sp-title" style="font-size:18px;">★【狼音アロ14th】金烏 (Sol Bird)</div>
+              <div class="sp-artist" style="font-size:13px; color:#00f0ff; margin-top:2px;">羅威 (Luowei) feat. 狼音アロ (Rouon Aro)</div>
             </div>
-            <div class="sp-check">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#07071a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+            <a href="https://music.youtube.com/watch?v=mL-Fwq6jg8o" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; gap:6px; padding:7px 14px; border-radius:8px; background:#ff0033; color:#ffffff; text-decoration:none; font-family:'Segoe UI',sans-serif; font-size:11.5px; font-weight:800; box-shadow:0 0 14px rgba(255,0,51,0.55); transition:transform 0.15s ease;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+              YT Music
+            </a>
           </div>
 
-          <div id="progressBar" class="sp-prog-bar" title="Seek">
-            <div id="progressFill" class="sp-prog-fill"></div>
-          </div>
-          <div class="sp-times">
-            <span id="elapsedTime">0:00</span>
-            <span id="remainingTime">-4:12</span>
-          </div>
-
-          <div class="sp-controls">
-            <button id="chorusBtn" class="sp-icon-btn" title="Jump to Chorus 1 (01:10)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
-            </button>
-            <button id="prevBtn" class="sp-icon-btn" title="Restart">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="5" width="3" height="14" rx="1"/><polygon points="20 5 20 19 8 12"/></svg>
-            </button>
-            <button id="playPauseBtn" class="sp-play-btn" aria-label="Play or Pause">
-              <svg id="playIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              <svg id="pauseIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
-            </button>
-            <button id="nextBtn" class="sp-icon-btn" title="Jump to Chorus 2 (03:07)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="4 5 4 19 16 12"/><rect x="17" y="5" width="3" height="14" rx="1"/></svg>
-            </button>
-            <button class="sp-icon-btn" style="color:#00ff88;" title="Repeat On">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-            </button>
+          <!-- Cyber Chapter Jumps -->
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;">
+            <button type="button" class="chap-pill" onclick="seekVideo(27)" title="00:27 Intro">00:27 Intro</button>
+            <button type="button" class="chap-pill" onclick="seekVideo(70)" title="01:10 Chorus 1">01:10 Chorus 1</button>
+            <button type="button" class="chap-pill" onclick="seekVideo(115)" title="01:55 Solo">01:55 Solo</button>
+            <button type="button" class="chap-pill" onclick="seekVideo(146)" title="02:26 Verse 2">02:26 Verse 2</button>
+            <button type="button" class="chap-pill" onclick="seekVideo(187)" title="03:07 Chorus 2">03:07 Chorus 2</button>
+            <button type="button" class="chap-pill" onclick="seekVideo(240)" title="04:00 Outro">04:00 Outro</button>
           </div>
 
-          <div class="sp-bottom">
+          <div class="sp-bottom" style="margin-top:auto;">
             <div class="sp-device">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="1" y1="20" x2="23" y2="20"/></svg>
-              <span>RIOON7337 // RIG</span>
+              <span>RIOON7337 // THEATER MATRIX</span>
             </div>
-            <div class="vol-mini" title="Volume">
-              <span style="font-size:12px;">🔊</span>
-              <input id="volumeSlider" type="range" min="0" max="1" step="0.02" value="0.85" />
-            </div>
+            <a href="https://www.youtube.com/watch?v=mL-Fwq6jg8o" target="_blank" rel="noopener noreferrer" style="color:#00f0ff; text-decoration:none; font-family:'Fira Code',monospace; font-size:11px; font-weight:700; display:flex; align-items:center; gap:4px;">
+              <span>Buka di YouTube ↗</span>
+            </a>
           </div>
         </div>
 
-        <!-- Right: Scrolling Spotify Lyrics -->
+        <!-- Right: Scrolling Synced Lyrics -->
         <div class="sp-right">
           <div class="lyrics-head">
             <div class="lyrics-badge">
               <span class="lyrics-dot"></span>
-              <span id="statusText">KLIK PLAY ▶ UNTUK MEMUTAR AUDIO</span>
+              <span id="statusText">KLIK LIRIK UNTUK MELOMPAT (SYNCED MV)</span>
             </div>
           </div>
           <div id="lyricsViewport" class="lyrics-viewport">
@@ -461,8 +453,7 @@
     <img class="full-svg" src="./footer-wave.svg" alt="Thanks For Visiting - Rioon7337" />
   </div>
 
-  <audio id="localAudio" src="./RouonAro_SolBird.m4a" preload="auto" loop></audio>
-
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     const LYRICS = [
       [0, "♪ // Intro - 金烏 (Sol Bird)"],
@@ -500,20 +491,10 @@
       [240.0, "♪ // [04:00] Outro - Sol Bird"]
     ];
 
-    const audio = document.getElementById('localAudio');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const playIcon = document.getElementById('playIcon');
-    const pauseIcon = document.getElementById('pauseIcon');
-    const progressBar = document.getElementById('progressBar');
-    const progressFill = document.getElementById('progressFill');
-    const elapsedTime = document.getElementById('elapsedTime');
-    const remainingTime = document.getElementById('remainingTime');
-    const volumeSlider = document.getElementById('volumeSlider');
+    let ytPlayer = null;
+    let ytTimer = null;
     const lyricsTrack = document.getElementById('lyricsTrack');
     const statusText = document.getElementById('statusText');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const chorusBtn = document.getElementById('chorusBtn');
 
     // Build lyrics elements
     LYRICS.forEach(([time, text], idx) => {
@@ -522,80 +503,47 @@
       el.textContent = text;
       el.dataset.time = time;
       el.dataset.index = idx;
+      el.title = `Klik untuk memutar dari ${time}s`;
       el.addEventListener('click', () => {
-        audio.currentTime = time;
-        if (audio.paused) playAudio();
+        seekVideo(time);
       });
       lyricsTrack.appendChild(el);
     });
 
     const lyricElements = Array.from(document.querySelectorAll('.lyric-item'));
 
-    function fmt(s) {
-      if (isNaN(s) || s < 0) s = 0;
-      const m = Math.floor(s / 60);
-      const sec = Math.floor(s % 60);
-      return `${m}:${sec.toString().padStart(2, '0')}`;
-    }
-
-    function playAudio() {
-      audio.play().then(() => {
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'block';
-        statusText.textContent = 'PLAYING — 金烏 (SOL BIRD) // 羅威 feat. 狼音アロ';
-      }).catch(err => {
-        console.warn('Autoplay blocked:', err);
+    function onYouTubeIframeAPIReady() {
+      ytPlayer = new YT.Player('ytVideoFrame', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
       });
     }
 
-    function pauseAudio() {
-      audio.pause();
-      playIcon.style.display = 'block';
-      pauseIcon.style.display = 'none';
-      statusText.textContent = 'PAUSED';
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) {
+        statusText.textContent = 'PLAYING — 金烏 (SOL BIRD) // 羅威 feat. 狼音アロ';
+        if (!ytTimer) {
+          ytTimer = setInterval(checkSync, 300);
+        }
+      } else if (event.data === YT.PlayerState.PAUSED) {
+        statusText.textContent = 'PAUSED';
+      } else if (event.data === YT.PlayerState.ENDED) {
+        statusText.textContent = 'SELESAI // TERIMA KASIH TELAH MENONTON';
+        if (ytTimer) {
+          clearInterval(ytTimer);
+          ytTimer = null;
+        }
+      }
     }
 
-    playPauseBtn.addEventListener('click', () => {
-      if (audio.paused) playAudio();
-      else pauseAudio();
-    });
+    function checkSync() {
+      if (!ytPlayer || typeof ytPlayer.getCurrentTime !== 'function') return;
+      const cur = ytPlayer.getCurrentTime();
+      updateLyrics(cur);
+    }
 
-    prevBtn.addEventListener('click', () => {
-      audio.currentTime = 0;
-      if (audio.paused) playAudio();
-    });
-
-    chorusBtn.addEventListener('click', () => {
-      audio.currentTime = 70.0;
-      if (audio.paused) playAudio();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      audio.currentTime = 187.0;
-      if (audio.paused) playAudio();
-    });
-
-    volumeSlider.addEventListener('input', (e) => {
-      audio.volume = parseFloat(e.target.value);
-    });
-
-    progressBar.addEventListener('click', (e) => {
-      const rect = progressBar.getBoundingClientRect();
-      const pos = (e.clientX - rect.left) / rect.width;
-      if (audio.duration) {
-        audio.currentTime = pos * audio.duration;
-      }
-    });
-
-    audio.addEventListener('timeupdate', () => {
-      const cur = audio.currentTime;
-      const dur = audio.duration || 252;
-      const pct = (cur / dur) * 100;
-      progressFill.style.width = pct + '%';
-      elapsedTime.textContent = fmt(cur);
-      remainingTime.textContent = '-' + fmt(dur - cur);
-
-      // Active lyric sync
+    function updateLyrics(cur) {
       let activeIdx = 0;
       for (let i = 0; i < LYRICS.length; i++) {
         if (cur >= LYRICS[i][0]) {
@@ -620,7 +568,20 @@
         const offset = activeEl.offsetTop - 160;
         lyricsTrack.style.transform = `translateY(-${Math.max(0, offset)}px)`;
       }
-    });
+    }
+
+    function seekVideo(seconds) {
+      if (ytPlayer && typeof ytPlayer.seekTo === 'function') {
+        ytPlayer.seekTo(seconds, true);
+        ytPlayer.playVideo();
+      } else {
+        const frame = document.getElementById('ytVideoFrame');
+        if (frame) {
+          frame.src = `https://www.youtube.com/embed/mL-Fwq6jg8o?enablejsapi=1&autoplay=1&start=${Math.floor(seconds)}`;
+        }
+      }
+      updateLyrics(seconds);
+    }
 
     // Check hash for autoplay on load
     if (window.location.hash === '#player') {
