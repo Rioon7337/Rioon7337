@@ -13,12 +13,12 @@
 
 <div align="center">
   <br/>
-  <img width="100%" src="./space-invaders.svg?v=2" alt="Space Invaders Defense Matrix" />
+  <img width="100%" src="./space-invaders.svg" alt="Space Invaders Defense Matrix" />
 </div>
 
 <div align="center">
   <br/>
-  <img width="100%" src="./flappy-bird.svg?v=2" alt="Flappy Bird Cyber Matrix" />
+  <img width="100%" src="./flappy-bird.svg" alt="Flappy Bird Cyber Matrix" />
 </div>
 
 <div align="center">
