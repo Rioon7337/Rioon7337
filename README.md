@@ -8,7 +8,7 @@
 
 <div align="center">
   <br/>
-  <img width="100%" src="./pacman.svg" alt="Pac-Man Arcade Matrix" />
+  <img width="100%" src="./snake.svg" alt="Nokia Snake Arcade" />
 </div>
 
 <div align="center">
