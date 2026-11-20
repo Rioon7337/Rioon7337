@@ -23,7 +23,7 @@
 
 <div align="center">
   <br/>
-  <a href="https://www.youtube.com/watch?v=mL-Fwq6jg8o" target="_blank" rel="noopener noreferrer"><img width="100%" src="./video-player.svg" alt="Favorite Music: 金烏 (Sol Bird) - 羅威 feat. 狼音アロ" /></a>
+  <a href="https://rioon7337.github.io/Rioon7337/#player"><img width="100%" src="./video-player.svg" alt="Favorite Music: 金烏 (Sol Bird) - 羅威 feat. 狼音アロ" /></a>
 </div>
 
 <div align="center">
