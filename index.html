@@ -456,38 +456,38 @@
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     const LYRICS = [
-      [0, "♪ // Intro - 金烏 (Sol Bird)"],
-      [27.0, "籠の鳥のことだった"],
-      [32.0, "囚われて 鳴き続ける"],
-      [37.0, "錆び付いた体でも"],
-      [44.0, "夜の風 思想が馳せる"],
-      [48.0, "地下の根を伸ばせる"],
-      [52.0, "鮮烈な叫びを上げる"],
-      [56.0, "千切れた紙に書く"],
-      [59.0, "誰かの不幸を刺す"],
-      [61.5, "雪と混ざる凍りついた雨"],
-      [65.0, "そっと頬を伝う理由"],
-      [70.0, "ほら 壊されるような味のないまま 空の下"],
-      [82.0, "この詩 いつか芽吹けば"],
-      [87.0, "ばらまくように 振った翼さらば"],
-      [92.5, "動けなくても代わりに行こう白夜"],
-      [100.0, "取り戻そう照らそう"],
-      [107.0, "もう一度明日を謳おう"],
+      [0, "♪ // Intro - Kin'u (Sol Bird)"],
+      [27.0, "Kago no tori no koto datta"],
+      [32.0, "Torawarete naki tsuzukeru"],
+      [37.0, "Sabitsuita karada demo"],
+      [44.0, "Yoru no kaze shisou ga haseru"],
+      [48.0, "Chika no ne wo nobaseru"],
+      [52.0, "Senretsu na sakebi wo ageru"],
+      [56.0, "Chigireta kami ni kaku"],
+      [59.0, "Dareka no fukou wo sasu"],
+      [61.5, "Yuki to mazaru kooritsuita ame"],
+      [65.0, "Sotto hoho wo tsutau riyuu"],
+      [70.0, "Hora kowasareru you na aji no nai mama sora no shita"],
+      [82.0, "Kono uta itsuka mebukeba"],
+      [87.0, "Baramaku you ni futta tsubasa saraba"],
+      [92.5, "Ugokenakutemo kawari ni ikou byakuya"],
+      [100.0, "Torimodosou terasou"],
+      [107.0, "Mou ichido ashita wo utaou"],
       [115.0, "♪ // [01:55] Interlude"],
-      [146.0, "どんな拙い模倣でも"],
-      [151.0, "縛られて やり続ける"],
-      [157.0, "錆び付いた記憶でも"],
-      [161.0, "曖昧な夢 君の声"],
-      [166.0, "この世のない滅び得ぬもの"],
-      [171.0, "空ろな僕の骨まで満たす"],
-      [176.0, "足らせ！ 君の方向へ"],
-      [180.0, "飛んで日暮れて倦鳥 やがて巣へ"],
-      [187.0, "ほら 捨てられたような流離のまま 泣いたおもちゃ"],
-      [200.0, "この歌 実を結べば"],
-      [205.0, "ばらまくように 振った翼さらば"],
-      [210.0, "一緒じゃなくても共に往こう"],
-      [219.0, "結局 取り戻そう直そう"],
-      [226.0, "もう一度明日を謳おう"],
+      [146.0, "Donna tsutanai mohou demo"],
+      [151.0, "Shibararete yari tsuzukeru"],
+      [157.0, "Sabitsuita kioku demo"],
+      [161.0, "Aimai na yume kimi no koe"],
+      [166.0, "Kono yo no nai horobienu mono"],
+      [171.0, "Utsuro na boku no hone made mitasu"],
+      [176.0, "Tarase! Kimi no houkou e"],
+      [180.0, "Tonde higurete kenchou yagate su e"],
+      [187.0, "Hora suterareta you na sasurai no mama naita omocha"],
+      [200.0, "Kono uta mi wo musubeba"],
+      [205.0, "Baramaku you ni futta tsubasa saraba"],
+      [210.0, "Issho ja nakutemo tomo ni yukou"],
+      [219.0, "Kekkyoku torimodosou naosou"],
+      [226.0, "Mou ichido ashita wo utaou"],
       [240.0, "♪ // [04:00] Outro - Sol Bird"]
     ];
 
@@ -522,7 +522,7 @@
 
     function onPlayerStateChange(event) {
       if (event.data === YT.PlayerState.PLAYING) {
-        statusText.textContent = 'PLAYING — 金烏 (SOL BIRD) // 羅威 feat. 狼音アロ';
+        statusText.textContent = "PLAYING \u2014 KIN'U (SOL BIRD) // Luowei feat. Rouon Aro";
         if (!ytTimer) {
           ytTimer = setInterval(checkSync, 300);
         }
