@@ -1,13 +1,16 @@
-<svg width="900" height="250" viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Authentic 1978 Space Invaders Arcade Rioon7337">
+<svg width="900" height="250" viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Space Invaders Arcade Matrix Rioon7337">
   <defs>
-    <!-- Deep Arcade CRT Black Background -->
-    <radialGradient id="bgCrt" cx="50%" cy="50%" r="85%">
-      <stop offset="0%" stop-color="#0a0e1c"/>
-      <stop offset="60%" stop-color="#05070e"/>
-      <stop offset="100%" stop-color="#020308"/>
+    <radialGradient id="bgInv" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0a1a3e"/>
+      <stop offset="60%" stop-color="#07071a"/>
+      <stop offset="100%" stop-color="#050512"/>
     </radialGradient>
 
-    <!-- Animated RGB Neon Outer Border -->
+    <pattern id="invGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#00f0ff" stroke-width="0.35" opacity="0.05"/>
+    </pattern>
+
+    <!-- Animated Neon Border Gradient -->
     <linearGradient id="rgbInv" gradientUnits="userSpaceOnUse" x1="12" y1="125" x2="888" y2="125">
       <stop offset="0%" stop-color="#00f0ff">
         <animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/>
@@ -24,1774 +27,63 @@
       <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 125" to="360 450 125" dur="4.5s" repeatCount="indefinite"/>
     </linearGradient>
 
-    <!-- CRT Arcade Scanline Pattern -->
-    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="100" y2="0" stroke="#00f0ff" stroke-width="0.3" opacity="0.06"/>
-    </pattern>
+    <!-- Glow Filters -->
+    <filter id="glowInv" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
 
-    <filter id="glowInv" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="laserGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="2.2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
-    <clipPath id="clipPlayfield">
+    <filter id="neonOuterInv" x="-10%" y="-18%" width="120%" height="136%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="clipInv">
       <rect x="12" y="12" width="876" height="226" rx="16"/>
     </clipPath>
 
-    <!-- ==================== 1978 ROM SPRITES ==================== -->
-    <g id="squid_a"><path d="M6.0 0.0h2.0v2.0h-2.0z M8.0 0.0h2.0v2.0h-2.0z M4.0 2.0h2.0v2.0h-2.0z M6.0 2.0h2.0v2.0h-2.0z M8.0 2.0h2.0v2.0h-2.0z M10.0 2.0h2.0v2.0h-2.0z M2.0 4.0h2.0v2.0h-2.0z M4.0 4.0h2.0v2.0h-2.0z M6.0 4.0h2.0v2.0h-2.0z M8.0 4.0h2.0v2.0h-2.0z M10.0 4.0h2.0v2.0h-2.0z M12.0 4.0h2.0v2.0h-2.0z M0.0 6.0h2.0v2.0h-2.0z M2.0 6.0h2.0v2.0h-2.0z M6.0 6.0h2.0v2.0h-2.0z M8.0 6.0h2.0v2.0h-2.0z M12.0 6.0h2.0v2.0h-2.0z M14.0 6.0h2.0v2.0h-2.0z M0.0 8.0h2.0v2.0h-2.0z M2.0 8.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M6.0 8.0h2.0v2.0h-2.0z M8.0 8.0h2.0v2.0h-2.0z M10.0 8.0h2.0v2.0h-2.0z M12.0 8.0h2.0v2.0h-2.0z M14.0 8.0h2.0v2.0h-2.0z M4.0 10.0h2.0v2.0h-2.0z M10.0 10.0h2.0v2.0h-2.0z M2.0 12.0h2.0v2.0h-2.0z M6.0 12.0h2.0v2.0h-2.0z M8.0 12.0h2.0v2.0h-2.0z M12.0 12.0h2.0v2.0h-2.0z M0.0 14.0h2.0v2.0h-2.0z M4.0 14.0h2.0v2.0h-2.0z M10.0 14.0h2.0v2.0h-2.0z M14.0 14.0h2.0v2.0h-2.0z" fill="currentColor"/></g>    <g id="squid_b"><path d="M6.0 0.0h2.0v2.0h-2.0z M8.0 0.0h2.0v2.0h-2.0z M4.0 2.0h2.0v2.0h-2.0z M6.0 2.0h2.0v2.0h-2.0z M8.0 2.0h2.0v2.0h-2.0z M10.0 2.0h2.0v2.0h-2.0z M2.0 4.0h2.0v2.0h-2.0z M4.0 4.0h2.0v2.0h-2.0z M6.0 4.0h2.0v2.0h-2.0z M8.0 4.0h2.0v2.0h-2.0z M10.0 4.0h2.0v2.0h-2.0z M12.0 4.0h2.0v2.0h-2.0z M0.0 6.0h2.0v2.0h-2.0z M2.0 6.0h2.0v2.0h-2.0z M6.0 6.0h2.0v2.0h-2.0z M8.0 6.0h2.0v2.0h-2.0z M12.0 6.0h2.0v2.0h-2.0z M14.0 6.0h2.0v2.0h-2.0z M0.0 8.0h2.0v2.0h-2.0z M2.0 8.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M6.0 8.0h2.0v2.0h-2.0z M8.0 8.0h2.0v2.0h-2.0z M10.0 8.0h2.0v2.0h-2.0z M12.0 8.0h2.0v2.0h-2.0z M14.0 8.0h2.0v2.0h-2.0z M2.0 10.0h2.0v2.0h-2.0z M6.0 10.0h2.0v2.0h-2.0z M8.0 10.0h2.0v2.0h-2.0z M12.0 10.0h2.0v2.0h-2.0z M0.0 12.0h2.0v2.0h-2.0z M14.0 12.0h2.0v2.0h-2.0z M2.0 14.0h2.0v2.0h-2.0z M12.0 14.0h2.0v2.0h-2.0z" fill="currentColor"/></g>    <g id="crab_a"><path d="M4.0 0.0h2.0v2.0h-2.0z M16.0 0.0h2.0v2.0h-2.0z M6.0 2.0h2.0v2.0h-2.0z M14.0 2.0h2.0v2.0h-2.0z M4.0 4.0h2.0v2.0h-2.0z M6.0 4.0h2.0v2.0h-2.0z M8.0 4.0h2.0v2.0h-2.0z M10.0 4.0h2.0v2.0h-2.0z M12.0 4.0h2.0v2.0h-2.0z M14.0 4.0h2.0v2.0h-2.0z M16.0 4.0h2.0v2.0h-2.0z M2.0 6.0h2.0v2.0h-2.0z M4.0 6.0h2.0v2.0h-2.0z M8.0 6.0h2.0v2.0h-2.0z M10.0 6.0h2.0v2.0h-2.0z M12.0 6.0h2.0v2.0h-2.0z M16.0 6.0h2.0v2.0h-2.0z M18.0 6.0h2.0v2.0h-2.0z M0.0 8.0h2.0v2.0h-2.0z M2.0 8.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M6.0 8.0h2.0v2.0h-2.0z M8.0 8.0h2.0v2.0h-2.0z M10.0 8.0h2.0v2.0h-2.0z M12.0 8.0h2.0v2.0h-2.0z M14.0 8.0h2.0v2.0h-2.0z M16.0 8.0h2.0v2.0h-2.0z M18.0 8.0h2.0v2.0h-2.0z M20.0 8.0h2.0v2.0h-2.0z M0.0 10.0h2.0v2.0h-2.0z M4.0 10.0h2.0v2.0h-2.0z M6.0 10.0h2.0v2.0h-2.0z M8.0 10.0h2.0v2.0h-2.0z M10.0 10.0h2.0v2.0h-2.0z M12.0 10.0h2.0v2.0h-2.0z M14.0 10.0h2.0v2.0h-2.0z M16.0 10.0h2.0v2.0h-2.0z M20.0 10.0h2.0v2.0h-2.0z M0.0 12.0h2.0v2.0h-2.0z M4.0 12.0h2.0v2.0h-2.0z M16.0 12.0h2.0v2.0h-2.0z M20.0 12.0h2.0v2.0h-2.0z M6.0 14.0h2.0v2.0h-2.0z M8.0 14.0h2.0v2.0h-2.0z M12.0 14.0h2.0v2.0h-2.0z M14.0 14.0h2.0v2.0h-2.0z" fill="currentColor"/></g>    <g id="crab_b"><path d="M4.0 0.0h2.0v2.0h-2.0z M16.0 0.0h2.0v2.0h-2.0z M0.0 2.0h2.0v2.0h-2.0z M6.0 2.0h2.0v2.0h-2.0z M14.0 2.0h2.0v2.0h-2.0z M20.0 2.0h2.0v2.0h-2.0z M0.0 4.0h2.0v2.0h-2.0z M4.0 4.0h2.0v2.0h-2.0z M6.0 4.0h2.0v2.0h-2.0z M8.0 4.0h2.0v2.0h-2.0z M10.0 4.0h2.0v2.0h-2.0z M12.0 4.0h2.0v2.0h-2.0z M14.0 4.0h2.0v2.0h-2.0z M16.0 4.0h2.0v2.0h-2.0z M20.0 4.0h2.0v2.0h-2.0z M0.0 6.0h2.0v2.0h-2.0z M2.0 6.0h2.0v2.0h-2.0z M4.0 6.0h2.0v2.0h-2.0z M8.0 6.0h2.0v2.0h-2.0z M10.0 6.0h2.0v2.0h-2.0z M12.0 6.0h2.0v2.0h-2.0z M16.0 6.0h2.0v2.0h-2.0z M18.0 6.0h2.0v2.0h-2.0z M20.0 6.0h2.0v2.0h-2.0z M2.0 8.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M6.0 8.0h2.0v2.0h-2.0z M8.0 8.0h2.0v2.0h-2.0z M10.0 8.0h2.0v2.0h-2.0z M12.0 8.0h2.0v2.0h-2.0z M14.0 8.0h2.0v2.0h-2.0z M16.0 8.0h2.0v2.0h-2.0z M18.0 8.0h2.0v2.0h-2.0z M4.0 10.0h2.0v2.0h-2.0z M6.0 10.0h2.0v2.0h-2.0z M8.0 10.0h2.0v2.0h-2.0z M10.0 10.0h2.0v2.0h-2.0z M12.0 10.0h2.0v2.0h-2.0z M14.0 10.0h2.0v2.0h-2.0z M16.0 10.0h2.0v2.0h-2.0z M2.0 12.0h2.0v2.0h-2.0z M18.0 12.0h2.0v2.0h-2.0z M4.0 14.0h2.0v2.0h-2.0z M16.0 14.0h2.0v2.0h-2.0z" fill="currentColor"/></g>    <g id="octo_a"><path d="M8.0 0.0h2.0v2.0h-2.0z M10.0 0.0h2.0v2.0h-2.0z M12.0 0.0h2.0v2.0h-2.0z M14.0 0.0h2.0v2.0h-2.0z M2.0 2.0h2.0v2.0h-2.0z M4.0 2.0h2.0v2.0h-2.0z M6.0 2.0h2.0v2.0h-2.0z M8.0 2.0h2.0v2.0h-2.0z M10.0 2.0h2.0v2.0h-2.0z M12.0 2.0h2.0v2.0h-2.0z M14.0 2.0h2.0v2.0h-2.0z M16.0 2.0h2.0v2.0h-2.0z M18.0 2.0h2.0v2.0h-2.0z M20.0 2.0h2.0v2.0h-2.0z M0.0 4.0h2.0v2.0h-2.0z M2.0 4.0h2.0v2.0h-2.0z M4.0 4.0h2.0v2.0h-2.0z M6.0 4.0h2.0v2.0h-2.0z M8.0 4.0h2.0v2.0h-2.0z M10.0 4.0h2.0v2.0h-2.0z M12.0 4.0h2.0v2.0h-2.0z M14.0 4.0h2.0v2.0h-2.0z M16.0 4.0h2.0v2.0h-2.0z M18.0 4.0h2.0v2.0h-2.0z M20.0 4.0h2.0v2.0h-2.0z M22.0 4.0h2.0v2.0h-2.0z M0.0 6.0h2.0v2.0h-2.0z M2.0 6.0h2.0v2.0h-2.0z M4.0 6.0h2.0v2.0h-2.0z M10.0 6.0h2.0v2.0h-2.0z M12.0 6.0h2.0v2.0h-2.0z M18.0 6.0h2.0v2.0h-2.0z M20.0 6.0h2.0v2.0h-2.0z M22.0 6.0h2.0v2.0h-2.0z M0.0 8.0h2.0v2.0h-2.0z M2.0 8.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M6.0 8.0h2.0v2.0h-2.0z M8.0 8.0h2.0v2.0h-2.0z M10.0 8.0h2.0v2.0h-2.0z M12.0 8.0h2.0v2.0h-2.0z M14.0 8.0h2.0v2.0h-2.0z M16.0 8.0h2.0v2.0h-2.0z M18.0 8.0h2.0v2.0h-2.0z M20.0 8.0h2.0v2.0h-2.0z M22.0 8.0h2.0v2.0h-2.0z M6.0 10.0h2.0v2.0h-2.0z M8.0 10.0h2.0v2.0h-2.0z M14.0 10.0h2.0v2.0h-2.0z M16.0 10.0h2.0v2.0h-2.0z M4.0 12.0h2.0v2.0h-2.0z M6.0 12.0h2.0v2.0h-2.0z M10.0 12.0h2.0v2.0h-2.0z M12.0 12.0h2.0v2.0h-2.0z M16.0 12.0h2.0v2.0h-2.0z M18.0 12.0h2.0v2.0h-2.0z M0.0 14.0h2.0v2.0h-2.0z M2.0 14.0h2.0v2.0h-2.0z M20.0 14.0h2.0v2.0h-2.0z M22.0 14.0h2.0v2.0h-2.0z" fill="currentColor"/></g>    <g id="octo_b"><path d="M8.0 0.0h2.0v2.0h-2.0z M10.0 0.0h2.0v2.0h-2.0z M12.0 0.0h2.0v2.0h-2.0z M14.0 0.0h2.0v2.0h-2.0z M2.0 2.0h2.0v2.0h-2.0z M4.0 2.0h2.0v2.0h-2.0z M6.0 2.0h2.0v2.0h-2.0z M8.0 2.0h2.0v2.0h-2.0z M10.0 2.0h2.0v2.0h-2.0z M12.0 2.0h2.0v2.0h-2.0z M14.0 2.0h2.0v2.0h-2.0z M16.0 2.0h2.0v2.0h-2.0z M18.0 2.0h2.0v2.0h-2.0z M20.0 2.0h2.0v2.0h-2.0z M0.0 4.0h2.0v2.0h-2.0z M2.0 4.0h2.0v2.0h-2.0z M4.0 4.0h2.0v2.0h-2.0z M6.0 4.0h2.0v2.0h-2.0z M8.0 4.0h2.0v2.0h-2.0z M10.0 4.0h2.0v2.0h-2.0z M12.0 4.0h2.0v2.0h-2.0z M14.0 4.0h2.0v2.0h-2.0z M16.0 4.0h2.0v2.0h-2.0z M18.0 4.0h2.0v2.0h-2.0z M20.0 4.0h2.0v2.0h-2.0z M22.0 4.0h2.0v2.0h-2.0z M0.0 6.0h2.0v2.0h-2.0z M2.0 6.0h2.0v2.0h-2.0z M4.0 6.0h2.0v2.0h-2.0z M10.0 6.0h2.0v2.0h-2.0z M12.0 6.0h2.0v2.0h-2.0z M18.0 6.0h2.0v2.0h-2.0z M20.0 6.0h2.0v2.0h-2.0z M22.0 6.0h2.0v2.0h-2.0z M0.0 8.0h2.0v2.0h-2.0z M2.0 8.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M6.0 8.0h2.0v2.0h-2.0z M8.0 8.0h2.0v2.0h-2.0z M10.0 8.0h2.0v2.0h-2.0z M12.0 8.0h2.0v2.0h-2.0z M14.0 8.0h2.0v2.0h-2.0z M16.0 8.0h2.0v2.0h-2.0z M18.0 8.0h2.0v2.0h-2.0z M20.0 8.0h2.0v2.0h-2.0z M22.0 8.0h2.0v2.0h-2.0z M4.0 10.0h2.0v2.0h-2.0z M6.0 10.0h2.0v2.0h-2.0z M8.0 10.0h2.0v2.0h-2.0z M10.0 10.0h2.0v2.0h-2.0z M12.0 10.0h2.0v2.0h-2.0z M14.0 10.0h2.0v2.0h-2.0z M16.0 10.0h2.0v2.0h-2.0z M18.0 10.0h2.0v2.0h-2.0z M2.0 12.0h2.0v2.0h-2.0z M4.0 12.0h2.0v2.0h-2.0z M18.0 12.0h2.0v2.0h-2.0z M20.0 12.0h2.0v2.0h-2.0z M6.0 14.0h2.0v2.0h-2.0z M8.0 14.0h2.0v2.0h-2.0z M14.0 14.0h2.0v2.0h-2.0z M16.0 14.0h2.0v2.0h-2.0z" fill="currentColor"/></g>    <g id="ufo"><path d="M10.0 0.0h2.0v2.0h-2.0z M12.0 0.0h2.0v2.0h-2.0z M14.0 0.0h2.0v2.0h-2.0z M16.0 0.0h2.0v2.0h-2.0z M18.0 0.0h2.0v2.0h-2.0z M20.0 0.0h2.0v2.0h-2.0z M6.0 2.0h2.0v2.0h-2.0z M8.0 2.0h2.0v2.0h-2.0z M10.0 2.0h2.0v2.0h-2.0z M12.0 2.0h2.0v2.0h-2.0z M14.0 2.0h2.0v2.0h-2.0z M16.0 2.0h2.0v2.0h-2.0z M18.0 2.0h2.0v2.0h-2.0z M20.0 2.0h2.0v2.0h-2.0z M22.0 2.0h2.0v2.0h-2.0z M24.0 2.0h2.0v2.0h-2.0z M26.0 2.0h2.0v2.0h-2.0z M4.0 4.0h2.0v2.0h-2.0z M6.0 4.0h2.0v2.0h-2.0z M8.0 4.0h2.0v2.0h-2.0z M10.0 4.0h2.0v2.0h-2.0z M12.0 4.0h2.0v2.0h-2.0z M14.0 4.0h2.0v2.0h-2.0z M16.0 4.0h2.0v2.0h-2.0z M18.0 4.0h2.0v2.0h-2.0z M20.0 4.0h2.0v2.0h-2.0z M22.0 4.0h2.0v2.0h-2.0z M24.0 4.0h2.0v2.0h-2.0z M26.0 4.0h2.0v2.0h-2.0z M28.0 4.0h2.0v2.0h-2.0z M2.0 6.0h2.0v2.0h-2.0z M4.0 6.0h2.0v2.0h-2.0z M8.0 6.0h2.0v2.0h-2.0z M10.0 6.0h2.0v2.0h-2.0z M14.0 6.0h2.0v2.0h-2.0z M16.0 6.0h2.0v2.0h-2.0z M20.0 6.0h2.0v2.0h-2.0z M22.0 6.0h2.0v2.0h-2.0z M26.0 6.0h2.0v2.0h-2.0z M28.0 6.0h2.0v2.0h-2.0z M0.0 8.0h2.0v2.0h-2.0z M2.0 8.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M6.0 8.0h2.0v2.0h-2.0z M8.0 8.0h2.0v2.0h-2.0z M10.0 8.0h2.0v2.0h-2.0z M12.0 8.0h2.0v2.0h-2.0z M14.0 8.0h2.0v2.0h-2.0z M16.0 8.0h2.0v2.0h-2.0z M18.0 8.0h2.0v2.0h-2.0z M20.0 8.0h2.0v2.0h-2.0z M22.0 8.0h2.0v2.0h-2.0z M24.0 8.0h2.0v2.0h-2.0z M26.0 8.0h2.0v2.0h-2.0z M28.0 8.0h2.0v2.0h-2.0z M30.0 8.0h2.0v2.0h-2.0z M6.0 10.0h2.0v2.0h-2.0z M8.0 10.0h2.0v2.0h-2.0z M10.0 10.0h2.0v2.0h-2.0z M20.0 10.0h2.0v2.0h-2.0z M22.0 10.0h2.0v2.0h-2.0z M24.0 10.0h2.0v2.0h-2.0z M8.0 12.0h2.0v2.0h-2.0z M22.0 12.0h2.0v2.0h-2.0z" fill="currentColor"/></g>    <g id="alien_exp"><path d="M6.0 0.0h2.0v2.0h-2.0z M18.0 0.0h2.0v2.0h-2.0z M0.0 2.0h2.0v2.0h-2.0z M8.0 2.0h2.0v2.0h-2.0z M16.0 2.0h2.0v2.0h-2.0z M24.0 2.0h2.0v2.0h-2.0z M2.0 4.0h2.0v2.0h-2.0z M22.0 4.0h2.0v2.0h-2.0z M4.0 6.0h2.0v2.0h-2.0z M20.0 6.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M20.0 8.0h2.0v2.0h-2.0z M2.0 10.0h2.0v2.0h-2.0z M22.0 10.0h2.0v2.0h-2.0z M0.0 12.0h2.0v2.0h-2.0z M8.0 12.0h2.0v2.0h-2.0z M16.0 12.0h2.0v2.0h-2.0z M24.0 12.0h2.0v2.0h-2.0z M6.0 14.0h2.0v2.0h-2.0z M18.0 14.0h2.0v2.0h-2.0z" fill="currentColor"/></g>    <g id="cannon"><path d="M12.0 0.0h2.0v2.0h-2.0z M10.0 2.0h2.0v2.0h-2.0z M12.0 2.0h2.0v2.0h-2.0z M14.0 2.0h2.0v2.0h-2.0z M10.0 4.0h2.0v2.0h-2.0z M12.0 4.0h2.0v2.0h-2.0z M14.0 4.0h2.0v2.0h-2.0z M2.0 6.0h2.0v2.0h-2.0z M4.0 6.0h2.0v2.0h-2.0z M6.0 6.0h2.0v2.0h-2.0z M8.0 6.0h2.0v2.0h-2.0z M10.0 6.0h2.0v2.0h-2.0z M12.0 6.0h2.0v2.0h-2.0z M14.0 6.0h2.0v2.0h-2.0z M16.0 6.0h2.0v2.0h-2.0z M18.0 6.0h2.0v2.0h-2.0z M20.0 6.0h2.0v2.0h-2.0z M22.0 6.0h2.0v2.0h-2.0z M0.0 8.0h2.0v2.0h-2.0z M2.0 8.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M6.0 8.0h2.0v2.0h-2.0z M8.0 8.0h2.0v2.0h-2.0z M10.0 8.0h2.0v2.0h-2.0z M12.0 8.0h2.0v2.0h-2.0z M14.0 8.0h2.0v2.0h-2.0z M16.0 8.0h2.0v2.0h-2.0z M18.0 8.0h2.0v2.0h-2.0z M20.0 8.0h2.0v2.0h-2.0z M22.0 8.0h2.0v2.0h-2.0z M24.0 8.0h2.0v2.0h-2.0z M0.0 10.0h2.0v2.0h-2.0z M2.0 10.0h2.0v2.0h-2.0z M4.0 10.0h2.0v2.0h-2.0z M6.0 10.0h2.0v2.0h-2.0z M8.0 10.0h2.0v2.0h-2.0z M10.0 10.0h2.0v2.0h-2.0z M12.0 10.0h2.0v2.0h-2.0z M14.0 10.0h2.0v2.0h-2.0z M16.0 10.0h2.0v2.0h-2.0z M18.0 10.0h2.0v2.0h-2.0z M20.0 10.0h2.0v2.0h-2.0z M22.0 10.0h2.0v2.0h-2.0z M24.0 10.0h2.0v2.0h-2.0z M0.0 12.0h2.0v2.0h-2.0z M2.0 12.0h2.0v2.0h-2.0z M4.0 12.0h2.0v2.0h-2.0z M6.0 12.0h2.0v2.0h-2.0z M8.0 12.0h2.0v2.0h-2.0z M10.0 12.0h2.0v2.0h-2.0z M12.0 12.0h2.0v2.0h-2.0z M14.0 12.0h2.0v2.0h-2.0z M16.0 12.0h2.0v2.0h-2.0z M18.0 12.0h2.0v2.0h-2.0z M20.0 12.0h2.0v2.0h-2.0z M22.0 12.0h2.0v2.0h-2.0z M24.0 12.0h2.0v2.0h-2.0z M0.0 14.0h2.0v2.0h-2.0z M2.0 14.0h2.0v2.0h-2.0z M4.0 14.0h2.0v2.0h-2.0z M6.0 14.0h2.0v2.0h-2.0z M8.0 14.0h2.0v2.0h-2.0z M10.0 14.0h2.0v2.0h-2.0z M12.0 14.0h2.0v2.0h-2.0z M14.0 14.0h2.0v2.0h-2.0z M16.0 14.0h2.0v2.0h-2.0z M18.0 14.0h2.0v2.0h-2.0z M20.0 14.0h2.0v2.0h-2.0z M22.0 14.0h2.0v2.0h-2.0z M24.0 14.0h2.0v2.0h-2.0z" fill="currentColor"/></g>    <g id="cannon_exp"><path d="M6.0 0.0h2.0v2.0h-2.0z M12.0 0.0h2.0v2.0h-2.0z M18.0 0.0h2.0v2.0h-2.0z M24.0 0.0h2.0v2.0h-2.0z M2.0 2.0h2.0v2.0h-2.0z M8.0 2.0h2.0v2.0h-2.0z M14.0 2.0h2.0v2.0h-2.0z M20.0 2.0h2.0v2.0h-2.0z M26.0 2.0h2.0v2.0h-2.0z M0.0 4.0h2.0v2.0h-2.0z M6.0 4.0h2.0v2.0h-2.0z M12.0 4.0h2.0v2.0h-2.0z M16.0 4.0h2.0v2.0h-2.0z M22.0 4.0h2.0v2.0h-2.0z M28.0 4.0h2.0v2.0h-2.0z M2.0 6.0h2.0v2.0h-2.0z M10.0 6.0h2.0v2.0h-2.0z M18.0 6.0h2.0v2.0h-2.0z M26.0 6.0h2.0v2.0h-2.0z M4.0 8.0h2.0v2.0h-2.0z M8.0 8.0h2.0v2.0h-2.0z M20.0 8.0h2.0v2.0h-2.0z M24.0 8.0h2.0v2.0h-2.0z M2.0 10.0h2.0v2.0h-2.0z M10.0 10.0h2.0v2.0h-2.0z M18.0 10.0h2.0v2.0h-2.0z M26.0 10.0h2.0v2.0h-2.0z M0.0 12.0h2.0v2.0h-2.0z M6.0 12.0h2.0v2.0h-2.0z M12.0 12.0h2.0v2.0h-2.0z M16.0 12.0h2.0v2.0h-2.0z M22.0 12.0h2.0v2.0h-2.0z M28.0 12.0h2.0v2.0h-2.0z M4.0 14.0h2.0v2.0h-2.0z M10.0 14.0h2.0v2.0h-2.0z M16.0 14.0h2.0v2.0h-2.0z M22.0 14.0h2.0v2.0h-2.0z" fill="currentColor"/></g>
-
-    <g id="bunker">
-      <path d="
-        M 6 0 H 38 V 4 H 44 V 26 H 32 V 18 H 28 V 14 H 16 V 18 H 12 V 26 H 0 V 4 H 6 Z
-      " fill="#00ff88"/>
+    <!-- Alien Sprites (Pose A and B) -->
+    <g id="squidA">
+      <path d="M6 0h4v2h-4z M4 2h8v2h-8z M2 4h12v2h-12z M0 6h4v2h-4z M6 6h4v2h-4z M12 6h4v2h-4z M0 8h16v2h-16z M2 10h2v2h-2z M12 10h2v2h-2z M0 12h2v4h-2z M14 12h2v4h-2z M4 12h2v2h-2z M10 12h2v2h-2z" fill="currentColor"/>
     </g>
-    
+    <g id="squidB">
+      <path d="M6 0h4v2h-4z M4 2h8v2h-8z M2 4h12v2h-12z M0 6h4v2h-4z M6 6h4v2h-4z M12 6h4v2h-4z M0 8h16v2h-16z M4 10h2v2h-2z M10 10h2v2h-2z M2 12h2v4h-2z M12 12h2v4h-2z M6 12h4v2h-4z" fill="currentColor"/>
+    </g>
+
+    <g id="crabA">
+      <path d="M4 0h2v2h-2z M14 0h2v2h-2z M6 2h2v2h-2z M12 2h2v2h-2z M4 4h12v2h-12z M2 6h4v2h-4z M8 6h4v2h-4z M14 6h4v2h-4z M0 8h20v4h-20z M0 12h4v2h-4z M16 12h4v2h-4z M4 14h2v4h-2z M14 14h2v4h-2z" fill="currentColor"/>
+    </g>
+    <g id="crabB">
+      <path d="M4 0h2v2h-2z M14 0h2v2h-2z M0 2h2v2h-2z M6 2h2v2h-2z M12 2h2v2h-2z M18 2h2v2h-2z M0 4h20v2h-20z M0 6h4v2h-4z M8 6h4v2h-4z M16 6h4v2h-4z M2 8h16v4h-16z M0 12h2v6h-2z M18 12h2v6h-2z" fill="currentColor"/>
+    </g>
+
+    <g id="octoA">
+      <path d="M8 0h8v2h-8z M2 2h20v2h-20z M0 4h24v2h-24z M0 6h6v2h-6z M10 6h4v2h-4z M18 6h6v2h-6z M0 8h24v4h-24z M4 12h4v2h-4z M16 12h4v2h-4z M2 14h4v2h-4z M10 14h4v2h-4z M18 14h4v2h-4z M0 16h2v4h-2z M6 16h2v4h-2z M16 16h2v4h-2z M22 16h2v4h-2z" fill="currentColor"/>
+    </g>
+    <g id="octoB">
+      <path d="M8 0h8v2h-8z M2 2h20v2h-20z M0 4h24v2h-24z M0 6h6v2h-6z M10 6h4v2h-4z M18 6h6v2h-6z M0 8h24v4h-24z M6 12h12v2h-12z M4 14h2v4h-2z M18 14h2v4h-2z M8 16h2v4h-2z M14 16h2v4h-2z" fill="currentColor"/>
+    </g>
+
+    <!-- Player Laser Tank -->
+    <g id="playerTank">
+      <path d="M14 0h4v6h-4z M6 6h20v4h-20z M2 10h28v6h-28z M0 16h32v4h-32z" fill="#00ff88"/>
+      <rect x="14" y="0" width="4" height="4" fill="#ffffff" filter="url(#laserGlow)"/>
+    </g>
+
+    <g id="bunkerBase">
+      <path d="M4 0h36v6h4v6h4v24h-12v-12h-24v12h-12v-24h4v-6h4z" fill="#00ffcc" opacity="0.85"/>
+    </g>
   </defs>
 
-  <!-- Outer Neon Border Aura -->
-  <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="url(#rgbInv)" stroke-width="5" opacity="0.35" filter="url(#glowInv)"/>
-  <rect x="12" y="12" width="876" height="226" rx="16" fill="url(#bgCrt)"/>
-  <rect x="12" y="12" width="876" height="226" rx="16" fill="url(#scanlines)"/>
-
-  <!-- Main Game Field (Clipped inside rounded bezel) -->
-  <g clip-path="url(#clipPlayfield)">
-
-    <!-- ==================== AUTHENTIC 1978 ARCADE HUD HEADER ==================== -->
-    <g transform="translate(0 34)" font-family="'Fira Code', 'Press Start 2P', monospace" font-size="11" font-weight="900" letter-spacing="2">
-      <!-- Player 1 Score -->
-      <text x="50" y="0" fill="#ffffff">SCORE&lt;1&gt;</text>
-      <!-- Centered Hi-Score -->
-      <text x="450" y="0" text-anchor="middle" fill="#ff0055">HI-SCORE</text>
-      <!-- Player 2 Score -->
-      <text x="850" y="0" text-anchor="end" fill="#ffffff">SCORE&lt;2&gt;</text>
-
-      <!-- Dynamic P1 Score Value -->
-      <g transform="translate(50 14)">
-        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="1;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0000
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0010
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0020
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0040
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0060
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0210
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0240
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0250
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0260
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0280
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0310
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0360
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0390
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0400
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0420
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0440
-        </text>        <text x="0" y="0" fill="#00ff88" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1" keyTimes="0.0000;0.0000;0.0367;0.0633;0.0900;0.1167;0.1250;0.1533;0.1833;0.2133;0.2417;0.2667;0.3333;0.3333;0.3667;0.3933;0.4200;0.4467;0.4633;0.4917;0.5200;0.5500;0.5800;0.6083;0.6667;0.6667;0.6967;0.7233;0.7500;0.7767;0.8000;0.8300;0.8583;0.8867;0.9167;0.9467;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-          0470
-        </text>
-      </g>
-
-      <!-- Hi-Score Value -->
-      <text x="450" y="14" text-anchor="middle" fill="#ffffff">250807</text>
-      <!-- P2 Score Value -->
-      <text x="850" y="14" text-anchor="end" fill="#00ff88">0000</text>
-    </g>
-
-    <!-- Mystery UFOs -->
-
-    <!-- WAVE 1 MYSTERY UFO -->
-    <g>
-      <animate attributeName="display"
-        values="none;inline;none;none"
-        keyTimes="0.0;0.0783;0.1350;1.0"
-        dur="60.0s" repeatCount="indefinite"/>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="880 40; 880 40; 430 40; 430 40; -60 40"
-          keyTimes="0.0; 0.0783; 0.1250; 0.1300; 1.0"
-          dur="60.0s" repeatCount="indefinite"/>
-        <!-- UFO Hull -->
-        <g color="#ff0044">
-          <animate attributeName="opacity" values="1;1;0;0" keyTimes="0.0;0.1250;0.1253;1.0" dur="60.0s" repeatCount="indefinite"/>
-          <use href="#ufo"/>
-        </g>
-        <!-- UFO Explosion & Points -->
-        <g color="#ffd700" opacity="0">
-          <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0;0.1250;0.1253;0.1308;0.1342;1.0" dur="60.0s" repeatCount="indefinite"/>
-          <use href="#alien_exp" transform="translate(6 0)"/>
-          <text x="18" y="-5" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#ffd700">+300</text>
-        </g>
-      </g>
-    </g>
-    <!-- WAVE 2 MYSTERY UFO -->
-    <g>
-      <animate attributeName="display"
-        values="none;inline;none;none"
-        keyTimes="0.0;0.7500;0.8067;1.0"
-        dur="60.0s" repeatCount="indefinite"/>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="880 40; 880 40; 430 40; 430 40; -60 40"
-          keyTimes="0.0; 0.7500; 0.7967; 0.8017; 1.0"
-          dur="60.0s" repeatCount="indefinite"/>
-        <!-- UFO Hull -->
-        <g color="#ff0044">
-          <animate attributeName="opacity" values="1;1;0;0" keyTimes="0.0;0.7967;0.7970;1.0" dur="60.0s" repeatCount="indefinite"/>
-          <use href="#ufo"/>
-        </g>
-        <!-- UFO Explosion & Points -->
-        <g color="#ffd700" opacity="0">
-          <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0;0.7967;0.7970;0.8025;0.8058;1.0" dur="60.0s" repeatCount="indefinite"/>
-          <use href="#alien_exp" transform="translate(6 0)"/>
-          <text x="18" y="-5" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#ffd700">+150</text>
-        </g>
-      </g>
-    </g>
-    <!-- WAVE 3 MYSTERY UFO -->
-    <g>
-      <animate attributeName="display"
-        values="none;inline;none;none"
-        keyTimes="0.0;1.4200;1.4767;1.0"
-        dur="60.0s" repeatCount="indefinite"/>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="880 40; 880 40; 430 40; 430 40; -60 40"
-          keyTimes="0.0; 1.4200; 1.4667; 1.4717; 1.0"
-          dur="60.0s" repeatCount="indefinite"/>
-        <!-- UFO Hull -->
-        <g color="#ff0044">
-          <animate attributeName="opacity" values="1;1;0;0" keyTimes="0.0;1.4667;1.4670;1.0" dur="60.0s" repeatCount="indefinite"/>
-          <use href="#ufo"/>
-        </g>
-        <!-- UFO Explosion & Points -->
-        <g color="#ffd700" opacity="0">
-          <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0;1.4667;1.4670;1.4725;1.4758;1.0" dur="60.0s" repeatCount="indefinite"/>
-          <use href="#alien_exp" transform="translate(6 0)"/>
-          <text x="18" y="-5" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#ffd700">+300</text>
-        </g>
-      </g>
-    </g>
-
-    <!-- Alien Armadas (Waves 1, 2, 3) -->
-
-    <!-- ==================== WAVE 01 ALIEN ARMADA ==================== -->
-    <g>
-      <animate attributeName="display" values="inline;none;none" keyTimes="0.0;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="-14 0;-4 0;6 0;16 0;26 0;36 7;26 7;16 7;6 7;-4 7;-14 7;-24 7;-34 14;-24 14;-14 14;-4 14;6 14;16 14;26 14;36 21;26 21;16 21;6 21;-4 21;-4 21" keyTimes="0.0000;0.0137;0.0273;0.0410;0.0547;0.0683;0.0820;0.0957;0.1093;0.1230;0.1367;0.1503;0.1640;0.1777;0.1913;0.2050;0.2187;0.2323;0.2460;0.2597;0.2733;0.2870;0.3007;0.3143;1.0000" dur="60.0s" repeatCount="indefinite"/>
-        
-        <g transform="translate(210 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 52)" color="#ffffff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.0000;0.2667;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.2667;0.2667;0.2713;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.2667;0.2667;0.2767;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +30
-          </text>
-        </g>
-
-        <g transform="translate(372 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 52)" color="#ffffff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.0000;0.1533;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.1533;0.1533;0.1580;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.1533;0.1533;0.1633;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +30
-          </text>
-        </g>
-
-        <g transform="translate(534 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 72)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.0000;0.1167;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.1167;0.1167;0.1213;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.1167;0.1167;0.1267;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(480 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 72)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.0000;0.2417;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.2417;0.2417;0.2463;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.2417;0.2417;0.2517;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(210 92)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.0000;0.2133;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.2133;0.2133;0.2180;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.2133;0.2133;0.2233;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(264 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 92)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.0000;0.0900;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.0900;0.0900;0.0947;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.0900;0.0900;0.1000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(426 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 112)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.0000;0.0633;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.0633;0.0633;0.0680;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.0633;0.0633;0.0733;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-
-        <g transform="translate(372 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 132)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.0000;0.0367;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.0367;0.0367;0.0413;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.0367;0.0367;0.0467;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-
-        <g transform="translate(318 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 132)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.0000;0.1833;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.1833;0.1833;0.1880;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.1833;0.1833;0.1933;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-
-        <g transform="translate(588 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0000;0.3333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-      </g>
-    </g>
-    <!-- ==================== WAVE 02 ALIEN ARMADA ==================== -->
-    <g>
-      <animate attributeName="display" values="none;inline;none" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="-14 0;-14 0;-4 0;6 0;16 0;26 0;36 7;26 7;16 7;6 7;-4 7;-14 7;-24 7;-34 14;-24 14;-14 14;-4 14;6 14;16 14;26 14;36 21;26 21;16 21;6 21;-4 21;-4 21" keyTimes="0.0000;0.3333;0.3470;0.3607;0.3743;0.3880;0.4017;0.4153;0.4290;0.4427;0.4563;0.4700;0.4837;0.4973;0.5110;0.5247;0.5383;0.5520;0.5657;0.5793;0.5930;0.6067;0.6203;0.6340;0.6477;1.0000" dur="60.0s" repeatCount="indefinite"/>
-        
-        <g transform="translate(210 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 52)" color="#ffffff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.3333;0.4917;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.4917;0.4917;0.4963;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.4917;0.4917;0.5017;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +30
-          </text>
-        </g>
-
-        <g transform="translate(426 52)" color="#ffffff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.3333;0.6083;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.6083;0.6083;0.6130;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.6083;0.6083;0.6183;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +30
-          </text>
-        </g>
-
-        <g transform="translate(480 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 72)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.3333;0.4467;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.4467;0.4467;0.4513;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.4467;0.4467;0.4567;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(534 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 92)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.3333;0.4200;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.4200;0.4200;0.4247;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.4200;0.4200;0.4300;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(372 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 92)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.3333;0.5800;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.5800;0.5800;0.5847;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.5800;0.5800;0.5900;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(210 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 112)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.3333;0.3933;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.3933;0.3933;0.3980;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.3933;0.3933;0.4033;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-
-        <g transform="translate(480 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 112)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.3333;0.5500;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.5500;0.5500;0.5547;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.5500;0.5500;0.5600;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-
-        <g transform="translate(588 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 132)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.3333;0.5200;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.5200;0.5200;0.5247;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.5200;0.5200;0.5300;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-
-        <g transform="translate(264 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 132)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.3333;0.3667;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.3667;0.3667;0.3713;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.3667;0.3667;0.3767;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-
-        <g transform="translate(426 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3333;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-      </g>
-    </g>
-    <!-- ==================== WAVE 03 ALIEN ARMADA ==================== -->
-    <g>
-      <animate attributeName="display" values="none;none;inline" keyTimes="0.0;0.6667;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="-14 0;-14 0;-4 0;6 0;16 0;26 0;36 7;26 7;16 7;6 7;-4 7;-14 7;-24 7;-34 14;-24 14;-14 14;-4 14;6 14;16 14;26 14;36 21;26 21;16 21;6 21;-4 21;-4 21" keyTimes="0.0000;0.6667;0.6803;0.6940;0.7077;0.7213;0.7350;0.7487;0.7623;0.7760;0.7897;0.8033;0.8170;0.8307;0.8443;0.8580;0.8717;0.8853;0.8990;0.9127;0.9263;0.9400;0.9537;0.9673;0.9810;1.0000" dur="60.0s" repeatCount="indefinite"/>
-        
-        <g transform="translate(210 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 52)" color="#ffffff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.6667;0.8300;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.8300;0.8300;0.8347;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.8300;0.8300;0.8400;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +30
-          </text>
-        </g>
-
-        <g transform="translate(318 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 52)" color="#ffffff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.6667;0.9467;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.9467;0.9467;0.9513;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.9467;0.9467;0.9567;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +30
-          </text>
-        </g>
-
-        <g transform="translate(588 52)" color="#ffffff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#squid_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#squid_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 72)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.6667;0.7767;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.7767;0.7767;0.7813;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.7767;0.7767;0.7867;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(372 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 72)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.6667;0.9167;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.9167;0.9167;0.9213;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.9167;0.9167;0.9267;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(588 72)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 92)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.6667;0.8867;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.8867;0.8867;0.8913;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.8867;0.8867;0.8967;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(480 92)" color="#00f0ff">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.6667;0.7500;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.7500;0.7500;0.7547;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.7500;0.7500;0.7600;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +20
-          </text>
-        </g>
-
-        <g transform="translate(534 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 92)" color="#00f0ff">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#crab_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#crab_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 112)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.6667;0.7233;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.7233;0.7233;0.7280;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.7233;0.7233;0.7333;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-
-        <g transform="translate(426 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(480 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 112)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(210 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(264 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(318 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(372 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(426 132)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.6667;0.6967;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.6967;0.6967;0.7013;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.6967;0.6967;0.7067;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-
-        <g transform="translate(480 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(534 132)" color="#00ff88">
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6667;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-        </g>
-
-        <g transform="translate(588 132)" color="#00ff88">
-          <!-- Alien Normal -->
-          <g>
-            <animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0.0000;0.6667;0.8583;1.0000;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#octo_a"><animate attributeName="display" values="inline;none;inline" dur="0.8s" repeatCount="indefinite"/></use>
-            <use href="#octo_b"><animate attributeName="display" values="none;inline;none" dur="0.8s" repeatCount="indefinite"/></use>
-          </g>
-          <!-- Explosion Sprite -->
-          <g color="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.8583;0.8583;0.8630;1.0" dur="60.0s" repeatCount="indefinite"/>
-            <use href="#alien_exp"/>
-          </g>
-          <!-- Score Popup -->
-          <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ffd700">
-            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0.0000;0.8583;0.8583;0.8683;1.0" dur="60.0s" repeatCount="indefinite"/>
-            +10
-          </text>
-        </g>
-      </g>
-    </g>
-
-    <!-- Player Lasers -->
-
-    <!-- Laser Shot -->
-    <line x1="276" y1="196" x2="276" y2="142" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0333;0.0367;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;142;142" keyTimes="0.0;0.0333;0.0367;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="330" y1="196" x2="330" y2="122" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0600;0.0633;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;122;122" keyTimes="0.0;0.0600;0.0633;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="384" y1="196" x2="384" y2="102" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0867;0.0900;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;102;102" keyTimes="0.0;0.0867;0.0900;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="438" y1="196" x2="438" y2="82" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.1133;0.1167;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;82;82" keyTimes="0.0;0.1133;0.1167;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="430" y1="196" x2="430" y2="42" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.1217;0.1250;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;42;42" keyTimes="0.0;0.1217;0.1250;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="492" y1="196" x2="492" y2="62" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.1500;0.1533;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;62;62" keyTimes="0.0;0.1500;0.1533;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="546" y1="196" x2="546" y2="142" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.1800;0.1833;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;142;142" keyTimes="0.0;0.1800;0.1833;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="222" y1="196" x2="222" y2="102" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.2100;0.2133;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;102;102" keyTimes="0.0;0.2100;0.2133;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="600" y1="196" x2="600" y2="82" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.2383;0.2417;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;82;82" keyTimes="0.0;0.2383;0.2417;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="330" y1="196" x2="330" y2="62" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.2633;0.2667;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;62;62" keyTimes="0.0;0.2633;0.2667;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="384" y1="196" x2="384" y2="142" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3633;0.3667;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;142;142" keyTimes="0.0;0.3633;0.3667;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="438" y1="196" x2="438" y2="122" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3900;0.3933;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;122;122" keyTimes="0.0;0.3900;0.3933;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="330" y1="196" x2="330" y2="102" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.4167;0.4200;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;102;102" keyTimes="0.0;0.4167;0.4200;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="492" y1="196" x2="492" y2="82" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.4433;0.4467;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;82;82" keyTimes="0.0;0.4433;0.4467;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="430" y1="196" x2="430" y2="42" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.4600;0.4633;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;42;42" keyTimes="0.0;0.4600;0.4633;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="384" y1="196" x2="384" y2="62" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.4883;0.4917;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;62;62" keyTimes="0.0;0.4883;0.4917;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="222" y1="196" x2="222" y2="142" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.5167;0.5200;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;142;142" keyTimes="0.0;0.5167;0.5200;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="546" y1="196" x2="546" y2="122" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.5467;0.5500;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;122;122" keyTimes="0.0;0.5467;0.5500;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="600" y1="196" x2="600" y2="102" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.5767;0.5800;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;102;102" keyTimes="0.0;0.5767;0.5800;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="438" y1="196" x2="438" y2="62" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6050;0.6083;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;62;62" keyTimes="0.0;0.6050;0.6083;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="438" y1="196" x2="438" y2="142" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6933;0.6967;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;142;142" keyTimes="0.0;0.6933;0.6967;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="384" y1="196" x2="384" y2="122" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.7200;0.7233;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;122;122" keyTimes="0.0;0.7200;0.7233;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="492" y1="196" x2="492" y2="102" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.7467;0.7500;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;102;102" keyTimes="0.0;0.7467;0.7500;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="330" y1="196" x2="330" y2="82" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.7733;0.7767;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;82;82" keyTimes="0.0;0.7733;0.7767;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="430" y1="196" x2="430" y2="42" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.7967;0.8000;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;42;42" keyTimes="0.0;0.7967;0.8000;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="276" y1="196" x2="276" y2="62" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.8267;0.8300;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;62;62" keyTimes="0.0;0.8267;0.8300;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="600" y1="196" x2="600" y2="142" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.8550;0.8583;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;142;142" keyTimes="0.0;0.8550;0.8583;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="438" y1="196" x2="438" y2="102" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.8833;0.8867;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;102;102" keyTimes="0.0;0.8833;0.8867;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="546" y1="196" x2="546" y2="82" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.9133;0.9167;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;82;82" keyTimes="0.0;0.9133;0.9167;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-    <!-- Laser Shot -->
-    <line x1="546" y1="196" x2="546" y2="62" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.9433;0.9467;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="196;196;62;62" keyTimes="0.0;0.9433;0.9467;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </line>
-
-    <!-- Alien Bombs -->
-
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0200;0.0383;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="240 80; 240 80; 240 206; 240 206"
-        keyTimes="0.0;0.0200;0.0383;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.0767;0.0950;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="355 80; 355 80; 355 206; 355 206"
-        keyTimes="0.0;0.0767;0.0950;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.1333;0.1517;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="470 80; 470 80; 470 206; 470 206"
-        keyTimes="0.0;0.1333;0.1517;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.1900;0.2083;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="585 80; 585 80; 585 206; 585 206"
-        keyTimes="0.0;0.1900;0.2083;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.2467;0.2650;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="700 80; 700 80; 700 206; 700 206"
-        keyTimes="0.0;0.2467;0.2650;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.3533;0.3717;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="240 80; 240 80; 240 206; 240 206"
-        keyTimes="0.0;0.3533;0.3717;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.4100;0.4283;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="355 80; 355 80; 355 206; 355 206"
-        keyTimes="0.0;0.4100;0.4283;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.4667;0.4850;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="470 80; 470 80; 470 206; 470 206"
-        keyTimes="0.0;0.4667;0.4850;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.5233;0.5417;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="585 80; 585 80; 585 206; 585 206"
-        keyTimes="0.0;0.5233;0.5417;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.5800;0.5983;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="700 80; 700 80; 700 206; 700 206"
-        keyTimes="0.0;0.5800;0.5983;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.6867;0.7050;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="240 80; 240 80; 240 206; 240 206"
-        keyTimes="0.0;0.6867;0.7050;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.7433;0.7617;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="355 80; 355 80; 355 206; 355 206"
-        keyTimes="0.0;0.7433;0.7617;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.8000;0.8183;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="470 80; 470 80; 470 206; 470 206"
-        keyTimes="0.0;0.8000;0.8183;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.8567;0.8750;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="585 80; 585 80; 585 206; 585 206"
-        keyTimes="0.0;0.8567;0.8750;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-    <!-- Alien Bomb -->
-    <path d="M0 0 L2 4 L-2 8 L2 12" stroke="#ff0055" stroke-width="2" fill="none" opacity="0">
-      <animate attributeName="opacity" values="0;1;0;0" keyTimes="0.0;0.9133;0.9317;1.0" dur="60.0s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate"
-        values="700 80; 700 80; 700 206; 700 206"
-        keyTimes="0.0;0.9133;0.9317;1.0" dur="60.0s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- 4 Original Green Defense Bunkers -->
-    <g transform="translate(180 168)"><use href="#bunker"/></g>
-    <g transform="translate(360 168)"><use href="#bunker"/></g>
-    <g transform="translate(540 168)"><use href="#bunker"/></g>
-    <g transform="translate(720 168)"><use href="#bunker"/></g>
-
-    <!-- ==================== PLAYER LASER CANNON (TANK) ==================== -->
-    <g transform="translate(0 200)">
-      <!-- Smooth Glide Movement -->
-      <animateTransform attributeName="transform" type="translate"
-        values="450.0 0;266.0 0;276.0 0;276.0 0;320.0 0;330.0 0;330.0 0;374.0 0;384.0 0;384.0 0;428.0 0;438.0 0;420.0 0;438.0 0;430.0 0;430.0 0;482.0 0;492.0 0;492.0 0;536.0 0;546.0 0;546.0 0;212.0 0;222.0 0;222.0 0;590.0 0;600.0 0;600.0 0;320.0 0;330.0 0;330.0 0;380.0 0;380.0 0;374.0 0;384.0 0;384.0 0;428.0 0;438.0 0;438.0 0;320.0 0;330.0 0;330.0 0;482.0 0;492.0 0;492.0 0;420.0 0;430.0 0;430.0 0;374.0 0;384.0 0;384.0 0;212.0 0;222.0 0;222.0 0;536.0 0;546.0 0;546.0 0;590.0 0;600.0 0;600.0 0;428.0 0;438.0 0;438.0 0;380.0 0;380.0 0;428.0 0;438.0 0;438.0 0;374.0 0;384.0 0;384.0 0;482.0 0;492.0 0;492.0 0;320.0 0;330.0 0;330.0 0;420.0 0;430.0 0;430.0 0;266.0 0;276.0 0;276.0 0;590.0 0;600.0 0;600.0 0;428.0 0;438.0 0;438.0 0;536.0 0;546.0 0;546.0 0;536.0 0;546.0 0;546.0 0;380.0 0;380.0 0;450.0 0" keyTimes="0.0000;0.0258;0.0325;0.0375;0.0525;0.0592;0.0642;0.0792;0.0858;0.0908;0.1058;0.1125;0.1142;0.1175;0.1208;0.1258;0.1425;0.1492;0.1542;0.1725;0.1792;0.1842;0.2025;0.2092;0.2142;0.2308;0.2375;0.2425;0.2558;0.2625;0.2675;0.2917;0.3167;0.3558;0.3625;0.3675;0.3825;0.3892;0.3942;0.4092;0.4158;0.4208;0.4358;0.4425;0.4475;0.4525;0.4592;0.4642;0.4808;0.4875;0.4925;0.5092;0.5158;0.5208;0.5392;0.5458;0.5508;0.5692;0.5758;0.5808;0.5975;0.6042;0.6092;0.6333;0.6583;0.6858;0.6925;0.6975;0.7125;0.7192;0.7242;0.7392;0.7458;0.7508;0.7658;0.7725;0.7775;0.7892;0.7958;0.8008;0.8192;0.8258;0.8308;0.8475;0.8542;0.8592;0.8758;0.8825;0.8875;0.9058;0.9125;0.9175;0.9358;0.9425;0.9475;0.9700;0.9950;1.0000" dur="60.0s" repeatCount="indefinite"/>
-
-      <!-- Normal Green Cannon -->
-      <g color="#00ff88">
-        <animate attributeName="opacity" values="1;0;1;1;0;1;1;0;1;1" keyTimes="0.0000;0.2917;0.3183;0.3333;0.6333;0.6600;0.6667;0.9700;0.9967;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-        <use href="#cannon"/>
-      </g>
-
-      <!-- Destruction Explosion when hit by alien bomb -->
-      <g color="#ff0055">
-        <animate attributeName="opacity" values="0;1;0;0;1;0;0;1;0;0" keyTimes="0.0000;0.2917;0.3183;0.3333;0.6333;0.6600;0.6667;0.9700;0.9967;1.0000" dur="60.0s" calcMode="discrete" repeatCount="indefinite"/>
-        <use href="#cannon_exp"/>
-      </g>
-    </g>
-
-    <!-- ==================== AUTHENTIC 1978 ARCADE BASELINE & FOOTER ==================== -->
-    <!-- Green Ground Line -->
-    <line x1="12" y1="216" x2="888" y2="216" stroke="#00ff88" stroke-width="2"/>
-
-    <!-- Bottom Arcade Info: Lives Counter & Credit -->
-    <g transform="translate(0 230)" font-family="'Fira Code', 'Press Start 2P', monospace" font-size="10" font-weight="900" fill="#00ff88" letter-spacing="2">
-      <!-- Player Lives -->
-      <g transform="translate(50 -10)">
-        <text x="0" y="8" fill="#ffffff">3</text>
-        <g transform="translate(18 0)"><use href="#cannon" color="#00ff88" transform="scale(0.8)"/></g>
-        <g transform="translate(44 0)"><use href="#cannon" color="#00ff88" transform="scale(0.8)"/></g>
-      </g>
-      <!-- Center Title -->
-      <text x="450" y="0" text-anchor="middle" fill="#00f0ff">// SPACE INVADERS &#183; TAITO 1978 //</text>
-      <!-- Credit -->
-      <text x="850" y="0" text-anchor="end" fill="#ffffff">CREDIT 00</text>
-    </g>
-
-  </g>
+  <!-- Outer Neon Aura -->
+  <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="url(#rgbInv)" stroke-width="5" opacity="0.32" filter="url(#neonOuterInv)"/>
+  <rect x="12" y="12" width="876" height="226" rx="16" fill="url(#bgInv)"/>
+  <rect x="12" y="12" width="876" height="226" rx="16" fill="url(#invGrid)"/>
 
   <!-- Cyber Corners -->
   <path d="M22 42 L22 22 L42 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".85"/>
@@ -1799,9 +91,677 @@
   <path d="M22 208 L22 228 L42 228" stroke="#d946ef" stroke-width="2" fill="none" opacity=".85"/>
   <path d="M878 208 L878 228 L858 228" stroke="#d946ef" stroke-width="2" fill="none" opacity=".85"/>
 
-  <!-- Traveling Border Tracer -->
+  <!-- Arcade HUD Labels -->
+  <text x="32" y="32" font-family="'Fira Code', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#00f0ff" opacity="0.95">// SPACE INVADERS &#183; RIOON7337</text>
+  <text x="868" y="32" text-anchor="end" font-family="'Fira Code', ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#ff73fa" opacity="0.95">HI-SCORE: 250807</text>
+
+  <!-- Continuous 30s Live Dynamic Score Display (Climbs from 0000 to 1000!) -->
+  <g transform="translate(450 32)">
+    <rect x="-70" y="-13" width="140" height="18" rx="4" fill="#070c20" stroke="#00f0ff" stroke-width="0.8" opacity="0.85"/>
+    <text text-anchor="middle" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="800" letter-spacing="2" fill="#00ffcc" filter="url(#glowInv)">
+      SCORE: <tspan fill="#ffffff"><animate attributeName="fill" values="#00f0ff;#ffffff;#00f0ff" dur="1s" repeatCount="indefinite"/></tspan>
+    </text>
+    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00f0ff">
+      <animate attributeName="opacity" calcMode="discrete" values="1;0" keyTimes="0.0;0.04;1.0" dur="30s" repeatCount="indefinite"/>0000
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00f0ff">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.04;0.12;1.0" dur="30s" repeatCount="indefinite"/>0020
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00f0ff">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.12;0.20667;1.0" dur="30s" repeatCount="indefinite"/>0030
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00f0ff">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.20667;0.24667;1.0" dur="30s" repeatCount="indefinite"/>0060
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00f0ff">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.24667;0.34;1.0" dur="30s" repeatCount="indefinite"/>0070
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00ff88">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.34;0.46;1.0" dur="30s" repeatCount="indefinite"/>0370
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00ff88">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.46;0.50667;1.0" dur="30s" repeatCount="indefinite"/>0390
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00ff88">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.50667;0.56667;1.0" dur="30s" repeatCount="indefinite"/>0410
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00ff88">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.56667;0.66667;1.0" dur="30s" repeatCount="indefinite"/>0440
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00ff88">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.66667;0.72;1.0" dur="30s" repeatCount="indefinite"/>0450
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#00ff88">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.72;0.83333;1.0" dur="30s" repeatCount="indefinite"/>0470
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#ffd700">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1;0" keyTimes="0.0;0.83333;0.93333;1.0" dur="30s" repeatCount="indefinite"/>0970
+    </text>\n    <text text-anchor="start" x="22" y="0" font-family="'Fira Code', monospace" font-size="11" font-weight="900" fill="#ffd700">
+      <animate attributeName="opacity" calcMode="discrete" values="0;1" keyTimes="0.0;0.93333;1.0" dur="30s" repeatCount="indefinite"/>1000
+    </text>
+  </g>
+
+  <!-- Animated Border & Traveling Tracer -->
   <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="url(#rgbInv)" stroke-width="1.6"/>
   <rect x="12" y="12" width="876" height="226" rx="16" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.9" pathLength="1000" stroke-dasharray="85 915" filter="url(#glowInv)">
     <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4s" repeatCount="indefinite"/>
   </rect>
+
+  <!-- Game Playfield Area -->
+  <g clip-path="url(#clipInv)">
+
+    <!-- UFO 1: Classic Red UFO (Crosses at t=8.5s - 10.2s, Sniped at t=10.2s for +300 PTS!) -->
+    <g>
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="
+            920 44; 920 44;
+            720 44; 540 44; 420 44;
+            420 44; -80 44; -80 44
+          "
+          keyTimes="
+            0; 0.28;
+            0.31; 0.33; 0.34;
+            0.36; 0.38; 1
+          "
+          dur="30s" repeatCount="indefinite"/>
+
+        <!-- UFO Visual 1 -->
+        <g filter="url(#glowInv)">
+          <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.339;0.34;1" dur="30s" repeatCount="indefinite"/>
+          <g fill="#ff0055">
+            <path d="M12 0h12v2h-12z M8 2h20v2h-20z M4 4h28v3h-28z M0 7h36v3h-36z M6 10h6v2h-6z M16 10h4v2h-4z M24 10h6v2h-6z"/>
+            <circle cx="10" cy="5" r="1.5" fill="#ffffff"/>
+            <circle cx="18" cy="5" r="1.5" fill="#ffd700"/>
+            <circle cx="26" cy="5" r="1.5" fill="#ffffff"/>
+          </g>
+        </g>
+
+        <!-- UFO 1 Blast Explosion -->
+        <g filter="url(#glowInv)">
+          <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.339;0.342;0.365;0.375" dur="30s" repeatCount="indefinite"/>
+          <circle cx="18" cy="6" r="15" fill="#ffd700" opacity="0.85">
+            <animate attributeName="r" values="3;16;24" keyTimes="0;0.6;1" dur="30s" begin="10.2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="18" cy="6" r="8" fill="#ffffff"/>
+          <g fill="#ff0055">
+            <rect x="-6" y="-6" width="4" height="4"/><rect x="36" y="-6" width="4" height="4"/>
+            <rect x="-4" y="16" width="4" height="4"/><rect x="34" y="16" width="4" height="4"/>
+          </g>
+          <text x="18" y="-4" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" font-weight="900" fill="#ffd700">+300</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- UFO 2: Golden High-Speed Super Boss UFO (Crosses at t=23.5s - 25.0s, Sniped at t=25.0s for +500 PTS!) -->
+    <g>
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="
+            -80 44; -80 44;
+            240 44; 380 44; 490 44;
+            490 44; 940 44; 940 44
+          "
+          keyTimes="
+            0; 0.77;
+            0.80; 0.82; 0.833;
+            0.85; 0.87; 1
+          "
+          dur="30s" repeatCount="indefinite"/>
+
+        <!-- Super UFO Body -->
+        <g filter="url(#glowInv)">
+          <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.832;0.833;1" dur="30s" repeatCount="indefinite"/>
+          <g fill="#ffd700">
+            <path d="M14 0h16v2h-16z M10 2h24v2h-24z M6 4h32v3h-32z M0 7h44v3h-44z M6 10h8v2h-8z M18 10h8v2h-8z M30 10h8v2h-8z"/>
+            <circle cx="12" cy="5" r="1.8" fill="#00f0ff"/>
+            <circle cx="22" cy="5" r="2.2" fill="#ffffff"/>
+            <circle cx="32" cy="5" r="1.8" fill="#ff73fa"/>
+          </g>
+        </g>
+
+        <!-- Super UFO Mega Explosion -->
+        <g filter="url(#glowInv)">
+          <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.832;0.835;0.865;0.875" dur="30s" repeatCount="indefinite"/>
+          <circle cx="22" cy="6" r="20" fill="#ffffff" opacity="0.95"/>
+          <circle cx="22" cy="6" r="28" fill="#ffd700" opacity="0.6">
+            <animate attributeName="r" values="5;24;36" keyTimes="0;0.5;1" dur="30s" begin="25.0s" repeatCount="indefinite"/>
+          </circle>
+          <g fill="#00ffcc">
+            <rect x="-8" y="-8" width="5" height="5"/><rect x="46" y="-8" width="5" height="5"/>
+            <rect x="-6" y="20" width="5" height="5"/><rect x="44" y="20" width="5" height="5"/>
+          </g>
+          <text x="22" y="-6" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" font-weight="900" fill="#ffd700">+500</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Marching Alien Armada (Continuous back and forth stepping across 30s) -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="
+          0 0; 32 0; 0 0; -32 0;
+          0 0; 32 0; 0 0; -32 0;
+          0 0; 32 0; 0 0; -32 0;
+          0 0; 32 0; 0 0; -32 0;
+          0 0; 32 0; 0 0; -32 0;
+          0 0; 32 0; 0 0; -32 0;
+          0 0
+        "
+        dur="30s" repeatCount="indefinite"/>
+
+      <!-- ROW 1: SQUID ALIENS (Neon Magenta / Pink) -->
+      <g fill="#ff73fa" filter="url(#glowInv)">
+        <!-- Alien 1 (x=180) - Destroyed at t=17.0s! -->
+        <g transform="translate(180 50)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.565;0.567;0.985;0.99" dur="30s" repeatCount="indefinite"/>
+            <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.565;0.570;0.595;0.605" dur="30s" repeatCount="indefinite"/>
+            <circle cx="8" cy="8" r="6" fill="#ffd700"/>
+            <text x="8" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ff73fa">+30</text>
+          </g>
+        </g>
+
+        <!-- Alien 2 (x=245) - Destroyed at t=6.2s! -->
+        <g transform="translate(245 50)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.205;0.207;0.985;0.99" dur="30s" repeatCount="indefinite"/>
+            <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.205;0.210;0.235;0.245" dur="30s" repeatCount="indefinite"/>
+            <circle cx="8" cy="8" r="6" fill="#ffd700"/>
+            <text x="8" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ff73fa">+30</text>
+          </g>
+        </g>
+
+        <!-- Alien 3 (x=310) -->
+        <g transform="translate(310 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 4 (x=375) -->
+        <g transform="translate(375 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 5 (x=440) -->
+        <g transform="translate(440 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+
+        <!-- Alien 6 (x=505) - Destroyed at t=28.0s! -->
+        <g transform="translate(505 50)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.932;0.934;1" dur="30s" repeatCount="indefinite"/>
+            <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.932;0.935;0.965;0.975" dur="30s" repeatCount="indefinite"/>
+            <circle cx="8" cy="8" r="6" fill="#ffd700"/>
+            <text x="8" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#ff73fa">+30</text>
+          </g>
+        </g>
+
+        <!-- Alien 7 (x=570) -->
+        <g transform="translate(570 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 8 (x=635) -->
+        <g transform="translate(635 50)">
+          <use href="#squidA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#squidB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+      </g>
+
+      <!-- ROW 2: CRAB ALIENS (Electric Cyan) -->
+      <g fill="#00f0ff" filter="url(#glowInv)">
+        <!-- Alien 1 (x=178) -->
+        <g transform="translate(178 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 2 (x=243) -->
+        <g transform="translate(243 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+
+        <!-- Alien 3 (x=308) - Destroyed at t=1.2s! -->
+        <g transform="translate(308 78)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.038;0.040;0.985;0.99" dur="30s" repeatCount="indefinite"/>
+            <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.038;0.042;0.065;0.075" dur="30s" repeatCount="indefinite"/>
+            <circle cx="10" cy="8" r="6" fill="#ffd700"/>
+            <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#00f0ff">+20</text>
+          </g>
+        </g>
+
+        <!-- Alien 4 (x=373) - Destroyed at t=13.8s! -->
+        <g transform="translate(373 78)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.458;0.460;0.985;0.99" dur="30s" repeatCount="indefinite"/>
+            <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.458;0.462;0.485;0.495" dur="30s" repeatCount="indefinite"/>
+            <circle cx="10" cy="8" r="6" fill="#ffd700"/>
+            <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#00f0ff">+20</text>
+          </g>
+        </g>
+
+        <!-- Alien 5 (x=438) -->
+        <g transform="translate(438 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 6 (x=503) -->
+        <g transform="translate(503 78)">
+          <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+
+        <!-- Alien 7 (x=568) - Destroyed at t=15.2s! -->
+        <g transform="translate(568 78)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.504;0.506;0.985;0.99" dur="30s" repeatCount="indefinite"/>
+            <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.504;0.508;0.530;0.540" dur="30s" repeatCount="indefinite"/>
+            <circle cx="10" cy="8" r="6" fill="#ffd700"/>
+            <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#00f0ff">+20</text>
+          </g>
+        </g>
+
+        <!-- Alien 8 (x=633) - Destroyed at t=21.6s! -->
+        <g transform="translate(633 78)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.718;0.720;0.985;0.99" dur="30s" repeatCount="indefinite"/>
+            <use href="#crabA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#crabB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.718;0.722;0.745;0.755" dur="30s" repeatCount="indefinite"/>
+            <circle cx="10" cy="8" r="6" fill="#ffd700"/>
+            <text x="10" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#00f0ff">+20</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- ROW 3: OCTOPUS ALIENS (Cyber Mint) -->
+      <g fill="#00ff88" filter="url(#glowInv)">
+        <!-- Alien 1 (x=176) -->
+        <g transform="translate(176 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 2 (x=241) -->
+        <g transform="translate(241 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 3 (x=306) -->
+        <g transform="translate(306 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+
+        <!-- Alien 4 (x=371) - Destroyed at t=7.4s! -->
+        <g transform="translate(371 106)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.245;0.247;0.985;0.99" dur="30s" repeatCount="indefinite"/>
+            <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.245;0.249;0.270;0.280" dur="30s" repeatCount="indefinite"/>
+            <circle cx="12" cy="10" r="6" fill="#ffd700"/>
+            <text x="12" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#00ff88">+10</text>
+          </g>
+        </g>
+
+        <!-- Alien 5 (x=436) - Destroyed at t=3.6s! -->
+        <g transform="translate(436 106)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.118;0.120;0.985;0.99" dur="30s" repeatCount="indefinite"/>
+            <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.118;0.122;0.145;0.155" dur="30s" repeatCount="indefinite"/>
+            <circle cx="12" cy="10" r="6" fill="#ffd700"/>
+            <text x="12" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#00ff88">+10</text>
+          </g>
+        </g>
+
+        <!-- Alien 6 (x=501) - Destroyed at t=20.0s! -->
+        <g transform="translate(501 106)">
+          <g>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.665;0.667;0.985;0.99" dur="30s" repeatCount="indefinite"/>
+            <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+            <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+          </g>
+          <g>
+            <animate attributeName="opacity" values="0;0;1;0.9;0" keyTimes="0;0.665;0.669;0.690;0.700" dur="30s" repeatCount="indefinite"/>
+            <circle cx="12" cy="10" r="6" fill="#ffd700"/>
+            <text x="12" y="-3" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="900" fill="#00ff88">+10</text>
+          </g>
+        </g>
+
+        <!-- Alien 7 (x=566) -->
+        <g transform="translate(566 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+        <!-- Alien 8 (x=631) -->
+        <g transform="translate(631 106)">
+          <use href="#octoA"><animate attributeName="display" values="inline;none;inline" dur="0.7s" repeatCount="indefinite"/></use>
+          <use href="#octoB"><animate attributeName="display" values="none;inline;none" dur="0.7s" repeatCount="indefinite"/></use>
+        </g>
+      </g>
+    </g>
+
+    <!-- Randomized Continuous Alien Bombing Raids Across 30s -->
+    <!-- Bomb 1 (Col 2, x=250): Drops at t=2.0s, hits Bunker 1 at t=2.8s -->
+    <g stroke="#ff0055" stroke-width="2" fill="none" filter="url(#laserGlow)">
+      <path d="M250 126 L247 132 L253 138 L250 144">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 -40; 0 -40; 0 35; 0 35"
+          keyTimes="0; 0.066; 0.093; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.066;0.091;0.093;1" dur="30s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Bomb 2 (Col 7, x=575): Drops at t=4.5s, hits Bunker 4 at t=5.5s -->
+    <g stroke="#ff73fa" stroke-width="2" fill="none" filter="url(#laserGlow)">
+      <path d="M575 126 L572 132 L578 138 L575 144">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 -40; 0 -40; 0 35; 0 35"
+          keyTimes="0; 0.15; 0.183; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.15;0.181;0.183;1" dur="30s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Bomb 3 (Col 4, x=380): Targeted at Tank at t=11.5s! Tank EVADES left, bomb hits ground at t=12.5s! -->
+    <g stroke="#ff0055" stroke-width="2.2" fill="none" filter="url(#laserGlow)">
+      <path d="M380 126 L377 132 L383 138 L380 144">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 -50; 0 -50; 0 76; 0 76"
+          keyTimes="0; 0.383; 0.416; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.383;0.414;0.416;1" dur="30s" repeatCount="indefinite"/>
+      </path>
+      <!-- Crater Spark on Ground at t=12.5s -->
+      <circle cx="380" cy="220" r="8" fill="#ffd700" stroke="none" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0.8;0" keyTimes="0;0.414;0.417;0.428;0.435" dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="2;9;14" keyTimes="0;0.417;1" dur="30s" begin="12.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Bomb 4 (Col 5, x=440): Drops at t=18.0s, hits Bunker 3 at t=19.0s -->
+    <g stroke="#ff0055" stroke-width="2" fill="none" filter="url(#laserGlow)">
+      <path d="M440 126 L437 132 L443 138 L440 144">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 -40; 0 -40; 0 35; 0 35"
+          keyTimes="0; 0.60; 0.633; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.60;0.631;0.633;1" dur="30s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Bomb 5 (Col 3, x=310): Drops at t=25.5s, targeted near Bunker 2 -->
+    <g stroke="#ff73fa" stroke-width="2.2" fill="none" filter="url(#laserGlow)">
+      <path d="M310 126 L307 132 L313 138 L310 144">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 -50; 0 -50; 0 76; 0 76"
+          keyTimes="0; 0.85; 0.883; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.85;0.881;0.883;1" dur="30s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- 4 Defense Bunkers (Shields) with Evolving Damage Progression Across 30s -->
+    <g transform="translate(0 156)" filter="url(#glowInv)">
+      <!-- Bunker 1 (x=180) - Takes direct hit from Bomb 1 at t=2.8s -->
+      <g transform="translate(180 0)">
+        <use href="#bunkerBase"/>
+        <g fill="#07071a">
+          <rect x="6" y="24" width="4" height="4"/>
+          <!-- Hit crater at t=2.8s -->
+          <circle cx="24" cy="4" r="7">
+            <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.092;0.094;1" dur="30s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Bunker 2 (x=330) -->
+      <g transform="translate(330 0)">
+        <use href="#bunkerBase"/>
+        <rect x="14" y="6" width="4" height="6" fill="#07071a"/>
+        <rect x="30" y="16" width="6" height="4" fill="#07071a"/>
+      </g>
+
+      <!-- Bunker 3 (x=480) - Takes direct hit from Bomb 4 at t=19.0s -->
+      <g transform="translate(480 0)">
+        <use href="#bunkerBase"/>
+        <g fill="#07071a">
+          <rect x="18" y="4" width="6" height="6"/>
+          <!-- Direct hit crater at t=19.0s -->
+          <circle cx="22" cy="6" r="8">
+            <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.632;0.634;1" dur="30s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Bunker 4 (x=630) - Takes direct hit from Bomb 2 at t=5.5s -->
+      <g transform="translate(630 0)">
+        <use href="#bunkerBase"/>
+        <g fill="#07071a">
+          <rect x="6" y="24" width="4" height="4"/>
+          <!-- Hit crater at t=5.5s -->
+          <circle cx="20" cy="4" r="7">
+            <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.182;0.184;1" dur="30s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </g>
+    </g>
+
+    <!-- Active Player Tank Maneuvers Across 30s Battle -->
+    <g>
+      <!-- Movement keyframes:
+           - t=0s - 1.2s: moves to x=308 to snipe Crab 3!
+           - t=2.0s - 3.6s: slides to x=436 to destroy Octopus 5!
+           - t=4.5s - 6.2s: slides to x=245 to snipe Squid 2!
+           - t=6.8s - 7.4s: shifts to x=371 to destroy Octopus 4!
+           - t=8.5s - 10.2s: maneuvers to x=420 to lock onto Red UFO 1!
+           - t=11.5s - 12.5s: dashes to x=330 to dodge incoming missile bomb!
+           - t=13.0s - 13.8s: moves to x=373 to destroy Crab 4!
+           - t=14.5s - 15.2s: strafes to x=568 to destroy Crab 7!
+           - t=16.0s - 17.0s: sweeps to x=180 to destroy Squid 1!
+           - t=18.5s - 20.0s: shifts to x=501 to destroy Octopus 6!
+           - t=20.8s - 21.6s: moves to x=633 to destroy Crab 8!
+           - t=23.5s - 25.0s: tracks Golden Super UFO to x=490! Mega beam!
+           - t=27.0s - 28.0s: sweeps to x=505 to destroy Squid 6!
+           - t=29.0s - 30.0s: returns to center position x=380.
+      -->
+      <animateTransform attributeName="transform" type="translate"
+        values="
+          380 198;
+          308 198; 308 198;
+          436 198; 436 198;
+          245 198; 245 198;
+          371 198; 371 198;
+          420 198; 420 198;
+          330 198; 330 198;
+          373 198; 373 198;
+          568 198; 568 198;
+          180 198; 180 198;
+          501 198; 501 198;
+          633 198; 633 198;
+          490 198; 490 198;
+          360 198; 360 198;
+          505 198; 505 198;
+          380 198
+        "
+        keyTimes="
+          0;
+          0.035; 0.045;
+          0.11; 0.125;
+          0.19; 0.21;
+          0.235; 0.25;
+          0.32; 0.345;
+          0.39; 0.42;
+          0.445; 0.465;
+          0.49; 0.51;
+          0.55; 0.57;
+          0.65; 0.67;
+          0.70; 0.725;
+          0.81; 0.835;
+          0.87; 0.89;
+          0.92; 0.94;
+          1
+        "
+        dur="30s" repeatCount="indefinite"/>
+
+      <use href="#playerTank"/>
+
+      <!-- Evasion Warning Flash when dodging Bomb 3 at t=12s -->
+      <g stroke="#00f0ff" stroke-width="1.2" fill="none" opacity="0">
+        <animate attributeName="opacity" values="0;1;0;1;0" keyTimes="0;0.39;0.40;0.41;0.42" dur="30s" repeatCount="indefinite"/>
+        <path d="M-4 -4 L36 -4 L36 22 L-4 22 Z"/>
+      </g>
+    </g>
+
+    <!-- Player Lasers (Precisely timed to each kill across 30s!) -->
+    <g filter="url(#laserGlow)">
+      <!-- Shot 1: x=308+16=324, hits Crab 3 (y=88) at t=1.2s -->
+      <line x1="324" y1="198" x2="324" y2="182" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -98; 0 -98"
+          keyTimes="0; 0.03; 0.04; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.028;0.039;0.041;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 2: x=436+16=452, hits Octopus 5 (y=116) at t=3.6s -->
+      <line x1="452" y1="198" x2="452" y2="182" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -72; 0 -72"
+          keyTimes="0; 0.11; 0.12; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.108;0.119;0.121;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 3: x=245+16=261, hits Squid 2 (y=60) at t=6.2s -->
+      <line x1="261" y1="198" x2="261" y2="182" stroke="#ff73fa" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -126; 0 -126"
+          keyTimes="0; 0.196; 0.207; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.194;0.206;0.208;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 4: x=371+16=387, hits Octopus 4 (y=116) at t=7.4s -->
+      <line x1="387" y1="198" x2="387" y2="182" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -72; 0 -72"
+          keyTimes="0; 0.236; 0.247; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.234;0.246;0.248;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 5: Overcharged High-Velocity Beam to snipe Red UFO 1 at t=10.2s! -->
+      <line x1="436" y1="198" x2="436" y2="174" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -144; 0 -144"
+          keyTimes="0; 0.328; 0.340; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.326;0.339;0.341;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 6: x=373+16=389, hits Crab 4 (y=88) at t=13.8s -->
+      <line x1="389" y1="198" x2="389" y2="182" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -98; 0 -98"
+          keyTimes="0; 0.449; 0.460; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.447;0.459;0.461;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 7: x=568+16=584, hits Crab 7 (y=88) at t=15.2s -->
+      <line x1="584" y1="198" x2="584" y2="182" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -98; 0 -98"
+          keyTimes="0; 0.495; 0.506; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.493;0.505;0.507;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 8: x=180+16=196, hits Squid 1 (y=60) at t=17.0s -->
+      <line x1="196" y1="198" x2="196" y2="182" stroke="#ff73fa" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -126; 0 -126"
+          keyTimes="0; 0.555; 0.567; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.553;0.566;0.568;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 9: x=501+16=517, hits Octopus 6 (y=116) at t=20.0s -->
+      <line x1="517" y1="198" x2="517" y2="182" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -72; 0 -72"
+          keyTimes="0; 0.655; 0.667; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.653;0.666;0.668;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 10: x=633+16=649, hits Crab 8 (y=88) at t=21.6s -->
+      <line x1="649" y1="198" x2="649" y2="182" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -98; 0 -98"
+          keyTimes="0; 0.708; 0.720; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.706;0.719;0.721;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 11: Mega Laser Beam to destroy Golden Super UFO at t=25.0s! -->
+      <line x1="506" y1="198" x2="506" y2="172" stroke="#ffd700" stroke-width="3.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -144; 0 -144"
+          keyTimes="0; 0.820; 0.833; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.818;0.832;0.834;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Shot 12: x=505+16=521, hits Squid 6 (y=60) at t=28.0s! -->
+      <line x1="521" y1="198" x2="521" y2="182" stroke="#ff73fa" stroke-width="2.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate"
+          values="0 20; 0 20; 0 -126; 0 -126"
+          keyTimes="0; 0.920; 0.933; 1"
+          dur="30s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.918;0.932;0.934;1" dur="30s" repeatCount="indefinite"/>
+      </line>
+    </g>
+
+    <!-- Bottom Status Line & Spare Lives Display -->
+    <g>
+      <line x1="20" y1="224" x2="880" y2="224" stroke="#00f0ff" stroke-width="1.2" opacity="0.7"/>
+      <line x1="20" y1="224" x2="880" y2="224" stroke="#00ff88" stroke-width="1.8" stroke-dasharray="12 40" opacity="0.8"/>
+
+      <text x="32" y="238" font-family="'Fira Code', monospace" font-size="9.5" font-weight="700" fill="#00ff88" letter-spacing="1.5">LIVES: 3</text>
+      <g transform="translate(90 228) scale(0.55)" fill="#00ff88">
+        <use href="#playerTank" x="0"/>
+        <use href="#playerTank" x="42"/>
+        <use href="#playerTank" x="84"/>
+      </g>
+
+      <text x="868" y="238" text-anchor="end" font-family="'Fira Code', monospace" font-size="9.5" font-weight="700" fill="#00f0ff" letter-spacing="1.5">RADAR LOCK ON // CONTINUOUS DEFENSE</text>
+    </g>
+  </g>
 </svg>
