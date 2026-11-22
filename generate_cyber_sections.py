@@ -425,6 +425,41 @@ def generate_social_svg(name, node_code, label, status_text, accent_color, icon_
     # 260 x 78
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="260" height="78" viewBox="0 0 260 78" role="img" aria-label="{label}">
   <defs>
+    <style>
+      .card-edge {{ transition: stroke-width 0.2s, stroke 0.2s, opacity 0.2s; }}
+      .lbl-text {{ transition: fill 0.2s, text-shadow 0.2s; }}
+      .chev-arr {{ transition: transform 0.2s, stroke 0.2s; }}
+      .card-body {{ transition: fill 0.2s; }}
+      :root:hover .card-edge {{
+        stroke-width: 2.4px;
+        opacity: 1;
+        filter: url(#glow_{name});
+      }}
+      :root:hover .lbl-text {{
+        fill: #ffffff;
+        text-shadow: 0 0 10px {accent_color};
+      }}
+      :root:hover .chev-arr {{
+        transform: translate(228px, 34px);
+      }}
+      :root:active .card-body {{
+        fill: #0c1c44;
+      }}
+      :root:active .card-edge {{
+        stroke: #00ff88;
+        stroke-width: 2.8px;
+        opacity: 1;
+      }}
+      :root:active .lbl-text {{
+        fill: #00ff88;
+        text-shadow: 0 0 14px #00ff88;
+      }}
+      :root:active .chev-arr {{
+        stroke: #00ff88;
+        transform: translate(232px, 34px);
+      }}
+    </style>
+
     <linearGradient id="bg_{name}" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#050a1c"/>
       <stop offset="60%" stop-color="#071330"/>
@@ -460,11 +495,11 @@ def generate_social_svg(name, node_code, label, status_text, accent_color, icon_
   </defs>
 
   <!-- Body -->
-  <path d="M 14 2 L 246 2 L 258 14 L 258 64 L 246 76 L 14 76 L 2 64 L 2 14 Z" fill="url(#bg_{name})"/>
+  <path class="card-body" d="M 14 2 L 246 2 L 258 14 L 258 64 L 246 76 L 14 76 L 2 64 L 2 14 Z" fill="url(#bg_{name})"/>
   <rect x="2" y="2" width="256" height="74" fill="url(#grid_{name})" clip-path="url(#clip_{name})"/>
 
   <!-- Glowing Edge Border -->
-  <path d="M 14 2 L 246 2 L 258 14 L 258 64 L 246 76 L 14 76 L 2 64 L 2 14 Z"
+  <path class="card-edge" d="M 14 2 L 246 2 L 258 14 L 258 64 L 246 76 L 14 76 L 2 64 L 2 14 Z"
         fill="none" stroke="url(#edge_{name})" stroke-width="1.6" opacity="0.9" filter="url(#glow_{name})">
     <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="{delay_s}" repeatCount="indefinite"/>
   </path>
@@ -500,7 +535,7 @@ def generate_social_svg(name, node_code, label, status_text, accent_color, icon_
   <text x="64" y="24" font-family="'Fira Code', monospace" font-size="8.5" font-weight="700" letter-spacing="1.5" fill="{accent_color}">{node_code}</text>
 
   <!-- Main Platform Label -->
-  <text x="64" y="42" font-family="'Segoe UI', Arial, sans-serif" font-size="14.5" font-weight="900" letter-spacing="2" fill="#ffffff" filter="url(#glow_{name})">{label}</text>
+  <text class="lbl-text" x="64" y="42" font-family="'Segoe UI', Arial, sans-serif" font-size="14.5" font-weight="900" letter-spacing="2" fill="#ffffff" filter="url(#glow_{name})">{label}</text>
 
   <!-- Status Telemetry Line -->
   <g transform="translate(64, 58)">
@@ -511,7 +546,7 @@ def generate_social_svg(name, node_code, label, status_text, accent_color, icon_
   </g>
 
   <!-- Cyber Navigation Chevron >>> -->
-  <g stroke="#d946ef" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(224, 34)">
+  <g class="chev-arr" stroke="#d946ef" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(224, 34)">
     <path d="M0 0 L5 5 L0 10">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="{delay_s}" repeatCount="indefinite"/>
     </path>
