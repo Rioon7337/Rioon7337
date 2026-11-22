@@ -230,10 +230,21 @@
       display: grid;
       grid-template-columns: 1.25fr 0.95fr;
       overflow: hidden;
-      min-height: 520px;
+      height: 540px;
     }
     @media (max-width: 860px) {
-      .desk-card { grid-template-columns: 1fr; }
+      .desk-card {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .sp-left {
+        height: auto !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+      }
+      .sp-right {
+        height: 460px !important;
+      }
     }
     .chap-pill {
       background: rgba(10, 26, 62, 0.85);
@@ -257,10 +268,13 @@
     /* Left Player Controls */
     .sp-left {
       background: linear-gradient(180deg, #0d1a3e 0%, #070c20 100%);
-      padding: 24px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       border-right: 1px solid rgba(0, 240, 255, 0.15);
+      height: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
     }
     .sp-top {
       display: flex;
@@ -440,14 +454,18 @@
       background: #060b1c;
       display: flex;
       flex-direction: column;
-      padding: 24px;
+      padding: 22px 24px;
       position: relative;
+      height: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
     }
     .lyrics-head {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-shrink: 0;
     }
     .lyrics-badge {
       display: flex;
@@ -468,17 +486,21 @@
     }
     .lyrics-viewport {
       flex: 1;
+      height: 100%;
+      min-height: 0;
       overflow: hidden;
       position: relative;
-      mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
-      -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
+      mask-image: linear-gradient(180deg, transparent 0%, black 8%, black 85%, transparent 100%);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 8%, black 85%, transparent 100%);
     }
     .lyrics-track {
-      transition: transform 0.4s ease-out;
+      transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.25, 1);
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      padding: 160px 0;
+      gap: 16px;
+      padding-top: 20px;
+      padding-bottom: 260px;
+      will-change: transform;
     }
     .lyric-item {
       font-size: 19px;
@@ -720,9 +742,17 @@
       });
 
       const activeEl = lyricElements[activeIdx];
-      if (activeEl) {
-        const offset = activeEl.offsetTop - 160;
-        lyricsTrack.style.transform = `translateY(-${Math.max(0, offset)}px)`;
+      const viewport = document.getElementById('lyricsViewport');
+      if (activeEl && viewport) {
+        // Lirik hanya akan naik jika posisinya sudah melewati batas tampilan (38% dari tinggi viewport)
+        const threshold = viewport.clientHeight * 0.38;
+        const itemTop = activeEl.offsetTop;
+        if (itemTop > threshold) {
+          const scrollOffset = itemTop - threshold;
+          lyricsTrack.style.transform = `translateY(-${scrollOffset}px)`;
+        } else {
+          lyricsTrack.style.transform = 'translateY(0px)';
+        }
       }
     }
 
