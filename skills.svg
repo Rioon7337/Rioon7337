@@ -1,56 +1,50 @@
-<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arsenal - Tech Stack Rioon7337">
+<svg width="900" height="620" viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arsenal - Tech Stack Rioon7337">
 <defs>
 <style>
-  .title { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 6px; fill: #ffffff; }
-  .subtitle { font-family: 'Fira Code', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 3px; fill: #00f0ff; }
-  .cat { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 3px; }
-  .pill-text { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 13px; }
-  .glowbar { animation: pulse 3s ease-in-out infinite; }
-  .corner { stroke: #00f0ff; stroke-width: 1.6; fill: none; opacity: 0.85; stroke-linecap: round; }
-  .grid { stroke: #00f0ff; stroke-opacity: 0.04; stroke-width: 1; }
+  .title { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 900; font-size: 32px; letter-spacing: 7px; fill: #ffffff; }
+  .subtitle { font-family: 'Fira Code', 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 3.5px; fill: #00f0ff; }
+  .hud-badge { font-family: 'Fira Code', monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px; }
+  .sector-title { font-family: 'Fira Code', monospace; font-weight: 800; font-size: 11.5px; letter-spacing: 2px; }
+  .mod-id { font-family: 'Fira Code', monospace; font-size: 8px; font-weight: 700; letter-spacing: 1.2px; }
+  .mod-name { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 800; font-size: 13.5px; letter-spacing: 1.2px; fill: #ffffff; }
+  .mod-sub { font-family: 'Fira Code', monospace; font-size: 8.5px; font-weight: 600; letter-spacing: 1px; }
+  .corner { stroke-width: 1.8; fill: none; stroke-linecap: round; }
+  .grid-bg { stroke: #00f0ff; stroke-opacity: 0.035; stroke-width: 1; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
-  @keyframes drift {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(12px); }
-  }
   @keyframes glitch {
-    0%, 94%, 100% { transform: translate(0,0); opacity: 0; }
-    95% { transform: translate(-2.5px,0.8px); opacity: 0.7; }
-    97% { transform: translate(2.5px,-0.8px); opacity: 0.7; }
-    98.5% { transform: translate(-1.5px,0); opacity: 0.4; }
+    0%, 93%, 100% { transform: translate(0,0); opacity: 0; }
+    94% { transform: translate(-2.5px, 0.8px); opacity: 0.75; }
+    96% { transform: translate(2.5px, -0.8px); opacity: 0.75; }
+    98% { transform: translate(-1.5px, 0); opacity: 0.4; }
   }
   @keyframes scan {
-    0% { transform: translateY(-44px); opacity: 0; }
+    0% { transform: translateY(-40px); opacity: 0; }
     15% { opacity: 1; }
     85% { opacity: 1; }
-    100% { transform: translateY(610px); opacity: 0; }
+    100% { transform: translateY(630px); opacity: 0; }
   }
+  @keyframes blinkLed { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
   .ember { animation: rise linear infinite; }
   @keyframes rise {
     0% { transform: translateY(0); opacity: 0; }
     15% { opacity: 0.85; }
     85% { opacity: 0.45; }
-    100% { transform: translateY(-540px); opacity: 0; }
+    100% { transform: translateY(-560px); opacity: 0; }
   }
 </style>
 
-<radialGradient id="bgGradSkills" cx="50%" cy="15%" r="90%">
+<radialGradient id="bgGradSkills" cx="50%" cy="20%" r="95%">
   <stop offset="0%" stop-color="#0a1a3e"/>
-  <stop offset="55%" stop-color="#07071a"/>
-  <stop offset="100%" stop-color="#050512"/>
+  <stop offset="50%" stop-color="#07071a"/>
+  <stop offset="100%" stop-color="#04040e"/>
 </radialGradient>
 
-<radialGradient id="vignetteSkills" cx="50%" cy="50%" r="75%">
-  <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
-  <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
-</radialGradient>
-
-<linearGradient id="rgbBorderSkills" gradientUnits="userSpaceOnUse" x1="12" y1="300" x2="888" y2="300">
+<linearGradient id="rgbBorderSkills" gradientUnits="userSpaceOnUse" x1="12" y1="310" x2="888" y2="310">
   <stop offset="0%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/></stop>
   <stop offset="33%" stop-color="#d946ef"><animate attributeName="stop-color" values="#d946ef;#00f0ff;#ff73fa;#d946ef" dur="5s" repeatCount="indefinite"/></stop>
   <stop offset="66%" stop-color="#00ffcc"><animate attributeName="stop-color" values="#00ffcc;#ff73fa;#00f0ff;#00ffcc" dur="5s" repeatCount="indefinite"/></stop>
   <stop offset="100%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/></stop>
-  <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 300" to="360 450 300" dur="4.5s" repeatCount="indefinite"/>
+  <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 310" to="360 450 310" dur="5s" repeatCount="indefinite"/>
 </linearGradient>
 
 <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -59,101 +53,478 @@
   <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
 </linearGradient>
 
-<filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+<filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
   <feGaussianBlur stdDeviation="3" result="blur"/>
   <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
 </filter>
-<filter id="neonInnerSkills" x="-20%" y="-20%" width="140%" height="140%">
-  <feGaussianBlur stdDeviation="2.5" result="blur"/>
+<filter id="neonInner" x="-20%" y="-20%" width="140%" height="140%">
+  <feGaussianBlur stdDeviation="2" result="blur"/>
   <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
 </filter>
-<filter id="neonOuterSkills" x="-25%" y="-25%" width="150%" height="150%">
+<filter id="neonOuter" x="-30%" y="-30%" width="160%" height="160%">
   <feGaussianBlur stdDeviation="5.5" result="blur"/>
   <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
 </filter>
 
+<pattern id="dotPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+  <circle cx="2" cy="2" r="1" fill="#00f0ff" opacity="0.06"/>
+</pattern>
+
 <clipPath id="cardClipSkills">
-  <rect x="12" y="12" width="876" height="576" rx="16"/>
+  <path d="M 28 12 L 872 12 L 888 28 L 888 592 L 872 608 L 28 608 L 12 592 L 12 28 Z"/>
 </clipPath>
 </defs>
 
 <!-- Outer Neon Aura -->
-<rect x="12" y="12" width="876" height="576" rx="16" fill="none" stroke="url(#rgbBorderSkills)" stroke-width="5.5" opacity="0.32" filter="url(#neonOuterSkills)"/>
-<rect x="12" y="12" width="876" height="576" rx="16" fill="none" stroke="url(#rgbBorderSkills)" stroke-width="2.6" opacity="0.55" filter="url(#neonInnerSkills)"/>
+<path d="M 28 12 L 872 12 L 888 28 L 888 592 L 872 608 L 28 608 L 12 592 L 12 28 Z" fill="none" stroke="url(#rgbBorderSkills)" stroke-width="5" opacity="0.3" filter="url(#neonOuter)"/>
+<path d="M 28 12 L 872 12 L 888 28 L 888 592 L 872 608 L 28 608 L 12 592 L 12 28 Z" fill="none" stroke="url(#rgbBorderSkills)" stroke-width="2.2" opacity="0.6" filter="url(#neonInner)"/>
 
 <!-- Dark Glass Body -->
-<rect x="12" y="12" width="876" height="576" rx="16" fill="url(#bgGradSkills)"/>
-<rect x="12" y="12" width="876" height="576" rx="16" fill="url(#vignetteSkills)"/>
+<path d="M 28 12 L 872 12 L 888 28 L 888 592 L 872 608 L 28 608 L 12 592 L 12 28 Z" fill="url(#bgGradSkills)"/>
+<rect x="12" y="12" width="876" height="596" fill="url(#dotPattern)" clip-path="url(#cardClipSkills)"/>
 
+<!-- Cyber Tech Grid & Scanline -->
 <g clip-path="url(#cardClipSkills)">
-  <g style="animation: drift 12s ease-in-out infinite;">
-    <line class="grid" x1="12" y1="72" x2="888" y2="72"/>
-    <line class="grid" x1="12" y1="186" x2="888" y2="186"/>
-    <line class="grid" x1="12" y1="300" x2="888" y2="300"/>
-    <line class="grid" x1="12" y1="414" x2="888" y2="414"/>
-    <line class="grid" x1="12" y1="528" x2="888" y2="528"/>
+  <line class="grid-bg" x1="12" y1="95" x2="888" y2="95"/>
+  <line class="grid-bg" x1="12" y1="250" x2="888" y2="250"/>
+  <line class="grid-bg" x1="12" y1="405" x2="888" y2="405"/>
+  <line class="grid-bg" x1="12" y1="560" x2="888" y2="560"/>
+  <rect x="12" y="12" width="876" height="40" fill="url(#scanGrad)" style="animation: scan 6s linear infinite;"/>
+</g>
+
+<!-- Animated RGB Perimeter -->
+<path d="M 28 12 L 872 12 L 888 28 L 888 592 L 872 608 L 28 608 L 12 592 L 12 28 Z" fill="none" stroke="url(#rgbBorderSkills)" stroke-width="1.8" opacity="0.95"/>
+<!-- Traveling Laser Tracer -->
+<path d="M 28 12 L 872 12 L 888 28 L 888 592 L 872 608 L 28 608 L 12 592 L 12 28 Z" fill="none" stroke="#00f0ff" stroke-width="2.2" stroke-linecap="round" opacity="0.85" pathLength="1000" stroke-dasharray="90 910" filter="url(#neonInner)">
+  <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4.2s" repeatCount="indefinite"/>
+</path>
+
+<!-- Cyber Chamfered Corners -->
+<g stroke="#00f0ff" class="corner">
+  <path d="M16 42 L16 24 L24 16 L42 16"/>
+  <path d="M884 42 L884 24 L876 16 L858 16"/>
+</g>
+<g stroke="#d946ef" class="corner">
+  <path d="M16 578 L16 596 L24 604 L42 604"/>
+  <path d="M884 578 L884 596 L876 604 L858 604"/>
+</g>
+
+<!-- Side Rail Notches -->
+<g stroke="#00f0ff" stroke-width="1.2" opacity="0.45">
+  <line x1="12" y1="120" x2="20" y2="120"/>
+  <line x1="12" y1="260" x2="20" y2="260"/>
+  <line x1="12" y1="420" x2="20" y2="420"/>
+  <line x1="12" y1="540" x2="20" y2="540"/>
+  <line x1="880" y1="120" x2="888" y2="120"/>
+  <line x1="880" y1="260" x2="888" y2="260"/>
+  <line x1="880" y1="420" x2="888" y2="420"/>
+  <line x1="880" y1="540" x2="888" y2="540"/>
+</g>
+
+<!-- HEADER: Title & Telemetry HUD -->
+<g transform="translate(0, 0)">
+  <!-- Center Top HUD Badge -->
+  <g transform="translate(450, 18)">
+    <rect x="-105" y="-6" width="210" height="15" rx="4" fill="#040b1c" stroke="#00f0ff" stroke-width="1" opacity="0.9"/>
+    <circle cx="-92" cy="1.5" r="2.5" fill="#00ff88" style="animation: blinkLed 1.4s infinite;"/>
+    <text x="5" y="5.5" font-family="'Fira Code', monospace" font-size="8" font-weight="700" fill="#00f0ff" text-anchor="middle" letter-spacing="2">SYS.ARSENAL // REV.4.2</text>
+    <circle cx="92" cy="1.5" r="2.5" fill="#00ff88" style="animation: blinkLed 1.4s infinite;"/>
   </g>
-  <rect x="12" y="12" width="876" height="40" fill="url(#scanGrad)" style="animation: scan 5.5s linear infinite;"/>
+
+  <!-- Glitch Title ARSENAL -->
+  <text x="450" y="58" text-anchor="middle" class="title" filter="url(#glow)">ARSENAL</text>
+  <text x="447" y="58" text-anchor="middle" class="title" fill="#00f0ff" style="animation: glitch 6s infinite; opacity:0;">ARSENAL</text>
+  <text x="453" y="58" text-anchor="middle" class="title" fill="#d946ef" style="animation: glitch 6s infinite .14s; opacity:0;">ARSENAL</text>
+
+  <!-- Subtitle -->
+  <text x="450" y="77" text-anchor="middle" class="subtitle">// CYBERNETIC WEAPONRY &amp; TECH STACK LOADOUT // RIOON7337</text>
+
+  <!-- Glowing divider line with center diamond -->
+  <line x1="220" y1="85" x2="680" y2="85" stroke="url(#rgbBorderSkills)" stroke-width="1.2" opacity="0.7"/>
+  <polygon points="450,82 453,85 450,88 447,85" fill="#00f0ff" filter="url(#glow)"/>
 </g>
 
-<!-- Rotating RGB Border + Smooth Tracer -->
-<rect x="12" y="12" width="876" height="576" rx="16" fill="none" stroke="url(#rgbBorderSkills)" stroke-width="1.8" opacity="0.95"/>
-<rect x="12" y="12" width="876" height="576" rx="16" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" opacity="0.8" pathLength="1000" stroke-dasharray="85 915" filter="url(#neonInnerSkills)">
-  <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4s" repeatCount="indefinite"/>
-</rect>
+<!-- ================= SECTOR 01: FRONTEND ================= -->
+<g transform="translate(0, 102)">
+  <!-- Sector Header Bar -->
+  <rect x="32" y="0" width="836" height="24" rx="4" fill="#041226" stroke="#00f0ff" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="46" cy="12" r="3" fill="#00f0ff" style="animation: blinkLed 1.8s infinite;"/>
+  <text x="60" y="16" class="sector-title" fill="#00f0ff">SECTOR 01 // FRONTEND INTERFACE MATRIX</text>
+  <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#00ffcc" text-anchor="end" letter-spacing="1.5">&lt;SYS:FE // PORT:3000 /&gt;</text>
 
-<!-- Cyber Corners -->
-<path class="corner" d="M30 58 L30 30 L58 30" stroke="#00f0ff"/>
-<path class="corner" d="M870 58 L870 30 L842 30" stroke="#00f0ff"/>
-<path class="corner" d="M30 542 L30 570 L58 570" stroke="#d946ef"/>
-<path class="corner" d="M870 542 L870 570 L842 570" stroke="#d946ef"/>
-
-<!-- Main Title -->
-<text x="450" y="60" text-anchor="middle" class="title" filter="url(#glow)">ARSENAL</text>
-<text x="450" y="80" text-anchor="middle" class="subtitle">// TECH STACK MATRIX &#183; RIOON7337</text>
-<rect class="glowbar" x="350" y="88" width="200" height="2" rx="1" fill="url(#rgbBorderSkills)" filter="url(#glow)"/>
-<text x="448" y="60" text-anchor="middle" class="title" fill="#00f0ff" style="animation: glitch 6.5s infinite; opacity:0;">ARSENAL</text>
-<text x="452" y="60" text-anchor="middle" class="title" fill="#d946ef" style="animation: glitch 6.5s infinite .12s; opacity:0;">ARSENAL</text>
-
-<!-- Row 1: Frontend Development -->
-<text x="450" y="148" text-anchor="middle" class="cat" fill="#00f0ff" filter="url(#glow)">FRONTEND DEVELOPMENT</text>
-<rect x="410" y="156" width="80" height="1" fill="#00f0ff" opacity="0.6"/>
-<g>
-  <g><rect x="241" y="178" width="76" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="279" y="200" text-anchor="middle" class="pill-text" fill="#bbf7d0">REACT</text><rect x="241" y="178" width="76" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.0s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="331" y="178" width="66" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="364" y="200" text-anchor="middle" class="pill-text" fill="#cffafe">VITE</text><rect x="331" y="178" width="66" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.2s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="411" y="178" width="76" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="449" y="200" text-anchor="middle" class="pill-text" fill="#cffafe">BABEL</text><rect x="411" y="178" width="76" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.4s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="501" y="178" width="76" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="539" y="200" text-anchor="middle" class="pill-text" fill="#cffafe">HTML5</text><rect x="501" y="178" width="76" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.6s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="591" y="178" width="68" height="34" rx="9" fill="#070c1f" stroke="#00e5ff" stroke-width="1.2" filter="url(#glow)"/><text x="625" y="200" text-anchor="middle" class="pill-text" fill="#cffafe">CSS3</text><rect x="591" y="178" width="68" height="34" rx="9" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.8s" repeatCount="indefinite"/></rect></g>
+    <!-- Card: REACT -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 41 34 L 187 34 L 187 94 L 179 102 L 33 102 L 33 42 Z" fill="#060c22" stroke="#0088aa" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="37" y1="50" x2="183" y2="50" stroke="#00f0ff" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 41 34 L 187 34 L 187 94 L 179 102 L 33 102 L 33 42 Z" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="175,102 187,90 187,102" fill="#00f0ff" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="41" y="45" class="mod-id" fill="#00f0ff" opacity="0.85">MOD.01</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="177" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(43, 56)">
+        <ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2"/><ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2" transform="rotate(60 14 14)"/><ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2" transform="rotate(120 14 14)"/><circle cx="14" cy="14" r="2.2" fill="#00f0ff"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="79" y="72" class="mod-name">REACT</text>
+      <text x="79" y="86" class="mod-sub" fill="#00f0ff">UI.FRAMEWORK</text>
+    </g>
+    <!-- Card: VITE -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 211 34 L 357 34 L 357 94 L 349 102 L 203 102 L 203 42 Z" fill="#060c22" stroke="#0088aa" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="207" y1="50" x2="353" y2="50" stroke="#00f0ff" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 211 34 L 357 34 L 357 94 L 349 102 L 203 102 L 203 42 Z" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="345,102 357,90 357,102" fill="#00f0ff" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="211" y="45" class="mod-id" fill="#00f0ff" opacity="0.85">MOD.02</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="347" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(213, 56)">
+        <path d="M25 4L14 24 3 4h6l5 11 5-11z" fill="#ffc300"/><path d="M14 24L25 4l-7 1-4 8 2-6-4 1z" fill="#00f0ff"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="249" y="72" class="mod-name">VITE</text>
+      <text x="249" y="86" class="mod-sub" fill="#00f0ff">NEXTGEN.BUILD</text>
+    </g>
+    <!-- Card: BABEL -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 381 34 L 527 34 L 527 94 L 519 102 L 373 102 L 373 42 Z" fill="#060c22" stroke="#0088aa" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="377" y1="50" x2="523" y2="50" stroke="#00f0ff" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 381 34 L 527 34 L 527 94 L 519 102 L 373 102 L 373 42 Z" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="515,102 527,90 527,102" fill="#00f0ff" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="381" y="45" class="mod-id" fill="#00f0ff" opacity="0.85">MOD.03</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="517" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(383, 56)">
+        <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#151b2e" stroke="#f5da55" stroke-width="1.4"/><circle cx="14" cy="14.5" r="4.5" fill="#f5da55"/><line x1="8" y1="14.5" x2="20" y2="14.5" stroke="#060c22" stroke-width="1.5"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="419" y="72" class="mod-name">BABEL</text>
+      <text x="419" y="86" class="mod-sub" fill="#00f0ff">JS.COMPILER</text>
+    </g>
+    <!-- Card: HTML5 -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 551 34 L 697 34 L 697 94 L 689 102 L 543 102 L 543 42 Z" fill="#060c22" stroke="#0088aa" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="547" y1="50" x2="693" y2="50" stroke="#00f0ff" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 551 34 L 697 34 L 697 94 L 689 102 L 543 102 L 543 42 Z" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="685,102 697,90 697,102" fill="#00f0ff" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="551" y="45" class="mod-id" fill="#00f0ff" opacity="0.85">MOD.04</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="687" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(553, 56)">
+        <path d="M4 2l2 20 8 2.5 8-2.5 2-20H4z" fill="#e44d26" opacity="0.85"/><path d="M14 4v18.2l6.2-1.9 1.6-16.3H14z" fill="#f16529"/><path d="M8 8h12l-.3 3.5h-8l.3 3.5h7.4l-.7 7.2-4.7 1.4-4.7-1.4-.3-4H12l.2 2 1.8.5 1.8-.5.3-2.5H8L8 8z" fill="#ffffff"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="589" y="72" class="mod-name">HTML5</text>
+      <text x="589" y="86" class="mod-sub" fill="#00f0ff">HYPERTEXT.DOM</text>
+    </g>
+    <!-- Card: CSS3 -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 721 34 L 867 34 L 867 94 L 859 102 L 713 102 L 713 42 Z" fill="#060c22" stroke="#0088aa" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="717" y1="50" x2="863" y2="50" stroke="#00f0ff" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 721 34 L 867 34 L 867 94 L 859 102 L 713 102 L 713 42 Z" fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="855,102 867,90 867,102" fill="#00f0ff" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="721" y="45" class="mod-id" fill="#00f0ff" opacity="0.85">MOD.05</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="857" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(723, 56)">
+        <path d="M4 2l2 20 8 2.5 8-2.5 2-20H4z" fill="#1572b6" opacity="0.85"/><path d="M14 4v18.2l6.2-1.9 1.6-16.3H14z" fill="#33a9dc"/><path d="M8 8h12l-.3 3.5h-8l.3 3.5h7.4l-.7 7.2-4.7 1.4-4.7-1.4-.3-4H12l.2 2 1.8.5 1.8-.5.3-2.5H8L8 8z" fill="#ffffff"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="759" y="72" class="mod-name">CSS3</text>
+      <text x="759" y="86" class="mod-sub" fill="#00f0ff">NEON.STYLING</text>
+    </g>
 </g>
 
-<!-- Row 2: Backend & Database -->
-<text x="450" y="292" text-anchor="middle" class="cat" fill="#d946ef" filter="url(#glow)">BACKEND &amp; DATABASE</text>
-<rect x="410" y="300" width="80" height="1" fill="#d946ef" opacity="0.6"/>
-<g>
-  <g><rect x="188" y="322" width="92" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="234" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">LARAVEL</text><rect x="188" y="322" width="92" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.1s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="294" y="322" width="58" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="323" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">PHP</text><rect x="294" y="322" width="58" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.3s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="366" y="322" width="104" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="418" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">COMPOSER</text><rect x="366" y="322" width="104" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.5s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="484" y="322" width="92" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="530" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">NODE.JS</text><rect x="484" y="322" width="92" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.7s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="590" y="322" width="122" height="34" rx="9" fill="#110820" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/><text x="651" y="344" text-anchor="middle" class="pill-text" fill="#f5d0fe">POSTGRESQL</text><rect x="590" y="322" width="122" height="34" rx="9" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.9s" repeatCount="indefinite"/></rect></g>
+<!-- ================= SECTOR 02: BACKEND & DATABASE ================= -->
+<g transform="translate(0, 252)">
+  <!-- Sector Header Bar -->
+  <rect x="32" y="0" width="836" height="24" rx="4" fill="#140622" stroke="#d946ef" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="46" cy="12" r="3" fill="#d946ef" style="animation: blinkLed 2.1s infinite;"/>
+  <text x="60" y="16" class="sector-title" fill="#d946ef">SECTOR 02 // BACKEND CORE &amp; DATA STORAGE</text>
+  <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#ff73fa" text-anchor="end" letter-spacing="1.5">&lt;SYS:BE // DB:5432 /&gt;</text>
+
+    <!-- Card: LARAVEL -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 41 34 L 187 34 L 187 94 L 179 102 L 33 102 L 33 42 Z" fill="#060c22" stroke="#882299" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="37" y1="50" x2="183" y2="50" stroke="#d946ef" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 41 34 L 187 34 L 187 94 L 179 102 L 33 102 L 33 42 Z" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="175,102 187,90 187,102" fill="#d946ef" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="41" y="45" class="mod-id" fill="#d946ef" opacity="0.85">MOD.06</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="177" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(43, 56)">
+        <path d="M14 2L4 7v14l10 5 10-5V7L14 2z" fill="#ff2d20" opacity="0.25"/><polygon points="14,2 24,7 14,12 4,7" fill="none" stroke="#ff2d20" stroke-width="1.4"/><polygon points="4,7 14,12 14,26 4,21" fill="none" stroke="#ff2d20" stroke-width="1.4"/><polygon points="24,7 14,12 14,26 24,21" fill="none" stroke="#ff2d20" stroke-width="1.4"/><line x1="14" y1="12" x2="14" y2="26" stroke="#ff73fa" stroke-width="1.6"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="79" y="72" class="mod-name">LARAVEL</text>
+      <text x="79" y="86" class="mod-sub" fill="#d946ef">PHP.FRAMEWORK</text>
+    </g>
+    <!-- Card: PHP -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 211 34 L 357 34 L 357 94 L 349 102 L 203 102 L 203 42 Z" fill="#060c22" stroke="#882299" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="207" y1="50" x2="353" y2="50" stroke="#d946ef" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 211 34 L 357 34 L 357 94 L 349 102 L 203 102 L 203 42 Z" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="345,102 357,90 357,102" fill="#d946ef" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="211" y="45" class="mod-id" fill="#d946ef" opacity="0.85">MOD.07</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="347" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(213, 56)">
+        <ellipse cx="14" cy="14" rx="13" ry="8.5" fill="#777bb4" opacity="0.3" stroke="#8892bf" stroke-width="1.3"/><text x="14" y="17.5" font-family="'Fira Code', monospace" font-size="8.5" font-weight="900" fill="#c4b5fd" text-anchor="middle">PHP</text>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="249" y="72" class="mod-name">PHP</text>
+      <text x="249" y="86" class="mod-sub" fill="#d946ef">HYPERTEXT.PRE</text>
+    </g>
+    <!-- Card: COMPOSER -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 381 34 L 527 34 L 527 94 L 519 102 L 373 102 L 373 42 Z" fill="#060c22" stroke="#882299" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="377" y1="50" x2="523" y2="50" stroke="#d946ef" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 381 34 L 527 34 L 527 94 L 519 102 L 373 102 L 373 42 Z" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="515,102 527,90 527,102" fill="#d946ef" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="381" y="45" class="mod-id" fill="#d946ef" opacity="0.85">MOD.08</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="517" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(383, 56)">
+        <circle cx="14" cy="14" r="12" fill="#885630" opacity="0.25" stroke="#f5d0fe" stroke-width="1.3"/><circle cx="14" cy="10" r="4" fill="#f5d0fe"/><path d="M7 23c0-4 3.5-6 7-6s7 2 7 6H7z" fill="#f5d0fe"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="419" y="72" class="mod-name">COMPOSER</text>
+      <text x="419" y="86" class="mod-sub" fill="#d946ef">PKG.MANAGER</text>
+    </g>
+    <!-- Card: NODE.JS -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 551 34 L 697 34 L 697 94 L 689 102 L 543 102 L 543 42 Z" fill="#060c22" stroke="#882299" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="547" y1="50" x2="693" y2="50" stroke="#d946ef" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 551 34 L 697 34 L 697 94 L 689 102 L 543 102 L 543 42 Z" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="685,102 697,90 697,102" fill="#d946ef" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="551" y="45" class="mod-id" fill="#d946ef" opacity="0.85">MOD.09</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="687" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(553, 56)">
+        <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#339933" opacity="0.3" stroke="#00ff88" stroke-width="1.4"/><path d="M14 6v8l7-4M14 14l-7-4v8l7 4" fill="none" stroke="#00ff88" stroke-width="1.6"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="589" y="72" class="mod-name">NODE.JS</text>
+      <text x="589" y="86" class="mod-sub" fill="#d946ef">ASYNC.RUNTIME</text>
+    </g>
+    <!-- Card: POSTGRES -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 721 34 L 867 34 L 867 94 L 859 102 L 713 102 L 713 42 Z" fill="#060c22" stroke="#882299" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="717" y1="50" x2="863" y2="50" stroke="#d946ef" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 721 34 L 867 34 L 867 94 L 859 102 L 713 102 L 713 42 Z" fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="855,102 867,90 867,102" fill="#d946ef" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="721" y="45" class="mod-id" fill="#d946ef" opacity="0.85">MOD.10</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="857" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(723, 56)">
+        <path d="M14 3C8 3 4 7 4 13c0 7 6 12 10 12s10-5 10-12c0-6-4-10-10-10z" fill="#336791" opacity="0.3" stroke="#00f0ff" stroke-width="1.3"/><circle cx="10" cy="11" r="1.5" fill="#00f0ff"/><circle cx="18" cy="11" r="1.5" fill="#00f0ff"/><path d="M14 14v6M10 20h8" stroke="#00f0ff" stroke-width="1.4"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="759" y="72" class="mod-name">POSTGRES</text>
+      <text x="759" y="86" class="mod-sub" fill="#d946ef">RELATIONAL.DB</text>
+    </g>
 </g>
 
-<!-- Row 3: General Programming (Highlighted Rioon Languages) -->
-<text x="450" y="436" text-anchor="middle" class="cat" fill="#00ff88" filter="url(#glow)">CORE PROGRAMMING</text>
-<rect x="410" y="444" width="80" height="1" fill="#00ff88" opacity="0.6"/>
-<g>
-  <g><rect x="288" y="466" width="44" height="34" rx="9" fill="#051914" stroke="#00ff88" stroke-width="1.2" filter="url(#glow)"/><text x="310" y="488" text-anchor="middle" class="pill-text" fill="#a7f3d0">C</text><rect x="288" y="466" width="44" height="34" rx="9" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.0s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="346" y="466" width="62" height="34" rx="9" fill="#051914" stroke="#00ff88" stroke-width="1.2" filter="url(#glow)"/><text x="377" y="488" text-anchor="middle" class="pill-text" fill="#a7f3d0">C++</text><rect x="346" y="466" width="62" height="34" rx="9" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.25s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="422" y="466" width="90" height="34" rx="9" fill="#051914" stroke="#00ff88" stroke-width="1.2" filter="url(#glow)"/><text x="467" y="488" text-anchor="middle" class="pill-text" fill="#a7f3d0">JAVA</text><rect x="422" y="466" width="90" height="34" rx="9" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.5s" repeatCount="indefinite"/></rect></g>
-  <g><rect x="526" y="466" width="86" height="34" rx="9" fill="#051914" stroke="#00ff88" stroke-width="1.2" filter="url(#glow)"/><text x="569" y="488" text-anchor="middle" class="pill-text" fill="#a7f3d0">PYTHON</text><rect x="526" y="466" width="86" height="34" rx="9" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="300" stroke-dasharray="45 255"><animate attributeName="stroke-dashoffset" from="0" to="-300" dur="3.2s" begin="0.75s" repeatCount="indefinite"/></rect></g>
+<!-- ================= SECTOR 03: LOW-LEVEL & COMPUTING ================= -->
+<g transform="translate(0, 402)">
+  <!-- Sector Header Bar -->
+  <rect x="32" y="0" width="836" height="24" rx="4" fill="#041a14" stroke="#00ff88" stroke-width="0.9" opacity="0.85"/>
+  <circle cx="46" cy="12" r="3" fill="#00ff88" style="animation: blinkLed 1.6s infinite;"/>
+  <text x="60" y="16" class="sector-title" fill="#00ff88">SECTOR 03 // LOW-LEVEL ENGINE &amp; SCRIPTING</text>
+  <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#a7f3d0" text-anchor="end" letter-spacing="1.5">&lt;SYS:CORE // KERNEL:SYSTEM /&gt;</text>
+
+    <!-- Card: C -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 41 34 L 229 34 L 229 94 L 221 102 L 33 102 L 33 42 Z" fill="#060c22" stroke="#008855" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="37" y1="50" x2="225" y2="50" stroke="#00ff88" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 41 34 L 229 34 L 229 94 L 221 102 L 33 102 L 33 42 Z" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="217,102 229,90 229,102" fill="#00ff88" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="41" y="45" class="mod-id" fill="#00ff88" opacity="0.85">MOD.11</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="219" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(43, 56)">
+        <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#00599c" opacity="0.3" stroke="#00ff88" stroke-width="1.3"/><path d="M18 10a6 6 0 1 0 0 8" fill="none" stroke="#a7f3d0" stroke-width="2.2" stroke-linecap="round"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="79" y="72" class="mod-name">C</text>
+      <text x="79" y="86" class="mod-sub" fill="#00ff88">NATIVE.SYSTEM</text>
+    </g>
+    <!-- Card: C++ -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 254 34 L 442 34 L 442 94 L 434 102 L 246 102 L 246 42 Z" fill="#060c22" stroke="#008855" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="250" y1="50" x2="438" y2="50" stroke="#00ff88" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 254 34 L 442 34 L 442 94 L 434 102 L 246 102 L 246 42 Z" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="430,102 442,90 442,102" fill="#00ff88" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="254" y="45" class="mod-id" fill="#00ff88" opacity="0.85">MOD.12</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="432" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(256, 56)">
+        <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#004482" opacity="0.3" stroke="#00ffcc" stroke-width="1.3"/><path d="M14 10a5 5 0 1 0 0 8" fill="none" stroke="#cffafe" stroke-width="2" stroke-linecap="round"/><path d="M18 14h3M19.5 12.5v3M22.5 14h3M24 12.5v3" stroke="#00ffcc" stroke-width="1.2"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="292" y="72" class="mod-name">C++</text>
+      <text x="292" y="86" class="mod-sub" fill="#00ff88">HIGH_PERF.CORE</text>
+    </g>
+    <!-- Card: JAVA -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 467 34 L 655 34 L 655 94 L 647 102 L 459 102 L 459 42 Z" fill="#060c22" stroke="#008855" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="463" y1="50" x2="651" y2="50" stroke="#00ff88" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 467 34 L 655 34 L 655 94 L 647 102 L 459 102 L 459 42 Z" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="643,102 655,90 655,102" fill="#00ff88" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="467" y="45" class="mod-id" fill="#00ff88" opacity="0.85">MOD.13</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="645" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(469, 56)">
+        <path d="M6 21c4 2 12 2 16 0-3-1-13-1-16 0z" fill="#f89820"/><path d="M8 18c3 1.5 9 1.5 12 0-2-1-10-1-12 0z" fill="#5382a1"/><path d="M13 3c2 2-2 4 0 7-3-2 1-4 0-7z" fill="#e76f00"/><path d="M16 6c1 1.5-1 3 0 5-2-1.5 1-3.5 0-5z" fill="#e76f00"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="505" y="72" class="mod-name">JAVA</text>
+      <text x="505" y="86" class="mod-sub" fill="#00ff88">JVM.ENTERPRISE</text>
+    </g>
+    <!-- Card: PYTHON -->
+    <g>
+      <!-- Base Background -->
+      <path d="M 680 34 L 868 34 L 868 94 L 860 102 L 672 102 L 672 42 Z" fill="#060c22" stroke="#008855" stroke-width="1.2" opacity="0.95"/>
+      <!-- Inner tech grid lines -->
+      <line x1="676" y1="50" x2="864" y2="50" stroke="#00ff88" stroke-width="0.5" opacity="0.25"/>
+      <!-- Animated tracer dash -->
+      <path d="M 680 34 L 868 34 L 868 94 L 860 102 L 672 102 L 672 42 Z" fill="none" stroke="#00ff88" stroke-width="1.8" stroke-linecap="round" pathLength="400" stroke-dasharray="45 355">
+        <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Corner Accent Mark -->
+      <polygon points="856,102 868,90 868,102" fill="#00ff88" opacity="0.6"/>
+      <!-- Module Code Top-Left -->
+      <text x="680" y="45" class="mod-id" fill="#00ff88" opacity="0.85">MOD.14</text>
+      <!-- Status dot Top-Right -->
+      <circle cx="858" cy="43" r="2" fill="#00ff88" opacity="0.9"/>
+      <!-- Tech Icon (Left: 28x28 box centered around x+22, y+40) -->
+      <g transform="translate(682, 56)">
+        <path d="M13.5 3c-4.5 0-4.2 2-4.2 2v2.5h8.5v1.2H7.2S4 8.4 4 13s2.8 4.4 2.8 4.4H9v-2.2s-.1-2.6 2.6-2.6h4.5s2.5 0 2.5-2.5V5.5S18.8 3 13.5 3z" fill="#387eb8"/><circle cx="11" cy="5.5" r="1" fill="#ffffff"/><path d="M14.5 25c4.5 0 4.2-2 4.2-2v-2.5h-8.5v-1.2h10.6s3.2.3 3.2-4.3-2.8-4.4-2.8-4.4H19v2.2s.1 2.6-2.6 2.6h-4.5s-2.5 0-2.5 2.5v2.6s-.2 2.5 5.1 2.5z" fill="#ffe052"/><circle cx="17" cy="22.5" r="1" fill="#ffffff"/>
+      </g>
+      <!-- Text details (Right side) -->
+      <text x="718" y="72" class="mod-name">PYTHON</text>
+      <text x="718" y="86" class="mod-sub" fill="#00ff88">AI_NEURAL.CORE</text>
+    </g>
+</g>
+
+<!-- Bottom HUD Telemetry Status Rail -->
+<g transform="translate(32, 575)">
+  <rect x="0" y="0" width="836" height="20" rx="3" fill="#030818" stroke="#00f0ff" stroke-width="0.8" opacity="0.75"/>
+  <circle cx="12" cy="10" r="2.5" fill="#00ff88"/>
+  <text x="22" y="13.5" font-family="'Fira Code', monospace" font-size="8.5" font-weight="700" fill="#00ff88" letter-spacing="1.5">LOADOUT_INTEGRITY: 100% // ALL SUBSYSTEMS ARMED // QUANTUM BUFFER: 0x7337 // RIOON7337</text>
+  <text x="826" y="13.5" font-family="'Fira Code', monospace" font-size="8" font-weight="700" fill="#00f0ff" text-anchor="end" letter-spacing="1.5">ONLINE [●]</text>
 </g>
 
 <!-- Floating Cyber Particles -->
 <g clip-path="url(#cardClipSkills)">
-  <circle class="ember" cx="80" cy="565" r="1.6" fill="#00f0ff" style="animation-duration:4.5s; animation-delay:0s;"/>
-  <circle class="ember" cx="150" cy="565" r="1.6" fill="#d946ef" style="animation-duration:5.5s; animation-delay:1.2s;"/>
-  <circle class="ember" cx="240" cy="565" r="1.4" fill="#00ff88" style="animation-duration:6.2s; animation-delay:2.4s;"/>
-  <circle class="ember" cx="660" cy="565" r="1.6" fill="#00f0ff" style="animation-duration:5.8s; animation-delay:0.8s;"/>
-  <circle class="ember" cx="750" cy="565" r="1.5" fill="#ff73fa" style="animation-duration:4.8s; animation-delay:1.8s;"/>
-  <circle class="ember" cx="820" cy="565" r="1.6" fill="#00ffcc" style="animation-duration:5.2s; animation-delay:3.1s;"/>
+  <circle class="ember" cx="70" cy="580" r="1.6" fill="#00f0ff" style="animation-duration:4.5s; animation-delay:0s;"/>
+  <circle class="ember" cx="160" cy="580" r="1.4" fill="#d946ef" style="animation-duration:5.8s; animation-delay:1.2s;"/>
+  <circle class="ember" cx="280" cy="580" r="1.5" fill="#00ff88" style="animation-duration:6.2s; animation-delay:2.4s;"/>
+  <circle class="ember" cx="620" cy="580" r="1.6" fill="#00f0ff" style="animation-duration:5.2s; animation-delay:0.8s;"/>
+  <circle class="ember" cx="760" cy="580" r="1.5" fill="#ff73fa" style="animation-duration:4.8s; animation-delay:1.8s;"/>
+  <circle class="ember" cx="830" cy="580" r="1.6" fill="#00ffcc" style="animation-duration:5.5s; animation-delay:3.1s;"/>
 </g>
 </svg>

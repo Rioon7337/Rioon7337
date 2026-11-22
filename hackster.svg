@@ -1,106 +1,97 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="260" height="78" viewBox="0 0 260 78" role="img" aria-label="HACKSTER">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%"   stop-color="#07071a"/>
-      <stop offset="55%"  stop-color="#0a1a3e"/>
-      <stop offset="100%" stop-color="#06061c"/>
+    <linearGradient id="bg_hackster" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050a1c"/>
+      <stop offset="60%" stop-color="#071330"/>
+      <stop offset="100%" stop-color="#040614"/>
     </linearGradient>
 
-    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#00f0ff"/>
-      <stop offset="50%"  stop-color="#d946ef"/>
-      <stop offset="100%" stop-color="#00f0ff"/>
+    <linearGradient id="edge_hackster" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00ffcc"/>
+      <stop offset="50%" stop-color="#d946ef"/>
+      <stop offset="100%" stop-color="#00ffcc"/>
     </linearGradient>
 
-    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="2.6" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="glow_hackster" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
-    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="1.1"/>
-    </filter>
-
-    <clipPath id="clip">
-      <rect x="1.5" y="1.5" width="257" height="75" rx="12"/>
-    </clipPath>
-
-    <pattern id="grid" width="13" height="13" patternUnits="userSpaceOnUse">
-      <path d="M13 0H0V13" fill="none" stroke="#00f0ff" stroke-width="0.4" opacity="0.07"/>
+    <pattern id="grid_hackster" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M12 0H0V12" fill="none" stroke="#00ffcc" stroke-width="0.3" opacity="0.08"/>
     </pattern>
 
-    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#00f0ff" stop-opacity="0"/>
-      <stop offset="45%"  stop-color="#00f0ff" stop-opacity="0.2"/>
-      <stop offset="55%"  stop-color="#fff"   stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    <linearGradient id="sweep_hackster" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00ffcc" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#00ffcc" stop-opacity="0.25"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00ffcc" stop-opacity="0"/>
     </linearGradient>
+
+    <!-- Chamfered Keycard Clip -->
+    <clipPath id="clip_hackster">
+      <path d="M 14 2 L 246 2 L 258 14 L 258 64 L 246 76 L 14 76 L 2 64 L 2 14 Z"/>
+    </clipPath>
   </defs>
 
-  <!-- body -->
-  <rect x="1.5" y="1.5" width="257" height="75" rx="12" fill="url(#bg)"/>
-  <rect x="1.5" y="1.5" width="257" height="75" rx="12" fill="url(#grid)"/>
+  <!-- Body -->
+  <path d="M 14 2 L 246 2 L 258 14 L 258 64 L 246 76 L 14 76 L 2 64 L 2 14 Z" fill="url(#bg_hackster)"/>
+  <rect x="2" y="2" width="256" height="74" fill="url(#grid_hackster)" clip-path="url(#clip_hackster)"/>
 
-  <!-- glowing edge -->
-  <g filter="url(#glow)">
-    <rect x="1.5" y="1.5" width="257" height="75" rx="12"
-          fill="none" stroke="url(#edge)" stroke-width="1.5" opacity="0.9">
-      <animate attributeName="opacity" values="0.55;1;0.55" dur="3.4s"
-               begin="1.4s" repeatCount="indefinite"/>
+  <!-- Glowing Edge Border -->
+  <path d="M 14 2 L 246 2 L 258 14 L 258 64 L 246 76 L 14 76 L 2 64 L 2 14 Z"
+        fill="none" stroke="url(#edge_hackster)" stroke-width="1.6" opacity="0.9" filter="url(#glow_hackster)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" begin="0.8s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Traveling Dash Sweep -->
+  <path d="M 14 2 L 246 2 L 258 14 L 258 64 L 246 76 L 14 76 L 2 64 L 2 14 Z"
+        fill="none" stroke="#00ffcc" stroke-width="2" stroke-linecap="round" pathLength="600" stroke-dasharray="60 540">
+    <animate attributeName="stroke-dashoffset" from="0" to="-600" dur="3.6s" begin="0.8s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Light Sweep Effect -->
+  <g clip-path="url(#clip_hackster)">
+    <rect x="-260" y="0" width="260" height="78" fill="url(#sweep_hackster)">
+      <animate attributeName="x" from="-260" to="260" dur="4.2s" begin="0.8s" repeatCount="indefinite"/>
     </rect>
   </g>
 
-  <!-- travelling light sweep -->
-  <g clip-path="url(#clip)">
-    <rect x="-260" y="0" width="260" height="78" fill="url(#sweep)">
-      <animate attributeName="x" from="-260" to="260" dur="4.2s"
-               begin="1.4s" repeatCount="indefinite"/>
-    </rect>
+  <!-- Cyber Corners -->
+  <g stroke="#00ffcc" stroke-width="1.5" fill="none" opacity="0.9">
+    <path d="M7 24 L7 16 L16 7 L24 7"/>
+    <path d="M253 24 L253 16 L244 7 L236 7"/>
+    <path d="M7 54 L7 62 L16 71 L24 71"/>
+    <path d="M253 54 L253 62 L244 71 L236 71"/>
   </g>
 
-  <!-- corner brackets -->
-  <g stroke="#00f0ff" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.95">
-    <path d="M10 20V13a3 3 0 0 1 3-3h7"/>
-    <path d="M250 20V13a3 3 0 0 0-3-3h-7"/>
-    <path d="M10 58v7a3 3 0 0 0 3 3h7"/>
-    <path d="M250 58v7a3 3 0 0 1-3 3h-7"/>
+  <!-- Icon Chamber (Left Side) -->
+  <g transform="translate(18, 22)">
+    <rect x="0" y="0" width="34" height="34" rx="6" fill="#06122c" stroke="#00ffcc" stroke-width="1.2" opacity="0.9"/>
+    <g transform="translate(6, 6)"><path d="M4 4h4v6.5h7V4h4v15h-4v-5.5h-7V19H4V4z" fill="#00ffcc"/></g>
   </g>
 
-  <!-- icon -->
-  <g transform="translate(24 27.0)">
-    <g filter="url(#soft)" opacity="0.75">
-      <path d="M12 2.2 21 7.1v9.8L12 21.8 3 16.9V7.1z" fill="none" stroke="#00f0ff"
-            stroke-width="1.6" stroke-linejoin="round"/>
-      <path d="M9 16V8M15 16V8M9 12h6" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round"/></g>
-    
-      <path d="M12 2.2 21 7.1v9.8L12 21.8 3 16.9V7.1z" fill="none" stroke="#00f0ff"
-            stroke-width="1.6" stroke-linejoin="round"/>
-      <path d="M9 16V8M15 16V8M9 12h6" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round"/>
-  </g>
+  <!-- Node Code Identifier -->
+  <text x="64" y="24" font-family="'Fira Code', monospace" font-size="8.5" font-weight="700" letter-spacing="1.5" fill="#00ffcc">NODE.05 // HACKSTER</text>
 
-  <!-- label -->
-  <text x="66" y="35.0" font-family="'Fira Code','JetBrains Mono',ui-monospace,monospace"
-        font-size="14.5" font-weight="700" letter-spacing="2.4" fill="#00f0ff">HACKSTER</text>
+  <!-- Main Platform Label -->
+  <text x="64" y="42" font-family="'Segoe UI', Arial, sans-serif" font-size="14.5" font-weight="900" letter-spacing="2" fill="#ffffff" filter="url(#glow_hackster)">HACKSTER</text>
 
-  <!-- status line -->
-  <g>
-    <circle cx="70" cy="52.0" r="2.6" fill="#00ff88">
-      <animate attributeName="opacity" values="1;0.15;1" dur="1.8s"
-               begin="1.4s" repeatCount="indefinite"/>
+  <!-- Status Telemetry Line -->
+  <g transform="translate(64, 58)">
+    <circle cx="4" cy="-3.5" r="2.5" fill="#00ff88">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/>
     </circle>
-    <text x="79" y="56.0" font-family="'Fira Code',ui-monospace,monospace"
-          font-size="9.5" letter-spacing="1.6" fill="#00ffcc">CONNECTED</text>
+    <text x="12" y="0" font-family="'Fira Code', monospace" font-size="9" font-weight="600" letter-spacing="1.2" fill="#00ffcc">IOT_CORE // ARMED</text>
   </g>
 
-  <!-- arrow -->
-  <g stroke="#d946ef" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M226 34.0 l5 5 -5 5">
-      <animate attributeName="opacity" values="0.35;1;0.35" dur="2.2s"
-               begin="1.4s" repeatCount="indefinite"/>
+  <!-- Cyber Navigation Chevron >>> -->
+  <g stroke="#d946ef" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(224, 34)">
+    <path d="M0 0 L5 5 L0 10">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.8s" repeatCount="indefinite"/>
     </path>
-    <path d="M232 34.0 l5 5 -5 5" opacity="0.4">
-      <animate attributeName="opacity" values="0.1;0.6;0.1" dur="2.2s"
-               begin="1.65s" repeatCount="indefinite"/>
+    <path d="M6 0 L11 5 L6 10" opacity="0.6">
+      <animate attributeName="opacity" values="0.1;0.8;0.1" dur="2s" begin="0.8s" repeatCount="indefinite"/>
     </path>
   </g>
 </svg>

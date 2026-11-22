@@ -1,46 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180" role="img" aria-label="Thanks For Visiting - Rioon7337">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200" role="img" aria-label="Thanks For Visiting - Rioon7337">
   <defs>
-    <radialGradient id="bgWave" cx="50%" cy="50%" r="85%">
+    <style>
+      .ft-title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 26px; font-weight: 900; letter-spacing: 7px; fill: #ffffff; }
+      .ft-sub { font-family: 'Fira Code', monospace; font-size: 11px; font-weight: 700; letter-spacing: 3.5px; fill: #00f0ff; }
+      .ft-badge { font-family: 'Fira Code', monospace; font-size: 8.5px; font-weight: 700; letter-spacing: 1.8px; }
+      @keyframes glitchFt {
+        0%, 93%, 100% { transform: translate(0,0); opacity: 0; }
+        94% { transform: translate(-2px, 0.6px); opacity: 0.8; }
+        96% { transform: translate(2px, -0.6px); opacity: 0.8; }
+        98% { transform: translate(-1px, 0); opacity: 0.4; }
+      }
+      @keyframes blinkCursor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      .eq-bar { animation: eqPulse 1.8s ease-in-out infinite alternate; }
+    </style>
+
+    <radialGradient id="bgWave" cx="50%" cy="50%" r="90%">
       <stop offset="0%" stop-color="#0a1a3e"/>
       <stop offset="55%" stop-color="#07071a"/>
-      <stop offset="100%" stop-color="#050512"/>
+      <stop offset="100%" stop-color="#04040e"/>
     </radialGradient>
 
-    <!-- Cyan to Magenta Dual Cyber Wave Gradient -->
-    <linearGradient id="cyberWave1" gradientUnits="userSpaceOnUse" x1="20" y1="90" x2="880" y2="90">
+    <!-- Dual Animated Cyber Wave Gradients -->
+    <linearGradient id="cyberWave1" gradientUnits="userSpaceOnUse" x1="20" y1="100" x2="880" y2="100">
       <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
-      <stop offset="20%" stop-color="#00f0ff">
+      <stop offset="25%" stop-color="#00f0ff">
         <animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/>
       </stop>
       <stop offset="50%" stop-color="#00e5ff">
         <animate attributeName="stop-color" values="#00e5ff;#ff73fa;#00f0ff;#00e5ff" dur="5s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="80%" stop-color="#d946ef">
+      <stop offset="75%" stop-color="#d946ef">
         <animate attributeName="stop-color" values="#d946ef;#00f0ff;#ff73fa;#d946ef" dur="5s" repeatCount="indefinite"/>
       </stop>
       <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
     </linearGradient>
 
-    <linearGradient id="frameGradWave" gradientUnits="userSpaceOnUse" x1="12" y1="90" x2="888" y2="90">
-      <stop offset="0%" stop-color="#00f0ff">
-        <animate attributeName="stop-color" values="#00f0ff;#d946ef;#00f0ff" dur="5s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" stop-color="#d946ef">
-        <animate attributeName="stop-color" values="#d946ef;#00f0ff;#d946ef" dur="5s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#00f0ff">
-        <animate attributeName="stop-color" values="#00f0ff;#d946ef;#00f0ff" dur="5s" repeatCount="indefinite"/>
-      </stop>
-      <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 90" to="360 450 90" dur="6s" repeatCount="indefinite"/>
+    <linearGradient id="frameGradWave" gradientUnits="userSpaceOnUse" x1="12" y1="100" x2="888" y2="100">
+      <stop offset="0%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/></stop>
+      <stop offset="50%" stop-color="#d946ef"><animate attributeName="stop-color" values="#d946ef;#00ffcc;#00f0ff;#d946ef" dur="5s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#00ffcc"><animate attributeName="stop-color" values="#00ffcc;#00f0ff;#d946ef;#00ffcc" dur="5s" repeatCount="indefinite"/></stop>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 100" to="360 450 100" dur="5s" repeatCount="indefinite"/>
     </linearGradient>
 
-    <filter id="glowWave" x="-20%" y="-50%" width="140%" height="200%">
-      <feGaussianBlur stdDeviation="3.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-
-    <filter id="neonOuterWave" x="-10%" y="-25%" width="120%" height="150%">
-      <feGaussianBlur stdDeviation="5" result="b"/>
+    <filter id="glowWave" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3.2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
@@ -49,72 +52,113 @@
     </pattern>
 
     <clipPath id="waveClip">
-      <rect x="12" y="12" width="876" height="156" rx="14"/>
+      <path d="M 28 8 L 872 8 L 892 28 L 892 172 L 872 192 L 28 192 L 8 172 L 8 28 Z"/>
     </clipPath>
   </defs>
 
   <!-- Outer Neon Glow -->
-  <rect x="12" y="12" width="876" height="156" rx="14" fill="none" stroke="url(#frameGradWave)" stroke-width="4" opacity="0.35" filter="url(#neonOuterWave)"/>
+  <path d="M 28 8 L 872 8 L 892 28 L 892 172 L 872 192 L 28 192 L 8 172 L 8 28 Z" fill="none" stroke="url(#frameGradWave)" stroke-width="4.5" opacity="0.3" filter="url(#glowWave)"/>
 
-  <!-- Dark Midnight Card Background -->
-  <rect x="12" y="12" width="876" height="156" rx="14" fill="url(#bgWave)"/>
-  <rect x="12" y="12" width="876" height="156" rx="14" fill="url(#gridWave)"/>
+  <!-- Body -->
+  <path d="M 28 8 L 872 8 L 892 28 L 892 172 L 872 192 L 28 192 L 8 172 L 8 28 Z" fill="url(#bgWave)"/>
+  <rect x="8" y="8" width="884" height="184" fill="url(#gridWave)" clip-path="url(#waveClip)"/>
 
   <!-- Cyber Corners -->
-  <path d="M22 42 L22 22 L42 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".9"/>
-  <path d="M878 42 L878 22 L858 22" stroke="#00f0ff" stroke-width="2" fill="none" opacity=".9"/>
-  <path d="M22 138 L22 158 L42 158" stroke="#d946ef" stroke-width="2" fill="none" opacity=".9"/>
-  <path d="M878 138 L878 158 L858 158" stroke="#d946ef" stroke-width="2" fill="none" opacity=".9"/>
+  <g stroke="#00f0ff" stroke-width="1.8" fill="none" opacity="0.9">
+    <path d="M16 42 L16 26 L26 16 L42 16"/>
+    <path d="M884 42 L884 26 L874 16 L858 16"/>
+  </g>
+  <g stroke="#d946ef" stroke-width="1.8" fill="none" opacity="0.9">
+    <path d="M16 158 L16 174 L26 184 L42 184"/>
+    <path d="M884 158 L884 174 L874 184 L858 184"/>
+  </g>
+
+  <!-- Top Telemetry Header Strip -->
+  <g transform="translate(0, 24)">
+    <text x="36" y="5" class="ft-badge" fill="#00ffcc">&lt;SESSION_ID: #7337-TERMINAL // DISCONNECT_READY&gt;</text>
+    <g transform="translate(450, 0)">
+      <circle cx="-60" cy="1.5" r="2.5" fill="#00ff88" style="animation: eqPulse 1.4s infinite;"/>
+      <text x="0" y="5" class="ft-badge" fill="#00ff88" text-anchor="middle">UPTIME: 99.99% // SEC_HASH: 0x7337</text>
+      <circle cx="60" cy="1.5" r="2.5" fill="#00ff88" style="animation: eqPulse 1.4s infinite;"/>
+    </g>
+    <text x="864" y="5" class="ft-badge" fill="#00f0ff" text-anchor="end">&lt;LOGOUT PROTOCOL // SUCCESS&gt;</text>
+  </g>
+
+  <!-- Digital Equalizer Spectrum Background Bars (Symmetric from center) -->
+  <g clip-path="url(#waveClip)" opacity="0.18">
+    <!-- Left Equalizer Bars -->
+    <rect x="180" y="110" width="6" height="24" fill="#00f0ff"><animate attributeName="height" values="10;34;14;28;10" dur="2.1s" repeatCount="indefinite"/><animate attributeName="y" values="124;100;120;106;124" dur="2.1s" repeatCount="indefinite"/></rect>
+    <rect x="210" y="105" width="6" height="34" fill="#00f0ff"><animate attributeName="height" values="15;42;20;35;15" dur="1.7s" repeatCount="indefinite"/><animate attributeName="y" values="119;92;114;99;119" dur="1.7s" repeatCount="indefinite"/></rect>
+    <rect x="240" y="95" width="6" height="54" fill="#00ffcc"><animate attributeName="height" values="24;58;32;48;24" dur="2.3s" repeatCount="indefinite"/><animate attributeName="y" values="110;76;102;86;110" dur="2.3s" repeatCount="indefinite"/></rect>
+    <rect x="270" y="90" width="6" height="64" fill="#d946ef"><animate attributeName="height" values="30;66;40;55;30" dur="1.9s" repeatCount="indefinite"/><animate attributeName="y" values="104;68;94;79;104" dur="1.9s" repeatCount="indefinite"/></rect>
+    
+    <!-- Right Equalizer Bars -->
+    <rect x="630" y="90" width="6" height="64" fill="#d946ef"><animate attributeName="height" values="30;66;40;55;30" dur="1.9s" repeatCount="indefinite"/><animate attributeName="y" values="104;68;94;79;104" dur="1.9s" repeatCount="indefinite"/></rect>
+    <rect x="660" y="95" width="6" height="54" fill="#00ffcc"><animate attributeName="height" values="24;58;32;48;24" dur="2.3s" repeatCount="indefinite"/><animate attributeName="y" values="110;76;102;86;110" dur="2.3s" repeatCount="indefinite"/></rect>
+    <rect x="690" y="105" width="6" height="34" fill="#00f0ff"><animate attributeName="height" values="15;42;20;35;15" dur="1.7s" repeatCount="indefinite"/><animate attributeName="y" values="119;92;114;99;119" dur="1.7s" repeatCount="indefinite"/></rect>
+    <rect x="720" y="110" width="6" height="24" fill="#00f0ff"><animate attributeName="height" values="10;34;14;28;10" dur="2.1s" repeatCount="indefinite"/><animate attributeName="y" values="124;100;120;106;124" dur="2.1s" repeatCount="indefinite"/></rect>
+  </g>
 
   <!-- Flowing Dual Cyber Sine Waves -->
   <g clip-path="url(#waveClip)">
-    <g>
-      <!-- Primary Wave (Electric Cyan) -->
-      <path d="M-300 95 Q-225 52 -150 95 T0 95 T150 95 T300 95 T450 95 T600 95 T750 95 T900 95 T1050 95 T1200 95"
-            fill="none" stroke="url(#cyberWave1)" stroke-width="2.6" filter="url(#glowWave)">
-        <animateTransform attributeName="transform" type="translate" from="0 0" to="-300 0" dur="4s" repeatCount="indefinite"/>
-      </path>
-      <!-- Secondary Counter Wave (Quantum Magenta) -->
-      <path d="M-300 95 Q-225 138 -150 95 T0 95 T150 95 T300 95 T450 95 T600 95 T750 95 T900 95 T1050 95 T1200 95"
-            fill="none" stroke="#d946ef" stroke-width="1.8" opacity="0.65" filter="url(#glowWave)">
-        <animateTransform attributeName="transform" type="translate" from="-300 0" to="0 0" dur="5.5s" repeatCount="indefinite"/>
-      </path>
-    </g>
+    <!-- Primary Wave (Electric Cyan) -->
+    <path d="M-300 115 Q-225 65 -150 115 T0 115 T150 115 T300 115 T450 115 T600 115 T750 115 T900 115 T1050 115 T1200 115"
+          fill="none" stroke="url(#cyberWave1)" stroke-width="2.6" filter="url(#glowWave)">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-300 0" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <!-- Secondary Counter Wave (Quantum Magenta) -->
+    <path d="M-300 115 Q-225 165 -150 115 T0 115 T150 115 T300 115 T450 115 T600 115 T750 115 T900 115 T1050 115 T1200 115"
+          fill="none" stroke="#d946ef" stroke-width="1.8" opacity="0.65" filter="url(#glowWave)">
+      <animateTransform attributeName="transform" type="translate" from="-300 0" to="0 0" dur="5.5s" repeatCount="indefinite"/>
+    </path>
 
     <!-- Floating Cyber Motes -->
-    <circle cx="140" cy="48" r="1.5" fill="#00f0ff" opacity="0.8">
+    <circle cx="120" cy="55" r="1.5" fill="#00f0ff" opacity="0.8">
       <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="52;44;52" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="58;50;58" dur="3s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="310" cy="136" r="1.6" fill="#ff73fa" opacity="0.7">
+    <circle cx="280" cy="155" r="1.6" fill="#ff73fa" opacity="0.7">
       <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.6s" begin="0.8s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="140;132;140" dur="3.6s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="160;150;160" dur="3.6s" begin="0.8s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="620" cy="44" r="1.4" fill="#00ff88" opacity="0.75">
+    <circle cx="640" cy="50" r="1.4" fill="#00ff88" opacity="0.75">
       <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.2s" begin="1.4s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="770" cy="138" r="1.5" fill="#00f0ff" opacity="0.7">
+    <circle cx="780" cy="150" r="1.5" fill="#00f0ff" opacity="0.7">
       <animate attributeName="opacity" values="0.2;0.9;0.2" dur="4s" begin="0.4s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- Animated Border -->
-  <rect x="12" y="12" width="876" height="156" rx="14" fill="none" stroke="url(#frameGradWave)" stroke-width="1.6" opacity="0.85"/>
+  <!-- Border & Tracer -->
+  <path d="M 28 8 L 872 8 L 892 28 L 892 172 L 872 192 L 28 192 L 8 172 L 8 28 Z" fill="none" stroke="url(#frameGradWave)" stroke-width="1.8" opacity="0.95"/>
+  <path d="M 28 8 L 872 8 L 892 28 L 892 172 L 872 192 L 28 192 L 8 172 L 8 28 Z" fill="none" stroke="#00f0ff" stroke-width="2.2" stroke-linecap="round" opacity="0.9" pathLength="1000" stroke-dasharray="85 915" filter="url(#glowWave)">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4.2s" repeatCount="indefinite"/>
+  </path>
 
-  <!-- Traveling Border Light Tracer -->
-  <rect x="12" y="12" width="876" height="156" rx="14" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.9" pathLength="1000" stroke-dasharray="70 930" filter="url(#glowWave)">
-    <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4.5s" repeatCount="indefinite"/>
-  </rect>
+  <!-- Main Centered Typography -->
+  <text x="450" y="98" text-anchor="middle" class="ft-title" filter="url(#glowWave)">THANKS FOR VISITING</text>
+  <text x="447" y="98" text-anchor="middle" class="ft-title" fill="#00f0ff" style="animation: glitchFt 6s infinite; opacity:0;">THANKS FOR VISITING</text>
+  <text x="453" y="98" text-anchor="middle" class="ft-title" fill="#d946ef" style="animation: glitchFt 6s infinite .14s; opacity:0;">THANKS FOR VISITING</text>
 
-  <!-- Centered Footer Typography -->
-  <text x="450" y="86" text-anchor="middle"
-        font-family="'Segoe UI', Arial, sans-serif"
-        font-size="18" font-weight="800" letter-spacing="5" fill="#ffffff" filter="url(#glowWave)">
-    THANKS FOR VISITING
+  <!-- Subtitle with Blinking Standby Indicator -->
+  <text x="450" y="126" text-anchor="middle" class="ft-sub">
+    // SYSTEM STANDBY ENGAGED &#183; RIOON7337 //
   </text>
-  <text x="450" y="112" text-anchor="middle"
-        font-family="'Fira Code', ui-monospace, monospace"
-        font-size="12" font-weight="600" letter-spacing="3" fill="#00f0ff">
-    // SYSTEM STANDBY &#183; RIOON7337
-  </text>
+
+  <!-- Bottom Terminal Status Prompt -->
+  <g transform="translate(450, 152)">
+    <rect x="-140" y="-10" width="280" height="18" rx="4" fill="#030b1c" stroke="#00f0ff" stroke-width="0.8" opacity="0.8"/>
+    <circle cx="-126" cy="-1" r="2.5" fill="#00ff88"/>
+    <text x="5" y="3" font-family="'Fira Code', monospace" font-size="9" font-weight="700" fill="#00ff88" text-anchor="middle" letter-spacing="1.5">SYS.STATUS: STANDBY MODE<tspan fill="#00f0ff" style="animation: blinkCursor 0.8s infinite;"> _</tspan></text>
+  </g>
+
+  <!-- Corner Hazard Stripes /// -->
+  <g stroke="#00f0ff" stroke-width="1.2" opacity="0.4">
+    <line x1="36" y1="168" x2="44" y2="176"/>
+    <line x1="42" y1="168" x2="50" y2="176"/>
+    <line x1="48" y1="168" x2="56" y2="176"/>
+    <line x1="844" y1="168" x2="852" y2="176"/>
+    <line x1="850" y1="168" x2="858" y2="176"/>
+    <line x1="856" y1="168" x2="864" y2="176"/>
+  </g>
 </svg>

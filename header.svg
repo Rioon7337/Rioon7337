@@ -1,61 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120" viewBox="0 0 900 120" role="img" aria-label="Connect">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="130" viewBox="0 0 900 130" role="img" aria-label="Connect - Rioon7337">
   <defs>
-    <linearGradient id="hb" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#07071a"/>
-      <stop offset="50%"  stop-color="#0d1a3e"/>
-      <stop offset="100%" stop-color="#07071a"/>
+    <style>
+      .hdr-title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 32px; font-weight: 900; letter-spacing: 9px; fill: #ffffff; }
+      .hdr-sub { font-family: 'Fira Code', monospace; font-size: 11px; letter-spacing: 3.5px; fill: #ff73fa; }
+      .hdr-badge { font-family: 'Fira Code', monospace; font-size: 8.5px; font-weight: 700; letter-spacing: 2px; }
+      @keyframes glitchHdr {
+        0%, 93%, 100% { transform: translate(0,0); opacity: 0; }
+        94% { transform: translate(-2px, 0.6px); opacity: 0.8; }
+        96% { transform: translate(2px, -0.6px); opacity: 0.8; }
+        98% { transform: translate(-1px, 0); opacity: 0.4; }
+      }
+      @keyframes pulseDot { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+      @keyframes waveDrift {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-150px); }
+      }
+    </style>
+
+    <radialGradient id="hb" cx="50%" cy="50%" r="90%">
+      <stop offset="0%" stop-color="#0a1a3e"/>
+      <stop offset="55%" stop-color="#07071a"/>
+      <stop offset="100%" stop-color="#050512"/>
+    </radialGradient>
+
+    <linearGradient id="rgbBorderHdr" gradientUnits="userSpaceOnUse" x1="12" y1="65" x2="888" y2="65">
+      <stop offset="0%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/></stop>
+      <stop offset="33%" stop-color="#d946ef"><animate attributeName="stop-color" values="#d946ef;#00f0ff;#ff73fa;#d946ef" dur="5s" repeatCount="indefinite"/></stop>
+      <stop offset="66%" stop-color="#00ffcc"><animate attributeName="stop-color" values="#00ffcc;#ff73fa;#00f0ff;#00ffcc" dur="5s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#d946ef;#00ffcc;#00f0ff" dur="5s" repeatCount="indefinite"/></stop>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 450 65" to="360 450 65" dur="4.5s" repeatCount="indefinite"/>
     </linearGradient>
-    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#00f0ff" stop-opacity="0"/>
-      <stop offset="20%"  stop-color="#d946ef" stop-opacity="0.9"/>
-      <stop offset="50%"  stop-color="#00f0ff"/>
-      <stop offset="80%"  stop-color="#d946ef" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="hglow" x="-40%" y="-140%" width="180%" height="380%">
-      <feGaussianBlur stdDeviation="3" result="b"/>
+
+    <filter id="hglow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <pattern id="hgrid" width="18" height="18" patternUnits="userSpaceOnUse">
-      <path d="M18 0H0V18" fill="none" stroke="#00f0ff" stroke-width="0.4" opacity="0.08"/>
+
+    <pattern id="hgrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#00f0ff" stroke-width="0.35" opacity="0.06"/>
     </pattern>
+
+    <clipPath id="hdrClip">
+      <path d="M 24 6 L 876 6 L 894 24 L 894 106 L 876 124 L 24 124 L 6 106 L 6 24 Z"/>
+    </clipPath>
   </defs>
 
-  <rect width="900" height="120" fill="url(#hb)" rx="12"/>
-  <rect width="900" height="120" fill="url(#hgrid)" rx="12"/>
+  <!-- Outer Neon Aura -->
+  <path d="M 24 6 L 876 6 L 894 24 L 894 106 L 876 124 L 24 124 L 6 106 L 6 24 Z" fill="none" stroke="url(#rgbBorderHdr)" stroke-width="4.5" opacity="0.3" filter="url(#hglow)"/>
+
+  <!-- Body -->
+  <path d="M 24 6 L 876 6 L 894 24 L 894 106 L 876 124 L 24 124 L 6 106 L 6 24 Z" fill="url(#hb)"/>
+  <rect x="6" y="6" width="888" height="118" fill="url(#hgrid)" clip-path="url(#hdrClip)"/>
+
+  <!-- Edge Borders & Tracer -->
+  <path d="M 24 6 L 876 6 L 894 24 L 894 106 L 876 124 L 24 124 L 6 106 L 6 24 Z" fill="none" stroke="url(#rgbBorderHdr)" stroke-width="1.8" opacity="0.95"/>
+  <path d="M 24 6 L 876 6 L 894 24 L 894 106 L 876 124 L 24 124 L 6 106 L 6 24 Z" fill="none" stroke="#00f0ff" stroke-width="2.2" stroke-linecap="round" opacity="0.9" pathLength="1000" stroke-dasharray="80 920" filter="url(#hglow)">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4s" repeatCount="indefinite"/>
+  </path>
 
   <!-- Cyber Corners -->
-  <path d="M20 35 L20 18 L37 18" stroke="#00f0ff" stroke-width="1.8" fill="none" opacity="0.85"/>
-  <path d="M880 35 L880 18 L863 18" stroke="#00f0ff" stroke-width="1.8" fill="none" opacity="0.85"/>
-  <path d="M20 85 L20 102 L37 102" stroke="#d946ef" stroke-width="1.8" fill="none" opacity="0.85"/>
-  <path d="M880 85 L880 102 L863 102" stroke="#d946ef" stroke-width="1.8" fill="none" opacity="0.85"/>
-
-  <g filter="url(#hglow)">
-    <text x="450.0" y="52" text-anchor="middle"
-          font-family="'Fira Code','JetBrains Mono',ui-monospace,monospace"
-          font-size="30" font-weight="800" letter-spacing="9" fill="#00f0ff">CONNECT</text>
+  <g stroke="#00f0ff" stroke-width="1.8" fill="none" opacity="0.9">
+    <path d="M12 36 L12 20 L20 12 L36 12"/>
+    <path d="M888 36 L888 20 L880 12 L864 12"/>
+  </g>
+  <g stroke="#d946ef" stroke-width="1.8" fill="none" opacity="0.9">
+    <path d="M12 94 L12 110 L20 118 L36 118"/>
+    <path d="M888 94 L888 110 L880 118 L864 118"/>
   </g>
 
-  <text x="450.0" y="78" text-anchor="middle"
-        font-family="'Fira Code',ui-monospace,monospace"
-        font-size="12" letter-spacing="4" fill="#ff73fa">
-    // ESTABLISHING QUANTUM UPLINK &#8212; RIOON7337
+  <!-- Top Telemetry Strip -->
+  <g transform="translate(0, 18)">
+    <text x="32" y="5" class="hdr-badge" fill="#00ffcc">&lt;FREQ: 5.84 GHz // PROTOCOL: NEURAL_UPLINK&gt;</text>
+    <g transform="translate(450, 0)">
+      <circle cx="-55" cy="1" r="2.5" fill="#00ff88" style="animation: pulseDot 1.4s infinite;"/>
+      <text x="0" y="4.5" class="hdr-badge" fill="#00ff88" text-anchor="middle">LIVE SIGNAL // ENCRYPTED</text>
+      <circle cx="55" cy="1" r="2.5" fill="#00ff88" style="animation: pulseDot 1.4s infinite;"/>
+    </g>
+    <text x="868" y="5" class="hdr-badge" fill="#00f0ff" text-anchor="end">&lt;AES-GCM-256 // RIOON7337&gt;</text>
+  </g>
+
+  <!-- Main Title CONNECT with Glitch -->
+  <text x="450" y="65" text-anchor="middle" class="hdr-title" filter="url(#hglow)">CONNECT</text>
+  <text x="447" y="65" text-anchor="middle" class="hdr-title" fill="#00f0ff" style="animation: glitchHdr 6s infinite; opacity:0;">CONNECT</text>
+  <text x="453" y="65" text-anchor="middle" class="hdr-title" fill="#d946ef" style="animation: glitchHdr 6s infinite .14s; opacity:0;">CONNECT</text>
+
+  <!-- Subtitle -->
+  <text x="450" y="87" text-anchor="middle" class="hdr-sub">
+    // ESTABLISH DIRECT DATA LINK &#8212; SELECT NEURAL NODE &#8212; RIOON7337
   </text>
 
-  <rect x="80" y="94" width="740" height="1.6" fill="url(#rule)">
-    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
-  </rect>
+  <!-- Bottom Frequency Waveform Divider -->
+  <g clip-path="url(#hdrClip)">
+    <path d="M 60 106 Q 110 96 160 106 T 260 106 T 360 106 T 460 106 T 560 106 T 660 106 T 760 106 T 840 106" fill="none" stroke="url(#rgbBorderHdr)" stroke-width="1.4" opacity="0.6"/>
+  </g>
 
-  <g fill="#00f0ff" filter="url(#hglow)">
-    <circle cx="150.0" cy="94.8" r="2.6">
-      <animate attributeName="cx" values="150.0;750.0;150.0" dur="4.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-  <g fill="#d946ef" filter="url(#hglow)">
-    <circle cx="750.0" cy="94.8" r="2.2">
-      <animate attributeName="cx" values="750.0;150.0;750.0" dur="4.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" repeatCount="indefinite"/>
-    </circle>
-  </g>
+  <!-- Traveling Photon Packets on Waveform -->
+  <circle cx="200" cy="106" r="2.6" fill="#00f0ff" filter="url(#hglow)">
+    <animate attributeName="cx" values="100;800;100" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="106" r="2.4" fill="#d946ef" filter="url(#hglow)">
+    <animate attributeName="cx" values="800;100;800" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
 </svg>
