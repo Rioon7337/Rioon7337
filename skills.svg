@@ -149,7 +149,7 @@
   <!-- Sector Header Bar -->
   <rect x="32" y="0" width="836" height="24" rx="4" fill="#041226" stroke="#00f0ff" stroke-width="0.9" opacity="0.85"/>
   <circle cx="46" cy="12" r="3" fill="#00f0ff" style="animation: blinkLed 1.8s infinite;"/>
-  <text x="60" y="16" class="sector-title" fill="#00f0ff">SECTOR 01 // FAVORITE THIINGS</text>
+  <text x="60" y="16" class="sector-title" fill="#00f0ff">SECTOR 01 // FAVORITE THINGS</text>
   <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#00ffcc" text-anchor="end" letter-spacing="1.5">&lt;SYS:FT // PORT:3000 /&gt;</text>
 
     <!-- Card: REACT -->
@@ -173,8 +173,8 @@
         <ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2"/><ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2" transform="rotate(60 14 14)"/><ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2" transform="rotate(120 14 14)"/><circle cx="14" cy="14" r="2.2" fill="#00f0ff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="79" y="72" class="mod-name">SWEET FOODS/DRINKS</text>
-      <text x="79" y="86" class="mod-sub" fill="#00f0ff">ESPECIALLY STRAWBERRY</text>
+      <text x="79" y="72" class="mod-name">SWEET.THINGS</text>
+      <text x="79" y="86" class="mod-sub" fill="#00f0ff">#Strawberry</text>
     </g>
     <!-- Card: VITE -->
     <g>
@@ -198,7 +198,7 @@
       </g>
       <!-- Text details (Right side) -->
       <text x="249" y="72" class="mod-name">GAMES</text>
-      <text x="249" y="86" class="mod-sub" fill="#00f0ff">I LOVE SEEING MY HUSBANDO °w°</text>
+      <text x="249" y="86" class="mod-sub" fill="#00f0ff">MY.HUSBANDO.°w°</text>
     </g>
     <!-- Card: BABEL -->
     <g>
@@ -221,8 +221,8 @@
         <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#151b2e" stroke="#f5da55" stroke-width="1.4"/><circle cx="14" cy="14.5" r="4.5" fill="#f5da55"/><line x1="8" y1="14.5" x2="20" y2="14.5" stroke="#060c22" stroke-width="1.5"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="419" y="72" class="mod-name">LISTENING MUSIC</text>
-      <text x="419" y="86" class="mod-sub" fill="#00f0ff">ROUON ARO MY LOVE 😘</text>
+      <text x="419" y="72" class="mod-name">MUSIC</text>
+      <text x="419" y="86" class="mod-sub" fill="#00f0ff">#RouonAro</text>
     </g>
     <!-- Card: HTML5 -->
     <g>
@@ -245,8 +245,8 @@
         <path d="M4 2l2 20 8 2.5 8-2.5 2-20H4z" fill="#e44d26" opacity="0.85"/><path d="M14 4v18.2l6.2-1.9 1.6-16.3H14z" fill="#f16529"/><path d="M8 8h12l-.3 3.5h-8l.3 3.5h7.4l-.7 7.2-4.7 1.4-4.7-1.4-.3-4H12l.2 2 1.8.5 1.8-.5.3-2.5H8L8 8z" fill="#ffffff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="589" y="72" class="mod-name">READING BOOK</text>
-      <text x="589" y="86" class="mod-sub" fill="#00f0ff">NOVELS/COMICS.HORROR,FANTASY,BEASTMAN</text>
+      <text x="589" y="72" class="mod-name">BOOK</text>
+      <text x="589" y="86" class="mod-sub" fill="#00f0ff">#BeastMan</text>
     </g>
     <!-- Card: CSS3 -->
     <g>
@@ -269,8 +269,8 @@
         <path d="M4 2l2 20 8 2.5 8-2.5 2-20H4z" fill="#1572b6" opacity="0.85"/><path d="M14 4v18.2l6.2-1.9 1.6-16.3H14z" fill="#33a9dc"/><path d="M8 8h12l-.3 3.5h-8l.3 3.5h7.4l-.7 7.2-4.7 1.4-4.7-1.4-.3-4H12l.2 2 1.8.5 1.8-.5.3-2.5H8L8 8z" fill="#ffffff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="759" y="72" class="mod-name">DRAWING THINGS</text>
-      <text x="759" y="86" class="mod-sub" fill="#00f0ff">FURRY.NOT THAT EXPERT</text>
+      <text x="759" y="72" class="mod-name">DRAWING</text>
+      <text x="759" y="86" class="mod-sub" fill="#00f0ff">NOT.EXPERT</text>
     </g>
 </g>
 
@@ -304,7 +304,7 @@
       </g>
       <!-- Text details (Right side) -->
       <text x="79" y="72" class="mod-name">HOMEWORK</text>
-      <text x="79" y="86" class="mod-sub" fill="#d946ef">THERE IS SO MANY OF THEM</text>
+      <text x="79" y="86" class="mod-sub" fill="#d946ef">MANY.OF.THEM</text>
     </g>
     <!-- Card: PHP -->
     <g>
@@ -327,8 +327,8 @@
         <ellipse cx="14" cy="14" rx="13" ry="8.5" fill="#777bb4" opacity="0.3" stroke="#8892bf" stroke-width="1.3"/><text x="14" y="17.5" font-family="'Fira Code', monospace" font-size="8.5" font-weight="900" fill="#c4b5fd" text-anchor="middle">PHP</text>
       </g>
       <!-- Text details (Right side) -->
-      <text x="249" y="72" class="mod-name">LOUD NOISE</text>
-      <text x="249" y="86" class="mod-sub" fill="#d946ef">IT BOTHERS ME WHEN I DO THINGS</text>
+      <text x="249" y="72" class="mod-name">LOUD.NOISE</text>
+      <text x="249" y="86" class="mod-sub" fill="#d946ef">PLEASE.DON'T</text>
     </g>
     <!-- Card: COMPOSER -->
     <g>
@@ -352,7 +352,7 @@
       </g>
       <!-- Text details (Right side) -->
       <text x="419" y="72" class="mod-name">HEIGHT</text>
-      <text x="419" y="86" class="mod-sub" fill="#d946ef">PLEASE DON'T PLACE ME OUT THERE</text>
+      <text x="419" y="86" class="mod-sub" fill="#d946ef">I'M.SCARED</text>
     </g>
     <!-- Card: NODE.JS -->
     <g>
@@ -375,8 +375,8 @@
         <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#339933" opacity="0.3" stroke="#00ff88" stroke-width="1.4"/><path d="M14 6v8l7-4M14 14l-7-4v8l7 4" fill="none" stroke="#00ff88" stroke-width="1.6"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="589" y="72" class="mod-name">FULL STORAGE</text>
-      <text x="589" y="86" class="mod-sub" fill="#d946ef">DON'T LIKE TO DELETE MY PRECIOUS</text>
+      <text x="589" y="72" class="mod-name">FULL.STORAGE</text>
+      <text x="589" y="86" class="mod-sub" fill="#d946ef">MUST.DELETE</text>
     </g>
     <!-- Card: POSTGRES -->
     <g>
