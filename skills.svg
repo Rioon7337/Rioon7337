@@ -127,14 +127,14 @@
   <g transform="translate(450, 18)">
     <rect x="-105" y="-6" width="210" height="15" rx="4" fill="#040b1c" stroke="#00f0ff" stroke-width="1" opacity="0.9"/>
     <circle cx="-92" cy="1.5" r="2.5" fill="#00ff88" style="animation: blinkLed 1.4s infinite;"/>
-    <text x="5" y="5.5" font-family="'Fira Code', monospace" font-size="8" font-weight="700" fill="#00f0ff" text-anchor="middle" letter-spacing="2">SYS.ARSENAL // REV.4.2</text>
+    <text x="5" y="5.5" font-family="'Fira Code', monospace" font-size="8" font-weight="700" fill="#00f0ff" text-anchor="middle" letter-spacing="2">SYS.FAVORITE // REV.4.2</text>
     <circle cx="92" cy="1.5" r="2.5" fill="#00ff88" style="animation: blinkLed 1.4s infinite;"/>
   </g>
 
   <!-- Glitch Title ARSENAL -->
-  <text x="450" y="58" text-anchor="middle" class="title" filter="url(#glow)">ARSENAL</text>
-  <text x="447" y="58" text-anchor="middle" class="title" fill="#00f0ff" style="animation: glitch 6s infinite; opacity:0;">ARSENAL</text>
-  <text x="453" y="58" text-anchor="middle" class="title" fill="#d946ef" style="animation: glitch 6s infinite .14s; opacity:0;">ARSENAL</text>
+  <text x="450" y="58" text-anchor="middle" class="title" filter="url(#glow)">FAVORITE</text>
+  <text x="447" y="58" text-anchor="middle" class="title" fill="#00f0ff" style="animation: glitch 6s infinite; opacity:0;">FAVORITE</text>
+  <text x="453" y="58" text-anchor="middle" class="title" fill="#d946ef" style="animation: glitch 6s infinite .14s; opacity:0;">FAVORITE</text>
 
   <!-- Subtitle -->
   <text x="450" y="77" text-anchor="middle" class="subtitle">// CYBERNETIC WEAPONRY &amp; TECH STACK LOADOUT // RIOON7337</text>
@@ -149,8 +149,8 @@
   <!-- Sector Header Bar -->
   <rect x="32" y="0" width="836" height="24" rx="4" fill="#041226" stroke="#00f0ff" stroke-width="0.9" opacity="0.85"/>
   <circle cx="46" cy="12" r="3" fill="#00f0ff" style="animation: blinkLed 1.8s infinite;"/>
-  <text x="60" y="16" class="sector-title" fill="#00f0ff">SECTOR 01 // FRONTEND INTERFACE MATRIX</text>
-  <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#00ffcc" text-anchor="end" letter-spacing="1.5">&lt;SYS:FE // PORT:3000 /&gt;</text>
+  <text x="60" y="16" class="sector-title" fill="#00f0ff">SECTOR 01 // FAVORITE THIINGS</text>
+  <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#00ffcc" text-anchor="end" letter-spacing="1.5">&lt;SYS:FT // PORT:3000 /&gt;</text>
 
     <!-- Card: REACT -->
     <g>
@@ -173,8 +173,8 @@
         <ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2"/><ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2" transform="rotate(60 14 14)"/><ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2" transform="rotate(120 14 14)"/><circle cx="14" cy="14" r="2.2" fill="#00f0ff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="79" y="72" class="mod-name">REACT</text>
-      <text x="79" y="86" class="mod-sub" fill="#00f0ff">UI.FRAMEWORK</text>
+      <text x="79" y="72" class="mod-name">SWEET FOODS/DRINKS</text>
+      <text x="79" y="86" class="mod-sub" fill="#00f0ff">ESPECIALLY STRAWBERRY</text>
     </g>
     <!-- Card: VITE -->
     <g>
@@ -197,8 +197,8 @@
         <path d="M25 4L14 24 3 4h6l5 11 5-11z" fill="#ffc300"/><path d="M14 24L25 4l-7 1-4 8 2-6-4 1z" fill="#00f0ff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="249" y="72" class="mod-name">VITE</text>
-      <text x="249" y="86" class="mod-sub" fill="#00f0ff">NEXTGEN.BUILD</text>
+      <text x="249" y="72" class="mod-name">GAMES</text>
+      <text x="249" y="86" class="mod-sub" fill="#00f0ff">I LOVE SEEING MY HUSBANDO °w°</text>
     </g>
     <!-- Card: BABEL -->
     <g>
@@ -221,8 +221,8 @@
         <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#151b2e" stroke="#f5da55" stroke-width="1.4"/><circle cx="14" cy="14.5" r="4.5" fill="#f5da55"/><line x1="8" y1="14.5" x2="20" y2="14.5" stroke="#060c22" stroke-width="1.5"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="419" y="72" class="mod-name">BABEL</text>
-      <text x="419" y="86" class="mod-sub" fill="#00f0ff">JS.COMPILER</text>
+      <text x="419" y="72" class="mod-name">LISTENING MUSIC</text>
+      <text x="419" y="86" class="mod-sub" fill="#00f0ff">ROUON ARO MY LOVE 😘</text>
     </g>
     <!-- Card: HTML5 -->
     <g>
@@ -245,8 +245,8 @@
         <path d="M4 2l2 20 8 2.5 8-2.5 2-20H4z" fill="#e44d26" opacity="0.85"/><path d="M14 4v18.2l6.2-1.9 1.6-16.3H14z" fill="#f16529"/><path d="M8 8h12l-.3 3.5h-8l.3 3.5h7.4l-.7 7.2-4.7 1.4-4.7-1.4-.3-4H12l.2 2 1.8.5 1.8-.5.3-2.5H8L8 8z" fill="#ffffff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="589" y="72" class="mod-name">HTML5</text>
-      <text x="589" y="86" class="mod-sub" fill="#00f0ff">HYPERTEXT.DOM</text>
+      <text x="589" y="72" class="mod-name">READING BOOK</text>
+      <text x="589" y="86" class="mod-sub" fill="#00f0ff">NOVELS/COMICS.HORROR,FANTASY,BEASTMAN</text>
     </g>
     <!-- Card: CSS3 -->
     <g>
@@ -269,8 +269,8 @@
         <path d="M4 2l2 20 8 2.5 8-2.5 2-20H4z" fill="#1572b6" opacity="0.85"/><path d="M14 4v18.2l6.2-1.9 1.6-16.3H14z" fill="#33a9dc"/><path d="M8 8h12l-.3 3.5h-8l.3 3.5h7.4l-.7 7.2-4.7 1.4-4.7-1.4-.3-4H12l.2 2 1.8.5 1.8-.5.3-2.5H8L8 8z" fill="#ffffff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="759" y="72" class="mod-name">CSS3</text>
-      <text x="759" y="86" class="mod-sub" fill="#00f0ff">NEON.STYLING</text>
+      <text x="759" y="72" class="mod-name">DRAWING THINGS</text>
+      <text x="759" y="86" class="mod-sub" fill="#00f0ff">FURRY.NOT THAT EXPERT</text>
     </g>
 </g>
 
@@ -279,8 +279,8 @@
   <!-- Sector Header Bar -->
   <rect x="32" y="0" width="836" height="24" rx="4" fill="#140622" stroke="#d946ef" stroke-width="0.9" opacity="0.85"/>
   <circle cx="46" cy="12" r="3" fill="#d946ef" style="animation: blinkLed 2.1s infinite;"/>
-  <text x="60" y="16" class="sector-title" fill="#d946ef">SECTOR 02 // BACKEND CORE &amp; DATA STORAGE</text>
-  <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#ff73fa" text-anchor="end" letter-spacing="1.5">&lt;SYS:BE // DB:5432 /&gt;</text>
+  <text x="60" y="16" class="sector-title" fill="#d946ef">SECTOR 02 // LEAST FAVORITE THINGS</text>
+  <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#ff73fa" text-anchor="end" letter-spacing="1.5">&lt;SYS:LFT // DB:5432 /&gt;</text>
 
     <!-- Card: LARAVEL -->
     <g>
@@ -303,8 +303,8 @@
         <path d="M14 2L4 7v14l10 5 10-5V7L14 2z" fill="#ff2d20" opacity="0.25"/><polygon points="14,2 24,7 14,12 4,7" fill="none" stroke="#ff2d20" stroke-width="1.4"/><polygon points="4,7 14,12 14,26 4,21" fill="none" stroke="#ff2d20" stroke-width="1.4"/><polygon points="24,7 14,12 14,26 24,21" fill="none" stroke="#ff2d20" stroke-width="1.4"/><line x1="14" y1="12" x2="14" y2="26" stroke="#ff73fa" stroke-width="1.6"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="79" y="72" class="mod-name">LARAVEL</text>
-      <text x="79" y="86" class="mod-sub" fill="#d946ef">PHP.FRAMEWORK</text>
+      <text x="79" y="72" class="mod-name">HOMEWORK</text>
+      <text x="79" y="86" class="mod-sub" fill="#d946ef">THERE IS SO MANY OF THEM</text>
     </g>
     <!-- Card: PHP -->
     <g>
@@ -327,8 +327,8 @@
         <ellipse cx="14" cy="14" rx="13" ry="8.5" fill="#777bb4" opacity="0.3" stroke="#8892bf" stroke-width="1.3"/><text x="14" y="17.5" font-family="'Fira Code', monospace" font-size="8.5" font-weight="900" fill="#c4b5fd" text-anchor="middle">PHP</text>
       </g>
       <!-- Text details (Right side) -->
-      <text x="249" y="72" class="mod-name">PHP</text>
-      <text x="249" y="86" class="mod-sub" fill="#d946ef">HYPERTEXT.PRE</text>
+      <text x="249" y="72" class="mod-name">LOUD NOISE</text>
+      <text x="249" y="86" class="mod-sub" fill="#d946ef">IT BOTHERS ME WHEN I DO THINGS</text>
     </g>
     <!-- Card: COMPOSER -->
     <g>
@@ -351,8 +351,8 @@
         <circle cx="14" cy="14" r="12" fill="#885630" opacity="0.25" stroke="#f5d0fe" stroke-width="1.3"/><circle cx="14" cy="10" r="4" fill="#f5d0fe"/><path d="M7 23c0-4 3.5-6 7-6s7 2 7 6H7z" fill="#f5d0fe"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="419" y="72" class="mod-name">COMPOSER</text>
-      <text x="419" y="86" class="mod-sub" fill="#d946ef">PKG.MANAGER</text>
+      <text x="419" y="72" class="mod-name">HEIGHT</text>
+      <text x="419" y="86" class="mod-sub" fill="#d946ef">PLEASE DON'T PLACE ME OUT THERE</text>
     </g>
     <!-- Card: NODE.JS -->
     <g>
@@ -375,8 +375,8 @@
         <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#339933" opacity="0.3" stroke="#00ff88" stroke-width="1.4"/><path d="M14 6v8l7-4M14 14l-7-4v8l7 4" fill="none" stroke="#00ff88" stroke-width="1.6"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="589" y="72" class="mod-name">NODE.JS</text>
-      <text x="589" y="86" class="mod-sub" fill="#d946ef">ASYNC.RUNTIME</text>
+      <text x="589" y="72" class="mod-name">FULL STORAGE</text>
+      <text x="589" y="86" class="mod-sub" fill="#d946ef">DON'T LIKE TO DELETE MY PRECIOUS</text>
     </g>
     <!-- Card: POSTGRES -->
     <g>
@@ -399,8 +399,8 @@
         <path d="M14 3C8 3 4 7 4 13c0 7 6 12 10 12s10-5 10-12c0-6-4-10-10-10z" fill="#336791" opacity="0.3" stroke="#00f0ff" stroke-width="1.3"/><circle cx="10" cy="11" r="1.5" fill="#00f0ff"/><circle cx="18" cy="11" r="1.5" fill="#00f0ff"/><path d="M14 14v6M10 20h8" stroke="#00f0ff" stroke-width="1.4"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="759" y="72" class="mod-name">POSTGRES</text>
-      <text x="759" y="86" class="mod-sub" fill="#d946ef">RELATIONAL.DB</text>
+      <text x="759" y="72" class="mod-name">CHEATING/POLY</text>
+      <text x="759" y="86" class="mod-sub" fill="#d946ef">JUST BE LOYAL TO ONE PARTNER PLEASE</text>
     </g>
 </g>
 
@@ -409,8 +409,8 @@
   <!-- Sector Header Bar -->
   <rect x="32" y="0" width="836" height="24" rx="4" fill="#041a14" stroke="#00ff88" stroke-width="0.9" opacity="0.85"/>
   <circle cx="46" cy="12" r="3" fill="#00ff88" style="animation: blinkLed 1.6s infinite;"/>
-  <text x="60" y="16" class="sector-title" fill="#00ff88">SECTOR 03 // LOW-LEVEL ENGINE &amp; SCRIPTING</text>
-  <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#a7f3d0" text-anchor="end" letter-spacing="1.5">&lt;SYS:CORE // KERNEL:SYSTEM /&gt;</text>
+  <text x="60" y="16" class="sector-title" fill="#00ff88">SECTOR 03 // FAVORITE GAMES</text>
+  <text x="856" y="16" font-family="'Fira Code', monospace" font-size="8.5" fill="#a7f3d0" text-anchor="end" letter-spacing="1.5">&lt;SYS:FC // KERNEL:SYSTEM /&gt;</text>
 
     <!-- Card: C -->
     <g>
@@ -433,8 +433,8 @@
         <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#00599c" opacity="0.3" stroke="#00ff88" stroke-width="1.3"/><path d="M18 10a6 6 0 1 0 0 8" fill="none" stroke="#a7f3d0" stroke-width="2.2" stroke-linecap="round"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="79" y="72" class="mod-name">C</text>
-      <text x="79" y="86" class="mod-sub" fill="#00ff88">NATIVE.SYSTEM</text>
+      <text x="79" y="72" class="mod-name">ARKNIGHTS</text>
+      <text x="79" y="86" class="mod-sub" fill="#00ff88">TOWER DEFENSE.HUNG AND MOUNTAIN LOVER</text>
     </g>
     <!-- Card: C++ -->
     <g>
@@ -457,8 +457,8 @@
         <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#004482" opacity="0.3" stroke="#00ffcc" stroke-width="1.3"/><path d="M14 10a5 5 0 1 0 0 8" fill="none" stroke="#cffafe" stroke-width="2" stroke-linecap="round"/><path d="M18 14h3M19.5 12.5v3M22.5 14h3M24 12.5v3" stroke="#00ffcc" stroke-width="1.2"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="292" y="72" class="mod-name">C++</text>
-      <text x="292" y="86" class="mod-sub" fill="#00ff88">HIGH_PERF.CORE</text>
+      <text x="292" y="72" class="mod-name">HOUSAMO</text>
+      <text x="292" y="86" class="mod-sub" fill="#00ff88">LIFEWONDERS.FURRY BARA MEN LOVER</text>
     </g>
     <!-- Card: JAVA -->
     <g>
@@ -481,8 +481,8 @@
         <path d="M6 21c4 2 12 2 16 0-3-1-13-1-16 0z" fill="#f89820"/><path d="M8 18c3 1.5 9 1.5 12 0-2-1-10-1-12 0z" fill="#5382a1"/><path d="M13 3c2 2-2 4 0 7-3-2 1-4 0-7z" fill="#e76f00"/><path d="M16 6c1 1.5-1 3 0 5-2-1.5 1-3.5 0-5z" fill="#e76f00"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="505" y="72" class="mod-name">JAVA</text>
-      <text x="505" y="86" class="mod-sub" fill="#00ff88">JVM.ENTERPRISE</text>
+      <text x="505" y="72" class="mod-name">LIFE A HERO</text>
+      <text x="505" y="86" class="mod-sub" fill="#00ff88">LIFEWONDERS.FURRY BARA MEN LOVER</text>
     </g>
     <!-- Card: PYTHON -->
     <g>
@@ -505,8 +505,8 @@
         <path d="M13.5 3c-4.5 0-4.2 2-4.2 2v2.5h8.5v1.2H7.2S4 8.4 4 13s2.8 4.4 2.8 4.4H9v-2.2s-.1-2.6 2.6-2.6h4.5s2.5 0 2.5-2.5V5.5S18.8 3 13.5 3z" fill="#387eb8"/><circle cx="11" cy="5.5" r="1" fill="#ffffff"/><path d="M14.5 25c4.5 0 4.2-2 4.2-2v-2.5h-8.5v-1.2h10.6s3.2.3 3.2-4.3-2.8-4.4-2.8-4.4H19v2.2s.1 2.6-2.6 2.6h-4.5s-2.5 0-2.5 2.5v2.6s-.2 2.5 5.1 2.5z" fill="#ffe052"/><circle cx="17" cy="22.5" r="1" fill="#ffffff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="718" y="72" class="mod-name">PYTHON</text>
-      <text x="718" y="86" class="mod-sub" fill="#00ff88">AI_NEURAL.CORE</text>
+      <text x="718" y="72" class="mod-name">ZENLESS ZONE ZERO</text>
+      <text x="718" y="86" class="mod-sub" fill="#00ff88">RPG.VON LYCAON LOVER</text>
     </g>
 </g>
 

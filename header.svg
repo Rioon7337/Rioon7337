@@ -80,9 +80,9 @@
   </g>
 
   <!-- Main Title CONNECT with Glitch -->
-  <text x="450" y="65" text-anchor="middle" class="hdr-title" filter="url(#hglow)">CONNECT</text>
-  <text x="447" y="65" text-anchor="middle" class="hdr-title" fill="#00f0ff" style="animation: glitchHdr 6s infinite; opacity:0;">CONNECT</text>
-  <text x="453" y="65" text-anchor="middle" class="hdr-title" fill="#d946ef" style="animation: glitchHdr 6s infinite .14s; opacity:0;">CONNECT</text>
+  <text x="450" y="65" text-anchor="middle" class="hdr-title" filter="url(#hglow)">CONNECTION</text>
+  <text x="447" y="65" text-anchor="middle" class="hdr-title" fill="#00f0ff" style="animation: glitchHdr 6s infinite; opacity:0;">CONNECTION</text>
+  <text x="453" y="65" text-anchor="middle" class="hdr-title" fill="#d946ef" style="animation: glitchHdr 6s infinite .14s; opacity:0;">CONNECTION</text>
 
   <!-- Subtitle -->
   <text x="450" y="87" text-anchor="middle" class="hdr-sub">
