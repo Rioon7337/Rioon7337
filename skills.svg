@@ -375,7 +375,7 @@
         <polygon points="14,2 25,8.5 25,20.5 14,27 3,20.5 3,8.5" fill="#339933" opacity="0.3" stroke="#00ff88" stroke-width="1.4"/><path d="M14 6v8l7-4M14 14l-7-4v8l7 4" fill="none" stroke="#00ff88" stroke-width="1.6"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="589" y="72" class="mod-name">FULL.STORAGE</text>
+      <text x="589" y="72" class="mod-name">RED.STORAGE</text>
       <text x="589" y="86" class="mod-sub" fill="#d946ef">MUST.DELETE</text>
     </g>
     <!-- Card: POSTGRES -->
@@ -399,8 +399,8 @@
         <path d="M14 3C8 3 4 7 4 13c0 7 6 12 10 12s10-5 10-12c0-6-4-10-10-10z" fill="#336791" opacity="0.3" stroke="#00f0ff" stroke-width="1.3"/><circle cx="10" cy="11" r="1.5" fill="#00f0ff"/><circle cx="18" cy="11" r="1.5" fill="#00f0ff"/><path d="M14 14v6M10 20h8" stroke="#00f0ff" stroke-width="1.4"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="759" y="72" class="mod-name">CHEATING/POLY</text>
-      <text x="759" y="86" class="mod-sub" fill="#d946ef">JUST BE LOYAL TO ONE PARTNER PLEASE</text>
+      <text x="759" y="72" class="mod-name">CHEAT/POLY</text>
+      <text x="759" y="86" class="mod-sub" fill="#d946ef">BE.LOYAL</text>
     </g>
 </g>
 
