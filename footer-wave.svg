@@ -16,6 +16,26 @@
         0% { stroke-dashoffset: 0; }
         100% { stroke-dashoffset: -1000; }
       }
+      @keyframes scanDown {
+        0% { transform: translateY(-20px); opacity: 0; }
+        10% { opacity: 0.6; }
+        90% { opacity: 0.6; }
+        100% { transform: translateY(180px); opacity: 0; }
+      }
+      @keyframes dataRise {
+        0% { transform: translateY(0); opacity: 0; }
+        12% { opacity: 0.6; }
+        80% { opacity: 0.3; }
+        100% { transform: translateY(-140px); opacity: 0; }
+      }
+      @keyframes hexPulse {
+        0%, 100% { transform: scale(1); opacity: 0.15; }
+        50% { transform: scale(1.15); opacity: 0.35; }
+      }
+      @keyframes ringExpand {
+        0% { r: 2; opacity: 0.6; }
+        100% { r: 18; opacity: 0; }
+      }
     </style>
 
     <radialGradient id="bgFt" cx="50%" cy="40%" r="90%">
@@ -35,6 +55,12 @@
       <stop offset="30%" stop-color="#00f0ff" stop-opacity="0.6"/>
       <stop offset="50%" stop-color="#d946ef" stop-opacity="0.8"/>
       <stop offset="70%" stop-color="#00f0ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="scanbeam" x1="0" y1="0" x2="0" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
     </linearGradient>
 
@@ -63,9 +89,77 @@
     <rect x="8" y="8" width="884" height="164" fill="url(#dotsFt)"/>
   </g>
 
-  <!-- Single subtle horizontal scan line -->
+  <!-- Subtle Futuristic Ambient Animations -->
   <g clip-path="url(#ftClip)">
-    <line x1="80" y1="90" x2="820" y2="90" stroke="url(#dividerGrad)" stroke-width="0.6" opacity="0.35"/>
+    <!-- Moving Laser Scanbeam -->
+    <rect x="8" y="0" width="884" height="25" fill="url(#scanbeam)" style="animation: scanDown 6s ease-in-out infinite; pointer-events: none;"/>
+
+    <!-- Subtle Center Divider Wire with Pulsing Signal -->
+    <line x1="160" y1="90" x2="740" y2="90" stroke="url(#dividerGrad)" stroke-width="0.7" opacity="0.4"/>
+    <circle cx="450" cy="90" r="1.5" fill="#00ffcc">
+      <animate attributeName="cx" values="180;720;180" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Ambient Rising Cyber Data Bits -->
+    <g opacity="0.5">
+      <circle cx="210" cy="160" r="1.2" fill="#00f0ff" style="animation: dataRise 4.5s linear infinite;"/>
+      <circle cx="280" cy="170" r="1" fill="#d946ef" style="animation: dataRise 5.5s linear infinite 1.8s;"/>
+      <circle cx="620" cy="165" r="1" fill="#00ffcc" style="animation: dataRise 5s linear infinite 0.9s;"/>
+      <circle cx="700" cy="170" r="1.2" fill="#00f0ff" style="animation: dataRise 5.8s linear infinite 2.5s;"/>
+    </g>
+
+    <!-- Left Flank Telemetry Node -->
+    <g transform="translate(115, 85)" opacity="0.75">
+      <!-- Expanding radar ping ring -->
+      <circle cx="0" cy="0" r="4" fill="none" stroke="#00f0ff" stroke-width="0.8">
+        <animate attributeName="r" values="2;15" dur="3.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0" dur="3.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="2" fill="#00ff88"/>
+      <!-- HUD bracket & label -->
+      <path d="M-12 -12 L-18 -12 L-18 12 L-12 12" fill="none" stroke="#00f0ff" stroke-width="1"/>
+      <text x="-22" y="3" font-family="'Fira Code', monospace" font-size="6.5" font-weight="700" fill="#00f0ff" opacity="0.55" text-anchor="end">NODE.01</text>
+      <!-- Mini audio-frequency equalizer levels -->
+      <line x1="8" y1="-4" x2="8" y2="4" stroke="#00f0ff" stroke-width="1.2">
+        <animate attributeName="y1" values="-2;-7;-3;-2" dur="1.3s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="2;7;3;2" dur="1.3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="13" y1="-2" x2="13" y2="2" stroke="#00ffcc" stroke-width="1.2">
+        <animate attributeName="y1" values="-4;-1;-6;-4" dur="1.7s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="4;1;6;4" dur="1.7s" repeatCount="indefinite"/>
+      </line>
+      <line x1="18" y1="-5" x2="18" y2="5" stroke="#d946ef" stroke-width="1.2">
+        <animate attributeName="y1" values="-1;-6;-3;-1" dur="1.1s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="1;6;3;1" dur="1.1s" repeatCount="indefinite"/>
+      </line>
+    </g>
+
+    <!-- Right Flank Telemetry Node -->
+    <g transform="translate(785, 85)" opacity="0.75">
+      <!-- Expanding radar ping ring -->
+      <circle cx="0" cy="0" r="4" fill="none" stroke="#d946ef" stroke-width="0.8">
+        <animate attributeName="r" values="2;15" dur="3.2s" begin="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0" dur="3.2s" begin="1.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="2" fill="#d946ef"/>
+      <!-- HUD bracket & label -->
+      <path d="M12 -12 L18 -12 L18 12 L12 12" fill="none" stroke="#d946ef" stroke-width="1"/>
+      <text x="22" y="3" font-family="'Fira Code', monospace" font-size="6.5" font-weight="700" fill="#d946ef" opacity="0.55">NODE.02</text>
+      <!-- Mini audio-frequency equalizer levels -->
+      <line x1="-18" y1="-5" x2="-18" y2="5" stroke="#d946ef" stroke-width="1.2">
+        <animate attributeName="y1" values="-1;-6;-3;-1" dur="1.1s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="1;6;3;1" dur="1.1s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-13" y1="-2" x2="-13" y2="2" stroke="#00ffcc" stroke-width="1.2">
+        <animate attributeName="y1" values="-4;-1;-6;-4" dur="1.7s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="4;1;6;4" dur="1.7s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-8" y1="-4" x2="-8" y2="4" stroke="#00f0ff" stroke-width="1.2">
+        <animate attributeName="y1" values="-2;-7;-3;-2" dur="1.3s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="2;7;3;2" dur="1.3s" repeatCount="indefinite"/>
+      </line>
+    </g>
   </g>
 
   <!-- Chamfered Corners -->
