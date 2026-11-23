@@ -173,7 +173,7 @@
         <ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2"/><ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2" transform="rotate(60 14 14)"/><ellipse cx="14" cy="14" rx="12" ry="4.5" fill="none" stroke="#00f0ff" stroke-width="1.2" transform="rotate(120 14 14)"/><circle cx="14" cy="14" r="2.2" fill="#00f0ff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="79" y="72" class="mod-name">SWEET.THINGS</text>
+      <text x="79" y="72" class="mod-name">Sweet.Thing</text>
       <text x="79" y="86" class="mod-sub" fill="#00f0ff">#Strawberry</text>
     </g>
     <!-- Card: VITE -->
@@ -505,7 +505,7 @@
         <path d="M13.5 3c-4.5 0-4.2 2-4.2 2v2.5h8.5v1.2H7.2S4 8.4 4 13s2.8 4.4 2.8 4.4H9v-2.2s-.1-2.6 2.6-2.6h4.5s2.5 0 2.5-2.5V5.5S18.8 3 13.5 3z" fill="#387eb8"/><circle cx="11" cy="5.5" r="1" fill="#ffffff"/><path d="M14.5 25c4.5 0 4.2-2 4.2-2v-2.5h-8.5v-1.2h10.6s3.2.3 3.2-4.3-2.8-4.4-2.8-4.4H19v2.2s.1 2.6-2.6 2.6h-4.5s-2.5 0-2.5 2.5v2.6s-.2 2.5 5.1 2.5z" fill="#ffe052"/><circle cx="17" cy="22.5" r="1" fill="#ffffff"/>
       </g>
       <!-- Text details (Right side) -->
-      <text x="718" y="72" class="mod-name">ZENLESS.ZONE.ZERO</text>
+      <text x="718" y="72" class="mod-name">ZZZ</text>
       <text x="718" y="86" class="mod-sub" fill="#00ff88">Von.Lycaon.Lover</text>
     </g>
 </g>
