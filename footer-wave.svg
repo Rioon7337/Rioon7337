@@ -4,6 +4,8 @@
       .ft-title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: 900; letter-spacing: 8px; fill: #ffffff; }
       .ft-sub { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 600; letter-spacing: 3px; fill: #00f0ff; }
       .ft-tag { font-family: 'Fira Code', monospace; font-size: 7.5px; font-weight: 700; letter-spacing: 1.5px; }
+      .ft-telemetry { font-family: 'Fira Code', monospace; font-size: 7px; font-weight: 600; letter-spacing: 1px; }
+
       @keyframes glitchFt {
         0%, 92%, 100% { transform: translate(0,0); opacity: 0; }
         93% { transform: translate(-2px, 0.5px); opacity: 0.7; }
@@ -11,30 +13,27 @@
         97% { transform: translate(-1px, 0); opacity: 0.35; }
       }
       @keyframes cursorBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-      @keyframes fadeBreath { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.9; } }
-      @keyframes lineSweep {
-        0% { stroke-dashoffset: 0; }
-        100% { stroke-dashoffset: -1000; }
+      @keyframes fadeBreath { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.95; } }
+      @keyframes telemetryFaint { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.65; } }
+      @keyframes diamondPulse {
+        0%, 100% { transform: scale(1); opacity: 0.5; }
+        50% { transform: scale(1.4); opacity: 1; }
       }
       @keyframes scanDown {
-        0% { transform: translateY(-20px); opacity: 0; }
-        10% { opacity: 0.6; }
-        90% { opacity: 0.6; }
-        100% { transform: translateY(180px); opacity: 0; }
+        0% { transform: translateY(-25px); opacity: 0; }
+        10% { opacity: 0.75; }
+        90% { opacity: 0.75; }
+        100% { transform: translateY(185px); opacity: 0; }
       }
       @keyframes dataRise {
         0% { transform: translateY(0); opacity: 0; }
-        12% { opacity: 0.6; }
-        80% { opacity: 0.3; }
-        100% { transform: translateY(-140px); opacity: 0; }
+        15% { opacity: 0.7; }
+        80% { opacity: 0.4; }
+        100% { transform: translateY(-135px); opacity: 0; }
       }
-      @keyframes hexPulse {
-        0%, 100% { transform: scale(1); opacity: 0.15; }
-        50% { transform: scale(1.15); opacity: 0.35; }
-      }
-      @keyframes ringExpand {
-        0% { r: 2; opacity: 0.6; }
-        100% { r: 18; opacity: 0; }
+      @keyframes crossPulse {
+        0%, 100% { opacity: 0.3; transform: scale(0.9); }
+        50% { opacity: 0.85; transform: scale(1.1); }
       }
     </style>
 
@@ -52,15 +51,15 @@
 
     <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
-      <stop offset="30%" stop-color="#00f0ff" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#d946ef" stop-opacity="0.8"/>
-      <stop offset="70%" stop-color="#00f0ff" stop-opacity="0.6"/>
+      <stop offset="25%" stop-color="#00f0ff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#d946ef" stop-opacity="0.9"/>
+      <stop offset="75%" stop-color="#00ffcc" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
     </linearGradient>
 
     <linearGradient id="scanbeam" x1="0" y1="0" x2="0" y2="100%">
       <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
     </linearGradient>
 
@@ -74,147 +73,226 @@
     </clipPath>
   </defs>
 
-  <!-- Outer Glow -->
+  <!-- Outer Neon Glow Aura -->
   <path d="M 24 8 L 876 8 L 892 24 L 892 156 L 876 172 L 24 172 L 8 156 L 8 24 Z"
-        fill="none" stroke="url(#frameFt)" stroke-width="4" opacity="0.2" filter="url(#glowFt)"/>
+        fill="none" stroke="url(#frameFt)" stroke-width="4.5" opacity="0.2" filter="url(#glowFt)"/>
 
   <!-- Body -->
   <path d="M 24 8 L 876 8 L 892 24 L 892 156 L 876 172 L 24 172 L 8 156 L 8 24 Z" fill="url(#bgFt)"/>
 
-  <!-- Subtle dot grid -->
-  <g clip-path="url(#ftClip)" opacity="0.04">
+  <!-- Subtle Dot Grid Matrix -->
+  <g clip-path="url(#ftClip)" opacity="0.045">
     <pattern id="dotsFt" width="18" height="18" patternUnits="userSpaceOnUse">
       <circle cx="2" cy="2" r="0.8" fill="#00f0ff"/>
     </pattern>
     <rect x="8" y="8" width="884" height="164" fill="url(#dotsFt)"/>
   </g>
 
-  <!-- Subtle Futuristic Ambient Animations -->
+  <!-- ==================== AMBIENT FUTURISTIC ANIMATIONS ==================== -->
   <g clip-path="url(#ftClip)">
     <!-- Moving Laser Scanbeam -->
-    <rect x="8" y="0" width="884" height="25" fill="url(#scanbeam)" style="animation: scanDown 6s ease-in-out infinite; pointer-events: none;"/>
+    <rect x="8" y="0" width="884" height="30" fill="url(#scanbeam)" style="animation: scanDown 5.2s ease-in-out infinite; pointer-events: none;"/>
 
-    <!-- Subtle Center Divider Wire with Pulsing Signal -->
-    <line x1="160" y1="90" x2="740" y2="90" stroke="url(#dividerGrad)" stroke-width="0.7" opacity="0.4"/>
-    <circle cx="450" cy="90" r="1.5" fill="#00ffcc">
-      <animate attributeName="cx" values="180;720;180" dur="8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="8s" repeatCount="indefinite"/>
+    <!-- Rotating Holographic Tech Halo Behind Center Title -->
+    <g transform="translate(450, 80)" opacity="0.18">
+      <!-- Outer dashed tech ring -->
+      <circle cx="0" cy="0" r="56" fill="none" stroke="#00f0ff" stroke-width="0.8" stroke-dasharray="14 10 4 10">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="22s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Middle counter-spinning ring with tick marks -->
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#d946ef" stroke-width="0.8" stroke-dasharray="8 6 2 6">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="16s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Inner subtle reticle crosses -->
+      <g stroke="#00ffcc" stroke-width="0.9">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="28s" repeatCount="indefinite"/>
+        <line x1="-28" y1="0" x2="-20" y2="0"/>
+        <line x1="20" y1="0" x2="28" y2="0"/>
+        <line x1="0" y1="-28" x2="0" y2="-20"/>
+        <line x1="0" y1="20" x2="0" y2="28"/>
+      </g>
+    </g>
+
+    <!-- Subtle Center Divider Wire with Dual Pulsing Signals -->
+    <line x1="150" y1="90" x2="750" y2="90" stroke="url(#dividerGrad)" stroke-width="0.75" opacity="0.45"/>
+    <!-- Cyan signal traveler left to right -->
+    <circle cx="450" cy="90" r="1.6" fill="#00f0ff" filter="url(#glowFt)">
+      <animate attributeName="cx" values="160;740;160" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Magenta signal traveler right to left -->
+    <circle cx="450" cy="90" r="1.5" fill="#d946ef" filter="url(#glowFt)">
+      <animate attributeName="cx" values="740;160;740" dur="8.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="8.5s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Ambient Rising Cyber Data Bits -->
-    <g opacity="0.5">
-      <circle cx="210" cy="160" r="1.2" fill="#00f0ff" style="animation: dataRise 4.5s linear infinite;"/>
-      <circle cx="280" cy="170" r="1" fill="#d946ef" style="animation: dataRise 5.5s linear infinite 1.8s;"/>
-      <circle cx="620" cy="165" r="1" fill="#00ffcc" style="animation: dataRise 5s linear infinite 0.9s;"/>
-      <circle cx="700" cy="170" r="1.2" fill="#00f0ff" style="animation: dataRise 5.8s linear infinite 2.5s;"/>
+    <!-- Traveling Micro Sine-Waveform above subtitle -->
+    <path d="M 310 101 Q 330 98 350 101 T 390 101 T 430 101 T 470 101 T 510 101 T 550 101 T 590 101"
+          fill="none" stroke="url(#dividerGrad)" stroke-width="1.1" opacity="0.4">
+      <animate attributeName="d" values="
+        M 310 101 Q 330 97 350 101 T 390 101 T 430 101 T 470 101 T 510 101 T 550 101 T 590 101;
+        M 310 101 Q 330 105 350 101 T 390 101 T 430 101 T 470 101 T 510 101 T 550 101 T 590 101;
+        M 310 101 Q 330 97 350 101 T 390 101 T 430 101 T 470 101 T 510 101 T 550 101 T 590 101"
+        dur="3.2s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Ambient Rising Cyber Data Bits (6 multi-color motes) -->
+    <g opacity="0.6">
+      <circle cx="190" cy="160" r="1.3" fill="#00f0ff" style="animation: dataRise 4.2s linear infinite;"/>
+      <circle cx="260" cy="170" r="1" fill="#d946ef" style="animation: dataRise 5.2s linear infinite 1.5s;"/>
+      <circle cx="340" cy="165" r="1.2" fill="#00ffcc" style="animation: dataRise 4.8s linear infinite 2.8s;"/>
+      <circle cx="560" cy="165" r="1.1" fill="#00f0ff" style="animation: dataRise 5.5s linear infinite 0.7s;"/>
+      <circle cx="640" cy="170" r="1" fill="#d946ef" style="animation: dataRise 4.9s linear infinite 2.1s;"/>
+      <circle cx="710" cy="165" r="1.3" fill="#00ffcc" style="animation: dataRise 5.6s linear infinite 1.2s;"/>
     </g>
 
-    <!-- Left Flank Telemetry Node -->
-    <g transform="translate(115, 85)" opacity="0.75">
+    <!-- Left Flank Telemetry Node (NODE.01) -->
+    <g transform="translate(112, 85)" opacity="0.8">
       <!-- Expanding radar ping ring -->
       <circle cx="0" cy="0" r="4" fill="none" stroke="#00f0ff" stroke-width="0.8">
-        <animate attributeName="r" values="2;15" dur="3.2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.7;0" dur="3.2s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="2;16" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.75;0" dur="3s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="0" cy="0" r="2" fill="#00ff88"/>
+      <circle cx="0" cy="0" r="2.2" fill="#00ff88" style="animation: fadeBreath 1.8s infinite;"/>
       <!-- HUD bracket & label -->
       <path d="M-12 -12 L-18 -12 L-18 12 L-12 12" fill="none" stroke="#00f0ff" stroke-width="1"/>
-      <text x="-22" y="3" font-family="'Fira Code', monospace" font-size="6.5" font-weight="700" fill="#00f0ff" opacity="0.55" text-anchor="end">NODE.01</text>
+      <text x="-22" y="3" font-family="'Fira Code', monospace" font-size="6.5" font-weight="700" fill="#00f0ff" opacity="0.65" text-anchor="end">NODE.01</text>
       <!-- Mini audio-frequency equalizer levels -->
-      <line x1="8" y1="-4" x2="8" y2="4" stroke="#00f0ff" stroke-width="1.2">
-        <animate attributeName="y1" values="-2;-7;-3;-2" dur="1.3s" repeatCount="indefinite"/>
-        <animate attributeName="y2" values="2;7;3;2" dur="1.3s" repeatCount="indefinite"/>
+      <line x1="8" y1="-4" x2="8" y2="4" stroke="#00f0ff" stroke-width="1.3">
+        <animate attributeName="y1" values="-2;-8;-3;-2" dur="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="2;8;3;2" dur="1.2s" repeatCount="indefinite"/>
       </line>
-      <line x1="13" y1="-2" x2="13" y2="2" stroke="#00ffcc" stroke-width="1.2">
-        <animate attributeName="y1" values="-4;-1;-6;-4" dur="1.7s" repeatCount="indefinite"/>
-        <animate attributeName="y2" values="4;1;6;4" dur="1.7s" repeatCount="indefinite"/>
+      <line x1="13" y1="-2" x2="13" y2="2" stroke="#00ffcc" stroke-width="1.3">
+        <animate attributeName="y1" values="-5;-1;-7;-5" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="5;1;7;5" dur="1.6s" repeatCount="indefinite"/>
       </line>
-      <line x1="18" y1="-5" x2="18" y2="5" stroke="#d946ef" stroke-width="1.2">
-        <animate attributeName="y1" values="-1;-6;-3;-1" dur="1.1s" repeatCount="indefinite"/>
-        <animate attributeName="y2" values="1;6;3;1" dur="1.1s" repeatCount="indefinite"/>
+      <line x1="18" y1="-5" x2="18" y2="5" stroke="#d946ef" stroke-width="1.3">
+        <animate attributeName="y1" values="-1;-7;-4;-1" dur="1.1s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="1;7;4;1" dur="1.1s" repeatCount="indefinite"/>
       </line>
     </g>
 
-    <!-- Right Flank Telemetry Node -->
-    <g transform="translate(785, 85)" opacity="0.75">
+    <!-- Right Flank Telemetry Node (NODE.02) -->
+    <g transform="translate(788, 85)" opacity="0.8">
       <!-- Expanding radar ping ring -->
       <circle cx="0" cy="0" r="4" fill="none" stroke="#d946ef" stroke-width="0.8">
-        <animate attributeName="r" values="2;15" dur="3.2s" begin="1.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.7;0" dur="3.2s" begin="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="2;16" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.75;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="0" cy="0" r="2" fill="#d946ef"/>
+      <circle cx="0" cy="0" r="2.2" fill="#d946ef" style="animation: fadeBreath 1.8s infinite 0.9s;"/>
       <!-- HUD bracket & label -->
       <path d="M12 -12 L18 -12 L18 12 L12 12" fill="none" stroke="#d946ef" stroke-width="1"/>
-      <text x="22" y="3" font-family="'Fira Code', monospace" font-size="6.5" font-weight="700" fill="#d946ef" opacity="0.55">NODE.02</text>
+      <text x="22" y="3" font-family="'Fira Code', monospace" font-size="6.5" font-weight="700" fill="#d946ef" opacity="0.65">NODE.02</text>
       <!-- Mini audio-frequency equalizer levels -->
-      <line x1="-18" y1="-5" x2="-18" y2="5" stroke="#d946ef" stroke-width="1.2">
-        <animate attributeName="y1" values="-1;-6;-3;-1" dur="1.1s" repeatCount="indefinite"/>
-        <animate attributeName="y2" values="1;6;3;1" dur="1.1s" repeatCount="indefinite"/>
+      <line x1="-18" y1="-5" x2="-18" y2="5" stroke="#d946ef" stroke-width="1.3">
+        <animate attributeName="y1" values="-1;-7;-4;-1" dur="1.1s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="1;7;4;1" dur="1.1s" repeatCount="indefinite"/>
       </line>
-      <line x1="-13" y1="-2" x2="-13" y2="2" stroke="#00ffcc" stroke-width="1.2">
-        <animate attributeName="y1" values="-4;-1;-6;-4" dur="1.7s" repeatCount="indefinite"/>
-        <animate attributeName="y2" values="4;1;6;4" dur="1.7s" repeatCount="indefinite"/>
+      <line x1="-13" y1="-2" x2="-13" y2="2" stroke="#00ffcc" stroke-width="1.3">
+        <animate attributeName="y1" values="-5;-1;-7;-5" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="5;1;7;5" dur="1.6s" repeatCount="indefinite"/>
       </line>
-      <line x1="-8" y1="-4" x2="-8" y2="4" stroke="#00f0ff" stroke-width="1.2">
-        <animate attributeName="y1" values="-2;-7;-3;-2" dur="1.3s" repeatCount="indefinite"/>
-        <animate attributeName="y2" values="2;7;3;2" dur="1.3s" repeatCount="indefinite"/>
+      <line x1="-8" y1="-4" x2="-8" y2="4" stroke="#00f0ff" stroke-width="1.3">
+        <animate attributeName="y1" values="-2;-8;-3;-2" dur="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="2;8;3;2" dur="1.2s" repeatCount="indefinite"/>
       </line>
     </g>
+
+    <!-- Side Micro Telemetry Data Readouts -->
+    <text x="142" y="146" class="ft-telemetry" fill="#00f0ff" style="animation: telemetryFaint 3s infinite;">PORT::0x7337 // FIN_ACK</text>
+    <text x="758" y="146" class="ft-telemetry" fill="#00ffcc" text-anchor="end" style="animation: telemetryFaint 3s infinite 1.5s;">BUFFER::CLEAR // 100%</text>
   </g>
 
   <!-- Chamfered Corners -->
-  <g stroke="#00f0ff" stroke-width="1.6" fill="none" opacity="0.75" stroke-linecap="round">
+  <g stroke="#00f0ff" stroke-width="1.6" fill="none" opacity="0.8" stroke-linecap="round">
     <path d="M14 38 L14 22 L22 14 L38 14"/>
     <path d="M886 38 L886 22 L878 14 L862 14"/>
   </g>
-  <g stroke="#d946ef" stroke-width="1.6" fill="none" opacity="0.75" stroke-linecap="round">
+  <g stroke="#d946ef" stroke-width="1.6" fill="none" opacity="0.8" stroke-linecap="round">
     <path d="M14 142 L14 158 L22 166 L38 166"/>
     <path d="M886 142 L886 158 L878 166 L862 166"/>
   </g>
 
-  <!-- Minimal side notches -->
-  <g stroke="#00f0ff" stroke-width="1" opacity="0.3">
+  <!-- 4 Corner Target Crosshairs -->
+  <g>
+    <g transform="translate(48, 26)" style="animation: crossPulse 2.5s infinite;">
+      <circle cx="0" cy="0" r="1.3" fill="#00f0ff"/>
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="#00f0ff" stroke-width="0.7"/>
+      <line x1="0" y1="-4" x2="0" y2="4" stroke="#00f0ff" stroke-width="0.7"/>
+    </g>
+    <g transform="translate(852, 26)" style="animation: crossPulse 2.5s infinite 0.6s;">
+      <circle cx="0" cy="0" r="1.3" fill="#00f0ff"/>
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="#00f0ff" stroke-width="0.7"/>
+      <line x1="0" y1="-4" x2="0" y2="4" stroke="#00f0ff" stroke-width="0.7"/>
+    </g>
+    <g transform="translate(48, 154)" style="animation: crossPulse 2.5s infinite 1.2s;">
+      <circle cx="0" cy="0" r="1.3" fill="#d946ef"/>
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="#d946ef" stroke-width="0.7"/>
+      <line x1="0" y1="-4" x2="0" y2="4" stroke="#d946ef" stroke-width="0.7"/>
+    </g>
+    <g transform="translate(852, 154)" style="animation: crossPulse 2.5s infinite 1.8s;">
+      <circle cx="0" cy="0" r="1.3" fill="#d946ef"/>
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="#d946ef" stroke-width="0.7"/>
+      <line x1="0" y1="-4" x2="0" y2="4" stroke="#d946ef" stroke-width="0.7"/>
+    </g>
+  </g>
+
+  <!-- Minimal Side Notches -->
+  <g stroke="#00f0ff" stroke-width="1.2" opacity="0.35">
     <line x1="8" y1="60" x2="16" y2="60"/>
     <line x1="8" y1="120" x2="16" y2="120"/>
     <line x1="884" y1="60" x2="892" y2="60"/>
     <line x1="884" y1="120" x2="892" y2="120"/>
   </g>
 
-  <!-- Top status tag -->
-  <text x="36" y="30" class="ft-tag" fill="#00ffcc" opacity="0.6">&lt;SYS.EXIT // SESSION_COMPLETE&gt;</text>
-  <text x="864" y="30" class="ft-tag" fill="#00f0ff" text-anchor="end" opacity="0.6">&lt;STATUS: NOMINAL&gt;</text>
+  <!-- Top Status Tag -->
+  <text x="36" y="30" class="ft-tag" fill="#00ffcc" opacity="0.7">&lt;SYS.EXIT // SESSION_COMPLETE&gt;</text>
+  <text x="864" y="30" class="ft-tag" fill="#00f0ff" text-anchor="end" opacity="0.7">&lt;STATUS: NOMINAL [OK]&gt;</text>
 
-  <!-- Thin divider under top tag -->
-  <line x1="100" y1="38" x2="800" y2="38" stroke="#00f0ff" stroke-width="0.4" opacity="0.15"/>
+  <!-- Thin Divider Under Top Tag -->
+  <line x1="100" y1="38" x2="800" y2="38" stroke="#00f0ff" stroke-width="0.4" opacity="0.2"/>
 
-  <!-- ===== Main Title ===== -->
+  <!-- ==================== MAIN CENTER TYPOGRAPHY ==================== -->
   <text x="450" y="82" text-anchor="middle" class="ft-title" filter="url(#glowFt)">THANKS FOR VISITING</text>
   <!-- Glitch layers -->
-  <text x="447.5" y="82" text-anchor="middle" class="ft-title" fill="#00f0ff" style="animation: glitchFt 7s infinite; opacity:0;">THANKS FOR VISITING</text>
-  <text x="452.5" y="82" text-anchor="middle" class="ft-title" fill="#d946ef" style="animation: glitchFt 7s infinite 0.12s; opacity:0;">THANKS FOR VISITING</text>
+  <text x="447.5" y="82" text-anchor="middle" class="ft-title" fill="#00f0ff" style="animation: glitchFt 6.5s infinite; opacity:0;">THANKS FOR VISITING</text>
+  <text x="452.5" y="82" text-anchor="middle" class="ft-title" fill="#d946ef" style="animation: glitchFt 6.5s infinite 0.14s; opacity:0;">THANKS FOR VISITING</text>
 
-  <!-- Decorative diamond -->
-  <polygon points="450,92 453,95 450,98 447,95" fill="#00f0ff" opacity="0.5" filter="url(#glowFt)"/>
+  <!-- Decorative Diamond with Pulse Glow -->
+  <g transform="translate(450, 95)">
+    <polygon points="0,-4 4,0 0,4 -4,0" fill="#00f0ff" filter="url(#glowFt)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.35;1" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
 
   <!-- Subtitle -->
-  <text x="450" y="115" text-anchor="middle" class="ft-sub" opacity="0.8">
+  <text x="450" y="115" text-anchor="middle" class="ft-sub" opacity="0.85">
     // SIGNAL LOST &#183; SESSION TERMINATED &#183; RIOON7337 //
   </text>
 
-  <!-- Bottom terminal prompt -->
+  <!-- Bottom Terminal Prompt -->
   <g transform="translate(450, 145)">
-    <rect x="-120" y="-10" width="240" height="17" rx="3.5" fill="#030b1c" stroke="#00f0ff" stroke-width="0.7" opacity="0.7"/>
-    <circle cx="-106" cy="-1.5" r="2" fill="#00ff88" style="animation: fadeBreath 2s infinite;"/>
+    <rect x="-125" y="-10" width="250" height="17" rx="3.5" fill="#030b1c" stroke="#00f0ff" stroke-width="0.8" opacity="0.75"/>
+    <circle cx="-110" cy="-1.5" r="2.2" fill="#00ff88" style="animation: fadeBreath 1.8s infinite;"/>
     <text x="0" y="2" font-family="'Fira Code', monospace" font-size="8" font-weight="700" fill="#00ff88" text-anchor="middle" letter-spacing="1.5">DISCONNECTING<tspan fill="#00f0ff" style="animation: cursorBlink 0.75s step-end infinite;"> _</tspan></text>
   </g>
 
-  <!-- Border frame -->
+  <!-- Border Frame -->
   <path d="M 24 8 L 876 8 L 892 24 L 892 156 L 876 172 L 24 172 L 8 156 L 8 24 Z"
-        fill="none" stroke="url(#frameFt)" stroke-width="1.5" opacity="0.85"/>
+        fill="none" stroke="url(#frameFt)" stroke-width="1.6" opacity="0.9"/>
 
-  <!-- Laser tracer -->
+  <!-- Dual Laser Tracers (Clockwise Cyan + Counter-Clockwise Magenta) -->
+  <!-- Cyan Tracer (Clockwise) -->
   <path d="M 24 8 L 876 8 L 892 24 L 892 156 L 876 172 L 24 172 L 8 156 L 8 24 Z"
-        fill="none" stroke="#00f0ff" stroke-width="1.8" stroke-linecap="round" opacity="0.75"
-        pathLength="1000" stroke-dasharray="70 930" filter="url(#glowFt)"
-        style="animation: lineSweep 5s linear infinite;"/>
+        fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.85"
+        pathLength="1000" stroke-dasharray="80 920" filter="url(#glowFt)">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="4.2s" repeatCount="indefinite"/>
+  </path>
+  <!-- Magenta Tracer (Counter-Clockwise) -->
+  <path d="M 24 8 L 876 8 L 892 24 L 892 156 L 876 172 L 24 172 L 8 156 L 8 24 Z"
+        fill="none" stroke="#d946ef" stroke-width="1.8" stroke-linecap="round" opacity="0.65"
+        pathLength="1000" stroke-dasharray="60 940" filter="url(#glowFt)">
+    <animate attributeName="stroke-dashoffset" from="0" to="1000" dur="5s" repeatCount="indefinite"/>
+  </path>
 </svg>
