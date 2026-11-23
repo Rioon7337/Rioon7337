@@ -602,11 +602,11 @@
 </head>
 <body>
   <!-- Fixed Floating Cyber Back Button -->
-  <button type="button" class="cyber-back-btn" onclick="goBack()" title="Kembali ke Profil GitHub">
+  <a href="https://github.com/Rioon7337" class="cyber-back-btn" onclick="goBack(event)" title="Kembali ke Profil GitHub">
     <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     <span>BACK TO GITHUB</span>
     <span class="back-dot"></span>
-  </button>
+  </a>
 
   <div class="container">
     <!-- Primary Hero Card (Rioon7337 Namecard) -->
@@ -915,16 +915,11 @@
       });
     });
     // Cyber Navigation Return Function
-    function goBack() {
+    function goBack(e) {
+      if (e) e.preventDefault();
       playCyberChirp(600, 240, 0.08);
       setTimeout(() => {
-        if (document.referrer && document.referrer.includes('github.com')) {
-          window.location.href = document.referrer;
-        } else if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          window.location.href = 'https://github.com/Rioon7337';
-        }
+        window.location.href = 'https://github.com/Rioon7337';
       }, 100);
     }
   </script>
